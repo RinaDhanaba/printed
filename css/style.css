@@ -170,11 +170,11 @@ align-items: stretch;
     justify-content: center;
     margin: 0 15px;}
 
-.nav-menu ul < li:hover{
+.nav-menu ul li:hover{
     border-top: 3px solid var(--primary-color);
 }
 
-#promo-menu < li:hover {
+#promo-menu li:hover {
     border-top: 3px solid var(--secondary-color);
 }
 
@@ -218,13 +218,10 @@ align-items: stretch;
     display: block;
 }
 
-/* Additional styling for mobile and desktop view */
-.has-submenu > a::after {
-    content: ' ▾';
-}
+
 
 /* For mobile view, toggle visibility of submenu */
-@media screen and (max-width: var(--tab)) {
+@media (max-width: var(--tab)) {
     .submenu {
         position: relative;
         top: 0;
