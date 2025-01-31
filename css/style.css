@@ -135,9 +135,6 @@
     background: var(--primary-color);
 }
 
-
-
-
 .main-menu, .nav-menu{
     display: flex;
     justify-content: space-between;
@@ -201,21 +198,27 @@ align-items: stretch;
 
 
 
+/* Show submenu when it has the 'active' class */
+.submenu.active, .has-submenu:hover .submenu  {
+    display: block;
+}
 
 /* Hide submenus by default */
 .submenu {
     display: none;
     position: relative;
-    left: -100%;
+    width: 0px;
+    left: 0;
     top: 100%;
-    background-color: #444;
-    min-width: 150px;
-    padding: 10px 0;
 }
 
-/* Show submenu when it has the 'active' class */
-.submenu.active, .has-submenu:hover .submenu  {
-    display: block;
+.submenu ul{
+    position: absolute;
+    background-color: var(--light-gray);
+    min-width: 150px;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
 }
 
 /* For mobile view, toggle visibility of submenu */

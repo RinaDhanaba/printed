@@ -67,11 +67,13 @@
 
                 <li class="has-submenu">
                     <a href="#">Products ▾</a>
+                    <div class="submenu">
                     <ul class="submenu">
                         <li><a href="#">Product 1</a></li>
                         <li><a href="#">Product 2</a></li>
                         <li><a href="#">Product 3</a></li>
                     </ul>
+                    </div>                    
                 </li>
 
                 <li class="has-submenu">
