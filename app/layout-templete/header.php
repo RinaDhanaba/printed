@@ -14,19 +14,34 @@
         <!-- topbar section  -->
     <?php include 'app/topbar/cupon-topbar.php'; ?>
 
-        <nav class="navbar">
-            <div class="logo">printed.com</div>
-            <ul class="nav-links">
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Shop By</a></li>
-                <li><a href="#">What's New?</a></li>
-                <li><a href="#">Support</a></li>
-                <li><a href="#">Bespoke Service</a></li>
-                <li><a href="#">Blog</a></li>
-            </ul>
-            <div class="nav-icons">
-                <a href="#">Login</a>
-                <a href="#">Cart</a>
+    <nav class="navbar">
+        <!-- Logo -->
+        <a href="#" class="logo">
+            <img src="https://www.printed.com/favicon.ico" alt="Logo"> printed.com
+        </a>
+
+        <!-- Search Bar -->
+        <div class="search-box">
+            <input type="text" placeholder="Search">
+            <i class="fas fa-search"></i>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="nav-links">
+            <a href="#">Join</a>
+            <a href="#">Sign in</a>
+            <div class="cart">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count">0</span>
             </div>
-        </nav>
+            <i class="fas fa-phone"></i>
+            <button class="chat-button">💬 Chat</button>
+        </div>
+    </nav>
+
+
+
+
+
+    
     </header>

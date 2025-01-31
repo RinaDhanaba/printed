@@ -6,46 +6,97 @@
     font-family: Arial, sans-serif;
 }
 
-/* Header */
-.top-bar {
-    background: #ff69b4;
-    color: white;
-    text-align: center;
-    padding: 5px;
-}
 
+
+/* Header */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 10px 20px;
     background: white;
+    border-bottom: 1px solid #ddd;
 }
 
-.navbar .logo {
+.logo {
     font-size: 24px;
     font-weight: bold;
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 24px;
+    margin-right: 8px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: #f3f3f3;
+    padding: 8px;
+    border-radius: 20px;
+    width: 250px;
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+}
+
+.search-box .fa-search {
+    color: #e6007e;
+    cursor: pointer;
 }
 
 .nav-links {
-    list-style: none;
     display: flex;
-}
-
-.nav-links li {
-    margin: 0 15px;
+    align-items: center;
+    gap: 20px;
 }
 
 .nav-links a {
     text-decoration: none;
     color: black;
+    font-size: 14px;
 }
 
-.nav-icons a {
-    margin-left: 10px;
-    text-decoration: none;
-    color: black;
+.cart {
+    position: relative;
 }
+
+.cart .cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #e6007e;
+    color: white;
+    font-size: 12px;
+    border-radius: 50%;
+    padding: 3px 6px;
+}
+
+.chat-button {
+    background: #26c6da;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.chat-button:hover {
+    background: #1ca3b4;
+}
+
+
+
+
 
 /* Hero Section */
 .hero {
