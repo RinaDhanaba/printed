@@ -7,6 +7,30 @@
     --white: #fff
 }
 
+:root {
+    --mob: 480px;
+    --tab: 768px;
+    --desk: 1024px;
+    --larg: 1280px;
+}
+
+@media (min-width:var(--tab)){
+    .tab-only{
+        display: block;
+    }
+    .mobile-only {
+        display: none;
+    }
+}
+@media (max-width:var(--tab)){
+.mobile-only {
+    display: block;
+}
+.tab-only{
+    display: none;
+}
+}
+
 
 /* General Reset */
 * {
@@ -113,7 +137,7 @@
 
 .main-menu{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -158,7 +182,7 @@
 }
 
 /* Mobile Styles */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: var(--tab)) {
     .hamburger {
         display: block;
     }
@@ -183,10 +207,6 @@
 
     .nav-menu.open {
         right: 0;
-    }
-
-    .mobile-only {
-        display: block;
     }
 }
 

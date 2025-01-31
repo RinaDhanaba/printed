@@ -66,9 +66,13 @@
                 <li><a href="#">What's New?</a></li>
                 <li><a href="#">Support</a></li>
                 <li><a href="#">Blog</a></li>
-                <li><a href="#">Printed Plus</a></li>
+                <li class="mobile-only"><a href="#">Printed Plus</a></li>
             </ul>
         </nav>
+
+        <ul id="menu-list">
+            <li class="tab-only"><a href="#">Printed Plus</a></li>
+        </ul>
     </div>
 
 
