@@ -146,14 +146,15 @@ footer {
 }
 
 .top-bar .center{
-    flex:1;
+ flex:1;
  display: flex;
  justify-content: center;
  align-items: center;
  flex-direction: column;
 }
 
-.top-bar p{line-height: 1em;}
+.top-bar p{line-height: 1em;
+font-size: 20px;}
 
 .small-text {
     font-size: 12px;
@@ -168,13 +169,13 @@ footer {
     background: rgba(255, 255, 255, 0.2); /* Light transparent button */
     border: 1px dashed #000; /* Dashed border */
     color: white;
-    padding: 5px 15px;
-    font-size: 14px;
+    padding: 10px 15px;
+    font-size: 12px;
     font-weight: bold;
     cursor: pointer;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
-    align
+    position: absolute;
 }
 
 .promo-code:hover {
