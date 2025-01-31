@@ -12,7 +12,7 @@
     <!-- Header Section -->
     <header>
         <!-- topbar section  -->
-    <?php echo file_get_contents('../topbar/cupon-topbar.php'); ?>
+    <?php include 'app/topbar/cupon-topbar.php'; ?>
 
         <nav class="navbar">
             <div class="logo">printed.com</div>
