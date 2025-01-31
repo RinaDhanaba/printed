@@ -14,7 +14,7 @@
         <!-- topbar section  -->
     <?php include 'app/topbar/cupon-topbar.php'; ?>
 
-    <nav class="navbar">
+    <nav class="navbar container">
         <!-- Logo -->
         <a href="#" class="logo">
             <img src="..\media\logo (1).png" alt="Logo">

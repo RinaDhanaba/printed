@@ -16,7 +16,10 @@
     font-family: Arial, sans-serif;
 }
 
-
+.container{
+    max-width: 1200px;
+    width: 100%; margin: auto;
+}
 
 /* Header */
 .navbar {
@@ -34,7 +37,9 @@
 }
 
 .logo img {
-    height: 24px;
+    width: 25%;
+    max-width: 100px;
+    height: auto;
     margin-right: 8px;
 }
 
