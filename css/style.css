@@ -205,8 +205,8 @@ align-items: stretch;
 /* Hide submenus by default */
 .submenu {
     display: none;
-    position: absolute;
-    left: 0;
+    position: relative;
+    left: -100%;
     top: 100%;
     background-color: #444;
     min-width: 150px;
@@ -214,11 +214,9 @@ align-items: stretch;
 }
 
 /* Show submenu when it has the 'active' class */
-.submenu.active {
+.submenu.active, .has-submenu:hover .submenu  {
     display: block;
 }
-
-
 
 /* For mobile view, toggle visibility of submenu */
 @media (max-width: var(--tab)) {
