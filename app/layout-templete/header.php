@@ -50,6 +50,7 @@
 
 
     <div class="main-menu">
+        <div class="container">
         <!-- Hamburger Button -->
         <button class="hamburger" id="hamburger-btn">
             ☰
@@ -68,11 +69,13 @@
                 <li><a href="#">Blog</a></li>
                 <li class="mobile-only"><a href="#">Printed Plus</a></li>
             </ul>
-        </nav>
 
-        <ul id="promo-menu">
+            <ul id="promo-menu">
             <li class="tab-only"><a href="#">Printed Plus</a></li>
-        </ul>
+            </ul>
+            
+        </nav>
+        </div>
     </div>
 
 

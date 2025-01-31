@@ -133,14 +133,18 @@
     background: var(--primary-color);
 }
 
-
-
-.main-menu{
+.main-menu, .nav-menu{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     height: 80px;
     margin: auto;
+}
+
+#promo-menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 /* Base styles */
@@ -160,6 +164,11 @@
     color: var(--black);
     font-weight: bold;
     transition: color 0.3s ease;
+}
+
+#promo-menu li a {
+    font-weight: 400;
+    font-size: 12px;
 }
 
 .nav-menu ul li a:hover {
@@ -210,13 +219,6 @@
     .nav-menu.open {
         right: 0;
     }
-}
-
-#promo-menu{
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;right: 0;
 }
 
 
