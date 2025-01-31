@@ -170,11 +170,11 @@ align-items: stretch;
     justify-content: center;
     margin: 0 15px;}
 
-.nav-menu ul li:hover{
+.nav-menu ul < li:hover{
     border-top: 3px solid var(--primary-color);
 }
 
-#promo-menu li:hover {
+#promo-menu < li:hover {
     border-top: 3px solid var(--secondary-color);
 }
 
@@ -200,6 +200,22 @@ align-items: stretch;
 }
 
 
+
+.submenu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    list-style: none;
+    display: block;
+}
+
+.submenu li{
+    border-bottom: 1px solid var(--primary-color);
+}
+
+.hamburger, .submenu{
+    display: none;
+}
 
 
 
