@@ -78,26 +78,35 @@
 
                 <li class="has-submenu">
                     <a href="#">Shop By ▾</a>
+                    <div class="submenu">
                     <ul class="submenu">
-                        <li><a href="#">Category 1</a></li>
-                        <li><a href="#">Category 2</a></li>
+                        <li><a href="#">Product 1</a></li>
+                        <li><a href="#">Product 2</a></li>
+                        <li><a href="#">Product 3</a></li>
                     </ul>
+                    </div>
                 </li>
 
                 <li class="has-submenu">
                     <a href="#">What's New? ▾</a>
+                    <div class="submenu">
                     <ul class="submenu">
-                        <li><a href="#">Latest Arrivals</a></li>
-                        <li><a href="#">Trending</a></li>
+                        <li><a href="#">Product 1</a></li>
+                        <li><a href="#">Product 2</a></li>
+                        <li><a href="#">Product 3</a></li>
                     </ul>
+                    </div>
                 </li>
 
                 <li class="has-submenu">
                     <a href="#">Support ▾</a>
+                    <div class="submenu">
                     <ul class="submenu">
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Contact Support</a></li>
+                        <li><a href="#">Product 1</a></li>
+                        <li><a href="#">Product 2</a></li>
+                        <li><a href="#">Product 3</a></li>
                     </ul>
+                    </div>
                 </li>
 
                 <li><a href="#">Blog</a></li>
