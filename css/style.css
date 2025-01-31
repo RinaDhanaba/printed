@@ -139,6 +139,8 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    height: 80px;
+    margin: auto;
 }
 
 /* Base styles */
@@ -208,6 +210,13 @@
     .nav-menu.open {
         right: 0;
     }
+}
+
+#promo-menu{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;right: 0;
 }
 
 

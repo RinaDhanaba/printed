@@ -70,7 +70,7 @@
             </ul>
         </nav>
 
-        <ul id="menu-list">
+        <ul id="promo-menu">
             <li class="tab-only"><a href="#">Printed Plus</a></li>
         </ul>
     </div>
