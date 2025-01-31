@@ -1,3 +1,4 @@
 <div class="top-bar">
-    <p>10% off your first order. Use code: WELCOME10</p>
+    <p><strong>10% off your first order.*</strong> <span class="small-text">*T&Cs apply.</span></p>
+    <button class="promo-code">Use code: <strong>WELCOME10</strong></button>
 </div>

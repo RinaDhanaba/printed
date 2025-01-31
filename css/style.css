@@ -121,3 +121,51 @@ footer {
     color: white;
     margin-top: 20px;
 }
+
+
+
+
+
+
+
+
+
+/* Top Bar */
+.top-bar {
+    background: #e94fb1; /* Pink background */
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.small-text {
+    font-size: 12px;
+    font-weight: normal;
+    opacity: 0.8;
+}
+
+/* Promo Code Button */
+.promo-code {
+    background: rgba(255, 255, 255, 0.2); /* Light transparent button */
+    border: 2px dashed white; /* Dashed border */
+    color: white;
+    padding: 5px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.promo-code:hover {
+    background: white;
+    color: #e94fb1;
+}
+
