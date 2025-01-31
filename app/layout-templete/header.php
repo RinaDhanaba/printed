@@ -50,11 +50,9 @@
 
 
     <div class="main-menu">
-        <div class="container">
+    <div class="container">
         <!-- Hamburger Button -->
-        <button class="hamburger" id="hamburger-btn">
-            ☰
-        </button>
+        <button class="hamburger" id="hamburger-btn">☰</button>
 
         <!-- Navigation Menu -->
         <nav class="nav-menu" id="nav-menu">
@@ -62,21 +60,50 @@
                 <li class="mobile-only"><a href="#">Sign In</a></li>
                 <li class="mobile-only"><a href="#">Basket</a></li>
                 <li class="mobile-only"><a href="#">Contact</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#">Shop By</a></li>
-                <li><a href="#">What's New?</a></li>
-                <li><a href="#">Support</a></li>
+
+                <li class="has-submenu">
+                    <a href="#">Products ▾</a>
+                    <ul class="submenu">
+                        <li><a href="#">Product 1</a></li>
+                        <li><a href="#">Product 2</a></li>
+                        <li><a href="#">Product 3</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-submenu">
+                    <a href="#">Shop By ▾</a>
+                    <ul class="submenu">
+                        <li><a href="#">Category 1</a></li>
+                        <li><a href="#">Category 2</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-submenu">
+                    <a href="#">What's New? ▾</a>
+                    <ul class="submenu">
+                        <li><a href="#">Latest Arrivals</a></li>
+                        <li><a href="#">Trending</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-submenu">
+                    <a href="#">Support ▾</a>
+                    <ul class="submenu">
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Support</a></li>
+                    </ul>
+                </li>
+
                 <li><a href="#">Blog</a></li>
                 <li class="mobile-only"><a href="#">Printed Plus</a></li>
             </ul>
 
             <ul id="promo-menu">
-            <li class="tab-only"><a href="#">Printed Plus</a></li>
+                <li class="tab-only"><a href="#">Printed Plus</a></li>
             </ul>
-            
         </nav>
-        </div>
     </div>
+</div>
 
 
     </header>
