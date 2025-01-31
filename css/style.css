@@ -148,6 +148,9 @@
 }
 
 /* Base styles */
+.nav-menu{
+align-items: stretch;
+}
 .nav-menu ul {
     list-style: none;
     padding: 0;
