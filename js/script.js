@@ -1,27 +1,12 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const hamburgerBtn = document.getElementById("hamburger-btn");
-    const navMenu = document.getElementById("nav-menu");
+document.getElementById('hamburger-btn').addEventListener('click', function() {
+    var menu = document.getElementById('nav-menu');
+    menu.classList.toggle('show');
+});
 
-    // Toggle main menu
-    hamburgerBtn.addEventListener("click", function () {
-        navMenu.classList.toggle("active");
-    });
-
-    // Handle submenu toggle for mobile
-    const submenuParents = document.querySelectorAll(".has-submenu > a");
-
-    submenuParents.forEach(parent => {
-        parent.addEventListener("click", function (event) {
-            event.preventDefault(); // Prevent link from navigating
-            const submenu = this.nextElementSibling;
-
-            // Close other open submenus
-            document.querySelectorAll(".submenu").forEach(sub => {
-                if (sub !== submenu) sub.classList.remove("active");
-            });
-
-            // Toggle submenu visibility
-            submenu.classList.toggle("active");
-        });
+document.querySelectorAll('.has-submenu > a').forEach(function(item) {
+    item.addEventListener('click', function(e) {
+        var parent = item.parentElement;
+        parent.classList.toggle('open');
+        e.preventDefault(); // Prevent link from redirecting
     });
 });

@@ -206,9 +206,9 @@ align-items: stretch;
 
 
 .main-menu {
-    background: #333;
+    background-color: #333;
+    color: white;
     padding: 10px 0;
-    position: relative;
 }
 
 .container {
@@ -218,78 +218,50 @@ align-items: stretch;
     padding: 0 20px;
 }
 
-/* Hamburger button */
 .hamburger {
-    font-size: 24px;
+    font-size: 30px;
     background: none;
     border: none;
     color: white;
+    display: none; /* Hidden by default on larger screens */
     cursor: pointer;
-    display: none; /* Hidden on desktop */
 }
 
-/* Navigation menu */
 .nav-menu {
     display: flex;
-}
-
-.nav-menu ul {
-    list-style: none;
-    padding: 0;
+    justify-content: flex-end;
+    list-style-type: none;
     margin: 0;
-    display: flex;
+    padding: 0;
 }
 
-.nav-menu ul li {
-    margin: 0 15px;
-    position: relative;
+.nav-menu li {
+    margin-left: 20px;
 }
 
-.nav-menu ul li a {
+.nav-menu a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
-    display: block;
     padding: 10px;
 }
 
-/* Submenu styles */
 .submenu {
     display: none;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    background: #444;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 200px;
+    list-style-type: none;
+    padding-left: 20px;
 }
 
-.submenu li {
-    margin: 0;
-    text-align: left;
-}
-
-.submenu li a {
-    padding: 10px;
+.has-submenu:hover .submenu {
     display: block;
-    color: white;
 }
 
-.submenu li a:hover {
-    background: #555;
+/* Mobile menu - Hidden by default */
+.mobile-only {
+    display: none;
 }
 
-/* Show submenu on hover (Desktop) */
-@media screen and (min-width: 769px) {
-    .has-submenu:hover .submenu {
-        display: block;
-    }
-}
-
-/* Mobile styles */
-@media screen and (max-width: 768px) {
+/* Show hamburger on small screens */
+@media (max-width: 768px) {
     .hamburger {
         display: block;
     }
@@ -297,50 +269,49 @@ align-items: stretch;
     .nav-menu {
         display: none;
         flex-direction: column;
+        width: 100%;
+        background-color: #333;
         position: absolute;
-        top: 50px;
+        top: 60px;
         left: 0;
-        width: 100%;
-        background: #333;
-        text-align: center;
-        padding: 10px 0;
+        z-index: 1000;
     }
 
-    .nav-menu ul {
-        flex-direction: column;
+    .nav-menu.show {
+        display: flex;
     }
 
-    .nav-menu ul li {
-        margin: 0;
-        width: 100%;
+    .nav-menu li {
+        margin: 15px 0;
     }
 
     .mobile-only {
         display: block;
     }
 
-    .nav-menu.active {
-        display: flex;
-    }
-
-    /* Mobile submenu */
     .submenu {
-        position: static;
-        display: none;
-        width: 100%;
-        background: #222;
+        display: none; /* Hide submenu by default */
+        margin-left: 20px; /* Add some padding for submenus */
     }
 
-    .submenu li a {
-        padding-left: 30px;
-    }
-
-    .submenu.active {
+    /* Show submenu when the parent has the 'open' class */
+    .has-submenu.open .submenu {
         display: block;
+    }
+    
+    #promo-menu {
+        display: none;
     }
 }
 
+/* Styles for submenu items when opened */
+.has-submenu.open > a::after {
+    content: " ▾";
+}
 
+.has-submenu > a::after {
+    content: " ▸"; /* Add a triangle for closed submenus */
+}
 
 
 
