@@ -1,5 +1,5 @@
 <!-- Include the header -->
-<?php include('layout-templete/header.php'); ?>
+<?php include('app/layout-templete/header.php'); ?>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -36,4 +36,4 @@
     </section>
 
 <!-- Include the footer -->
-<?php include('layout-templete/footer.php'); ?>
+<?php include('app/layout-templete/footer.php'); ?>
