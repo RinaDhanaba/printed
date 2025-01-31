@@ -201,19 +201,37 @@ align-items: stretch;
 
 
 
-.submenu{
+
+/* Hide submenus by default */
+.submenu {
+    display: none;
     position: absolute;
-    top: 100%;
     left: 0;
-    list-style: none;
+    top: 100%;
+    background-color: #444;
+    min-width: 150px;
+    padding: 10px 0;
+}
+
+/* Show submenu when it has the 'active' class */
+.submenu.active {
     display: block;
 }
 
-.submenu li{
-    border-bottom: 1px solid var(--primary-color);
+/* Additional styling for mobile and desktop view */
+.has-submenu > a::after {
+    content: ' ▾';
 }
 
-.hamburger, .submenu{
+/* For mobile view, toggle visibility of submenu */
+@media screen and (max-width: var(--tab)) {
+    .submenu {
+        position: relative;
+        top: 0;
+    }
+}
+
+.hamburger{
     display: none;
 }
 
