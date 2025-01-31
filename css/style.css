@@ -53,7 +53,7 @@
     background: var(--light-gray);
     padding: 8px;
     border-radius: 20px;
-    width: 250px;
+    width: 350px;
 }
 
 .search-box input {
@@ -115,7 +115,7 @@
 
 /* Hero Section */
 .hero {
-    background: url('\media\man-working-printing-house-with-paper-paints.jpg') no-repeat center center/cover;
+    background: url('..\media\man-working-printing-house-with-paper-paints.jpg') no-repeat center center/cover;
     text-align: center;
     padding: 100px;
     color: var(--white);
@@ -198,8 +198,8 @@ footer {
 
 /* Top Bar */
 .top-bar {
-    background: #e94fb1; /* Pink background */
-    color: white;
+    background: var(--primary-color); /* Pink background */
+    color: var(--white);
     text-align: center;
     font-size: 16px;
     font-weight: bold;
@@ -233,8 +233,8 @@ font-size: 20px;}
 /* Promo Code Button */
 .promo-code {
     background: rgba(255, 255, 255, 0.2); /* Light transparent button */
-    border: 1px dashed #000; /* Dashed border */
-    color: white;
+    border: 1px dashed var(--black); /* Dashed border */
+    color: var(--white);
     padding: 10px 15px;
     font-size: 12px;
     font-weight: bold;
@@ -245,7 +245,7 @@ font-size: 20px;}
 }
 
 .promo-code:hover {
-    background: white;
-    color: #e94fb1;
+    background: var(--white);
+    color: var(--primary-color);
 }
 

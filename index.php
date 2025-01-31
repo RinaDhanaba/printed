@@ -15,7 +15,7 @@
         <h2>Print with us</h2>
         <div class="product-grid">
             <div class="product-card">
-                <img src="images/leaflets.jpg" alt="Leaflets & Flyers">
+                <img src="..\media\modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg" alt="Leaflets & Flyers">
                 <h3>Leaflets & Flyers</h3>
                 <p>from £12.50</p>
                 <a href="#">Order Now</a>
