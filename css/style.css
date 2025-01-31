@@ -14,6 +14,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    transition: transform 0.3s ease;
 }
 
 .container{
@@ -37,11 +38,11 @@
 .logo {
     display: flex;
     align-items: center;
+    width: 25%;
 }
 
 .logo img {
-    width: 25%;
-    max-width: 100px;
+    max-width: 200px;
     height: auto;
     margin-right: 8px;
 }
