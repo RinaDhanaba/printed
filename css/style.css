@@ -204,54 +204,114 @@ align-items: stretch;
 
 
 
-
+/* Hamburger button for mobile */
 .hamburger {
-    font-size: 30px;
-    background: none;
-    border: none;
+    background-color: #333;
     color: white;
-    display: none; /* Hidden by default on larger screens */
+    border: none;
+    font-size: 30px;
     cursor: pointer;
+    display: none; /* Hide by default */
+    padding: 10px;
 }
 
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+/* Hide menu items on small screens */
+#menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+#menu-list li {
+    margin: 0 15px;
+    position: relative;
+}
+
+/* Submenu styling */
 .submenu {
     display: none;
-    list-style-type: none;
-    padding-left: 20px;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #444;
+    min-width: 150px;
+    padding: 10px 0;
 }
 
 .has-submenu:hover .submenu {
     display: block;
 }
 
-@media (max-width: var(--tab)) {
+.submenu li {
+    padding: 10px 20px;
+}
+
+.submenu li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
     .hamburger {
-        display: block;
+        display: block; /* Show hamburger button */
     }
 
     .nav-menu {
-        display: none;
-        flex-direction: column;
+        display: none; /* Hide the nav by default */
         width: 100%;
         background-color: #333;
         position: absolute;
-        top: 60px;
+        top: 0;
         left: 0;
-        z-index: 1000;
+        padding-top: 50px;
+        z-index: 1;
     }
 
-    .nav-menu.show {
-        display: flex;
-    }
-    
-    .submenu {
-        display: none; /* Hide submenu by default */
-        margin-left: 20px; /* Add some padding for submenus */
+    .nav-menu.active {
+        display: block; /* Show nav when active */
     }
 
-    /* Show submenu when the parent has the 'open' class */
-    .has-submenu.open .submenu {
+    #menu-list {
         display: block;
+        text-align: center;
+    }
+
+    #menu-list li {
+        margin: 15px 0;
+    }
+
+    .mobile-only {
+        display: block; /* Show mobile-only items */
+    }
+
+    .has-submenu > a::after {
+        content: ' ▾';
+    }
+
+    .submenu {
+        left: 100%;
+        top: 0;
+        position: relative;
+    }
+
+    .has-submenu.active > .submenu {
+        display: block; /* Show submenu on click */
+    }
+}
+
+/* For desktop, make sure submenus are always visible */
+@media screen and (min-width: 769px) {
+    .submenu {
+        display: block !important;
     }
 }
 

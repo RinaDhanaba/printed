@@ -1,14 +1,17 @@
-// Hamburger menu toggle
 document.getElementById('hamburger-btn').addEventListener('click', function() {
-    var menu = document.getElementById('nav-menu');
-    menu.classList.toggle('show');
+    var navMenu = document.getElementById('nav-menu');
+    navMenu.classList.toggle('active');
 });
 
-// Submenu toggle
-document.querySelectorAll('.has-submenu > a').forEach(function(item) {
+var submenuItems = document.querySelectorAll('.has-submenu > a');
+submenuItems.forEach(function(item) {
     item.addEventListener('click', function(e) {
-        var parent = item.parentElement;
-        parent.classList.toggle('open');  // Toggle open state for the submenu
-        e.preventDefault(); // Prevent link from redirecting
+        var submenu = this.nextElementSibling;
+        if (submenu.style.display === "block") {
+            submenu.style.display = "none";
+        } else {
+            submenu.style.display = "block";
+        }
+        e.preventDefault(); // Prevent default anchor behavior
     });
 });
