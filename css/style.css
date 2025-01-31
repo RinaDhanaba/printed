@@ -22,13 +22,16 @@
 }
 
 /* Header */
+.first-nav{
+    padding: 10px 20px;
+    background: var(--white);
+    border-bottom: 1px solid var(--light-gray);
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background: var(--white);
-    border-bottom: 1px solid var(--light-gray);
 }
 
 .logo {

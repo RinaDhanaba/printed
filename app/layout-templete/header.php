@@ -13,35 +13,38 @@
     <header>
         <!-- topbar section  -->
     <?php include 'app/topbar/cupon-topbar.php'; ?>
+   
+    <div class="first-nav">
+        <nav class="navbar container">
+            <!-- Logo -->
+            <a href="#" class="logo">
+                <img src="..\media\logo (1).png" alt="Logo">
+            </a>
 
-    <nav class="navbar container">
-        <!-- Logo -->
-        <a href="#" class="logo">
-            <img src="..\media\logo (1).png" alt="Logo">
-        </a>
-
-        <!-- Search Bar -->
-        <div class="search-box">
-            <input type="text" placeholder="Search">
-            <i class="fas fa-search"></i>
-        </div>
-
-        <!-- Navigation Links -->
-        <div class="nav-links">
-            <a href="#">Join</a>
-            <a href="#">Sign in</a>
-            <div class="cart">
-                <i class="fas fa-shopping-bag"></i>
-                <span class="cart-count">0</span>
+            <!-- Search Bar -->
+            <div class="search-box">
+                <input type="text" placeholder="Search">
+                <i class="fas fa-search"></i>
             </div>
-            <i class="fas fa-phone"></i>
-            <button class="chat-button">💬 Chat</button>
-        </div>
-    </nav>
 
+            <!-- Navigation Links -->
+            <div class="nav-links">
+                <a href="#">Join</a>
+                <a href="#">Sign in</a>
+                <div class="cart">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <i class="fas fa-phone"></i>
+                <button class="chat-button">💬 Chat</button>
+            </div>
+        </nav>
+    </div>
 
+    
+    <div class="main-menu">
 
-
+    </div>
 
 
     </header>
