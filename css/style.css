@@ -111,6 +111,85 @@
 
 
 
+.main-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Base styles */
+.nav-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-menu ul li {
+    margin: 0 15px;
+}
+
+.nav-menu ul li a {
+    text-decoration: none;
+    color: var(--black);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-menu ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Hide mobile-only items on desktop */
+.mobile-only {
+    display: none;
+}
+
+/* Hamburger Button */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 15px;
+    right: 20px;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        width: 250px;
+        height: 100%;
+        background: white;
+        box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.2);
+        transition: right 0.3s ease-in-out;
+        flex-direction: column;
+        align-items: start;
+        padding: 20px;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+    }
+
+    .nav-menu.open {
+        right: 0;
+    }
+
+    .mobile-only {
+        display: block;
+    }
+}
+
 
 
 /* Hero Section */

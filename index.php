@@ -21,13 +21,13 @@
                 <a href="#">Order Now</a>
             </div>
             <div class="product-card">
-                <img src="images/booklets.jpg" alt="Saddle Stitch Booklets">
+                <img src="..\media\man-working-printing-house-with-paper-paints.jpg" alt="Saddle Stitch Booklets">
                 <h3>Saddle Stitch Booklets</h3>
                 <p>from £12.00</p>
                 <a href="#">Order Now</a>
             </div>
             <div class="product-card">
-                <img src="images/cards.jpg" alt="Greeting Cards">
+                <img src="..\media\man-working-printing-house-with-paper-paints.jpg" alt="Greeting Cards">
                 <h3>Greeting Cards</h3>
                 <p>from £12.50</p>
                 <a href="#">Order Now</a>

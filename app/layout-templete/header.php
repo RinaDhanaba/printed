@@ -50,7 +50,25 @@
 
 
     <div class="main-menu">
+        <!-- Hamburger Button -->
+        <button class="hamburger" id="hamburger-btn">
+            ☰
+        </button>
 
+        <!-- Navigation Menu -->
+        <nav class="nav-menu" id="nav-menu">
+            <ul id="menu-list">
+                <li class="mobile-only"><a href="#">Sign In</a></li>
+                <li class="mobile-only"><a href="#">Basket</a></li>
+                <li class="mobile-only"><a href="#">Contact</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Shop By</a></li>
+                <li><a href="#">What's New?</a></li>
+                <li><a href="#">Support</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Printed Plus</a></li>
+            </ul>
+        </nav>
     </div>
 
 
