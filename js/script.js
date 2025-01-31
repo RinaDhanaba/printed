@@ -1,5 +1,5 @@
-// Add click event listener for menu items with submenus
 document.querySelectorAll('.has-submenu > a').forEach(function(item) {
+    // Handle click event to toggle submenu
     item.addEventListener('click', function(e) {
         e.preventDefault();  // Prevent default anchor behavior
 
@@ -15,5 +15,12 @@ document.querySelectorAll('.has-submenu > a').forEach(function(item) {
                 otherSubmenu.classList.remove('active');
             }
         });
+    });
+
+    // Remove 'active' class on mouseout to hide submenu
+    item.addEventListener('mouseleave', function() {
+        var submenu = this.nextElementSibling;
+        // Remove the 'active' class when mouse leaves
+        submenu.classList.remove('active');
     });
 });

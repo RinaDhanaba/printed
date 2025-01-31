@@ -208,8 +208,8 @@ align-items: stretch;
     display: none;
     position: relative;
     width: 0px;
-    left: 0;
-    top: 100%;
+    left: -100%;
+    top: 15px;
 }
 
 .submenu ul{
@@ -221,17 +221,25 @@ align-items: stretch;
     flex-direction: column;
 }
 
+.hamburger{
+    display: none;
+}
+
 /* For mobile view, toggle visibility of submenu */
 @media (max-width: var(--tab)) {
     .submenu {
         position: relative;
         top: 0;
     }
+    .hamburger{
+        display: block;
+    }
+    .nav-menu, .nav-menu ul{
+        flex-direction: column;
+    }
 }
 
-.hamburger{
-    display: none;
-}
+
 
 
 
