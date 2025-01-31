@@ -17,7 +17,7 @@
     <nav class="navbar">
         <!-- Logo -->
         <a href="#" class="logo">
-            <img src="https://www.printed.com/favicon.ico" alt="Logo"> printed.com
+            <img src="..\media\logo (1).png" alt="Logo">
         </a>
 
         <!-- Search Bar -->
@@ -43,5 +43,5 @@
 
 
 
-    
+
     </header>

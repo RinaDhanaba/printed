@@ -1,3 +1,13 @@
+/* Define Global Variables */
+:root {
+    --primary-color: #FD7D18;
+    --light-gray:#C8CCCF;
+    --secondary-color: #1B5E3F;
+    --black: #000;
+    --white: #fff
+}
+
+
 /* General Reset */
 * {
     margin: 0;
@@ -14,15 +24,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background: white;
-    border-bottom: 1px solid #ddd;
+    background: var(--white);
+    border-bottom: 1px solid var(--light-gray);
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: black;
-    text-decoration: none;
     display: flex;
     align-items: center;
 }
@@ -35,7 +41,7 @@
 .search-box {
     display: flex;
     align-items: center;
-    background: #f3f3f3;
+    background: var(--light-gray);
     padding: 8px;
     border-radius: 20px;
     width: 250px;
@@ -49,7 +55,7 @@
 }
 
 .search-box .fa-search {
-    color: #e6007e;
+    color: var(--primary-color);
     cursor: pointer;
 }
 
@@ -61,7 +67,7 @@
 
 .nav-links a {
     text-decoration: none;
-    color: black;
+    color: var(--black);
     font-size: 14px;
 }
 
@@ -73,16 +79,16 @@
     position: absolute;
     top: -5px;
     right: -5px;
-    background: #e6007e;
-    color: white;
+    background: var(--primary-color);
+    color: var(--white);
     font-size: 12px;
     border-radius: 50%;
     padding: 3px 6px;
 }
 
 .chat-button {
-    background: #26c6da;
-    color: white;
+    background: var(--secondary-color);
+    color: var(--white);
     border: none;
     padding: 8px 15px;
     border-radius: 20px;
@@ -91,7 +97,7 @@
 }
 
 .chat-button:hover {
-    background: #1ca3b4;
+    background: var(--primary-color);
 }
 
 
@@ -100,10 +106,10 @@
 
 /* Hero Section */
 .hero {
-    background: url('images/stickers-banner.jpg') no-repeat center center/cover;
+    background: url('\media\man-working-printing-house-with-paper-paints.jpg') no-repeat center center/cover;
     text-align: center;
     padding: 100px;
-    color: white;
+    color: var(--white);
 }
 
 .hero h1 {
@@ -116,8 +122,8 @@
 }
 
 .hero button {
-    background: #ff69b4;
-    color: white;
+    background: var(--primary-color);
+    color: var(--white);
     padding: 10px 20px;
     border: none;
     cursor: pointer;
@@ -137,11 +143,11 @@
 }
 
 .product-card {
-    background: white;
+    background: var(--white);
     padding: 20px;
     border-radius: 10px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px var(--light-gray);
     width: 250px;
 }
 
@@ -157,8 +163,8 @@
 .product-card a {
     display: inline-block;
     margin-top: 10px;
-    background: #ff69b4;
-    color: white;
+    background: var(--primary-color);
+    color: var(--white);
     padding: 8px 15px;
     text-decoration: none;
     border-radius: 5px;
@@ -168,8 +174,8 @@
 footer {
     text-align: center;
     padding: 20px;
-    background: #222;
-    color: white;
+    background: var(--secondary-color);
+    color: var(--white)
     margin-top: 20px;
 }
 
