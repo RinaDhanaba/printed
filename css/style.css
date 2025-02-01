@@ -216,7 +216,6 @@ align-items: stretch;
 
 .mega-menu .menu li {
     position: relative;
-    border-top: 1px solid var(--primary-color);
 }
 
 .mega-menu .menu li a {
@@ -227,7 +226,7 @@ align-items: stretch;
 }
 
 .mega-menu .menu li:hover {
-    border-bottom: 1px solid var(--primary-color);
+    border-top: 1px solid var(--primary-color);
 }
 
 /* Submenu */
