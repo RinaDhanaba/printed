@@ -218,7 +218,7 @@
 }
 
 /* Responsive Styles */
-@media (max-width: var(--tab)) {
+@media (max-width:var(--tab)){
     .menu-toggle {
         padding: 10px;
         display: flex;
