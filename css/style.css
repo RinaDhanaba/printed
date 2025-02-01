@@ -14,14 +14,13 @@
     --larg: 1280px;
 }
 
-@media (min-width: 768px){
-    .tab-only{
-        display: block;
-    }
-    .mobile-only {
-        display: none;
-    }
+.tab-only{
+    display: block;
 }
+.mobile-only {
+    display: none;
+}
+
 @media (max-width: 768px){
 .mobile-only {
     display: block;
@@ -53,6 +52,11 @@
 .navigation{
     display: flex;
     flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.first-nav{
+    flex: 1;
 }
 }
 
@@ -253,6 +257,86 @@
     .mega-menu .submenu li:hover{
         border: none;
     }
+
+
+
+/* Mega Menu */
+.mega-menu {
+    position: relative;
+}
+
+/* Hidden Menu */
+.mega-menu .menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 90%;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: auto;
+    transition: right 0.4s ease-in-out;
+}
+
+/* Show Menu */
+.mega-menu .menu.active {
+    right: 0;
+}
+
+/* Close Button */
+.close-menu {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: right;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* Menu Links */
+.mega-menu .menu li {
+    list-style: none;
+    padding: 15px;
+}
+
+.mega-menu .menu li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    display: block;
+}
+
+/* Submenu */
+.mega-menu .submenu {
+    display: none;
+    background: #444;
+    padding-left: 20px;
+}
+
+.mega-menu .submenu.active {
+    display: block;
+}
+
+/* Toggle Button */
+.menu-toggle {
+    display: block;
+    color: white;
+    background-color: #333;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 50px;
+    text-align: center;
+}
+
+
+
+
+
+
+
 }
 
 
