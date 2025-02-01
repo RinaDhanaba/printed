@@ -269,7 +269,7 @@ align-items: stretch;
 }
 
 /* Responsive Styles */
-@media (max-width: var(--tab)) {
+@media (max-width: 770px) {
     .menu-toggle {
         display: block;
         padding: 10px;
