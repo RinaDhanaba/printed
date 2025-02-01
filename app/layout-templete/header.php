@@ -24,67 +24,71 @@
     <header>
         <!-- topbar section  -->
     <?php include 'app/topbar/cupon-topbar.php'; ?>
+
+    <div class="navigation">
    
-    <div class="first-nav">
-        <nav class="navbar container">
-            <!-- Logo -->
-            <a href="#" class="logo">
-                <img src="..\media\logo (1).png" alt="Logo">
-            </a>
+        <div class="first-nav">
+            <nav class="navbar container">
+                <!-- Logo -->
+                <a href="#" class="logo">
+                    <img src="..\media\logo (1).png" alt="Logo">
+                </a>
 
-            <!-- Search Bar -->
-            <div class="search-box">
-                <input type="text" placeholder="Search">
-                <i class="fas fa-search"></i>
-            </div>
-
-            <!-- Navigation Links -->
-            <div class="nav-links">
-                <a href="#">Join</a>
-                <a href="#">Sign in</a>
-                <div class="cart">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span class="cart-count">0</span>
+                <!-- Search Bar -->
+                <div class="search-box mobile-only">
+                    <input type="text" placeholder="Search">
+                    <i class="fas fa-search"></i>
                 </div>
-                <i class="fas fa-phone"></i>
-                <button class="chat-button">💬 Chat</button>
-            </div>
-        </nav>
-    </div>
+
+                <!-- Navigation Links -->
+                <div class="nav-links mobile-only">
+                    <a href="#">Join</a>
+                    <a href="#">Sign in</a>
+                    <div class="cart">
+                        <i class="fas fa-shopping-bag"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <i class="fas fa-phone"></i>
+                    <button class="chat-button">💬 Chat</button>
+                </div>
+            </nav>
+        </div>
 
 
-    <div class="main-menu">
-    <div class="container">
-        <!-- Mega Menu -->
-        <nav class="mega-menu">
-            <div class="menu-toggle">☰ Menu</div>
-            <ul class="menu">
-                <li><a href="#">Home</a></li>
-                <li class="has-submenu">
-                    <a href="#">Services</a>
-                    <div class="submenu">
-                        <ul>
-                            <li><a href="#">Web Design</a></li>
-                            <li><a href="#">SEO</a></li>
-                            <li><a href="#">Marketing</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="has-submenu">
-                    <a href="#">Products</a>
-                    <div class="submenu">
-                        <ul>
-                            <li><a href="#">Laptops</a></li>
-                            <li><a href="#">Smartphones</a></li>
-                            <li><a href="#">Accessories</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="main-menu">
+        <div class="container">
+            <!-- Mega Menu -->
+            <nav class="mega-menu">
+                <div class="menu-toggle">☰ Menu</div>
+                <ul class="menu">
+                    <li><a href="#">Home</a></li>
+                    <li class="has-submenu">
+                        <a href="#">Services</a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="#">Web Design</a></li>
+                                <li><a href="#">SEO</a></li>
+                                <li><a href="#">Marketing</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="has-submenu">
+                        <a href="#">Products</a>
+                        <div class="submenu">
+                            <ul>
+                                <li><a href="#">Laptops</a></li>
+                                <li><a href="#">Smartphones</a></li>
+                                <li><a href="#">Accessories</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>   
+        </div>
+
     </div>
-</div>
 
 
     </header>

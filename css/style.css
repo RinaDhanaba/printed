@@ -49,6 +49,13 @@
 
 
 /* Header */
+@media (max-width:var(--tab)){
+.navigation{
+    display: flex;
+    flex-wrap: nowrap;
+}
+}
+
 .first-nav{
     padding: 10px 20px;
     background: var(--white);
@@ -211,7 +218,7 @@
 }
 
 /* Responsive Styles */
-@media (max-width: 770px) {
+@media (max-width: var(--tab)) {
     .menu-toggle {
         padding: 10px;
         display: flex;
@@ -243,7 +250,7 @@
         width: 100%;
         background-color: var(--light-gray);
     }
-    .mega-menu .submenu li{
+    .mega-menu .submenu li:hover{
         border: none;
     }
 }
