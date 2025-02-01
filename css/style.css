@@ -14,7 +14,7 @@
     --larg: 1280px;
 }
 
-@media (min-width: calc(var(--tab))){
+@media (min-width: 768px){
     .tab-only{
         display: block;
     }
@@ -22,7 +22,7 @@
         display: none;
     }
 }
-@media (max-width: calc(var(--tab))){
+@media (max-width: 768px){
 .mobile-only {
     display: block;
 }
@@ -49,7 +49,7 @@
 
 
 /* Header */
-@media (max-width: calc(var(--tab))){
+@media (max-width: 768px){
 .navigation{
     display: flex;
     flex-wrap: nowrap;
@@ -218,7 +218,7 @@
 }
 
 /* Responsive Styles */
-@media (max-width: calc(var(--tab))){
+@media (max-width: 768px){
     .menu-toggle {
         padding: 10px;
         display: flex;
