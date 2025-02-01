@@ -27,3 +27,48 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+
+// Support section 
+function playVideo() {
+    alert("Play video feature coming soon!");
+}
+
+
+
+// slider
+let currentIndex = 0;
+
+function showSlide(index) {
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dot");
+
+    if (index >= slides.length) {
+        currentIndex = 0;
+    } else if (index < 0) {
+        currentIndex = slides.length - 1;
+    } else {
+        currentIndex = index;
+    }
+
+    document.querySelector(".slider-container").style.transform = `translateX(-${currentIndex * 100}%)`;
+
+    dots.forEach(dot => dot.classList.remove("active"));
+    dots[currentIndex].classList.add("active");
+}
+
+function nextSlide() {
+    showSlide(currentIndex + 1);
+}
+
+function prevSlide() {
+    showSlide(currentIndex - 1);
+}
+
+function currentSlide(index) {
+    showSlide(index);
+}
+
+// Auto-slide every 5 seconds
+setInterval(nextSlide, 5000);
+
