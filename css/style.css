@@ -198,48 +198,109 @@ align-items: stretch;
 
 
 
-/* Show submenu when it has the 'active' class */
-.submenu.active, .has-submenu:hover .submenu  {
+
+
+
+/* Mega Menu */
+.mega-menu {
+    background-color: #333;
+    position: relative;
+    padding: 10px 20px;
+}
+
+.mega-menu .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.mega-menu .menu li {
+    position: relative;
+}
+
+.mega-menu .menu li a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+}
+
+.mega-menu .menu li:hover {
+    background-color: #444;
+}
+
+/* Submenu */
+.mega-menu .submenu {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+}
+
+.mega-menu .submenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mega-menu .submenu li {
+    padding: 10px;
+}
+
+.mega-menu .submenu li a {
+    color: black;
+    font-size: 14px;
+}
+
+/* Show submenu on hover */
+.mega-menu .menu li:hover .submenu {
     display: block;
 }
 
-/* Hide submenus by default */
-.submenu {
+/* Mobile Menu */
+.menu-toggle {
     display: none;
-    position: relative;
-    width: 0px;
-    left: -100%;
-    top: 15px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
 }
 
-.submenu ul{
-    position: absolute;
-    background-color: var(--light-gray);
-    min-width: 150px;
-    padding: 10px 0;
-    display: flex;
-    flex-direction: column;
-}
-
-.hamburger{
-    display: none;
-}
-
-/* For mobile view, toggle visibility of submenu */
-@media (max-width: var(--tab)) {
-    .submenu {
-        position: relative;
-        top: 0;
-    }
-    .hamburger{
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu-toggle {
         display: block;
+        padding: 10px;
     }
-    .nav-menu, .nav-menu ul{
+
+    .mega-menu .menu {
+        display: none;
         flex-direction: column;
+        width: 100%;
+        background-color: #333;
+        position: absolute;
+        left: 0;
+        top: 50px;
+    }
+
+    .mega-menu .menu.active {
+        display: flex;
+    }
+
+    .mega-menu .menu li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .mega-menu .submenu {
+        position: static;
+        background-color: #222;
+        width: 100%;
     }
 }
-
-
 
 
 

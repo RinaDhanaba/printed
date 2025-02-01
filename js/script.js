@@ -1,26 +1,17 @@
-document.querySelectorAll('.has-submenu > a').forEach(function(item) {
-    // Handle click event to toggle submenu
-    item.addEventListener('click', function(e) {
-        e.preventDefault();  // Prevent default anchor behavior
+document.addEventListener("DOMContentLoaded", function() {
+    const menuToggle = document.querySelector(".menu-toggle");
+    const menu = document.querySelector(".menu");
 
-        // Get the submenu related to this clicked item
-        var submenu = this.nextElementSibling; 
-
-        // Toggle the 'active' class on this submenu only
-        submenu.classList.toggle('active');
-
-        // Close other submenus if they are open
-        document.querySelectorAll('.has-submenu > ul.submenu').forEach(function(otherSubmenu) {
-            if (otherSubmenu !== submenu) {
-                otherSubmenu.classList.remove('active');
-            }
-        });
+    menuToggle.addEventListener("click", function() {
+        menu.classList.toggle("active");
     });
 
-    // Remove 'active' class on mouseout to hide submenu
-    item.addEventListener('mouseleave', function() {
-        var submenu = this.nextElementSibling;
-        // Remove the 'active' class when mouse leaves
-        submenu.classList.remove('active');
+    // Mobile Submenu Toggle
+    const submenus = document.querySelectorAll(".has-submenu > a");
+    submenus.forEach(submenu => {
+        submenu.addEventListener("click", function(event) {
+            event.preventDefault();
+            this.nextElementSibling.classList.toggle("active");
+        });
     });
 });

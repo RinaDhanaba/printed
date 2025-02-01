@@ -55,66 +55,32 @@
 
     <div class="main-menu">
     <div class="container">
-        <!-- Hamburger Button -->
-        <button class="hamburger" id="hamburger-btn">☰</button>
-
-        <!-- Navigation Menu -->
-        <nav class="nav-menu" id="nav-menu">
-            <ul id="menu-list">
-                <li class="mobile-only"><a href="#">Sign In</a></li>
-                <li class="mobile-only"><a href="#">Basket</a></li>
-                <li class="mobile-only"><a href="#">Contact</a></li>
-
+        <!-- Mega Menu -->
+        <nav class="mega-menu">
+            <div class="menu-toggle">☰ Menu</div>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
                 <li class="has-submenu">
-                    <a href="#">Products ▾</a>
+                    <a href="#">Services</a>
                     <div class="submenu">
-                    <ul class="submenu">
-                        <li><a href="#">Product 1</a></li>
-                        <li><a href="#">Product 2</a></li>
-                        <li><a href="#">Product 3</a></li>
-                    </ul>
-                    </div>                    
-                </li>
-
-                <li class="has-submenu">
-                    <a href="#">Shop By ▾</a>
-                    <div class="submenu">
-                    <ul class="submenu">
-                        <li><a href="#">Product 1</a></li>
-                        <li><a href="#">Product 2</a></li>
-                        <li><a href="#">Product 3</a></li>
-                    </ul>
+                        <ul>
+                            <li><a href="#">Web Design</a></li>
+                            <li><a href="#">SEO</a></li>
+                            <li><a href="#">Marketing</a></li>
+                        </ul>
                     </div>
                 </li>
-
                 <li class="has-submenu">
-                    <a href="#">What's New? ▾</a>
+                    <a href="#">Products</a>
                     <div class="submenu">
-                    <ul class="submenu">
-                        <li><a href="#">Product 1</a></li>
-                        <li><a href="#">Product 2</a></li>
-                        <li><a href="#">Product 3</a></li>
-                    </ul>
+                        <ul>
+                            <li><a href="#">Laptops</a></li>
+                            <li><a href="#">Smartphones</a></li>
+                            <li><a href="#">Accessories</a></li>
+                        </ul>
                     </div>
                 </li>
-
-                <li class="has-submenu">
-                    <a href="#">Support ▾</a>
-                    <div class="submenu">
-                    <ul class="submenu">
-                        <li><a href="#">Product 1</a></li>
-                        <li><a href="#">Product 2</a></li>
-                        <li><a href="#">Product 3</a></li>
-                    </ul>
-                    </div>
-                </li>
-
-                <li><a href="#">Blog</a></li>
-                <li class="mobile-only"><a href="#">Printed Plus</a></li>
-            </ul>
-
-            <ul id="promo-menu">
-                <li class="tab-only"><a href="#">Printed Plus</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </div>
