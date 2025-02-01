@@ -14,21 +14,13 @@
     --larg: 1280px;
 }
 
-.tab-only{
-    display: block;
-}
-.mobile-only {
-    display: none;
+.tab-only{display: block;}
+.mobile-only {display: none !important;}
+@media (min-width: 768px){
+.mobile-only {display: flex !important;}
+.tab-only{display: none;}
 }
 
-@media (max-width: 768px){
-.mobile-only {
-    display: block;
-}
-.tab-only{
-    display: none;
-}
-}
 
 
 /* General Reset */
@@ -221,6 +213,9 @@
     cursor: pointer;
 }
 
+
+.close-menu{ display: none;}
+
 /* Responsive Styles */
 @media (max-width: 768px){
     .menu-toggle {
@@ -267,19 +262,16 @@
 
 /* Show Menu */
 .mega-menu .menu.active {
-    right: 0;
+    left: 0;
     position: fixed;
     top: 0;
-    right: -100%;
     width: 90%;
     height: 100vh;
-    background-color: #333;
-    color: white;
     display: flex;
     flex-direction: column;
-    padding: 20px;
     overflow-y: auto;
     transition: right 0.4s ease-in-out;
+    border-right: 1px solid var(--light-gray);
 }
 
 /* Close Button */
@@ -288,7 +280,7 @@
     font-weight: bold;
     text-align: right;
     cursor: pointer;
-    padding: 10px;
+    padding: 10px;display: block;
 }
 
 .mega-menu .submenu.active {
@@ -298,8 +290,8 @@
 /* Toggle Button */
 .menu-toggle {
     display: block;
-    color: white;
-    background-color: #333;
+    color: var(--black);
+    background-color:var(--white);
     padding: 10px;
     font-size: 20px;
     cursor: pointer;
