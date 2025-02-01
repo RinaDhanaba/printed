@@ -38,6 +38,68 @@
 }
 
 
+/* Top Bar */
+.top-bar {
+    background: var(--primary-color); /* Pink background */
+    color: var(--white);
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.top-bar .center{
+ flex:1;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+}
+
+.top-bar p{line-height: 1em;
+font-size: 20px;}
+
+.small-text {
+    font-size: 12px;
+    font-weight: normal;
+    opacity: 0.8;
+    display: block;
+    line-height: 1em;
+}
+
+/* Promo Code Button */
+.promo-code {
+    background: rgba(255, 255, 255, 0.2); /* Light transparent button */
+    border: 1px dashed var(--black); /* Dashed border */
+    color: var(--white);
+    padding: 10px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+}
+
+.promo-code:hover {
+    background: var(--white);
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px){
+    .promo-code{
+        position: relative;  
+    }
+}
+
+
+
+
 
 /* Header */
 @media (max-width: 768px){
@@ -138,13 +200,14 @@
     background: var(--primary-color);
 }
 
+
+
 .main-menu{
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto;
 }
-
 
 /* Mega Menu */
 .mega-menu {
@@ -222,6 +285,12 @@
         padding: 10px;
         display: flex;
         justify-content: flex-end;
+    }
+
+    .main-menu{
+        padding: 10px 20px;
+        background: var(--white);
+        border-bottom: 1px solid var(--light-gray);
     }
 
     .mega-menu .menu {
@@ -394,56 +463,4 @@ footer {
 
 
 
-/* Top Bar */
-.top-bar {
-    background: var(--primary-color); /* Pink background */
-    color: var(--white);
-    text-align: center;
-    font-size: 16px;
-    font-weight: bold;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: end;
-    align-items: end;
-    gap: 20px;
-    position: relative;
-}
-
-.top-bar .center{
- flex:1;
- display: flex;
- justify-content: center;
- align-items: center;
- flex-direction: column;
-}
-
-.top-bar p{line-height: 1em;
-font-size: 20px;}
-
-.small-text {
-    font-size: 12px;
-    font-weight: normal;
-    opacity: 0.8;
-    display: block;
-    line-height: 1em;
-}
-
-/* Promo Code Button */
-.promo-code {
-    background: rgba(255, 255, 255, 0.2); /* Light transparent button */
-    border: 1px dashed var(--black); /* Dashed border */
-    color: var(--white);
-    padding: 10px 15px;
-    font-size: 12px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: all 0.3s ease-in-out;
-    position: absolute;
-}
-
-.promo-code:hover {
-    background: var(--white);
-    color: var(--primary-color);
-}
 
