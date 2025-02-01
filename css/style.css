@@ -273,8 +273,6 @@ align-items: stretch;
     .menu-toggle {
         display: block;
         padding: 10px;
-        position: relative;
-        right: 0;
     }
 
     .mega-menu .menu {
