@@ -112,8 +112,8 @@
 
 .cart .cart-count {
     position: absolute;
-    top: -5px;
-    right: -5px;
+    top: -8px;
+    right: -9px;
     background: var(--primary-color);
     color: var(--white);
     font-size: 12px;
@@ -203,9 +203,8 @@ align-items: stretch;
 
 /* Mega Menu */
 .mega-menu {
-    background-color: #333;
     position: relative;
-    padding: 10px 20px;
+    padding: 0;
 }
 
 .mega-menu .menu {
@@ -221,13 +220,13 @@ align-items: stretch;
 
 .mega-menu .menu li a {
     display: block;
-    padding: 10px 20px;
-    color: white;
+    padding: 15px 20px;
+    color: var(--light-gray);
     text-decoration: none;
 }
 
 .mega-menu .menu li:hover {
-    background-color: #444;
+    border-top: 1px solid var(--primary-color);
 }
 
 /* Submenu */
@@ -236,7 +235,7 @@ align-items: stretch;
     position: absolute;
     top: 40px;
     left: 0;
-    background-color: white;
+    background-color: var(--white);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     min-width: 200px;
 }
@@ -258,13 +257,13 @@ align-items: stretch;
 
 /* Show submenu on hover */
 .mega-menu .menu li:hover .submenu {
-    display: block;
+    background-color: var(--light-gray);
 }
 
 /* Mobile Menu */
 .menu-toggle {
     display: none;
-    color: white;
+    color: var(--white);
     font-size: 20px;
     cursor: pointer;
 }
@@ -280,7 +279,7 @@ align-items: stretch;
         display: none;
         flex-direction: column;
         width: 100%;
-        background-color: #333;
+        background-color: var(--light-gray);
         position: absolute;
         left: 0;
         top: 50px;
@@ -297,7 +296,7 @@ align-items: stretch;
 
     .mega-menu .submenu {
         position: static;
-        background-color: #222;
+        background-color: var(--secondary-color);
         width: 100%;
     }
 }
