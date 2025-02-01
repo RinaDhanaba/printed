@@ -47,7 +47,7 @@
     font-weight: bold;
     padding: 10px 20px;
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     gap: 20px;
     position: relative;
@@ -368,13 +368,8 @@ font-size: 20px;}
     text-align: center;
 }
 
-
-
-
-
-
-
 }
+
 
 
 
@@ -382,7 +377,7 @@ font-size: 20px;}
 
 /* Hero Section */
 .hero {
-    background: url('..\media\man-working-printing-house-with-paper-paints.jpg') no-repeat center center/cover;
+    background: url('\media\man-working-printing-house-with-paper-paints.jpg') no-repeat center center/cover;
     text-align: center;
     padding: 100px;
     color: var(--white);
