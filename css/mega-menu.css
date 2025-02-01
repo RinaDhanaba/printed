@@ -1,0 +1,331 @@
+/* Top Bar */
+.top-bar {
+    background: var(--primary-color); /* Pink background */
+    color: var(--white);
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+.top-bar .center{
+ flex:1;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+}
+
+.top-bar p{line-height: 1em;
+font-size: 20px;}
+
+.small-text {
+    font-size: 12px;
+    font-weight: normal;
+    opacity: 0.8;
+    display: block;
+    line-height: 1em;
+}
+
+/* Promo Code Button */
+.promo-code {
+    background: rgba(255, 255, 255, 0.2); /* Light transparent button */
+    border: 1px dashed var(--black); /* Dashed border */
+    color: var(--white);
+    padding: 10px 15px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+    position: absolute;
+}
+
+.promo-code:hover {
+    background: var(--white);
+    color: var(--primary-color);
+}
+
+@media (max-width: 768px){
+    .promo-code{
+        position: relative;  
+    }
+}
+
+
+
+
+
+/* Header */
+@media (max-width: 768px){
+.navigation{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.first-nav{
+    flex: 1;
+}
+}
+
+.first-nav{
+    padding: 10px 20px;
+    background: var(--white);
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    width: 25%;
+}
+
+.logo img {
+    max-width: 200px;
+    height: auto;
+    margin-right: 8px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background: var(--light-gray);
+    padding: 8px;
+    border-radius: 20px;
+    width: 350px;
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    outline: none;
+    width: 100%;
+}
+
+.search-box .fa-search {
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--black);
+    font-size: 14px;
+}
+
+.cart {
+    position: relative;
+}
+
+.cart .cart-count {
+    position: absolute;
+    top: -8px;
+    right: -9px;
+    background: var(--primary-color);
+    color: var(--white);
+    font-size: 12px;
+    border-radius: 50%;
+    padding: 3px 6px;
+}
+
+.chat-button {
+    background: var(--secondary-color);
+    color: var(--white);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.chat-button:hover {
+    background: var(--primary-color);
+}
+
+
+
+.main-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+/* Mega Menu */
+.mega-menu {
+    position: relative;
+    padding: 0;
+}
+
+.mega-menu .menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.mega-menu .menu li {
+    position: relative;
+}
+
+.mega-menu .menu li a {
+    display: block;
+    padding: 20px 20px;
+    color: var(--black);
+    text-decoration: none;
+}
+
+.mega-menu .menu li:hover {
+    border-top: 1px solid var(--primary-color);
+}
+
+/* Submenu */
+.mega-menu .submenu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: var(--white);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+}
+
+.mega-menu .submenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.mega-menu .submenu li a{
+    padding: 10px 10px;
+}
+
+.mega-menu .submenu li a {
+    color: var(--black);
+    font-size: 14px;
+}
+
+/* Show submenu on hover */
+.mega-menu .menu li:hover .submenu {
+    display: block;
+}
+
+/* Mobile Menu */
+.menu-toggle {
+    display: none;
+    color: var(--black);
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.close-menu{ display: none;}
+
+/* Responsive Styles */
+@media (max-width: 768px){
+    .menu-toggle {
+        padding: 10px;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .main-menu{
+        padding: 10px 20px;
+        background: var(--white);
+        border-bottom: 1px solid var(--light-gray);
+    }
+
+    .mega-menu .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 50px;
+        background: var(--white);
+    }
+
+    .mega-menu .menu.active {
+        display: flex;
+    }
+
+    .mega-menu .menu li {
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid var(--light-gray);
+    }
+
+    .mega-menu .submenu {
+        position: static;
+        width: 100%;
+        background-color: var(--light-gray);
+    }
+    .mega-menu .submenu li:hover{
+        border: none;
+    }
+
+
+
+/* Mega Menu */
+.mega-menu {
+    position: relative;
+}
+
+/* Show Menu */
+.mega-menu .menu.active {
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 90%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    transition: right 0.4s ease-in-out;
+    border-right: 1px solid var(--light-gray);
+}
+
+/* Close Button */
+.close-menu {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: right;
+    cursor: pointer;
+    padding: 10px;display: block;
+}
+
+.mega-menu .submenu.active {
+    display: block;
+}
+
+/* Toggle Button */
+.menu-toggle {
+    display: block;
+    color: var(--black);
+    background-color:var(--white);
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    width: 50px;
+    text-align: center;
+}
+
+}
