@@ -17,10 +17,10 @@
         <div class="stars">
             <?php
                 for ($i = 0; $i < 4; $i++) {
-                    echo '<span class="star full"></span>';
+                    echo '<img src="../media/star-full.svg"/>';
                 }
             ?>
-            <span class="star half"></span>
+            <img src="../media/star-half.svg"/>
         </div>
         <p class="review-count">Based on <?php echo number_format(9458); ?> reviews</p>
         <p class="trustpilot-logo">★ Trustpilot</p>
@@ -72,7 +72,7 @@ $products = [
                 <?php if (isset($product['badge'])) : ?>
                     <span class="badge"><?php echo $product['badge']; ?></span>
                 <?php endif; ?>
-                <img src="images/<?php echo $product['image']; ?>" alt="<?php echo $product['title']; ?>">
+                <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['title']; ?>">
                 <h3><?php echo $product['title']; ?></h3>
                 <p class="price">from <strong><?php echo $product['price']; ?></strong></p>
                 <a href="<?php echo $product['link']; ?>" class="order-now">Order Now ></a>
@@ -121,7 +121,7 @@ $products2 = [
                 <?php if (isset($product['badge'])) : ?>
                     <span class="badge"><?php echo $product['badge']; ?></span>
                 <?php endif; ?>
-                <img src="images/<?php echo $product['image']; ?>" alt="<?php echo $product['title']; ?>">
+                <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['title']; ?>">
                 <h3><?php echo $product['title']; ?></h3>
                 <p class="price">from <strong><?php echo $product['price']; ?></strong></p>
                 <a href="<?php echo $product['link']; ?>" class="order-now">Order Now ></a>
