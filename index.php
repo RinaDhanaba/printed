@@ -135,43 +135,43 @@ $products2 = [
         <h2>Supporting small businesses</h2>
 
         <div class="video-container">
-            <img src="video-thumbnail.jpg" alt="Video Thumbnail" class="thumbnail">
+            <img src="../media/man-working-printing-house-with-paper-paints.jpg" alt="Video Thumbnail" class="thumbnail">
             <button class="play-button" onclick="playVideo()">
-                <img src="play-icon.png" alt="Play">
+                <img src="C../media/star-full.svg" alt="Play">
             </button>
         </div>
 
         <div class="features">
             <div class="feature">
-                <img src="icons/handshake.png" alt="Printed Promise">
+                <img src="../media/man-working-printing-house-with-paper-paints.jpg" alt="Printed Promise">
                 <h3>Printed Promise</h3>
                 <p>Our promises to deliver your print, your way.</p>
                 <a href="#">Find Out More ></a>
             </div>
 
             <div class="feature">
-                <img src="icons/rewards.png" alt="Rewards">
+                <img src="../media/man-working-printing-house-with-paper-paints.jpg" alt="Rewards">
                 <h3>Rewards</h3>
                 <p>Earn Printed Points and redeem them for free print and more.</p>
                 <a href="#">Earn Now ></a>
             </div>
 
             <div class="feature">
-                <img src="icons/bespoke.png" alt="Bespoke">
+                <img src="../media/man-working-printing-house-with-paper-paints.jpg" alt="Bespoke">
                 <h3>Bespoke</h3>
                 <p>For any idea that isn’t covered by the print options on our site, go Bespoke.</p>
                 <a href="#">Get A Quote ></a>
             </div>
 
             <div class="feature">
-                <img src="icons/sample.png" alt="Sample Packs">
+                <img src="../media/man-working-printing-house-with-paper-paints.jpg" alt="Sample Packs">
                 <h3>Sample Packs</h3>
                 <p>Get a feel for our huge range of papers and products with a free Sample Pack.</p>
                 <a href="#">Order Now ></a>
             </div>
 
             <div class="feature">
-                <img src="icons/sustainability.png" alt="Sustainability">
+                <img src="../media/man-working-printing-house-with-paper-paints.jpg" alt="Sustainability">
                 <h3>Sustainability</h3>
                 <p>From sourcing eco-friendly papers to minimizing and recycling our waste, we’re dedicated to doing our part for the planet.</p>
                 <a href="#">Find Out More ></a>
@@ -187,19 +187,19 @@ $slides = [
     [
         "title" => "The Retail Collection",
         "description" => "Whatever you sell, whether it is in-store or online, we’ve got everything you need to bring your brand to life.",
-        "image" => "images/slide1.jpg",
+        "image" => "../media/man-working-printing-house-with-paper-paints.jpg",
         "link" => "#"
     ],
     [
         "title" => "Custom Packaging",
         "description" => "Make your brand stand out with high-quality, eco-friendly packaging solutions.",
-        "image" => "images/slide2.jpg",
+        "image" => "../media/man-working-printing-house-with-paper-paints.jpg",
         "link" => "#"
     ],
     [
         "title" => "Marketing Materials",
         "description" => "From flyers to brochures, print everything you need to promote your business.",
-        "image" => "images/slide3.jpg",
+        "image" => "../media/man-working-printing-house-with-paper-paints.jpg",
         "link" => "#"
     ]
 ];
@@ -236,19 +236,19 @@ $delivery_options = [
     [
         "title" => "Standard",
         "description" => "Find Out More >",
-        "icon" => "icons/standard-delivery.svg",
+        "icon" => "../media/star-full.svg",
         "link" => "#"
     ],
     [
         "title" => "Next Day",
         "description" => "Find Out More >",
-        "icon" => "icons/next-day-delivery.svg",
+        "icon" => "../media/star-full.svg",
         "link" => "#"
     ],
     [
         "title" => "International",
         "description" => "Find Out More >",
-        "icon" => "icons/international-delivery.svg",
+        "icon" => "../media/star-full.svg",
         "link" => "#"
     ]
 ];
