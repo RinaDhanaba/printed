@@ -22,7 +22,7 @@
 }
 
 .top-bar p{line-height: 1em;
-font-size: 20px;}
+font-size: 20px;color: var(--white);}
 
 .small-text {
     font-size: 12px;
