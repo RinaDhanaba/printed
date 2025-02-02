@@ -17,10 +17,10 @@
         <div class="stars">
             <?php
                 for ($i = 0; $i < 4; $i++) {
-                    echo '<img src="../media/star-full.svg"/>';
+                    echo '<span class="star full"></span>';
                 }
             ?>
-            <img src="../media/star-half.svg"/>
+            <span class="star half"></span>
         </div>
         <p class="review-count">Based on <?php echo number_format(9458); ?> reviews</p>
         <p class="trustpilot-logo">★ Trustpilot</p>

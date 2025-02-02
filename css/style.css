@@ -75,9 +75,10 @@
     align-items: center;
     gap: 10px;
     background: white;
-    padding: 15px 20px;
+    padding: 25px 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    justify-content: center;
 }
 
 .rating-text {
@@ -92,11 +93,11 @@
 .star {
     width: 20px;
     height: 20px;
-    background: url('star-full.svg') no-repeat center/contain;
+    background: url('../media/star-full.svg') no-repeat center/contain;
 }
 
 .star.half {
-    background: url('star-half.svg') no-repeat center/contain;
+    background: url('../media/star-half.svg') no-repeat center/contain;
 }
 
 .review-count {
