@@ -66,7 +66,9 @@
             <nav class="mega-menu">
                 <div class="menu-toggle">☰ Menu</div>
                 <ul class="menu">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/single-product">product</a></li>
+                    <li><a href="/category">category</a></li>
                     <li class="has-submenu">
                         <a href="#">Services</a>
                         <div class="submenu">
