@@ -403,22 +403,22 @@ $delivery_options = [
 $trending_articles = [
     [
         "title" => "What is Bleed in Printing? Everything You Need to Know",
-        "image" => "../media/bleed-printing.jpg",
+        "image" => "../media/category_custom_shape_1.jpg",
         "link" => "#",
     ],
     [
         "title" => "Designing Wedding Invites & Save the Dates with Canva",
-        "image" => "../media/wedding-invite.jpg",
+        "image" => "../media/category_custom_shape_1.jpg",
         "link" => "#",
     ],
     [
         "title" => "Wedding Invitation Trends You’ll Love in 2025",
-        "image" => "../media/invitation-trends.jpg",
+        "image" => "../media/category_custom_shape_1.jpg",
         "link" => "#",
     ],
     [
         "title" => "How To Nail Your Next Business Card Design",
-        "image" => "../media/business-card.jpg",
+        "image" => "../media/category_custom_shape_1.jpg",
         "link" => "#",
     ]
 ];
