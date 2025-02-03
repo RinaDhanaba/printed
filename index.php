@@ -164,7 +164,7 @@ $products = [
                 <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['title']; ?>">
                 <div class="hover_desc">
                     <p><?php echo $product['desc']; ?></p>
-                    <a href="<?php echo $product['product_link']; ?>" class="explore">Explore more >></a>
+                    <a href="<?php echo $product['product_link']; ?>" class="explore">Explore more</a>
                 </div>
                 </div>
                 <div class="card_content">
@@ -229,7 +229,7 @@ $products2 = [
                 <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['title']; ?>">
                 <div class="hover_desc">
                     <p><?php echo $product['desc']; ?></p>
-                    <a href="<?php echo $product['product_link']; ?>" class="explore">Explore more >></a>
+                    <a href="<?php echo $product['product_link']; ?>" class="explore">Explore more</a>
                 </div>
                 </div>
                 <div class="card_content">
