@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const nextBtn = slider.querySelector(nextBtnSelector);
         const prevBtn = slider.querySelector(prevBtnSelector);
 
-        let currentIndex = 1; // Start from the first real slide (after cloning)
+        let currentIndex = 0; // Start from the first real slide (index 0)
         let autoSlide;
 
         // Clone first and last slides for infinite effect
@@ -28,40 +28,40 @@ document.addEventListener("DOMContentLoaded", function () {
         const totalSlides = slides.length;
 
         // Set initial position
-        sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+        sliderContainer.style.transform = `translateX(-${(currentIndex + 1) * 100}%)`; // Adjust to show the first real slide
 
         function updateDots() {
             dots.forEach(dot => dot.classList.remove("active"));
-            if (dots[currentIndex - 1]) {
-                dots[currentIndex - 1].classList.add("active"); // Adjust for clones
+            if (dots[currentIndex]) {
+                dots[currentIndex].classList.add("active");
             }
         }
 
         function showSlide(index) {
             if (index >= totalSlides - 1) {
-                currentIndex = 1;
-                sliderContainer.style.transition = "none";
-                sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+                currentIndex = 0; // After the last slide (clone), go to the first real slide
+                sliderContainer.style.transition = "none"; // No transition during reset
+                sliderContainer.style.transform = `translateX(-${(currentIndex + 1) * 100}%)`; // Jump to first slide
                 setTimeout(() => {
-                    sliderContainer.style.transition = "transform 0.5s ease-in-out";
+                    sliderContainer.style.transition = "transform 0.5s ease-in-out"; // Apply transition
                     nextSlide();
-                }, 50);
+                }, 50); // Small delay for smooth transition
                 return;
             }
 
-            if (index <= 0) {
-                currentIndex = totalSlides - 2;
-                sliderContainer.style.transition = "none";
-                sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+            if (index < 0) {
+                currentIndex = totalSlides - 3; // Go to the last real slide before the clone
+                sliderContainer.style.transition = "none"; // No transition during reset
+                sliderContainer.style.transform = `translateX(-${(currentIndex + 1) * 100}%)`; // Jump to last real slide
                 setTimeout(() => {
-                    sliderContainer.style.transition = "transform 0.5s ease-in-out";
+                    sliderContainer.style.transition = "transform 0.5s ease-in-out"; // Apply transition
                     prevSlide();
-                }, 50);
+                }, 50); // Small delay for smooth transition
                 return;
             }
 
             currentIndex = index;
-            sliderContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+            sliderContainer.style.transform = `translateX(-${(currentIndex + 1) * 100}%)`; // Adjust for clone offset
             updateDots();
         }
 
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         function currentSlide(index) {
-            showSlide(index + 1); // Offset for cloned slides
+            showSlide(index);
         }
 
         if (nextBtn) nextBtn.addEventListener("click", () => {
