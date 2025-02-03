@@ -1,93 +1,79 @@
     <!-- Footer Section -->
-    <footer class="footer">
+    <?php
+$footer_sections = [
+    "Contact" => [
+        ["icon" => "phone", "text" => "0800 840 1430"],
+        ["icon" => "mail", "text" => "theteam@printed.com", "link" => "mailto:theteam@printed.com"],
+        ["icon" => "chat", "text" => "Chat with us"]
+    ],
+    "Products" => [
+        "What's new?", "Most popular", "Wedding", "View all products", 
+        "Special finishes", "Bespoke Service", "Special offers", "Free Sample Packs"
+    ],
+    "Learn more" => [
+        "Delivery", "Paper information", "Version printing", "Blog", 
+        "Rewards", "Printed Promise", "Affiliate programme", "Referral"
+    ],
+    "Here to help" => [
+        "Contact us", "FAQ", "Apply for an account", "Charity benefits", 
+        "Education benefits", "Student discount", "Printed Plus"
+    ],
+    "About Printed.com" => [
+        "Our print facility", "Our environment", "Careers"
+    ]
+];
+
+$social_icons = ["facebook", "twitter", "youtube", "linkedin", "pinterest", "instagram", "tiktok"];
+$certifications = ["iso1.png", "iso2.png", "iso3.png", "fsc.png"];
+?>
+
+<footer>
     <div class="footer-container">
-        <?php
-        $footerSections = [
-            "Contact" => [
-                "📞 0800 840 1430",
-                "📧 <a href='mailto:theteam@printed.com'>theteam@printed.com</a>",
-                "💬 <a href='#'>Chat with us</a>",
-                "social" => [
-                    "facebook" => "#",
-                    "twitter" => "#",
-                    "linkedin" => "#",
-                    "pinterest" => "#",
-                    "instagram" => "#",
-                    "tiktok" => "#",
-                    "youtube" => "#"
-                ]
-            ],
-            "Products" => [
-                "What's new?" => "#",
-                "Most popular" => "#",
-                "Wedding" => "#",
-                "View all products" => "#",
-                "Special finishes" => "#",
-                "Bespoke Service" => "#",
-                "Special offers" => "#",
-                "Free Sample Packs" => "#"
-            ],
-            "Learn More" => [
-                "Delivery" => "#",
-                "Paper information" => "#",
-                "Version printing" => "#",
-                "Blog" => "#",
-                "Rewards" => "#",
-                "Printed Promise" => "#",
-                "Affiliate programme" => "#",
-                "Referal" => "#"
-            ],
-            "Here to help" => [
-                "Contact us" => "#",
-                "FAQ" => "#",
-                "Apply for an account" => "#",
-                "Charity benefits" => "#",
-                "Education benefits" => "#",
-                "Student discount" => "#",
-                "Printed Plus" => "#"
-            ],
-            "About Printed.com" => [
-                "Our print facility" => "#",
-                "Our environment" => "#",
-                "Careers" => "#"
-            ]
-        ];
+        <div class="footer-column contact">
+            <h3>Contact</h3>
+            <?php foreach ($footer_sections['Contact'] as $contact) : ?>
+                <p>
+                    <i class="icon-<?php echo $contact['icon']; ?>"></i>
+                    <?php if (isset($contact['link'])) : ?>
+                        <a href="<?php echo $contact['link']; ?>"><?php echo $contact['text']; ?></a>
+                    <?php else : ?>
+                        <?php echo $contact['text']; ?>
+                    <?php endif; ?>
+                </p>
+            <?php endforeach; ?>
 
-        foreach ($footerSections as $section => $links) {
-            echo "<div class='footer-section'>";
-            echo "<h3>$section</h3>";
-            echo "<ul>";
-            foreach ($links as $key => $value) {
-                if ($key === "social") {
-                    echo "<div class='social-icons'>";
-                    foreach ($value as $platform => $url) {
-                        echo "<a href='$url' target='_blank'>" . ucfirst($platform) . "</a>";
-                    }
-                    echo "</div>";
-                } elseif (is_numeric($key)) {
-                    echo "<li>$value</li>";
-                } else {
-                    echo "<li><a href='$value'>$key</a></li>";
-                }
-            }
-            echo "</ul>";
-            echo "</div>";
-        }
-        ?>
+            <div class="social-icons">
+                <?php foreach ($social_icons as $icon) : ?>
+                    <i class="icon-<?php echo $icon; ?>"></i>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+        <?php foreach ($footer_sections as $title => $items) : ?>
+            <?php if ($title !== "Contact") : ?>
+                <div class="footer-column">
+                    <h3><?php echo $title; ?></h3>
+                    <ul>
+                        <?php foreach ($items as $item) : ?>
+                            <li><a href="#"><?php echo $item; ?></a></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            <?php endif; ?>
+        <?php endforeach; ?>
     </div>
 
-    <div class="certifications">
-        <img src="cert1.png" alt="ISO 9001">
-        <img src="cert2.png" alt="ISO 14001">
-        <img src="cert3.png" alt="ISO 27001">
-        <img src="cert4.png" alt="FSC Certified">
-    </div>
-
-    <div class="copyright">
-        © 2025 The Printed Group Limited trading as Printed.com  
-        <br> <a href="#">Terms and conditions</a> | <a href="#">Privacy policy</a> | <a href="#">Site map</a>
+    <div class="footer-bottom">
+        <p>© 2025 The Printed Group Limited trading as Printed.com</p>
+        <p><a href="#">Terms and conditions</a> | <a href="#">Privacy policy</a> | <a href="#">Site map</a></p>
+        <div class="certifications">
+            <?php foreach ($certifications as $cert) : ?>
+                <img src="<?php echo $cert; ?>" alt="Certification">
+            <?php endforeach; ?>
+        </div>
     </div>
 </footer>
+
 
 </body>
 </html>
