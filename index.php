@@ -29,11 +29,11 @@ $hero_slider = [
 ?>
 
 <!-- Hero Section -->
-<div class="swiper mySwiper">
-    <div class="swiper-wrapper">
-        <?php foreach ($hero_slider as $slide) : ?>
-            <div class="swiper-slide">
-                <div class="slide-content">
+<div class="hero_slider">
+    <div class="hero-slider-container">
+        <?php foreach ($hero_slider as $index => $slide) : ?>
+            <div class="hero-slide">
+                <div class="hero-content">
                     <div class="text-section">
                         <h2><?php echo htmlspecialchars($slide['title']); ?></h2>
                         <p><?php echo htmlspecialchars($slide['para']); ?></p>
@@ -50,11 +50,15 @@ $hero_slider = [
     </div>
 
     <!-- Navigation Arrows -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+    <button class="slider-btn next" onclick="nextSlide()">&#10095;</button>
+    <button class="slider-btn pre" onclick="prevSlide()">&#10095;</button>
 
     <!-- Pagination Dots -->
-    <div class="swiper-pagination"></div>
+    <div class="dots">
+        <?php foreach ($hero_slider as $index => $slide) : ?>
+            <span class="dot" onclick="currentSlide(<?php echo $index; ?>)"></span>
+        <?php endforeach; ?>
+    </div>
 </div>
 
 
