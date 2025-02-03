@@ -218,7 +218,7 @@ $products2 = [
 ?>
 
 <!-- Product Section -->
-<section class="product-grid">
+<section class="product-grid product-grid2">
     <h2>Wedding print</h2>
     <div class="grid">
         <?php foreach ($products2 as $product) : ?>
