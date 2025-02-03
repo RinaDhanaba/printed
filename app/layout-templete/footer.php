@@ -79,7 +79,7 @@ $certifications = ["../media/certificate.png.png", "../media/certificate.png.png
         <?php endforeach; ?>
     </div>
 
-    <div class="footer-bottom">
+    <div class="footer-bottom container">
         <div>
         <p>© 2025 The Printed Group Limited trading as Printed.com</p>
         <p><a href="#">Terms and conditions</a> | <a href="#">Privacy policy</a> | <a href="#">Site map</a></p>
