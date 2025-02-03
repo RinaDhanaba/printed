@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="../css/mega-menu.css">
 
     <!-- js files  -->
+    <script defer src="../js/slider.js"></script>
     <script defer src="../js/script.js"></script>
 
 </head>
