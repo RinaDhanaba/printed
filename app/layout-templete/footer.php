@@ -44,7 +44,7 @@ $footer_sections = [
 ];
 
 $social_icons = ["facebook", "twitter", "youtube", "linkedin", "pinterest", "instagram", "tiktok"];
-$certifications = ["../media/certificate.png.png", "../media/certificate.png.png", "../media/certificate.png.png", "../media/certificate.png.png"];
+$certifications = ["../media/certificate.png", "../media/certificate.png", "../media/certificate.png", "../media/certificate.png"];
 ?>
 
 <footer>
