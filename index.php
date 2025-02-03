@@ -9,21 +9,24 @@ $hero_slider = [
         "para" => "Refresh your stationery with Notepads, Bookmarks, and more.",
         "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "button_text" => "Shop Stationery",
-        "link" => "#"
+        "link" => "#",
+        "color" => "#151922"
     ],
     [
         "title" => "Put your best card forward",
         "para" => "Create high-quality Business Cards starting from £8.50.",
         "image" => "../media/man-working-printing-house-with-paper-paints.jpg",
         "button_text" => "Shop Business Cards",
-        "link" => "#"
+        "link" => "#",
+        "color" => "#55267E"
     ],
     [
         "title" => "Your love story starts here",
         "para" => "Begin your journey with beautiful wedding prints to mark your big day.",
         "image" => "../media/leaflets-_-flyers-nav-image-3_11.jpg",
         "button_text" => "Shop Wedding Print",
-        "link" => "#"
+        "link" => "#",
+        "color" => "#014CA5"
     ]
 ];
 ?>
@@ -32,7 +35,7 @@ $hero_slider = [
 <div class="hero_slider">
     <div class="slider-container">
         <?php foreach ($hero_slider as $index => $slide) : ?>
-            <div class="hero-slide">
+            <div class="hero-slide" style="background-color: <?php echo htmlspecialchars($slide['color']); ?>" >
                 <div class="hero-content">
                     <div class="text-section">
                         <h2><?php echo htmlspecialchars($slide['title']); ?></h2>
