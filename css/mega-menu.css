@@ -279,10 +279,10 @@ font-size: 20px;color: var(--white);}
     .mega-menu .submenu {
         position: static;
         width: 100%;
-        background-color: var(--light-gray);
+        background-color: var(--secondary-color);
     }
-    .mega-menu .submenu li:hover{
-        border: none;
+    .mega-menu .submenu li a{
+        color: var(--white);
     }
 
 
