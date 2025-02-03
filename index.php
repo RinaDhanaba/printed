@@ -160,14 +160,17 @@ $products = [
                 <?php if (isset($product['badge'])) : ?>
                     <span class="badge"><?php echo $product['badge']; ?></span>
                 <?php endif; ?>
-                <div class="hover_desc">
+                <div><div class="hover_desc">
                     <p><?php echo $product['desc']; ?></p>
                     <a href="<?php echo $product['product_link']; ?>" class="explore">Explore more >></a>
                 </div>
                 <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['title']; ?>">
+                </div>
+                <div class="card_content">
                 <h3><?php echo $product['title']; ?></h3>
                 <p class="price">from <strong><?php echo $product['price']; ?></strong></p>
                 <a href="<?php echo $product['link']; ?>" class="order-now">Order Now ></a>
+                </div>
             </div>
         <?php endforeach; ?>
     </div>
