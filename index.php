@@ -278,6 +278,7 @@ $slides = [
         <?php endforeach; ?>
     </div>
     <button class="slider-btn next" onclick="nextSlide()">&#10095;</button>
+    <button class="slider-btn pre" onclick="prevSlide()">&#10095;</button>
 
     <div class="dots">
         <?php foreach ($slides as $index => $slide) : ?>
