@@ -175,6 +175,7 @@ $products = [
             </div>
         <?php endforeach; ?>
     </div>
+    <a href="#" class="chat-button">View All Products</a>
 </section>
 
 
@@ -240,6 +241,7 @@ $products2 = [
             </div>
         <?php endforeach; ?>
     </div>
+    <a href="#" class="chat-button">View all Wedding Print</a>
 </section>
 
 

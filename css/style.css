@@ -106,9 +106,16 @@ p{
 .text-section {
     position:relative;
     width:50%;
-    max-width: 400px;
-    padding: 20px;
+    max-width: 500px;      
+    padding: 20px;  
+    padding-right:100px;
     border-radius: 10px;
+}
+
+@media(max-width:900px){
+    .text-section {
+        padding-right:10px;
+    }
 }
 
 .text-section h2 {
@@ -323,8 +330,8 @@ p{
     position: relative;
     display: inline-block;
     width: 60%;
-    max-width: var(--container);
-    max-height: 400px;
+    max-width: 750px;
+    max-height: 380px;
     overflow: hidden;
 }
 
@@ -361,7 +368,7 @@ p{
 }
 
 .feature img {
-    width: 50px;
+    width: 90px;
     margin-bottom: 10px;
 }
 
@@ -408,36 +415,46 @@ p{
     overflow: hidden;
 }
 
-.slide img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.slide-content {
-    position: absolute;
-    left: 10%;
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px 25px 40px;
-    border-radius: 10px;
-    max-width: 400px;
-    border-radius:20px;
-}
-
-@media (max-width:550px){
-    .slide-content {
-        width: 90%;
-        left:50%;
-        transform:translateX(-50%);
-    }
-}
-
-.explore-btn {
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-}
+.slide h2 {
+    margin-bottom:15px;
+     font-size:22px;
+ }
+ 
+ .slide p {
+    margin-bottom:25px;
+     font-size:14px
+ }
+ .slide img {
+     width: 100%;
+     border-radius: 10px;
+ }
+ 
+ .slide-content {
+     position: absolute;
+     left: 10%;
+     background: rgba(255, 255, 255, 0.9);
+     padding: 20px 25px 40px;
+     border-radius: 10px;
+     max-width: 400px;
+     border-radius:20px;
+ }
+ 
+ @media (max-width:550px){
+     .slide-content {
+         width: 90%;
+         left:50%;
+         transform:translateX(-50%);
+     }
+ }
+ 
+ .explore-btn {
+     background: var(--primary-color);
+     color: var(--white);
+     padding: 10px 15px;
+     text-decoration: none;
+     border-radius: 5px;
+     font-size:14px;
+ }
 
 .slider-btn {
     position: absolute;
@@ -520,7 +537,7 @@ p{
     font-weight: bold;
 }
 
-.delivery-section p {
+.delivery-section a {
     font-size: 13px;
 }
 
