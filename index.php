@@ -10,7 +10,7 @@ $hero_slider = [
         "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "button_text" => "Shop Stationery",
         "link" => "#",
-        "color" => "#151922"
+        "color" => "#960145"
     ],
     [
         "title" => "Put your best card forward",
@@ -26,7 +26,7 @@ $hero_slider = [
         "image" => "../media/leaflets-_-flyers-nav-image-3_11.jpg",
         "button_text" => "Shop Wedding Print",
         "link" => "#",
-        "color" => "#014CA5"
+        "color" => "#0282e7"
     ]
 ];
 ?>
