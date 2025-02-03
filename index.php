@@ -60,7 +60,6 @@ $hero_slider = [
 </div>
 
 
-
     <!-- Trustpilot section  -->
     <div class="trustpilot-section">
         <p class="rating-text">Excellent</p>
@@ -76,31 +75,51 @@ $hero_slider = [
         <p class="trustpilot-logo">★ Trustpilot</p>
     </div>
 
+
+
     <?php
 $products = [
     [
         "title" => "Leaflets & Flyers",
         "price" => "£12.50",
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "../media/a6-folded-invitations.2_1.jpg",
         "link" => "#"
     ],
     [
         "title" => "Saddle Stitch Booklets",
         "price" => "£22.00",
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "../media/a6-invitations-flat-2000-x-2000_4_1.jpg",
         "link" => "#"
     ],
     [
         "title" => "Greeting Cards",
         "price" => "£12.50",
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "../media/business_cards_category.jpg",
         "link" => "#",
         "badge" => "Free white envelopes"
     ],
     [
         "title" => "Business Cards",
         "price" => "£8.50",
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "../media/category_custom_shape_1.jpg",
+        "link" => "#"
+    ],
+    [
+        "title" => "Business Cards",
+        "price" => "£8.50",
+        "image" => "../media/category_custom_shape_1.jpg",
+        "link" => "#"
+    ],
+    [
+        "title" => "Business Cards",
+        "price" => "£8.50",
+        "image" => "../media/category_custom_shape_1.jpg",
+        "link" => "#"
+    ],
+    [
+        "title" => "Business Cards",
+        "price" => "£8.50",
+        "image" => "../media/category_custom_shape_1.jpg",
         "link" => "#"
     ],
     [

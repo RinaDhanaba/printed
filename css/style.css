@@ -104,7 +104,7 @@ p{
 .text-section {
     position:relative;
     width:50%;
-    max-width: 500px;
+    max-width: 600px;
     padding: 20px;
     border-radius: 10px;
 }
