@@ -237,7 +237,6 @@ p{
     background:#fff;
     padding:20px;
     position:absolute;
-    bottom:0;
     width:100%;
     opacity: 0; /* Initially invisible */
     transition: bottom 0.4s ease-in-out, opacity 0.4s ease-in-out;
