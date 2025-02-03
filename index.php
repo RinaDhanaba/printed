@@ -14,7 +14,7 @@ $hero_slider = [
     [
         "title" => "Put your best card forward",
         "para" => "Create high-quality Business Cards starting from £8.50.",
-        "image" => "../media\man-working-printing-house-with-paper-paints.jpg",
+        "image" => "../media/man-working-printing-house-with-paper-paints.jpg",
         "button_text" => "Shop Business Cards",
         "link" => "#"
     ],
