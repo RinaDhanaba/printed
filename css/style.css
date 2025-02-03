@@ -677,7 +677,7 @@ footer {
 }
 
 .footer-column {
-    width: 20%;
+    flex:1;
     min-width: 200px;
     margin-bottom: 20px;
     padding:10px 10px 10px 30px;
@@ -720,16 +720,20 @@ footer {
     gap: 10px;
     font-size: 14px;
 }
-
-.social-icons i {
+footer i {
     font-size: 18px;
     margin-right: 10px;
     color: var(--secondary-color);
     cursor: pointer;
 }
 
-.social-icons i:hover{
+footer i:hover{
     color: var(--primary-color);
+}
+.social-icons i {
+    margin-top: 10px;
+    color: var(--light-gray);
+    cursor: pointer;
 }
 
 .footer-bottom {
@@ -786,6 +790,10 @@ footer {
     }
     .contact p {
     justify-content: center;}
+
+    .footer-bottom{
+        flex-direction:column;
+    }
     
     .certifications {
         flex-wrap: wrap;
