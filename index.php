@@ -50,8 +50,10 @@ $hero_slider = [
     </div>
 
     <!-- Navigation Arrows -->
+    <div class="hero-controls">
     <button class="slider-btn next" onclick="nextSlide()">&#10095;</button>
     <button class="slider-btn pre" onclick="prevSlide()">&#10095;</button>
+    </div>
 
     <!-- Pagination Dots -->
     <div class="dots">
@@ -268,7 +270,6 @@ $slides = [
 ?>
 
 <div class="slider">
-    <button class="slider-btn prev" onclick="prevSlide()">&#10094;</button>
     <div class="slider-container">
         <?php foreach ($slides as $index => $slide) : ?>
             <div class="slide <?php echo $index === 0 ? 'active' : ''; ?>">
@@ -281,8 +282,11 @@ $slides = [
             </div>
         <?php endforeach; ?>
     </div>
+
+    <div class="slider-controls">
     <button class="slider-btn next" onclick="nextSlide()">&#10095;</button>
-    <button class="slider-btn pre" onclick="prevSlide()">&#10095;</button>
+    <button class="slider-btn prev" onclick="prevSlide()">&#10095;</button>
+    </div>
 
     <div class="dots">
         <?php foreach ($slides as $index => $slide) : ?>
