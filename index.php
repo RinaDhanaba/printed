@@ -30,7 +30,7 @@ $hero_slider = [
 
 <!-- Hero Section -->
 <div class="hero_slider">
-    <div class="hero-slider-container">
+    <div class="slider-container">
         <?php foreach ($hero_slider as $index => $slide) : ?>
             <div class="hero-slide">
                 <div class="hero-content">
@@ -48,31 +48,17 @@ $hero_slider = [
             </div>
         <?php endforeach; ?>
     </div>
-
-    <!-- Navigation Arrows -->
     <div class="hero-controls">
-    <button class="slider-btn next" onclick="nextSlide()">&#10095;</button>
-    <button class="slider-btn pre" onclick="prevSlide()">&#10095;</button>
+        <button class="slider-btn prev">&#10094;</button>
+        <button class="slider-btn next">&#10095;</button>
     </div>
-
-    <!-- Pagination Dots -->
     <div class="dots">
         <?php foreach ($hero_slider as $index => $slide) : ?>
-            <span class="dot" onclick="currentSlide(<?php echo $index; ?>)"></span>
+            <span class="dot"></span>
         <?php endforeach; ?>
     </div>
 </div>
 
-
-
-
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Peel. Stick. Repeat.</h1>
-            <p>Explore our Sticker range, including new Holographic Foil.</p>
-            <button>Shop Stickers</button>
-        </div>
-    </section>
 
 
     <!-- Trustpilot section  -->
@@ -272,7 +258,7 @@ $slides = [
 <div class="slider">
     <div class="slider-container">
         <?php foreach ($slides as $index => $slide) : ?>
-            <div class="slide <?php echo $index === 0 ? 'active' : ''; ?>">
+            <div class="slide">
                 <img src="<?php echo $slide['image']; ?>" alt="<?php echo $slide['title']; ?>">
                 <div class="slide-content">
                     <h2><?php echo $slide['title']; ?></h2>
@@ -282,19 +268,16 @@ $slides = [
             </div>
         <?php endforeach; ?>
     </div>
-
     <div class="slider-controls">
-    <button class="slider-btn next" onclick="nextSlide()">&#10095;</button>
-    <button class="slider-btn prev" onclick="prevSlide()">&#10095;</button>
+        <button class="slider-btn prev">&#10094;</button>
+        <button class="slider-btn next">&#10095;</button>
     </div>
-
     <div class="dots">
         <?php foreach ($slides as $index => $slide) : ?>
-            <span class="dot" onclick="currentSlide(<?php echo $index; ?>)"></span>
+            <span class="dot"></span>
         <?php endforeach; ?>
     </div>
 </div>
-
 
 
 

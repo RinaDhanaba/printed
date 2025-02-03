@@ -32,58 +32,56 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-function initializeSlider(containerSelector, slideSelector, dotSelector, interval = 5000) {
-    let currentIndex = 0;
+document.addEventListener("DOMContentLoaded", function () {
+    function initializeSlider(containerSelector, slideSelector, dotSelector, nextBtnSelector, prevBtnSelector, interval = 5000) {
+        const sliderContainer = document.querySelector(containerSelector);
+        if (!sliderContainer) return;
 
-    function showSlide(index) {
-        const slides = document.querySelectorAll(`${containerSelector} ${slideSelector}`);
-        const dots = document.querySelectorAll(`${containerSelector} ${dotSelector}`);
+        let currentIndex = 0;
+        const slides = sliderContainer.querySelectorAll(slideSelector);
+        const dots = sliderContainer.querySelectorAll(dotSelector);
+        const nextBtn = sliderContainer.querySelector(nextBtnSelector);
+        const prevBtn = sliderContainer.querySelector(prevBtnSelector);
 
-        if (!slides.length) return; // Prevent errors if no slides exist
+        function showSlide(index) {
+            if (index >= slides.length) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = slides.length - 1;
+            } else {
+                currentIndex = index;
+            }
 
-        if (index >= slides.length) {
-            currentIndex = 0;
-        } else if (index < 0) {
-            currentIndex = slides.length - 1;
-        } else {
-            currentIndex = index;
+            sliderContainer.querySelector(".slider-container").style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            dots.forEach(dot => dot.classList.remove("active"));
+            if (dots[currentIndex]) dots[currentIndex].classList.add("active");
         }
 
-        document.querySelector(containerSelector).style.transform = `translateX(-${currentIndex * 100}%)`;
+        function nextSlide() {
+            showSlide(currentIndex + 1);
+        }
 
-        // Update active dot
-        dots.forEach(dot => dot.classList.remove("active"));
-        if (dots[currentIndex]) dots[currentIndex].classList.add("active");
+        function prevSlide() {
+            showSlide(currentIndex - 1);
+        }
+
+        function currentSlide(index) {
+            showSlide(index);
+        }
+
+        if (nextBtn) nextBtn.addEventListener("click", nextSlide);
+        if (prevBtn) prevBtn.addEventListener("click", prevSlide);
+        dots.forEach((dot, i) => dot.addEventListener("click", () => currentSlide(i)));
+
+        setInterval(nextSlide, interval);
     }
 
-    function nextSlide() {
-        showSlide(currentIndex + 1);
-    }
+    // Initialize all sliders dynamically
+    initializeSlider(".hero_slider", ".hero-slide", ".dot", ".next", ".prev");
+    initializeSlider(".slider", ".slide", ".dot", ".next", ".prev");
+});
 
-    function prevSlide() {
-        showSlide(currentIndex - 1);
-    }
-
-    function currentSlide(index) {
-        showSlide(index);
-    }
-
-    // Auto-slide setup
-    setInterval(nextSlide, interval);
-
-    return { nextSlide, prevSlide, currentSlide };
-}
-
-// Initialize sliders for Hero Section and Other Sliders
-const heroSlider = initializeSlider(".hero-slider-container", ".hero-slide", ".hero-dot");
-const mainSlider = initializeSlider(".slider-container", ".slide", ".dot");
-
-// Example: Attach navigation to buttons (assuming you have buttons with these classes)
-document.querySelector(".hero-next")?.addEventListener("click", heroSlider.nextSlide);
-document.querySelector(".hero-prev")?.addEventListener("click", heroSlider.prevSlide);
-
-document.querySelector(".slider-next")?.addEventListener("click", mainSlider.nextSlide);
-document.querySelector(".slider-prev")?.addEventListener("click", mainSlider.prevSlide);
 
 
 
