@@ -348,11 +348,10 @@ p{
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 40px;
-    max-width: var(--container);
 }
 
 .feature {
-    width: 220px;
+    width: 300px;
     margin: 15px;
     text-align: center;
 }
@@ -360,6 +359,15 @@ p{
 .feature img {
     width: 50px;
     margin-bottom: 10px;
+}
+
+.feature h3 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.feature p {
+    font-size: 13px;
 }
 
 .support-section a {
