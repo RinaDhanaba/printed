@@ -321,6 +321,7 @@ p{
     width: 60%;
     max-width: var(--container);
     max-height: 400px;
+    overflow: hidden;
 }
 
 .thumbnail {
@@ -347,10 +348,11 @@ p{
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 40px;
+    max-width: var(--container);
 }
 
 .feature {
-    width: 180px;
+    width: 220px;
     margin: 15px;
     text-align: center;
 }
@@ -376,9 +378,8 @@ p{
     position: relative;
     width: 100%;
     max-width: var(--container);
-    margin: auto;
+    margin: auto;    
     overflow: hidden;
-    height: 500px;
 }
 
 .slider-container {
@@ -393,6 +394,7 @@ p{
     justify-content: center;
     position: relative;
     height:400px;
+    overflow: hidden;
 }
 
 .slide img {
@@ -404,9 +406,10 @@ p{
     position: absolute;
     left: 10%;
     background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
+    padding: 20px 25px 40px;
     border-radius: 10px;
     max-width: 400px;
+    border-radius:20px;
 }
 
 @media (max-width:550px){

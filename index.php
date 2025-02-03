@@ -304,34 +304,6 @@ $features = [
                 <a href="<?php echo $feature['link']; ?>"><?php echo $feature['btn']; ?> ></a>
             </div>
             <?php endforeach; ?>
-
-            <div class="feature">
-                <img src="../media/man-working-printing-house-with-paper-paints.jpg" alt="Rewards">
-                <h3>Rewards</h3>
-                <p>Earn Printed Points and redeem them for free print and more.</p>
-                <a href="#">Earn Now ></a>
-            </div>
-
-            <div class="feature">
-                <img src="../media/man-working-printing-house-with-paper-paints.jpg" alt="Bespoke">
-                <h3>Bespoke</h3>
-                <p>For any idea that isn’t covered by the print options on our site, go Bespoke.</p>
-                <a href="#">Get A Quote ></a>
-            </div>
-
-            <div class="feature">
-                <img src="../media/man-working-printing-house-with-paper-paints.jpg" alt="Sample Packs">
-                <h3>Sample Packs</h3>
-                <p>Get a feel for our huge range of papers and products with a free Sample Pack.</p>
-                <a href="#">Order Now ></a>
-            </div>
-
-            <div class="feature">
-                <img src="../media/man-working-printing-house-with-paper-paints.jpg" alt="Sustainability">
-                <h3>Sustainability</h3>
-                <p>From sourcing eco-friendly papers to minimizing and recycling our waste.</p>
-                <a href="#">Find Out More ></a>
-            </div>
         </div>
     </section>
 
