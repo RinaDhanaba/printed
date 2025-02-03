@@ -315,13 +315,13 @@ $slides = [
     [
         "title" => "The Retail Collection",
         "description" => "Whatever you sell, whether it is in-store or online, we’ve got everything you need to bring your brand to life.",
-        "image" => "../media/man-working-printing-house-with-paper-paints.jpg",
+        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#"
     ],
     [
         "title" => "Custom Packaging",
         "description" => "Make your brand stand out with high-quality, eco-friendly packaging solutions.",
-        "image" => "../media/man-working-printing-house-with-paper-paints.jpg",
+        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#"
     ],
     [
@@ -364,19 +364,19 @@ $delivery_options = [
     [
         "title" => "Standard",
         "description" => "Find Out More >",
-        "icon" => "../media/star-full.svg",
+        "icon" => "../media/Standard.png",
         "link" => "#"
     ],
     [
         "title" => "Next Day",
         "description" => "Find Out More >",
-        "icon" => "../media/star-full.svg",
+        "icon" => "../media/Next Day.png",
         "link" => "#"
     ],
     [
         "title" => "International",
         "description" => "Find Out More >",
-        "icon" => "../media/star-full.svg",
+        "icon" => "../media/International.png",
         "link" => "#"
     ]
 ];
