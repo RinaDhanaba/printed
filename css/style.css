@@ -704,14 +704,14 @@ footer {
     margin: 5px 0;
 }
 
-.footer-column ul li a , .footer-bottom p a{
+.footer-column ul li a , .footer-column p a{
     text-decoration: none;
     color: var(--text-color);
     font-size:13px;
     transition: color 0.3s;
 }
 
-.footer-column ul li a:hover, .footer-bottom p a:hover {
+.footer-column ul li a:hover, .footer-column p a:hover {
     color:var(--primary-color);
 }
 
