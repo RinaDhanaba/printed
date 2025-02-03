@@ -88,7 +88,7 @@ p{
 
 .text-section{
     width:50%;
-    max-width: calc(1200px / 2))
+    max-width: calc(1200px / 2);
     margin: auto 0 auto auto;
     display:flex;
    flex-direction:column;
@@ -103,7 +103,6 @@ p{
     width:auto;
     height:100%;
     overflow:hidden;
-    repeat:no-repeat;
 }
 
 .shop-btn {
