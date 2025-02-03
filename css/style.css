@@ -111,12 +111,13 @@ p{
 
 .text-section h2 {
     font-size: 2.5rem;
+    font-weight: 750;
     color: var(--white);
 }
 
 .text-section p {
     font-size: 1.2rem;
-    color: var(--dark-gray);
+    color: var(--white);
 }
 
 .shop-btn {
@@ -143,14 +144,16 @@ p{
 }
 
 @media (max-width:500px) {
-    .hero-slide {
+    .hero-content {
         flex-direction: column-reverse;
+    }
+    .hero-content * {
+        width:100%;
     }
     .image-section img {
         display: block;
     }
 }
-
 
 
 /* trustpilot section  */
