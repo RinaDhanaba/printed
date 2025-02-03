@@ -245,11 +245,14 @@ p{
     bottom: 0;
     width:100%;
     opacity: 0; /* Initially invisible */
+    display:none;
     transition: bottom 0.4s ease-in-out, opacity 0.4s ease-in-out;
 }
 .product:hover .hover_desc{
+    position:absolute;
     bottom: 0; /* Moves it up to visible area */
     opacity: 1; /* Makes it visible */
+    display:block;
 }
 
 .card_content{
@@ -317,6 +320,7 @@ p{
     display: inline-block;
     width: 60%;
     max-width: var(--container);
+    max-height: 400px;
 }
 
 .thumbnail {

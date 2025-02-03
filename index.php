@@ -182,18 +182,24 @@ $products = [
 $products2 = [
     [
         "title" => "Leaflets & Flyers",
+        "desc" => "Leaflets & Flyers",
+        "product_link" => "#",
         "price" => "£12.50",
         "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#"
     ],
     [
         "title" => "Saddle Stitch Booklets",
+        "desc" => "Leaflets & Flyers",
+        "product_link" => "#",
         "price" => "£22.00",
         "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#"
     ],
     [
         "title" => "Greeting Cards",
+        "desc" => "Leaflets & Flyers",
+        "product_link" => "#",
         "price" => "£12.50",
         "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#",
@@ -201,6 +207,8 @@ $products2 = [
     ],
     [
         "title" => "Business Cards",
+        "desc" => "Leaflets & Flyers",
+        "product_link" => "#",
         "price" => "£8.50",
         "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#"
@@ -208,23 +216,32 @@ $products2 = [
 ];
 ?>
 
-    <!-- Product Section -->
-    <section class="product-grid">
-    <h2>Print with us</h2>
+<!-- Product Section -->
+<section class="product-grid">
+    <h2>Wedding print</h2>
     <div class="grid">
         <?php foreach ($products2 as $product) : ?>
             <div class="product">
                 <?php if (isset($product['badge'])) : ?>
                     <span class="badge"><?php echo $product['badge']; ?></span>
                 <?php endif; ?>
+                <div>
                 <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['title']; ?>">
+                <div class="hover_desc">
+                    <p><?php echo $product['desc']; ?></p>
+                    <a href="<?php echo $product['product_link']; ?>" class="explore">Explore more >></a>
+                </div>
+                </div>
+                <div class="card_content">
                 <h3><?php echo $product['title']; ?></h3>
                 <p class="price">from <strong><?php echo $product['price']; ?></strong></p>
                 <a href="<?php echo $product['link']; ?>" class="order-now">Order Now ></a>
+                </div>
             </div>
         <?php endforeach; ?>
     </div>
 </section>
+
 
 
 <section class="support-section">
@@ -233,17 +250,60 @@ $products2 = [
         <div class="video-container">
             <img src="../media/man-working-printing-house-with-paper-paints.jpg" alt="Video Thumbnail" class="thumbnail">
             <button class="play-button" onclick="playVideo()">
-                <img src="C../media/star-full.svg" alt="Play">
+                <img src="../media/play-button.svg" alt="Play">
             </button>
         </div>
 
+
+        <?php
+$features = [
+    [
+        "title" => "Printed Promise",
+        "desc" => "Our promises to deliver your print, your way.",
+        "image" => "../media/Printed Promise.png",
+        "btn" => "Find Out More",
+        "link" => "#"
+    ],
+    [
+        "title" => "Rewards",
+        "desc" => "Earn Printed Points and redeem them for free print and more.",
+        "image" => "../media/Rewards.png",        
+        "btn" => "Earn Now",
+        "link" => "#"
+    ],
+    [
+        "title" => "Bespoke",
+        "desc" => "For any idea that isn’t covered by the print options on our site, go Bespoke.",
+        "image" => "../media/Bespoke.png",
+        "btn" => "Get A Quote",
+        "link" => "#"
+    ],
+    [
+        "title" => "Sample Packs",
+        "desc" => "Get a feel for our huge range of papers and products with a free Sample Pack.",
+        "image" => "../media/Sample Packs.png",
+        "btn" => "Order Now",
+        "link" => "#"
+    ],
+    [
+        "title" => "Sustainability",
+        "desc" => "From sourcing eco-friendly papers to minimizing and recycling our waste.",
+        "image" => "../media/Sustainability.png",
+        "btn" => "Find Out More ",
+        "link" => "#"
+    ]
+];
+?>
+
         <div class="features">
+        <?php foreach ($features as $feature) : ?>
             <div class="feature">
-                <img src="../media/man-working-printing-house-with-paper-paints.jpg" alt="Printed Promise">
-                <h3>Printed Promise</h3>
-                <p>Our promises to deliver your print, your way.</p>
-                <a href="#">Find Out More ></a>
+                <img src="<?php echo $feature['image']; ?>" alt="<?php echo $feature['title']; ?>">
+                <h3><?php echo $feature['title']; ?></h3>
+                <p><?php echo $feature['desc']; ?></p>
+                <a href="<?php echo $feature['link']; ?>"><?php echo $feature['btn']; ?> ></a>
             </div>
+            <?php endforeach; ?>
 
             <div class="feature">
                 <img src="../media/man-working-printing-house-with-paper-paints.jpg" alt="Rewards">
@@ -269,7 +329,7 @@ $products2 = [
             <div class="feature">
                 <img src="../media/man-working-printing-house-with-paper-paints.jpg" alt="Sustainability">
                 <h3>Sustainability</h3>
-                <p>From sourcing eco-friendly papers to minimizing and recycling our waste, we’re dedicated to doing our part for the planet.</p>
+                <p>From sourcing eco-friendly papers to minimizing and recycling our waste.</p>
                 <a href="#">Find Out More ></a>
             </div>
         </div>
