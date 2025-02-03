@@ -663,15 +663,15 @@ p{
 /* Footer */
 
 footer {
-    background: #f8f8f8;
+    background: var(--white);
     padding: 40px 20px;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--light-gray);
 }
 
 .footer-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -680,6 +680,12 @@ footer {
     width: 20%;
     min-width: 200px;
     margin-bottom: 20px;
+    padding:10px 10px 10px 30px;
+}
+.footer-column:first-child {
+    border-right: 1px solid var(--light-gray);
+    width:25%;
+    min-width:300px;
 }
 
 .footer-column h3 {
@@ -689,6 +695,8 @@ footer {
 
 .footer-column ul {
     list-style: none;
+    padding:0;
+    margin:0;
 }
 
 .footer-column ul li {
@@ -697,12 +705,13 @@ footer {
 
 .footer-column ul li a {
     text-decoration: none;
-    color: #000;
+    color: var(--text-color);
+    font-size:13px;
     transition: color 0.3s;
 }
 
 .footer-column ul li a:hover {
-    color: #ff0080;
+    color:var(--primary-color);
 }
 
 .contact p {
@@ -715,15 +724,21 @@ footer {
 .social-icons i {
     font-size: 18px;
     margin-right: 10px;
-    color: #666;
+    color: var(--secondary-color);
     cursor: pointer;
+}
+
+.social-icons i:hover{
+    color: var(--primary-color);
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 20px;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--light-gray);
     margin-top: 20px;
+    display:flex;
+    justify-content: space-between;
 }
 
 .footer-bottom p {
@@ -732,13 +747,13 @@ footer {
 }
 
 .footer-bottom a {
-    color: #000;
+    color: var(--black);
     text-decoration: none;
     transition: color 0.3s;
 }
 
 .footer-bottom a:hover {
-    color: #ff0080;
+    color: var(--primary-color);
 }
 
 .certifications {
@@ -762,6 +777,16 @@ footer {
         width: 100%;
         text-align: center;
     }
+
+    .footer-column:first-child {
+        width:100%;
+        min-width:100%;
+         border-right: none;
+        text-align: center;
+    }
+    .contact p {
+    justify-content: center;}
+    
     .certifications {
         flex-wrap: wrap;
     }
