@@ -7,21 +7,21 @@ $hero_slider = [
     [
         "title" => "Express yourself",
         "para" => "Refresh your stationery with Notepads, Bookmarks, and more.",
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "../media/leaflets-_-flyers-nav-image-3_11.jpg",
         "button_text" => "Shop Stationery",
         "link" => "#"
     ],
     [
         "title" => "Put your best card forward",
         "para" => "Create high-quality Business Cards starting from £8.50.",
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "../media/business_cards_category.jpg",
         "button_text" => "Shop Business Cards",
         "link" => "#"
     ],
     [
         "title" => "Your love story starts here",
         "para" => "Begin your journey with beautiful wedding prints to mark your big day.",
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "../media/leaflets-_-flyers-nav-image-3_11.jpg",
         "button_text" => "Shop Wedding Print",
         "link" => "#"
     ]
