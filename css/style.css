@@ -58,67 +58,84 @@ p{
 
 
 
-
 /* Hero Section */
 
 .hero_slider {
     position: relative;
     width: 100%;
-    margin: auto;
+    height:500px;
     overflow: hidden;
 }
 
-.hero-slide {
-    width: 100%;
+.slider-container {
     display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    transition: transform 0.5s ease-in-out;
 }
 
-.hero-content{
-    width: 100%;
+.hero-slide {
+    min-width: 100%;
+    height: 100%;
     display: flex;
-    flex-direction:row;
-    height:400px
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
 }
-.hero-content:nth-child(even) {
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.hero-slide:nth-child(even) {
     background-color: var(--primary-color);
 }
-.hero-content:nth-child(even) {
+
+.hero-slide:nth-child(odd) {
     background-color: var(--light-gray);
 }
 
-.text-section{
+.text-section {
+    position:relative;
     width:50%;
-    max-width: calc(1200px / 2);
-    margin: auto 0 auto auto;
-    display:flex;
-   flex-direction:column;
-   justify-content: center;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+}
 
+.text-section h2 {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.text-section p {
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+}
+
+.shop-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    background: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin-top: 10px;
 }
 .image-section{
     width:50%;
 }
-.image-section img{
-    object-fit: cover;
-    width:auto;
-    height:100%;
-    overflow:hidden;
-}
-
-.shop-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: var(--primary-color);
-    color: var(--white);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 5%;
-}
-
-.shop-btn:hover {
-    background: var(--primary-color);
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures full coverage without distortion */
 }
 
 
