@@ -33,7 +33,7 @@ $certifications = ["iso1.png", "iso2.png", "iso3.png", "fsc.png"];
             <h3>Contact</h3>
             <?php foreach ($footer_sections['Contact'] as $contact) : ?>
                 <p>
-                    <i class="icon-<?php echo $contact['icon']; ?>"></i>
+                    <i class="fa-solid fa-<?php echo $contact['icon']; ?>"></i>
                     <?php if (isset($contact['link'])) : ?>
                         <a href="<?php echo $contact['link']; ?>"><?php echo $contact['text']; ?></a>
                     <?php else : ?>
@@ -44,7 +44,7 @@ $certifications = ["iso1.png", "iso2.png", "iso3.png", "fsc.png"];
 
             <div class="social-icons">
                 <?php foreach ($social_icons as $icon) : ?>
-                    <i class="icon-<?php echo $icon; ?>"></i>
+                    <i class="fa-brands fa-<?php echo $icon; ?>"></i>
                 <?php endforeach; ?>
             </div>
         </div>
