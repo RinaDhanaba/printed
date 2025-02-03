@@ -60,28 +60,66 @@ p{
 
 
 /* Hero Section */
-.hero {
-    background: url('/media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg') no-repeat center center/cover;
-    text-align: center;
-    padding: 100px;
-    color: var(--white);
+.swiper {
+    width: 100%;
+    height: 500px;
 }
 
-.hero h1 {
-    font-size: 40px;
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-gray)
 }
 
-.hero p {
-    font-size: 18px;
-    margin: 10px 0;
+.slide-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: var(--container);
 }
 
-.hero button {
-    background: var(--primary-color);
-    color: var(--white);
+.text-section {
+    width: 50%;
+}
+
+.text-section h2 {
+    font-size: 2em;
+    color: var(--black);
+}
+
+.text-section p {
+    font-size: 1.2em;
+    color: var(--text-color);
+}
+
+.shop-btn {
+    display: inline-block;
     padding: 10px 20px;
-    border: none;
-    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.image-section {
+    width: 50%;
+}
+
+.image-section img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: var(--primary-color);
+}
+
+.swiper-pagination-bullet {
+    background-color: var(--primary-color);
 }
 
 
@@ -362,8 +400,8 @@ p{
     justify-content: center;
     gap: 50px;
     flex-wrap: wrap;
-    max-width: var(--container)
-    margin: auto;
+    max-width: var(--container);
+    margin:auto;
 }
 
 .delivery-option {

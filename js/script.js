@@ -28,6 +28,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// hero section 
+var swiper = new Swiper(".mySwiper", {
+    loop: true,  // Infinite loop
+    autoplay: {
+        delay: 3000,  // Auto slide every 3 seconds
+        disableOnInteraction: false,  // Continue autoplay after interaction
+    },
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+});
+
 
 // Support section 
 function playVideo() {

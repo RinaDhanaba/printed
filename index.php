@@ -1,7 +1,62 @@
 <!-- Include the header -->
 <?php include('app/layout-templete/header.php'); ?>
 
+
+<?php
+$hero_slider = [
+    [
+        "title" => "Express yourself",
+        "para" => "Refresh your stationery with Notepads, Bookmarks, and more.",
+        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "button_text" => "Shop Stationery",
+        "link" => "#"
+    ],
+    [
+        "title" => "Put your best card forward",
+        "para" => "Create high-quality Business Cards starting from £8.50.",
+        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "button_text" => "Shop Business Cards",
+        "link" => "#"
+    ],
+    [
+        "title" => "Your love story starts here",
+        "para" => "Begin your journey with beautiful wedding prints to mark your big day.",
+        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "button_text" => "Shop Wedding Print",
+        "link" => "#"
+    ]
+];
+?>
+
     <!-- Hero Section -->
+    <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+        <?php foreach ($hero_slider as $slide) : ?>
+        <div class="swiper-slide">
+            <div class="slide-content">
+                <div class="text-section">
+                    <h2><?php echo $slide['title']; ?></h2>
+                    <p><?php echo $slide['para']; ?></p>
+                    <a href="<?php echo $slide['link']; ?>" class="shop-btn"><?php echo $slide['button_text']; ?></a>
+                </div>
+                <div class="image-section">
+                    <img src="<?php echo $slide['image']; ?>" alt="<?php echo $slide['title']; ?>">
+                </div>
+            </div>
+        </div>
+        <?php endforeach; ?>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+
+    <!-- Pagination Dots -->
+    <div class="swiper-pagination"></div>
+</div>
+
+
+
     <section class="hero">
         <div class="hero-content">
             <h1>Peel. Stick. Repeat.</h1>
