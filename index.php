@@ -28,22 +28,24 @@ $hero_slider = [
 ];
 ?>
 
-    <!-- Hero Section -->
-    <div class="swiper mySwiper">
+<!-- Hero Section -->
+<div class="swiper mySwiper">
     <div class="swiper-wrapper">
         <?php foreach ($hero_slider as $slide) : ?>
-        <div class="swiper-slide">
-            <div class="slide-content">
-                <div class="text-section">
-                    <h2><?php echo $slide['title']; ?></h2>
-                    <p><?php echo $slide['para']; ?></p>
-                    <a href="<?php echo $slide['link']; ?>" class="shop-btn"><?php echo $slide['button_text']; ?></a>
-                </div>
-                <div class="image-section">
-                    <img src="<?php echo $slide['image']; ?>" alt="<?php echo $slide['title']; ?>">
+            <div class="swiper-slide">
+                <div class="slide-content">
+                    <div class="text-section">
+                        <h2><?php echo htmlspecialchars($slide['title']); ?></h2>
+                        <p><?php echo htmlspecialchars($slide['para']); ?></p>
+                        <a href="<?php echo htmlspecialchars($slide['link']); ?>" class="shop-btn">
+                            <?php echo htmlspecialchars($slide['button_text']); ?>
+                        </a>
+                    </div>
+                    <div class="image-section">
+                        <img src="<?php echo htmlspecialchars($slide['image']); ?>" alt="<?php echo htmlspecialchars($slide['title']); ?>">
+                    </div>
                 </div>
             </div>
-        </div>
         <?php endforeach; ?>
     </div>
 
@@ -54,6 +56,7 @@ $hero_slider = [
     <!-- Pagination Dots -->
     <div class="swiper-pagination"></div>
 </div>
+
 
 
 
