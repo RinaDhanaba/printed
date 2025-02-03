@@ -119,17 +119,21 @@ p{
 
 .text-section p {
     color: var(--white);
+    margin: 20px 0 40px 0;
 }
 
 .shop-btn  {
-    background: var(--primary-color);;
+    background: var(--primary-color);
     color: var(--white);
     border: none;
-    padding: 8px 15px;
+    padding: 10px 25px;
     border-radius: 20px;
     cursor: pointer;
     font-size: 14px;
+    text-decoration: none;
+    font-weight: 600;
 }
+
 
 .shop-btn:hover {
     background: var(--secondary-color);

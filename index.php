@@ -84,18 +84,24 @@ $hero_slider = [
 $products = [
     [
         "title" => "Leaflets & Flyers",
+        "desc" => "Leaflets & Flyers",
+        "product_link" => "#",
         "price" => "£12.50",
         "image" => "../media/a6-folded-invitations.2_1.jpg",
         "link" => "#"
     ],
     [
         "title" => "Saddle Stitch Booklets",
+        "desc" => "Leaflets & Flyers",
+        "product_link" => "#",
         "price" => "£22.00",
         "image" => "../media/a6-invitations-flat-2000-x-2000_4_1.jpg",
         "link" => "#"
     ],
     [
         "title" => "Greeting Cards",
+        "desc" => "Leaflets & Flyers",
+        "product_link" => "#",
         "price" => "£12.50",
         "image" => "../media/business_cards_category.jpg",
         "link" => "#",
@@ -103,30 +109,40 @@ $products = [
     ],
     [
         "title" => "Business Cards",
+        "desc" => "Leaflets & Flyers",
+        "product_link" => "#",
         "price" => "£8.50",
         "image" => "../media/category_custom_shape_1.jpg",
         "link" => "#"
     ],
     [
         "title" => "Business Cards",
+        "desc" => "Leaflets & Flyers",
+        "product_link" => "#",
         "price" => "£8.50",
         "image" => "../media/category_custom_shape_1.jpg",
         "link" => "#"
     ],
     [
         "title" => "Business Cards",
+        "desc" => "Leaflets & Flyers",
+        "product_link" => "#",
         "price" => "£8.50",
         "image" => "../media/category_custom_shape_1.jpg",
         "link" => "#"
     ],
     [
         "title" => "Business Cards",
+        "desc" => "Leaflets & Flyers",
+        "product_link" => "#",
         "price" => "£8.50",
         "image" => "../media/category_custom_shape_1.jpg",
         "link" => "#"
     ],
     [
         "title" => "Postcards",
+        "desc" => "Leaflets & Flyers",
+        "product_link" => "#",
         "price" => "£12.50",
         "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#",
@@ -144,6 +160,10 @@ $products = [
                 <?php if (isset($product['badge'])) : ?>
                     <span class="badge"><?php echo $product['badge']; ?></span>
                 <?php endif; ?>
+                <div class="hover_desc">
+                    <p><?php echo $product['desc']; ?></p>
+                    <a href="<?php echo $product['product_link']; ?>" class="explore">Explore more >></a>
+                </div>
                 <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['title']; ?>">
                 <h3><?php echo $product['title']; ?></h3>
                 <p class="price">from <strong><?php echo $product['price']; ?></strong></p>
