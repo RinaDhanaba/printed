@@ -186,9 +186,9 @@ $papers = [
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-    let currentIndex = 0;
     const tabs = document.querySelectorAll(".tab");
     const maxIndex = tabs.length - 1;
+    let currentIndex = Math.floor(maxIndex / 2); // Set the middle tab as active
 
     function updateTabs() {
         // Remove 'active' class from all tabs and details
@@ -233,10 +233,9 @@ document.addEventListener("DOMContentLoaded", function () {
         scrollTabs(1);
     });
 
-    // Initialize first active tab
+    // Initialize with center tab active
     updateTabs();
 });
-
 
 </script>
 
