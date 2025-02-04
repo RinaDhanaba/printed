@@ -159,9 +159,17 @@ document.addEventListener("DOMContentLoaded", function () {
     let navItems = document.querySelectorAll(".nav-item");
     let sections = document.querySelectorAll(".page-section");
     let navbarOffset = navbar.offsetTop; // Get initial navbar position
+    let isSticky = false; // Track sticky state
 
     function updateActiveSection() {
-        let scrollPosition = window.scrollY + window.innerHeight / 3; // Dynamically adjust scroll offset
+        let scrollPosition = window.scrollY + window.innerHeight / 3;
+
+        if (!isSticky) {
+            // Keep the first item active until sticky
+            navItems.forEach((item) => item.classList.remove("active"));
+            navItems[0].classList.add("active");
+            return;
+        }
 
         sections.forEach((section) => {
             let sectionTop = section.offsetTop;
@@ -180,8 +188,10 @@ document.addEventListener("DOMContentLoaded", function () {
     function handleStickyNav() {
         if (window.scrollY > navbarOffset) {
             navbar.classList.add("sticky");
+            isSticky = true;
         } else {
             navbar.classList.remove("sticky");
+            isSticky = false;
         }
     }
 
