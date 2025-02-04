@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/mega-menu.css">
     <link rel="stylesheet" href="../css/category.css">    
-    <link rel="stylesheet" href="../css/sitebar.css">
+    <link rel="stylesheet" href="../css/sidebar.css">
 
     <!-- js files  -->
     <script defer src="../js/slider.js"></script>
