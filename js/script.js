@@ -47,6 +47,38 @@ function toggleNav() {
     sidebar.style.width = sidebar.style.width === "95%" ? "0" : "95%";
 }
 
+// Define preset configurations
+const presetData = {
+    "Build Your Own": { product: "", size: "", finishType: "" },
+    "Most Popular": { product: "Leaflets & Flyers", size: "A5", finishType: "Double-Sided" },
+    "Eco": { product: "Leaflets & Flyers", size: "A5", finishType: "Double-Sided" },
+    "Economy": { product: "Leaflets & Flyers", size: "A5", finishType: "Double-Sided" }
+};
+
+// Handle preset selection
+function selectPreset(preset) {
+    const presetInfo = presetData[preset];
+
+    // Store values in hidden inputs
+    document.getElementById("selectedPreset").value = preset;
+    document.getElementById("selectedProduct").value = presetInfo.product;
+    document.getElementById("selectedSize").value = presetInfo.size;
+    document.getElementById("selectedFinishType").value = presetInfo.finishType;
+
+    // Save to localStorage for later steps
+    localStorage.setItem("selectedPreset", preset);
+    localStorage.setItem("selectedProduct", presetInfo.product);
+    localStorage.setItem("selectedSize", presetInfo.size);
+    localStorage.setItem("selectedFinishType", presetInfo.finishType);
+
+    // Open sidebar and update progress
+    openSidebar(presetInfo.product, presetInfo.size, preset, presetInfo.finishType);
+
+    // Highlight selected option
+    document.querySelectorAll(".preset-card").forEach(card => card.classList.remove("selected"));
+    document.querySelector(`label[data-preset='${preset}']`).classList.add("selected");
+}
+
 // Open Sidebar and Set Preselected Values
 function openSidebar(product, size, preset = null, finishType = null) {
     var sidebar = document.getElementById("mySidenav");
@@ -124,6 +156,11 @@ document.querySelectorAll("input[type='radio']").forEach((radio) => {
         updateProgress();
     });
 });
+
+// Go to the next step
+function goToNextStep() {
+    window.location.href = "step2.html"; // Replace with actual next step URL
+}
 
 
 

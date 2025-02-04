@@ -8,23 +8,41 @@
 
         <form action="/app/layout-templete/process.php" method="POST" id="multiStepForm">
             
-            <!-- Step 1: Product Presets -->
-            <div class="form-step">
-                <h3 class="step-title">📌 Our Product Presets</h3>
-                <div class="options-grid">
-                    <label class="option-card">
-                        <input type="radio" name="preset" value="Build Your Own"> Build Your Own
+            <!-- Step 1: Our Product Presets -->
+            <div class="form-step active" id="step1">
+                <h2>✅ Our Product Presets</h2>
+                <p>Build your own or choose from one of our preset options.</p>
+
+                <div class="preset-options">
+                    <label class="preset-card" data-preset="Build Your Own" onclick="selectPreset('Build Your Own')">
+                        <span>🎨 Build Your Own</span>
+                        <p>Customize your product to your exact specification.</p>
                     </label>
-                    <label class="option-card">
-                        <input type="radio" name="preset" value="Most Popular"> Most Popular
+
+                    <label class="preset-card" data-preset="Most Popular" onclick="selectPreset('Most Popular')">
+                        <span>⭐ Most Popular</span>
+                        <p>A5 portrait Leaflets, printed double-sided on 170gsm Silk paper.</p>
                     </label>
-                    <label class="option-card">
-                        <input type="radio" name="preset" value="Eco"> Eco
+
+                    <label class="preset-card" data-preset="Eco" onclick="selectPreset('Eco')">
+                        <span>🌿 Eco</span>
+                        <p>A5 portrait Leaflets, printed double-sided on 150gsm Recycled Silk paper.</p>
                     </label>
-                    <label class="option-card">
-                        <input type="radio" name="preset" value="Economy"> Economy
+
+                    <label class="preset-card" data-preset="Economy" onclick="selectPreset('Economy')">
+                        <span>📄 Economy</span>
+                        <p>A5 portrait Leaflets, printed double-sided on 130gsm Silk paper.</p>
                     </label>
                 </div>
+
+                <!-- Hidden Inputs to Store Selection -->
+                <input type="hidden" id="selectedPreset" name="preset">
+                <input type="hidden" id="selectedProduct" name="product">
+                <input type="hidden" id="selectedSize" name="size">
+                <input type="hidden" id="selectedPaperType" name="paperType">
+                <input type="hidden" id="selectedFinish" name="finish">
+
+                <button type="button" class="next-btn" onclick="goToNextStep()">Next</button>
             </div>
 
             <!-- Step 2: Product Type -->
@@ -210,6 +228,43 @@ section.form-section {
 .submit-btn:hover {
     background: #008a8a;
 }
+
+.preset-options {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.preset-card {
+    border: 2px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-align: center;
+    width: 200px;
+}
+
+.preset-card:hover {
+    border-color: #007bff;
+}
+
+.preset-card.selected {
+    border-color: #ff4081;
+    background-color: #fff0f5;
+}
+
+.next-btn {
+    margin-top: 20px;
+    padding: 10px 15px;
+    background: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+
+
 
 /* Heading */
 #sidebar h2 {
