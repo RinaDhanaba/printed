@@ -1,33 +1,67 @@
 <!-- Sidebar -->
-<div id="sidebar" class="sidebar">
-    <button id="closeSidebar">&times;</button>
-    <h2>Customize Your Order</h2>
-    
-    <form action="process.php" method="POST">
-        <!-- Product Selection -->
-        <label>Product:</label>
-        <select name="product" id="productSelect">
-            <option value="Leaflets & Flyers" <?= ($_SESSION['selected_options']['product'] ?? '') == "Leaflets & Flyers" ? 'selected' : ''; ?>>Leaflets & Flyers</option>
-            <option value="Folded Leaflets & Flyers" <?= ($_SESSION['selected_options']['product'] ?? '') == "Folded Leaflets & Flyers" ? 'selected' : ''; ?>>Folded Leaflets & Flyers</option>
-        </select>
 
-        <!-- Size -->
-        <label>Size:</label>
-        <select name="size">
-            <option value="A4">A4</option>
-            <option value="A5">A5</option>
-        </select>
+<!-- Button to open sidebar -->
+<button class="toggle-btn" onclick="toggleSidebar()">☰ Open Sidebar</button>
 
-        <!-- Submit -->
-        <button type="submit">Save & Continue</button>
-    </form>
-
-    <!-- Progress Bar -->
-    <div class="progress-bar">
-        <h3>Product Summary</h3>
-        <ul>
-            <li class="<?= isset($_SESSION['selected_options']['product']) ? 'selected' : ''; ?>">Product: <?= $_SESSION['selected_options']['product'] ?? '-' ?></li>
-            <li class="<?= isset($_SESSION['selected_options']['size']) ? 'selected' : ''; ?>">Size: <?= $_SESSION['selected_options']['size'] ?? '-' ?></li>
-        </ul>
-    </div>
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+    <button class="close-btn" onclick="toggleSidebar()">✖ Close</button>
+    <h2>Sidebar Content</h2>
+    <p>This is your sidebar where you can add any content you like.</p>
 </div>
+
+<script>
+    function toggleSidebar() {
+        var sidebar = document.getElementById("sidebar");
+        sidebar.classList.toggle("active");
+    }
+</script>
+
+
+<style>
+        /* Sidebar styling */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            right: -300px; /* Initially hidden */
+            width: 300px;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+            transition: right 0.3s ease-in-out;
+            padding: 20px;
+        }
+
+        /* When sidebar is active */
+        .sidebar.active {
+            right: 0;
+        }
+
+        /* Button styling */
+        .toggle-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background-color: #ff1493;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        /* Close button inside sidebar */
+        .close-btn {
+            background-color: #ff1493;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+</style>

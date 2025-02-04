@@ -1,23 +1,6 @@
 <!-- Include the header -->
 <?php include('app/layout-templete/header.php'); ?>
 
-<?php 
-session_start();
-
-// Initialize selected options
-if (!isset($_SESSION['selected_options'])) {
-    $_SESSION['selected_options'] = [
-        'product' => '',
-        'size' => '',
-        'orientation' => '',
-        'printed_side' => '',
-        'paper' => '',
-        'quantity' => '',
-    ];
-}
-
-?>
-
 <!-- Product Listing -->
 <div class="product-listing">
     <div class="product" data-product="Leaflets & Flyers">
