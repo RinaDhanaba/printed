@@ -98,4 +98,5 @@ document.addEventListener("DOMContentLoaded", function () {
     // Initialize all sliders dynamically
     initializeSlider(".hero_slider", ".hero-slide", ".dot", ".next", ".prev");
     initializeSlider(".slider", ".slide", ".dot", ".next", ".prev");
+    initializeSlider(".cat-slider", ".slide", ".dot", ".next", ".prev");
 });
