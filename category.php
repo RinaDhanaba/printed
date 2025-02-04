@@ -103,6 +103,41 @@ $cat_slides = [
 <!-- Sidebar Section -->
 <?php include 'app/layout-templete/sidebar.php'; ?>
 
+
+
+
+
+<?php
+$menuItems = [
+    ["id" => "section1", "title" => "Leaflets & Flyers - The Range", "file" => "app/layout-templete/cat-content1.php"],
+    ["id" => "section2", "title" => "Browse our papers", "file" => "app/layout-templete/cat-content2.php"],
+    ["id" => "section3", "title" => "Artwork templates", "file" => "app/layout-templete/cat-content3.php"],
+    ["id" => "section4", "title" => "You may also like", "file" => "app/layout-templete/cat-content4.php"]
+];
+?>
+
+<!-- Navigation Bar -->
+<nav id="navbar">
+    <ul class="nav-links">
+        <?php foreach ($menuItems as $item) : ?>
+            <li><a href="#<?php echo $item['id']; ?>" class="nav-item"><?php echo $item['title']; ?></a></li>
+        <?php endforeach; ?>
+    </ul>
+    <button id="orderNow" class="order-now">Order Now</button>
+</nav>
+
+<!-- Page Sections -->
+<div class="content">
+    <?php foreach ($menuItems as $item) : ?>
+        <section id="<?php echo $item['id']; ?>" class="page-section">
+            <h2><?php echo $item['title']; ?></h2>
+            <?php include $item['file']; ?>
+        </section>
+    <?php endforeach; ?>
+</div>
+
+
+
 <!-- Blog section -->
 <?php include('app/layout-templete/trending_blog.php'); ?>
 

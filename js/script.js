@@ -149,3 +149,45 @@ function capitalize(str) {
 }
 
 
+
+
+
+
+
+
+// category 
+document.addEventListener("DOMContentLoaded", function () {
+    let navbar = document.getElementById("navbar");
+    let navItems = document.querySelectorAll(".nav-item");
+    let sections = document.querySelectorAll(".page-section");
+
+    function updateActiveSection() {
+        let scrollPosition = window.scrollY + 100;
+
+        sections.forEach((section) => {
+            if (
+                scrollPosition >= section.offsetTop &&
+                scrollPosition < section.offsetTop + section.offsetHeight
+            ) {
+                navItems.forEach((item) => item.classList.remove("active"));
+                document
+                    .querySelector(`.nav-item[href="#${section.id}"]`)
+                    .classList.add("active");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) {
+            navbar.classList.add("sticky");
+        } else {
+            navbar.classList.remove("sticky");
+        }
+
+        updateActiveSection();
+    });
+
+    updateActiveSection(); // Run once on page load
+});
+
+
