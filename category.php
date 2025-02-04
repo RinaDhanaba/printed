@@ -115,20 +115,13 @@ $menuItems = [
 
 <!-- Navigation Bar -->
 <nav id="navbar">
-    <div class="nav-container">
-        <button id="mobileNavToggle" class="mobile-nav-toggle">
-            <span id="mobileNavLabel">The Range</span> 
-            <span class="arrow">▼</span>
-        </button>
-        <ul class="nav-links">
-            <?php foreach ($menuItems as $item) : ?>
-                <li><a href="#<?php echo $item['id']; ?>" class="nav-item"><?php echo $item['title']; ?></a></li>
-            <?php endforeach; ?>
-        </ul>
-    </div>
+    <ul class="nav-links">
+        <?php foreach ($menuItems as $item) : ?>
+            <li><a href="#<?php echo $item['id']; ?>" class="nav-item"><?php echo $item['title']; ?></a></li>
+        <?php endforeach; ?>
+    </ul>
     <button id="orderNow" class="order-now">Order Now</button>
 </nav>
-
 
 <!-- Page Sections -->
 <div class="cat-content">
