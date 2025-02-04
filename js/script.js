@@ -47,7 +47,10 @@ function toggleNav() {
     sidebar.style.width = sidebar.style.width === "95%" ? "0" : "95%";
 }
 
-// Define preset configurations
+// Step Names in Progress Bar
+const steps = ["Preset", "Quantity", "Product", "Size", "FinishType"];
+
+// Default preset configuration
 const presetData = {
     "Build Your Own": { product: "", size: "", finishType: "" },
     "Most Popular": { product: "Leaflets & Flyers", size: "A5", finishType: "Double-Sided" },
@@ -55,112 +58,71 @@ const presetData = {
     "Economy": { product: "Leaflets & Flyers", size: "A5", finishType: "Double-Sided" }
 };
 
-// Handle preset selection
-function selectPreset(preset) {
-    const presetInfo = presetData[preset];
-
-    // Store values in hidden inputs
-    document.getElementById("selectedPreset").value = preset;
-    document.getElementById("selectedProduct").value = presetInfo.product;
-    document.getElementById("selectedSize").value = presetInfo.size;
-    document.getElementById("selectedFinishType").value = presetInfo.finishType;
-
-    // Save to localStorage for later steps
-    localStorage.setItem("selectedPreset", preset);
-    localStorage.setItem("selectedProduct", presetInfo.product);
-    localStorage.setItem("selectedSize", presetInfo.size);
-    localStorage.setItem("selectedFinishType", presetInfo.finishType);
-
-    // Open sidebar and update progress
-    openSidebar(presetInfo.product, presetInfo.size, preset, presetInfo.finishType);
-
-    // Highlight selected option
-    document.querySelectorAll(".preset-card").forEach(card => card.classList.remove("selected"));
-    document.querySelector(`label[data-preset='${preset}']`).classList.add("selected");
-}
-
-// Open Sidebar and Set Preselected Values
-function openSidebar(product, size, preset = null, finishType = null) {
-    var sidebar = document.getElementById("mySidenav");
-    sidebar.style.width = "95%"; // Open Sidebar
-
-    // Store values in localStorage
-    if (product) localStorage.setItem("selectedProduct", product);
-    if (size) localStorage.setItem("selectedSize", size);
-    if (preset) localStorage.setItem("selectedPreset", preset);
-    if (finishType) localStorage.setItem("selectedFinishType", finishType);
-
-    // Set values in the form
-    setRadioValue("product", product);
-    setRadioValue("size", size);
-    setRadioValue("preset", preset);
-    setRadioValue("finishType", finishType);
-
-    // Update progress UI
-    updateProgress();
-}
-
-// Helper function to set a radio button value
-function setRadioValue(name, value) {
-    let radios = document.querySelectorAll(`input[name='${name}']`);
-    radios.forEach(radio => {
-        radio.checked = radio.value === value;
-    });
-}
-
-// Load saved selections on page load
+// Load selections on page load
 document.addEventListener("DOMContentLoaded", function () {
-    let savedPreset = localStorage.getItem("selectedPreset");
-    let savedProduct = localStorage.getItem("selectedProduct");
-    let savedSize = localStorage.getItem("selectedSize");
-    let savedFinishType = localStorage.getItem("selectedFinishType");
-
-    setRadioValue("preset", savedPreset);
-    setRadioValue("product", savedProduct);
-    setRadioValue("size", savedSize);
-    setRadioValue("finishType", savedFinishType);
+    steps.forEach(step => {
+        let savedValue = localStorage.getItem(`selected${step}`) || (step === "Preset" ? "Build Your Own" : "-");
+        updateSelection(step.toLowerCase(), savedValue);
+    });
 
     updateProgress();
 });
 
-// Step Navigation and Auto-update Sidebar Progress
+// Update selection dynamically (for presets, quantity, etc.)
+function updateSelection(type, value) {
+    localStorage.setItem(`selected${capitalize(type)}`, value);
+
+    document.querySelectorAll(`.${type}-card`).forEach(card => card.classList.remove("selected"));
+    let selectedCard = document.querySelector(`.${type}-card[data-${type}='${value}']`);
+    if (selectedCard) selectedCard.classList.add("selected");
+
+    // Auto-update related fields when selecting a preset
+    if (type === "preset") {
+        let presetInfo = presetData[value] || {};
+        ["product", "size", "finishType"].forEach(field => {
+            updateSelection(field, presetInfo[field] || "-");
+        });
+    }
+
+    updateProgress();
+}
+
+// Handle preset selection
+document.querySelectorAll(".preset-card").forEach(card => {
+    card.addEventListener("click", () => updateSelection("preset", card.dataset.preset));
+});
+
+// Handle quantity selection
+document.querySelectorAll(".quantity-card").forEach(card => {
+    card.addEventListener("click", () => updateSelection("quantity", card.dataset.quantity));
+});
+
+// Custom quantity buttons
+function updateCustomQuantity(change) {
+    let input = document.getElementById("customQuantity");
+    let newQuantity = Math.max(50, parseInt(input.value) + change);
+    input.value = newQuantity;
+    updateSelection("quantity", newQuantity);
+}
+
+// Update progress sidebar
 function updateProgress() {
     const progressList = document.querySelectorAll("#progressList li");
 
-    const selectedPreset = document.querySelector("input[name='preset']:checked")?.value || "-";
-    const selectedProduct = document.querySelector("input[name='product']:checked")?.value || "-";
-    const selectedSize = document.querySelector("input[name='size']:checked")?.value || "-";
-    const selectedFinishType = document.querySelector("input[name='finishType']:checked")?.value || "-";
+    steps.forEach((step, index) => {
+        let value = localStorage.getItem(`selected${step}`) || "-";
+        let progressItem = progressList[index];
 
-    // Update the progress sidebar dynamically
-    progressList[0].querySelector("span").textContent = selectedPreset;
-    progressList[1].querySelector("span").textContent = selectedProduct;
-    progressList[2].querySelector("span").textContent = selectedSize;
-    progressList[3].querySelector("span").textContent = selectedFinishType;
-
-    // Add "completed" class to filled steps
-    progressList.forEach((item, index) => {
-        let value = item.querySelector("span").textContent;
-        if (value !== "-") {
-            item.classList.add("completed");
-        } else {
-            item.classList.remove("completed");
+        if (progressItem) {
+            progressItem.querySelector("span").textContent = value;
+            progressItem.classList.toggle("completed", value !== "-");
         }
     });
 }
 
-// Listen for changes in radio buttons to update progress
-document.querySelectorAll("input[type='radio']").forEach((radio) => {
-    radio.addEventListener("change", function () {
-        localStorage.setItem(`selected${radio.name.charAt(0).toUpperCase() + radio.name.slice(1)}`, radio.value);
-        updateProgress();
-    });
-});
-
-// Go to the next step
-function goToNextStep() {
-    window.location.href = "step2.html"; // Replace with actual next step URL
+// Capitalize first letter (used for localStorage keys)
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
 }
-
 
 
