@@ -9,41 +9,40 @@
         <form action="/app/layout-templete/process.php" method="POST" id="multiStepForm">
             
             <!-- Step 1: Our Product Presets -->
-            <div class="form-step active" id="step1">
-                <h2>✅ Our Product Presets</h2>
-                <p>Build your own or choose from one of our preset options.</p>
+<div class="form-step active" id="step1">
+    <h2>✅ Our Product Presets</h2>
+    <p>Build your own or choose from one of our preset options.</p>
 
-                <div class="preset-options">
-                    <label class="preset-card" data-preset="Build Your Own" onclick="selectPreset('Build Your Own')">
-                        <span>🎨 Build Your Own</span>
-                        <p>Customize your product to your exact specification.</p>
-                    </label>
+    <div class="preset-options">
+        <label class="preset-card" data-preset="Build Your Own" onclick="selectPreset('Build Your Own')">
+            <span>🎨 Build Your Own</span>
+            <p>Customize your product to your exact specification.</p>
+        </label>
 
-                    <label class="preset-card" data-preset="Most Popular" onclick="selectPreset('Most Popular')">
-                        <span>⭐ Most Popular</span>
-                        <p>A5 portrait Leaflets, printed double-sided on 170gsm Silk paper.</p>
-                    </label>
+        <label class="preset-card" data-preset="Most Popular" onclick="selectPreset('Most Popular')">
+            <span>⭐ Most Popular</span>
+            <p>A5 portrait Leaflets, printed double-sided on 170gsm Silk paper.</p>
+        </label>
 
-                    <label class="preset-card" data-preset="Eco" onclick="selectPreset('Eco')">
-                        <span>🌿 Eco</span>
-                        <p>A5 portrait Leaflets, printed double-sided on 150gsm Recycled Silk paper.</p>
-                    </label>
+        <label class="preset-card" data-preset="Eco" onclick="selectPreset('Eco')">
+            <span>🌿 Eco</span>
+            <p>A5 portrait Leaflets, printed double-sided on 150gsm Recycled Silk paper.</p>
+        </label>
 
-                    <label class="preset-card" data-preset="Economy" onclick="selectPreset('Economy')">
-                        <span>📄 Economy</span>
-                        <p>A5 portrait Leaflets, printed double-sided on 130gsm Silk paper.</p>
-                    </label>
-                </div>
+        <label class="preset-card" data-preset="Economy" onclick="selectPreset('Economy')">
+            <span>📄 Economy</span>
+            <p>A5 portrait Leaflets, printed double-sided on 130gsm Silk paper.</p>
+        </label>
+    </div>
 
-                <!-- Hidden Inputs to Store Selection -->
-                <input type="hidden" id="selectedPreset" name="preset">
-                <input type="hidden" id="selectedProduct" name="product">
-                <input type="hidden" id="selectedSize" name="size">
-                <input type="hidden" id="selectedPaperType" name="paperType">
-                <input type="hidden" id="selectedFinish" name="finish">
+    <!-- Hidden Inputs to Store Selection -->
+    <input type="hidden" id="selectedPreset" name="preset">
+    <input type="hidden" id="selectedProduct" name="product">
+    <input type="hidden" id="selectedSize" name="size">
+    <input type="hidden" id="selectedFinishType" name="finishType">
 
-                <button type="button" class="next-btn" onclick="goToNextStep()">Next</button>
-            </div>
+    <button type="button" class="next-btn" onclick="goToNextStep()">Next</button>
+</div>
 
             <!-- Step 2: Product Type -->
             <div class="form-step">
