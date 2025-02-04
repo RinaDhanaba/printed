@@ -134,16 +134,20 @@ $papers = [
         <h2>Browse Our Papers</h2>
         <p class="description">The paper you choose can make all the difference to your finished print.</p>
 
-        <!-- Tab Navigation -->
+        <!-- Tab Navigation with Arrows -->
+        <div class="tab-wrapper" style="position: relative; display: flex; align-items: center;">
+        <button class="arrow arrow-left" onclick="scrollTabs(-1)">&#9665;</button>
+        
         <div class="tab-container">
-            <button class="arrow arrow-left">&larr;</button>  <!-- Left Arrow -->
-            <div class="tabs-wrapper">
-                <?php foreach ($papers as $index => $paper): ?>
-                    <div class="tab" data-index="<?= $index ?>"><?= $paper['name'] ?></div>
-                <?php endforeach; ?>
-            </div>
-            <button class="arrow arrow-right">&rarr;</button>  <!-- Right Arrow -->
+            <?php foreach ($papers as $index => $paper): ?>
+                <div class="tab <?= $index === 0 ? 'active' : '' ?>" data-index="<?= $index ?>">
+                    <?= $paper['name'] ?>
+                </div>
+            <?php endforeach; ?>
         </div>
+
+        <button class="arrow arrow-right" onclick="scrollTabs(1)">&#9655;</button>
+    </div>
 
 
         <!-- Paper Details Section -->
@@ -199,18 +203,17 @@ $papers = [
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const tabs = document.querySelectorAll(".tab");
-    const details = document.querySelectorAll(".paper-details");
     const maxIndex = tabs.length - 1;
     let currentIndex = Math.floor(maxIndex / 2); // Set the middle tab as active
 
     function updateTabs() {
         // Remove 'active' class from all tabs and details
         tabs.forEach(t => t.classList.remove("active"));
-        details.forEach(d => d.classList.remove("active"));
+        document.querySelectorAll(".paper-details").forEach(d => d.classList.remove("active"));
 
         // Add 'active' class to the current tab and corresponding details
         tabs[currentIndex].classList.add("active");
-        details[currentIndex].classList.add("active");
+        document.getElementById("paper-" + currentIndex).classList.add("active");
 
         // Scroll active tab into view
         tabs[currentIndex].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
@@ -229,10 +232,10 @@ document.addEventListener("DOMContentLoaded", function () {
         updateTabs();
     }
 
-    // Click to activate tab
+    // Event Listeners for tab clicks
     tabs.forEach((tab, index) => {
-        tab.addEventListener("click", () => {
-            currentIndex = index; // Update index
+        tab.addEventListener("click", function () {
+            currentIndex = index; // Update index based on clicked tab
             updateTabs();
         });
     });
