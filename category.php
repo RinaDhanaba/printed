@@ -11,7 +11,7 @@
 </div> -->
 
 
-<?php
+<!-- <?php
 $cat_slides = [
     [
         "title" => "The Retail Collection",
@@ -57,7 +57,7 @@ $cat_slides = [
             <span class="dot"></span>
         <?php endforeach; ?>
     </div>
-</div>
+</div> -->
 
 
 
