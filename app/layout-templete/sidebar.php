@@ -1,5 +1,4 @@
 <!-- Sidebar -->
-<!-- Sidebar -->
 <div id="mySidenav" class="sidenav">
     <button class="openbtn" onclick="toggleNav()">☰</button>
 
@@ -40,8 +39,6 @@
     <input type="hidden" id="selectedProduct" name="product">
     <input type="hidden" id="selectedSize" name="size">
     <input type="hidden" id="selectedFinishType" name="finishType">
-
-    <button type="button" class="next-btn" onclick="goToNextStep()">Next</button>
 </div>
 
             <!-- Step 2: Product Type -->

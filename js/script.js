@@ -68,21 +68,32 @@ document.addEventListener("DOMContentLoaded", function () {
     updateProgress();
 });
 
+
+
 function updateSelection(type, value) {
     localStorage.setItem(`selected${capitalize(type)}`, value);
 
-    // Remove 'selected' class from all cards of this type
+    // Update UI selection
     document.querySelectorAll(`.${type}-card`).forEach(card => card.classList.remove("selected"));
-
-    // Find the correct card and mark it as selected
     let selectedCard = document.querySelector(`.${type}-card[data-${type}='${value}']`);
     if (selectedCard) selectedCard.classList.add("selected");
+
+    // Update radio buttons if applicable
+    let radioButton = document.querySelector(`input[name="${type}"][value="${value}"]`);
+    if (radioButton) {
+        radioButton.checked = true;
+    }
+
+    // Update hidden input fields for form submission
+    let inputField = document.getElementById(`selected${capitalize(type)}`);
+    if (inputField) {
+        inputField.value = value;
+    }
 
     // Auto-update related fields when selecting a preset
     if (type === "preset") {
         let presetInfo = presetData[value] || {};
-        
-        // Delay execution to ensure UI updates correctly
+
         setTimeout(() => {
             updateSelection("product", presetInfo.product || "-");
             updateSelection("size", presetInfo.size || "-");
@@ -94,10 +105,15 @@ function updateSelection(type, value) {
 }
 
 
+
 // Handle preset selection
 document.querySelectorAll(".preset-card").forEach(card => {
-    card.addEventListener("click", () => updateSelection("preset", card.dataset.preset));
+    card.addEventListener("click", function () {
+        let presetValue = this.dataset.preset;
+        updateSelection("preset", presetValue);
+    });
 });
+
 
 // Handle quantity selection
 document.querySelectorAll(".quantity-card").forEach(card => {
