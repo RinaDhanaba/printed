@@ -104,9 +104,6 @@ $cat_slides = [
 <?php include 'app/layout-templete/sidebar.php'; ?>
 
 
-
-
-
 <?php
 $menuItems = [
     ["id" => "section1", "title" => "Leaflets & Flyers - The Range", "file" => "app/layout-templete/cat-content1.php"],
@@ -127,7 +124,7 @@ $menuItems = [
 </nav>
 
 <!-- Page Sections -->
-<div class="content">
+<div class="cat-content">
     <?php foreach ($menuItems as $item) : ?>
         <section id="<?php echo $item['id']; ?>" class="page-section">
             <h2><?php echo $item['title']; ?></h2>
@@ -135,7 +132,6 @@ $menuItems = [
         </section>
     <?php endforeach; ?>
 </div>
-
 
 
 <!-- Blog section -->

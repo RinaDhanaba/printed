@@ -89,7 +89,8 @@
 
 
 
-.cat-navbar {
+/* Sticky Navigation */
+#navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -97,10 +98,12 @@
     padding: 10px 20px;
     border-bottom: 1px solid #ddd;
     position: relative;
+    width: 100%;
     transition: all 0.3s ease-in-out;
+    top: 0;
 }
 
-.cat-navbar .nav-links {
+#navbar .nav-links {
     list-style: none;
     display: flex;
     gap: 30px;
@@ -108,11 +111,11 @@
     margin: 0;
 }
 
-.cat-navbar .nav-links li {
+#navbar .nav-links li {
     display: inline;
 }
 
-.cat-navbar .nav-links a {
+#navbar .nav-links a {
     text-decoration: none;
     color: black;
     font-weight: bold;
@@ -120,7 +123,8 @@
     position: relative;
 }
 
-.cat-navbar .nav-links a.active::after {
+/* Active Section Underline */
+#navbar .nav-links a.active::after {
     content: "";
     display: block;
     height: 3px;
@@ -131,18 +135,19 @@
     left: 0;
 }
 
-/* Sticky Nav */
-.cat-navbar.sticky {
+/* Sticky Effect */
+#navbar.sticky {
     position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     background: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
 
-/* Order Now Button (Hidden Initially) */
-.cat-navbar .order-now {
+/* Show Order Now Button when Sticky */
+#navbar .order-now {
     display: none;
     background: #ff0080;
     color: white;
@@ -153,17 +158,18 @@
     cursor: pointer;
 }
 
-nav.cat-navbar.sticky .order-now {
+#navbar.sticky .order-now {
     display: inline-block;
 }
 
 /* Page Sections */
 .cat-content {
-    padding-top: 80px;
+    padding-top: 80px; /* Ensure content is below navbar */
+    position: relative;
 }
 
 .page-section {
-    height: 80vh;
+    min-height: 80vh;
     padding: 50px;
     border-bottom: 1px solid #ddd;
 }

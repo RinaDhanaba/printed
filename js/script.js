@@ -153,13 +153,13 @@ function capitalize(str) {
 
 
 
+// category page nav-bar 
 
-
-// category 
 document.addEventListener("DOMContentLoaded", function () {
     let navbar = document.getElementById("navbar");
     let navItems = document.querySelectorAll(".nav-item");
     let sections = document.querySelectorAll(".page-section");
+    let navbarOffset = navbar.offsetTop; // Get initial navbar position
 
     function updateActiveSection() {
         let scrollPosition = window.scrollY + 100;
@@ -170,24 +170,27 @@ document.addEventListener("DOMContentLoaded", function () {
                 scrollPosition < section.offsetTop + section.offsetHeight
             ) {
                 navItems.forEach((item) => item.classList.remove("active"));
-                document
-                    .querySelector(`.nav-item[href="#${section.id}"]`)
-                    .classList.add("active");
+                let activeItem = document.querySelector(`.nav-item[href="#${section.id}"]`);
+                if (activeItem) {
+                    activeItem.classList.add("active");
+                }
             }
         });
     }
 
-    window.addEventListener("scroll", function () {
-        if (window.scrollY > 50) {
+    function handleStickyNav() {
+        if (window.scrollY > navbarOffset) {
             navbar.classList.add("sticky");
         } else {
             navbar.classList.remove("sticky");
         }
+    }
 
+    window.addEventListener("scroll", function () {
+        handleStickyNav();
         updateActiveSection();
     });
 
     updateActiveSection(); // Run once on page load
 });
-
 
