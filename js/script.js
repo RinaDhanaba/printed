@@ -154,7 +154,6 @@ function capitalize(str) {
 
 
 // category page nav-bar 
-
 document.addEventListener("DOMContentLoaded", function () {
     let navbar = document.getElementById("navbar");
     let navItems = document.querySelectorAll(".nav-item");
@@ -162,13 +161,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let navbarOffset = navbar.offsetTop; // Get initial navbar position
 
     function updateActiveSection() {
-        let scrollPosition = window.scrollY + 100;
+        let scrollPosition = window.scrollY + window.innerHeight / 3; // Dynamically adjust scroll offset
 
         sections.forEach((section) => {
-            if (
-                scrollPosition >= section.offsetTop &&
-                scrollPosition < section.offsetTop + section.offsetHeight
-            ) {
+            let sectionTop = section.offsetTop;
+            let sectionBottom = sectionTop + section.offsetHeight;
+
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
                 navItems.forEach((item) => item.classList.remove("active"));
                 let activeItem = document.querySelector(`.nav-item[href="#${section.id}"]`);
                 if (activeItem) {
@@ -193,4 +192,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateActiveSection(); // Run once on page load
 });
-
