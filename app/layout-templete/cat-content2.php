@@ -131,7 +131,6 @@ $papers = [
 
 <section class="advanced-horizontal-tab">
     <div class="container">
-        <h2>Browse Our Papers</h2>
         <p class="description">The paper you choose can make all the difference to your finished print.</p>
 
         <!-- Tab Navigation with Arrows -->
