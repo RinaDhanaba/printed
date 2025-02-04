@@ -22,7 +22,6 @@ $products = [
 
     <!-- Product Section -->
     <section class="product-grid">
-    <h2>Print with us</h2>
     <div class="grid">
         <?php foreach ($products as $product) : ?>
             <div class="product">
@@ -44,12 +43,12 @@ $products = [
             </div>
         <?php endforeach; ?>
     </div>
-    <a href="#" class="chat-button">View All Products</a>
 </section>
 
 
 <style>
 .cat-content .product-grid{
-    background: var(--gary-bg);
+    background: var(--white);
+    padding:0;
 }
 </style>
