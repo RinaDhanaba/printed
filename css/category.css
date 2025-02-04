@@ -90,7 +90,6 @@
 
 
 /* Sticky Navigation */
-/* General Navbar */
 #navbar {
     display: flex;
     justify-content: space-between;
@@ -99,67 +98,57 @@
     padding: 10px 20px;
     border-bottom: 1px solid #ddd;
     position: relative;
-    transition: all 0.3s ease-in-out;
-}
-
-/* Mobile Dropdown */
-.mobile-nav-toggle {
-    display: none;
-    background: white;
-    border: none;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 10px;
     width: 100%;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid teal;
+    transition: all 0.3s ease-in-out;
+    top: 0;
 }
 
-.mobile-nav-toggle .arrow {
-    transition: transform 0.3s ease;
-}
-
-.nav-links {
+#navbar .nav-links {
     list-style: none;
+    display: flex;
+    gap: 30px;
     padding: 0;
     margin: 0;
-    display: flex;
-    gap: 20px;
 }
 
-/* Hide menu on mobile */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        background: white;
-        width: 100%;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        border: 1px solid #ddd;
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-links.open {
-        display: flex;
-    }
-
-    .nav-links li {
-        padding: 10px;
-    }
-
-    .mobile-nav-toggle {
-        display: flex;
-    }
+#navbar .nav-links li {
+    display: inline;
 }
 
-/* Order Now Button */
+#navbar .nav-links a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    position: relative;
+}
+
+/* Active Section Underline */
+#navbar .nav-links a.active::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: teal;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+/* Sticky Effect */
+#navbar.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Show Order Now Button when Sticky */
 #navbar .order-now {
+    display: none;
     background: #ff0080;
     color: white;
     border: none;
@@ -167,10 +156,20 @@
     border-radius: 20px;
     font-weight: bold;
     cursor: pointer;
-    display: none; /* Initially hidden */
 }
 
-/* Show on sticky nav */
 #navbar.sticky .order-now {
     display: inline-block;
+}
+
+/* Page Sections */
+.cat-content {
+    padding-top: 80px; /* Ensure content is below navbar */
+    position: relative;
+}
+
+.page-section {
+    min-height: 80vh;
+    padding: 50px;
+    border-bottom: 1px solid #ddd;
 }
