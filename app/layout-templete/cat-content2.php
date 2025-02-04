@@ -135,13 +135,16 @@ $papers = [
         <p class="description">The paper you choose can make all the difference to your finished print.</p>
 
         <!-- Tab Navigation -->
-        <div class="tab-wrapper">
-            <?php foreach ($papers as $index => $paper): ?>
-                <div class="tab <?= $index === 0 ? 'active' : '' ?>" data-index="<?= $index ?>">
-                    <?= $paper['name'] ?>
-                </div>
-            <?php endforeach; ?>
+        <div class="tab-container">
+            <button class="arrow arrow-left">&larr;</button>  <!-- Left Arrow -->
+            <div class="tabs-wrapper">
+                <?php foreach ($papers as $index => $paper): ?>
+                    <div class="tab" data-index="<?= $index ?>"><?= $paper['name'] ?></div>
+                <?php endforeach; ?>
+            </div>
+            <button class="arrow arrow-right">&rarr;</button>  <!-- Right Arrow -->
         </div>
+
 
         <!-- Paper Details Section -->
         <?php foreach ($papers as $index => $paper): ?>
