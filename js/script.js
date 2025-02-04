@@ -36,9 +36,17 @@ function playVideo() {
     alert("Play video feature coming soon!");
 }
 
+// side slider categorey
+function toggleNav() {
+    var sidebar = document.getElementById("mySidenav");
+    if (sidebar.style.width === "1000px") {
+        sidebar.style.width = "0";
+    } else {
+        sidebar.style.width = "1000px";
+    }
+}
 
 // Step Navigation form 
-
 document.addEventListener("DOMContentLoaded", function () {
     let currentStep = 0;
     const formSteps = document.querySelectorAll(".form-step");

@@ -3,28 +3,32 @@
 
 <div id="mySidenav" class="sidenav">
 <button class="openbtn" onclick="toggleNav()">☰</button>
+    
 
 
+<!-- Sidebar -->
+<div id="sidebar">
+    <h2>Progress</h2>
+    <ul id="progressList">
+        <li data-step="1">Product Presets: <span>-</span></li>
+        <li data-step="2">Product Type: <span>-</span></li>
+        <li data-step="3">Size: <span>-</span></li>
+        <li data-step="4">Summary</li>
+    </ul>
+</div>
 
+<!-- Main Form -->
 <div class="container">
     <h2>Leaflets & Flyers</h2>
 
-    <div class="progress-bar">
-        <div class="step active">1</div>
-        <div class="step">2</div>
-        <div class="step">3</div>
-        <div class="step">4</div>
-    </div>
-
-    <form action="process.php" method="POST" id="multiStepForm">
+    <form action="/app/layout-templete/process.php" method="POST" id="multiStepForm">
         <!-- Step 1: Product Presets -->
-        <div class="form-step active">
+        <div class="form-step">
             <h3>Product Presets</h3>
             <label><input type="radio" name="preset" value="Build Your Own" required> Build Your Own</label>
             <label><input type="radio" name="preset" value="Most Popular"> Most Popular</label>
             <label><input type="radio" name="preset" value="Eco"> Eco</label>
             <label><input type="radio" name="preset" value="Economy"> Economy</label>
-            <button type="button" class="next-step">Next</button>
         </div>
 
         <!-- Step 2: Product Type -->
@@ -32,8 +36,6 @@
             <h3>Select Product Type</h3>
             <label><input type="radio" name="product" value="Leaflets & Flyers" required> Leaflets & Flyers</label>
             <label><input type="radio" name="product" value="Folded Leaflets & Flyers"> Folded Leaflets & Flyers</label>
-            <button type="button" class="prev-step">Back</button>
-            <button type="button" class="next-step">Next</button>
         </div>
 
         <!-- Step 3: Select Size -->
@@ -42,23 +44,21 @@
             <label><input type="radio" name="size" value="A7" required> A7</label>
             <label><input type="radio" name="size" value="A6"> A6</label>
             <label><input type="radio" name="size" value="A5"> A5</label>
-            <button type="button" class="prev-step">Back</button>
-            <button type="button" class="next-step">Next</button>
         </div>
 
         <!-- Step 4: Summary & Submit -->
         <div class="form-step">
             <h3>Summary</h3>
             <p>Review your selections before submitting.</p>
-            <button type="button" class="prev-step">Back</button>
             <button type="submit" name="submit">Submit</button>
         </div>
     </form>
 </div>
 
-
-
+    
 </div>
+
+
 
 <style>
         /* Sidebar styling */
@@ -91,70 +91,77 @@
 
 
 
+/* Sidebar (Progress Bar) */
+.sidenav #sidebar {
+    width: 250px;
+    background: #fff;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    position: fixed;
+    height: 100%;
+    overflow-y: auto;
+    transition: 0.3s;
+}
 
+.sidenav #sidebar h2 {
+    text-align: center;
+}
 
+.sidenav #progressList {
+    list-style: none;
+    padding: 0;
+}
 
-.sidenav.container {
+.sidenav #progressList li {
+    padding: 10px;
+    font-size: 16px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.sidenav #progressList li::before {
+    content: "✔";
+    color: gray;
+    margin-right: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.sidenav #progressList li.completed::before {
+    opacity: 1;
+    color: green;
+}
+
+/* Form Container */
+.sidenav .container {
+    margin-left: 270px;
     width: 50%;
-    margin: 50px auto;
     background: white;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.sidenav h2, h3 {
-    text-align: center;
-}
-
-.sidenav .progress-bar {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 20px;
-}
-
-.sidenav .progress-bar .step {
-    width: 40px;
-    height: 40px;
-    background: #ddd;
-    color: #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    font-weight: bold;
-}
-
-.sidenav .progress-bar .active {
-    background: #28a745;
-    color: white;
-}
-
+/* Form Steps */
 .sidenav .form-step {
-    display: none;
-}
-
-.sidenav .form-step.active {
-    display: block;
-}
-
-.sidenav button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    background: #007bff;
-    color: white;
-    font-size: 16px;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
     border-radius: 5px;
 }
 
-.sidenav button.prev-step {
-    background: #6c757d;
+/* Mobile View */
+@media screen and (max-width: 768px) {
+    .sidenav #sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .sidenav .container {
+        margin-left: 0;
+        width: 100%;
+    }
 }
 
-.sidenav button:hover {
-    opacity: 0.8;
-}
 </style>
