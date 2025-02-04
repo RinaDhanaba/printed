@@ -1,1 +1,254 @@
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero, corporis soluta ipsa modi commodi distinctio facere quasi, ullam dolores mollitia neque cum dolorem tenetur dignissimos magnam ex temporibus qui quisquam error repellat maiores harum? Quidem alias corrupti, nostrum accusamus aut assumenda ut rem commodi. Laboriosam doloremque, ea velit cum officia nobis iste sunt! Maiores, incidunt. Eum, rerum qui libero temporibus, nihil totam repudiandae quaerat fugit dignissimos deleniti corrupti optio expedita repellendus quae illo animi tenetur voluptatem nobis labore. Voluptates adipisci architecto atque, obcaecati possimus tempore dolor, mollitia hic commodi id sit est alias beatae totam facilis perferendis! Quia nobis facilis aliquid excepturi, tenetur exercitationem eveniet, accusamus dolore explicabo placeat dolor molestiae optio labore voluptatum corrupti. Doloremque commodi, delectus quia dignissimos at ex. Nobis vel eaque, error consequatur ullam quod eligendi sit dolorum dicta, nam qui repellat amet quam odio a dolore vero doloribus illum? Soluta dicta rem repellendus accusantium debitis numquam cupiditate cumque optio eveniet dolorum illum quod quasi consectetur quos nemo suscipit, tenetur corporis explicabo beatae. Reiciendis atque necessitatibus aliquid. Distinctio cum delectus ipsa placeat dolore a dignissimos labore maxime consequatur nulla, tenetur id itaque officia cumque, quia dolor fugiat, dolorum veniam eligendi sint consectetur reprehenderit repellat. Distinctio numquam ratione tenetur sequi, itaque repellendus doloribus nesciunt dolores at illum esse corporis quod similique debitis aut quos asperiores laudantium deleniti, mollitia veritatis accusantium provident? Autem laboriosam molestias temporibus eum minus dolore distinctio quos possimus quisquam aliquid illo libero, delectus esse accusantium ratione quae ducimus dolorem praesentium, unde ea totam minima quas! Aliquam, fuga. Illum sapiente vitae eum quaerat ipsam explicabo, libero accusantium veritatis harum perferendis iusto maxime rerum? In vero ab, aspernatur et pariatur quo nihil delectus commodi praesentium laborum suscipit quis molestias doloribus vitae! Alias voluptatibus non, illo esse labore accusantium nisi officiis possimus commodi, neque sunt voluptates ut?
+<?php
+// Paper types array
+$papers = [
+    [
+        "name" => "Nettuno",
+        "image" => "../media/category-correx2_1.jpg",
+        "description" => "A high-quality textured paper perfect for elegant print designs.",
+        "weights" => ["120gsm", "250gsm"],
+        "bestFor" => ["Business Cards", "Wedding Invitations", "Brochures"],
+        "credentials" => ["Recyclable", "FSC Certified", "Eco-Friendly"]
+    ],
+    [
+        "name" => "Acquerello",
+        "image" => "../media/category-correx2_1.jpg",
+        "description" => "A finely lined surface that adds a touch of class to any design.",
+        "weights" => ["150gsm", "300gsm"],
+        "bestFor" => ["Greeting Cards", "Menus", "Invitations"],
+        "credentials" => ["FSC Certified", "Sustainably Sourced", "Chlorine-Free"]
+    ],
+    [
+        "name" => "Pearl Polar",
+        "image" => "../media/category-correx2_1.jpg",
+        "description" => "A pearlescent, smooth finish with a premium look.",
+        "weights" => ["170gsm", "350gsm"],
+        "bestFor" => ["Luxury Prints", "Photobooks", "Certificates"],
+        "credentials" => ["Recyclable", "Premium Quality", "Gloss Finish"]
+    ],
+    [
+        "name" => "Pearl Oyster",
+        "image" => "../media/category-correx2_1.jpg",
+        "description" => "A subtle pearlescent shine for standout designs.",
+        "weights" => ["125gsm", "300gsm"],
+        "bestFor" => ["Wedding Stationery", "Greeting Cards", "Invitations"],
+        "credentials" => ["Recyclable", "FSC Certified", "Sustainably Sourced", "Chlorine-Free"]
+    ],[
+        "name" => "Acquerello",
+        "image" => "../media/category-correx2_1.jpg",
+        "description" => "A finely lined surface that adds a touch of class to any design.",
+        "weights" => ["150gsm", "300gsm"],
+        "bestFor" => ["Greeting Cards", "Menus", "Invitations"],
+        "credentials" => ["FSC Certified", "Sustainably Sourced", "Chlorine-Free"]
+    ],
+    [
+        "name" => "Pearl Polar",
+        "image" => "../media/category-correx2_1.jpg",
+        "description" => "A pearlescent, smooth finish with a premium look.",
+        "weights" => ["170gsm", "350gsm"],
+        "bestFor" => ["Luxury Prints", "Photobooks", "Certificates"],
+        "credentials" => ["Recyclable", "Premium Quality", "Gloss Finish"]
+    ],
+    [
+        "name" => "Pearl Oyster",
+        "image" => "../media/category-correx2_1.jpg",
+        "description" => "A subtle pearlescent shine for standout designs.",
+        "weights" => ["125gsm", "300gsm"],
+        "bestFor" => ["Wedding Stationery", "Greeting Cards", "Invitations"],
+        "credentials" => ["Recyclable", "FSC Certified", "Sustainably Sourced", "Chlorine-Free"]
+    ],[
+        "name" => "Acquerello",
+        "image" => "../media/category-correx2_1.jpg",
+        "description" => "A finely lined surface that adds a touch of class to any design.",
+        "weights" => ["150gsm", "300gsm"],
+        "bestFor" => ["Greeting Cards", "Menus", "Invitations"],
+        "credentials" => ["FSC Certified", "Sustainably Sourced", "Chlorine-Free"]
+    ],
+    [
+        "name" => "Pearl Polar",
+        "image" => "../media/category-correx2_1.jpg",
+        "description" => "A pearlescent, smooth finish with a premium look.",
+        "weights" => ["170gsm", "350gsm"],
+        "bestFor" => ["Luxury Prints", "Photobooks", "Certificates"],
+        "credentials" => ["Recyclable", "Premium Quality", "Gloss Finish"]
+    ],
+    [
+        "name" => "Pearl Oyster",
+        "image" => "../media/category-correx2_1.jpg",
+        "description" => "A subtle pearlescent shine for standout designs.",
+        "weights" => ["125gsm", "300gsm"],
+        "bestFor" => ["Wedding Stationery", "Greeting Cards", "Invitations"],
+        "credentials" => ["Recyclable", "FSC Certified", "Sustainably Sourced", "Chlorine-Free"]
+    ],[
+        "name" => "Acquerello",
+        "image" => "../media/category-correx2_1.jpg",
+        "description" => "A finely lined surface that adds a touch of class to any design.",
+        "weights" => ["150gsm", "300gsm"],
+        "bestFor" => ["Greeting Cards", "Menus", "Invitations"],
+        "credentials" => ["FSC Certified", "Sustainably Sourced", "Chlorine-Free"]
+    ],
+    [
+        "name" => "Pearl Polar",
+        "image" => "../media/category-correx2_1.jpg",
+        "description" => "A pearlescent, smooth finish with a premium look.",
+        "weights" => ["170gsm", "350gsm"],
+        "bestFor" => ["Luxury Prints", "Photobooks", "Certificates"],
+        "credentials" => ["Recyclable", "Premium Quality", "Gloss Finish"]
+    ],
+    [
+        "name" => "Pearl Oyster",
+        "image" => "../media/category-correx2_1.jpg",
+        "description" => "A subtle pearlescent shine for standout designs.",
+        "weights" => ["125gsm", "300gsm"],
+        "bestFor" => ["Wedding Stationery", "Greeting Cards", "Invitations"],
+        "credentials" => ["Recyclable", "FSC Certified", "Sustainably Sourced", "Chlorine-Free"]
+    ],[
+        "name" => "Acquerello",
+        "image" => "../media/category-correx2_1.jpg",
+        "description" => "A finely lined surface that adds a touch of class to any design.",
+        "weights" => ["150gsm", "300gsm"],
+        "bestFor" => ["Greeting Cards", "Menus", "Invitations"],
+        "credentials" => ["FSC Certified", "Sustainably Sourced", "Chlorine-Free"]
+    ],
+    [
+        "name" => "Pearl Polar",
+        "image" => "../media/category-correx2_1.jpg",
+        "description" => "A pearlescent, smooth finish with a premium look.",
+        "weights" => ["170gsm", "350gsm"],
+        "bestFor" => ["Luxury Prints", "Photobooks", "Certificates"],
+        "credentials" => ["Recyclable", "Premium Quality", "Gloss Finish"]
+    ],
+    [
+        "name" => "Pearl Oyster",
+        "image" => "../media/category-correx2_1.jpg",
+        "description" => "A subtle pearlescent shine for standout designs.",
+        "weights" => ["125gsm", "300gsm"],
+        "bestFor" => ["Wedding Stationery", "Greeting Cards", "Invitations"],
+        "credentials" => ["Recyclable", "FSC Certified", "Sustainably Sourced", "Chlorine-Free"]
+    ]
+];
+
+?>
+
+
+<section class="advanced-horizontal-tab">
+<div class="container">
+    <h2>Browse Our Papers</h2>
+    <p class="description">The paper you choose can make all the difference to your finished print.</p>
+
+    <!-- Tab Navigation -->
+    <div class="tab-container">
+        <?php foreach ($papers as $index => $paper): ?>
+            <div class="tab <?= $index === 0 ? 'active' : '' ?>" data-index="<?= $index ?>">
+                <?= $paper['name'] ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
+
+    <!-- Paper Details Section -->
+    <?php foreach ($papers as $index => $paper): ?>
+        <div class="paper-details <?= $index === 0 ? 'active' : '' ?>" id="paper-<?= $index ?>">
+            <img src="<?= $paper['image'] ?>" alt="<?= $paper['name'] ?>" class="paper-image">
+            <h3><?= $paper['name'] ?></h3>
+            <p><?= $paper['description'] ?></p>
+
+            <h4>Available Weights</h4>
+            <p>
+                <?php foreach ($paper['weights'] as $weight): ?>
+                    <span class="badge bg-secondary"><?= $weight ?></span>
+                <?php endforeach; ?>
+            </p>
+
+            <h4>Best for</h4>
+            <ul>
+                <?php foreach ($paper['bestFor'] as $use): ?>
+                    <li><?= $use ?></li>
+                <?php endforeach; ?>
+            </ul>
+
+            <h4>Credentials</h4>
+            <ul>
+                <?php foreach ($paper['credentials'] as $cred): ?>
+                    <li><?= $cred ?></li>
+                <?php endforeach; ?>
+            </ul>
+
+            <a href="#" class="btn-order">Order Now</a>
+        </div>
+    <?php endforeach; ?>
+</div>
+</section>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let tabs = document.querySelectorAll(".tab");
+        let details = document.querySelectorAll(".paper-details");
+
+        tabs.forEach(tab => {
+            tab.addEventListener("click", function () {
+                let index = this.getAttribute("data-index");
+
+                // Remove active class from all tabs and details
+                tabs.forEach(t => t.classList.remove("active"));
+                details.forEach(d => d.classList.remove("active"));
+
+                // Add active class to the clicked tab and corresponding details
+                this.classList.add("active");
+                document.getElementById("paper-" + index).classList.add("active");
+            });
+        });
+    });
+</script>
+
+
+<style>
+
+.tab-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 10px 0;
+            white-space: nowrap;
+            justify-content: center;
+            align-items: center;
+        }
+        .tab {
+            cursor: pointer;
+            padding: 10px 15px;
+            background: #fff;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        .tab:hover, .tab.active {
+            border-color: #ff0080;
+            color: #ff0080;
+        }
+        .paper-details {
+            display: none;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            text-align: left;
+            margin-top: 20px;
+        }
+        .paper-details.active {
+            display: block;
+        }
+        .paper-image {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 10px;
+        }
+        .btn-order {
+            background-color: #ff0080;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+</style>
