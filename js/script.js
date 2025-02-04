@@ -52,37 +52,31 @@ function toggleNav() {
 
 // Step Navigation form 
 document.addEventListener("DOMContentLoaded", function () {
-    let currentStep = 0;
     const formSteps = document.querySelectorAll(".form-step");
-    const progressSteps = document.querySelectorAll(".progress-bar .step");
+    const progressList = document.querySelectorAll("#progressList li");
+    const inputs = document.querySelectorAll("input[type='radio']");
 
-    function showStep(step) {
-        formSteps.forEach((stepDiv, index) => {
-            stepDiv.classList.toggle("active", index === step);
+    inputs.forEach((input) => {
+        input.addEventListener("change", function () {
+            updateProgress();
         });
+    });
 
-        progressSteps.forEach((circle, index) => {
-            circle.classList.toggle("active", index <= step);
+    function updateProgress() {
+        progressList.forEach((step) => {
+            const stepNumber = step.getAttribute("data-step");
+            const selectedInput = document.querySelector(`.form-step:nth-child(${stepNumber}) input[type='radio']:checked`);
+            
+            if (selectedInput) {
+                step.querySelector("span").textContent = selectedInput.value;
+                step.classList.add("completed");
+            } else {
+                step.querySelector("span").textContent = "-";
+                step.classList.remove("completed");
+            }
         });
     }
 
-    document.querySelectorAll(".next-step").forEach((button) => {
-        button.addEventListener("click", () => {
-            if (currentStep < formSteps.length - 1) {
-                currentStep++;
-                showStep(currentStep);
-            }
-        });
-    });
-
-    document.querySelectorAll(".prev-step").forEach((button) => {
-        button.addEventListener("click", () => {
-            if (currentStep > 0) {
-                currentStep--;
-                showStep(currentStep);
-            }
-        });
-    });
-
-    showStep(currentStep);
+    updateProgress();
 });
+

@@ -5,7 +5,6 @@
 <button class="openbtn" onclick="toggleNav()">☰</button>
     
 
-
 <!-- Sidebar -->
 <div id="sidebar">
     <h2>Progress</h2>
