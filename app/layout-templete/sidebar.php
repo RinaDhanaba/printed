@@ -1,8 +1,8 @@
 <!-- Sidebar -->
-<button class="openbtn" onclick="toggleNav()">☰ Open Sidebar</button>
+
 
 <div id="mySidenav" class="sidenav">
-    <button class="closebtn" onclick="toggleNav()">×</button>
+<button class="openbtn" onclick="toggleNav()">☰</button>
     <h2>Sidebar Content</h2>
     <a href="#">Home</a>
     <a href="#">Services</a>
@@ -29,14 +29,14 @@ function toggleNav() {
         .openbtn {
     font-size: 18px;
     cursor: pointer;
-    background-color: #111;
+    background-color: var(--primary-color);
     color: white;
     border: none;
     padding: 10px 15px;
-    position: fixed;
-    right: 20px;
+    position: relative;
+    right: -130%;
     top: 20px;
-    z-index: 1000;
+    z-index: 999999;
 }
 
 .sidenav {
@@ -45,12 +45,12 @@ function toggleNav() {
     position: fixed;
     top: 0;
     right: 0;
-    background-color: #333;
+    background-color: var(--white);
     overflow-x: hidden;
     transition: 0.3s;
     padding-top: 60px;
-    max-width: 95%;
-    width: 1000px;
+    width: 95%;
+    max-width: 1000px;
 }
 
 .sidenav a {
