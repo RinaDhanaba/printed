@@ -17,19 +17,52 @@ $cat_slides = [
     [
         "title" => "The Retail Collection",
         "price" => "2.50", 
-        "description" => "Whatever you sell, whether it is in-store or online, we’ve got everything you need to bring your brand to life.",
+        "description" => "<p>
+        Promote your business, event, charity or product with our range of printed Leaflets and Flyers. 
+        We’ve got a variety of sizes, folds, and papers to help you get your message out there in a way 
+        that represents your brand and is on budget. Whether you’re looking for one printed Leaflet or 
+        you’re placing a bulk order, you’ve come to the right place.
+    </p>
+
+    <ul>
+        <li>Print multiple Leaflet design versions at once</li>
+        <li>Lamination and round corners available</li>
+        <li>Next day delivery on selected options</li>
+    </ul>",
         "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#"
     ],
     [
         "title" => "Custom Packaging",
-        "description" => "Make your brand stand out with high-quality, eco-friendly packaging solutions.",
+        "description" => "<p>
+        Promote your business, event, charity or product with our range of printed Leaflets and Flyers. 
+        We’ve got a variety of sizes, folds, and papers to help you get your message out there in a way 
+        that represents your brand and is on budget. Whether you’re looking for one printed Leaflet or 
+        you’re placing a bulk order, you’ve come to the right place.
+    </p>
+
+    <ul>
+        <li>Print multiple Leaflet design versions at once</li>
+        <li>Lamination and round corners available</li>
+        <li>Next day delivery on selected options</li>
+    </ul>",
         "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#"
     ],
     [
         "title" => "Marketing Materials",
-        "description" => "From flyers to brochures, print everything you need to promote your business.",
+        "description" => "<p>
+        Promote your business, event, charity or product with our range of printed Leaflets and Flyers. 
+        We’ve got a variety of sizes, folds, and papers to help you get your message out there in a way 
+        that represents your brand and is on budget. Whether you’re looking for one printed Leaflet or 
+        you’re placing a bulk order, you’ve come to the right place.
+    </p>
+
+    <ul>
+        <li>Print multiple Leaflet design versions at once</li>
+        <li>Lamination and round corners available</li>
+        <li>Next day delivery on selected options</li>
+    </ul>",
         "image" => "../media/man-working-printing-house-with-paper-paints.jpg",
         "link" => "#"
     ]
