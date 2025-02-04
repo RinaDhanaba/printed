@@ -589,6 +589,9 @@ p{
     padding: 80px 10px;
     background: var(--white)
 }
+.trending-section h2{
+  margin-bottom: 10px;
+}
 
 .trending-subtitle {
     font-size: 12px;
