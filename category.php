@@ -42,9 +42,14 @@ $cat_slides = [
             <div class="slide">
                 <img src="<?php echo htmlspecialchars($slide['image']); ?>" alt="<?php echo htmlspecialchars($slide['title']); ?>">
                 <div class="slide-content">
+                    <div class="inner-slide-content">
                     <h2><?php echo htmlspecialchars($slide['title']); ?></h2>
                     <p><?php echo htmlspecialchars($slide['description']); ?></p>
                     <a href="<?php echo htmlspecialchars($slide['link']); ?>" class="explore-btn">Explore More</a>
+                    </div>
+                    <div class="trustpilot">
+                    <?php include('app/layout-templete/trustpilot.php'); ?>
+                    </div>
                 </div>
             </div>
         <?php endforeach; ?>
