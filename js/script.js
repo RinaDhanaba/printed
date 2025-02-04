@@ -39,37 +39,20 @@ function playVideo() {
 
 // Step Navigation form 
 
-document.addEventListener("DOMContentLoaded", function() {
-    let steps = document.querySelectorAll(".step");
-    let nextBtns = document.querySelectorAll(".next-btn");
-    let prevBtns = document.querySelectorAll(".prev-btn");
-    
-    let currentStep = 0;
+$(document).ready(function() {
+    // Open sidebar
+    $("#openSidebar, .select-product").click(function() {
+        $("#sidebar").addClass("open");
 
-    function showStep(stepIndex) {
-        steps.forEach((step, index) => {
-            step.style.display = index === stepIndex ? "block" : "none";
-        });
-    }
-
-    nextBtns.forEach((btn, index) => {
-        btn.addEventListener("click", function() {
-            if (index < steps.length - 1) {
-                currentStep++;
-                showStep(currentStep);
-            }
-        });
+        // If product button is clicked, preselect product
+        let selectedProduct = $(this).data("product");
+        if (selectedProduct) {
+            $("#productSelect").val(selectedProduct);
+        }
     });
 
-    prevBtns.forEach((btn, index) => {
-        btn.addEventListener("click", function() {
-            if (currentStep > 0) {
-                currentStep--;
-                showStep(currentStep);
-            }
-        });
+    // Close sidebar
+    $("#closeSidebar").click(function() {
+        $("#sidebar").removeClass("open");
     });
-
-    showStep(currentStep);
 });
-

@@ -18,46 +18,25 @@ if (!isset($_SESSION['selected_options'])) {
 
 ?>
 
-<div class="container mt-5">
-    <div class="row">
-        <!-- Form Section -->
-        <div class="col-md-8">
-            <form id="multiStepForm" action="app/layout-templete/process.php" method="POST">
-                <div class="step" id="step1">
-                    <h3>Select Product</h3>
-                    <label>
-                        <input type="radio" name="product" value="Leaflets & Flyers" 
-                            <?php if ($_SESSION['selected_options']['product'] == "Leaflets & Flyers") echo "checked"; ?>>
-                        Leaflets & Flyers
-                    </label>
-                    <button type="button" class="next-btn">Next</button>
-                </div>
-
-                <div class="step" id="step2" style="display: none;">
-                    <h3>Select Size</h3>
-                    <label><input type="radio" name="size" value="A4"> A4</label>
-                    <label><input type="radio" name="size" value="A5"> A5</label>
-                    <button type="button" class="prev-btn">Back</button>
-                    <button type="button" class="next-btn">Next</button>
-                </div>
-
-                <div class="step" id="step3" style="display: none;">
-                    <h3>Select Paper</h3>
-                    <label><input type="radio" name="paper" value="Glossy"> Glossy</label>
-                    <label><input type="radio" name="paper" value="Matte"> Matte</label>
-                    <button type="button" class="prev-btn">Back</button>
-                    <button type="submit">Submit</button>
-                </div>
-            </form>
-        </div>
-
-        <!-- Sidebar Section -->
-        <div class="col-md-4">
-            <?php include 'app/layout-templete/sidebar.php'; ?>
-        </div>
+<!-- Product Listing -->
+<div class="product-listing">
+    <div class="product" data-product="Leaflets & Flyers">
+        <img src="leaflet.jpg" alt="Leaflets & Flyers">
+        <h3>Leaflets & Flyers</h3>
+        <button class="select-product" data-product="Leaflets & Flyers">Order Now</button>
+    </div>
+    <div class="product" data-product="Folded Leaflets & Flyers">
+        <img src="folded-leaflet.jpg" alt="Folded Leaflets">
+        <h3>Folded Leaflets & Flyers</h3>
+        <button class="select-product" data-product="Folded Leaflets & Flyers">Order Now</button>
     </div>
 </div>
 
+<!-- Sidebar Section -->
+<?php include 'app/layout-templete/sidebar.php'; ?>
+
+<!-- Open Sidebar Button -->
+<button id="openSidebar">Customize</button>
 
 
 <!-- blog section  -->
