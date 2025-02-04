@@ -135,13 +135,19 @@ $papers = [
     <h2>Browse Our Papers</h2>
     <p class="description">The paper you choose can make all the difference to your finished print.</p>
 
-    <!-- Tab Navigation -->
-    <div class="tab-container">
-        <?php foreach ($papers as $index => $paper): ?>
-            <div class="tab <?= $index === 0 ? 'active' : '' ?>" data-index="<?= $index ?>">
-                <?= $paper['name'] ?>
-            </div>
-        <?php endforeach; ?>
+       <!-- Tab Navigation with Arrows -->
+       <div class="tab-wrapper" style="position: relative; display: flex; align-items: center;">
+        <button class="arrow arrow-left" onclick="scrollTabs(-1)">&#9665;</button>
+        
+        <div class="tab-container">
+            <?php foreach ($papers as $index => $paper): ?>
+                <div class="tab <?= $index === 0 ? 'active' : '' ?>" data-index="<?= $index ?>">
+                    <?= $paper['name'] ?>
+                </div>
+            <?php endforeach; ?>
+        </div>
+
+        <button class="arrow arrow-right" onclick="scrollTabs(1)">&#9655;</button>
     </div>
 
     <!-- Paper Details Section -->
@@ -178,6 +184,26 @@ $papers = [
 </div>
 </section>
 
+<script>
+    let currentIndex = 0;
+    const tabs = document.querySelectorAll(".tab");
+    const tabContainer = document.querySelector(".tab-container");
+    const maxIndex = tabs.length - 1;
+
+    function scrollTabs(direction) {
+        if (direction === 1 && currentIndex < maxIndex) {
+            currentIndex++;
+        } else if (direction === -1 && currentIndex > 0) {
+            currentIndex--;
+        }
+
+        tabs[currentIndex].scrollIntoView({ behavior: "smooth", inline: "center" });
+
+        // Update active tab styling
+        tabs.forEach(t => t.classList.remove("active"));
+        tabs[currentIndex].classList.add("active");
+    }
+</script>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -250,5 +276,24 @@ $papers = [
             cursor: pointer;
             text-decoration: none;
         }
+
+        .arrow {
+            background-color: #ff0080;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .arrow-left { left: -40px; }
+        .arrow-right { right: -40px; }
 
 </style>
