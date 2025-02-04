@@ -75,12 +75,24 @@
 }
 
 /* Sidebar (Initially Closed) */
+.sidenav {
+    height: 100%;
+    width: 0;  /* Initially closed */
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: var(--white);
+    transition: width 0.3s ease-in-out;  /* Smooth opening */
+    overflow-x: hidden;
+    padding-top: 60px;
+    max-width: 1000px;
+    z-index: 999999;
+}
+
+
 /* Sidebar */
 #sidebar {
     width: 280px;
-    position: fixed;
-    right: 0;
-    top: 0;
     height: 100vh;
     background: white;
     border-left: 3px solid #00c2c2;
