@@ -3,19 +3,20 @@
 
 <?php session_start(); ?>
 
-<!-- Product List Item That Opens Sidebar
+<!-- Product List Item That Opens Sidebar -->
+<!--
 <div class="product-item" onclick="openSidebar('Leaflets & Flyers', 'A5', 'Most Popular', 'Glossy')">
     <h3>Leaflets & Flyers</h3>
     <p>Size: A5 | Finish: Glossy</p>
     <button>Select</button>
-</div> -->
-
+</div>
+-->
 
 <?php
 $cat_slides = [
     [
         "title" => "The Retail Collection",
-        "price" => "2.50"
+        "price" => "2.50", 
         "description" => "Whatever you sell, whether it is in-store or online, we’ve got everything you need to bring your brand to life.",
         "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#"
@@ -35,13 +36,36 @@ $cat_slides = [
 ];
 ?>
 
+<div class="cat-slider">
+    <div class="slider-container">
+        <?php foreach ($cat_slides as $index => $slide) : ?>
+            <div class="slide">
+                <img src="<?php echo htmlspecialchars($slide['image']); ?>" alt="<?php echo htmlspecialchars($slide['title']); ?>">
+                <div class="slide-content">
+                    <h2><?php echo htmlspecialchars($slide['title']); ?></h2>
+                    <p><?php echo htmlspecialchars($slide['description']); ?></p>
+                    <a href="<?php echo htmlspecialchars($slide['link']); ?>" class="explore-btn">Explore More</a>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    
+    <div class="slider-controls">
+        <button class="slider-btn prev">&#10094;</button>
+        <button class="slider-btn next">&#10095;</button>
+    </div>
 
-
+    <div class="dots">
+        <?php foreach ($cat_slides as $index => $slide) : ?> <!-- ✅ Fixed variable -->
+            <span class="dot"></span>
+        <?php endforeach; ?>
+    </div>
+</div>
 
 <!-- Sidebar Section -->
 <?php include 'app/layout-templete/sidebar.php'; ?>
 
-<!-- blog section  -->
+<!-- Blog section -->
 <?php include('app/layout-templete/trending_blog.php'); ?>
 
 <!-- Include the footer -->
