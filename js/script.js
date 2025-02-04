@@ -52,31 +52,30 @@ function toggleNav() {
 
 // Step Navigation form 
 document.addEventListener("DOMContentLoaded", function () {
-    const formSteps = document.querySelectorAll(".form-step");
-    const progressList = document.querySelectorAll("#progressList li");
-    const inputs = document.querySelectorAll("input[type='radio']");
+    const formSteps = document.querySelectorAll(".form-step"); // All form steps
+    const progressList = document.querySelectorAll("#progressList li"); // Progress sidebar steps
+    const radioButtons = document.querySelectorAll("input[type='radio']"); // All radio buttons
 
-    inputs.forEach((input) => {
-        input.addEventListener("change", function () {
-            updateProgress();
-        });
-    });
-
+    // Function to update progress bar
     function updateProgress() {
-        progressList.forEach((step) => {
-            const stepNumber = step.getAttribute("data-step");
-            const selectedInput = document.querySelector(`.form-step:nth-child(${stepNumber}) input[type='radio']:checked`);
-            
-            if (selectedInput) {
-                step.querySelector("span").textContent = selectedInput.value;
-                step.classList.add("completed");
+        formSteps.forEach((step, index) => {
+            const selectedOption = step.querySelector("input[type='radio']:checked");
+            if (selectedOption) {
+                progressList[index].classList.add("completed"); // Mark as completed
+                progressList[index].querySelector("span").textContent = selectedOption.value; // Update text
             } else {
-                step.querySelector("span").textContent = "-";
-                step.classList.remove("completed");
+                progressList[index].classList.remove("completed");
+                progressList[index].querySelector("span").textContent = "-";
             }
         });
     }
 
-    updateProgress();
+    // Listen for radio button changes
+    radioButtons.forEach((radio) => {
+        radio.addEventListener("change", updateProgress);
+    });
+
+    updateProgress(); // Initial call
 });
+
 

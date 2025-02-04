@@ -3,21 +3,9 @@
 
 <div id="mySidenav" class="sidenav">
 <button class="openbtn" onclick="toggleNav()">☰</button>
-    
-
-<!-- Sidebar -->
-<div id="sidebar">
-    <h2>Progress</h2>
-    <ul id="progressList">
-        <li data-step="1">Product Presets: <span>-</span></li>
-        <li data-step="2">Product Type: <span>-</span></li>
-        <li data-step="3">Size: <span>-</span></li>
-        <li data-step="4">Summary</li>
-    </ul>
-</div>
 
 <!-- Main Form -->
-<div class="container">
+<section class="form-section">
     <h2>Leaflets & Flyers</h2>
 
     <form action="/app/layout-templete/process.php" method="POST" id="multiStepForm">
@@ -52,7 +40,19 @@
             <button type="submit" name="submit">Submit</button>
         </div>
     </form>
-</div>
+</section>
+
+
+<!-- Sidebar -->
+<section id="sidebar">
+    <h2>Progress</h2>
+    <ul id="progressList">
+        <li data-step="1">Product Presets: <span>-</span></li>
+        <li data-step="2">Product Type: <span>-</span></li>
+        <li data-step="3">Size: <span>-</span></li>
+        <li data-step="4">Summary</li>
+    </ul>
+</section>
 
     
 </div>
@@ -75,89 +75,93 @@
 }
 
 /* Sidebar (Initially Closed) */
-.sidenav {
-    height: 100%;
-    width: 0;  /* Initially closed */
+/* Sidebar */
+#sidebar {
+    width: 280px;
     position: fixed;
-    top: 0;
     right: 0;
-    background-color: var(--white);
-    transition: width 0.3s ease-in-out;  /* Smooth opening */
-    padding-top: 60px;
-    max-width: 1000px;
-    z-index: 999999;
-}
-
-
-
-/* Sidebar (Progress Bar) */
-.sidenav #sidebar {
-    width: 250px;
-    background: #fff;
+    top: 0;
+    height: 100vh;
+    background: white;
+    border-left: 3px solid #00c2c2;
     padding: 20px;
-    border-right: 1px solid #ddd;
-    position: fixed;
-    height: 100%;
     overflow-y: auto;
-    transition: 0.3s;
+    transition: all 0.3s ease-in-out;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.sidenav #sidebar h2 {
-    text-align: center;
+/* Heading */
+#sidebar h2 {
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-.sidenav #progressList {
+/* Progress List */
+#progressList {
     list-style: none;
     padding: 0;
 }
 
-.sidenav #progressList li {
-    padding: 10px;
-    font-size: 16px;
-    border-bottom: 1px solid #ddd;
+#progressList li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    background: #f9f9f9;
+    font-size: 14px;
+    transition: background 0.3s ease, transform 0.2s ease;
     position: relative;
 }
 
-.sidenav #progressList li::before {
-    content: "✔";
+/* Step Icon */
+#progressList li::before {
+    content: "⭘"; /* Default circle */
+    font-size: 16px;
     color: gray;
     margin-right: 8px;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: 0.3s ease;
 }
 
-.sidenav #progressList li.completed::before {
-    opacity: 1;
-    color: green;
+/* Completed Step */
+#progressList li.completed {
+    background: #e6fbf8;
+    border-left: 3px solid #00c2c2;
+    font-weight: bold;
+    transform: scale(1.02);
 }
 
-/* Form Container */
-.sidenav .container {
-    margin-left: 270px;
-    width: 50%;
-    background: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+#progressList li.completed::before {
+    content: "✔"; /* Check icon */
+    color: #00c2c2;
+    font-weight: bold;
 }
 
-/* Form Steps */
-.sidenav .form-step {
-    padding: 15px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+/* Edit Icon */
+.edit-icon {
+    color: #ff4081;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.edit-icon:hover {
+    color: #ff0051;
 }
 
 /* Mobile View */
 @media screen and (max-width: 768px) {
-    .sidenav #sidebar {
+    #sidebar {
         width: 100%;
         height: auto;
         position: relative;
     }
 
-    .sidenav .container {
+    .form-section {
         margin-left: 0;
         width: 100%;
     }
