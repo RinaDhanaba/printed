@@ -185,55 +185,59 @@ $papers = [
 </section>
 
 <script>
+document.addEventListener("DOMContentLoaded", function () {
     let currentIndex = 0;
     const tabs = document.querySelectorAll(".tab");
-    const tabContainer = document.querySelector(".tab-container");
     const maxIndex = tabs.length - 1;
 
-    function scrollTabs(direction) {
-    if (direction === 1 && currentIndex < maxIndex) {
-        currentIndex++;
-    } else if (direction === -1 && currentIndex > 0) {
-        currentIndex--;
+    function updateTabs() {
+        // Remove 'active' class from all tabs and details
+        tabs.forEach(t => t.classList.remove("active"));
+        document.querySelectorAll(".paper-details").forEach(d => d.classList.remove("active"));
+
+        // Add 'active' class to the current tab and corresponding details
+        tabs[currentIndex].classList.add("active");
+        document.getElementById("paper-" + currentIndex).classList.add("active");
+
+        // Scroll active tab into view
+        tabs[currentIndex].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+
+        // Show/hide arrows based on position
+        document.querySelector(".arrow-left").style.display = currentIndex === 0 ? "none" : "flex";
+        document.querySelector(".arrow-right").style.display = currentIndex === maxIndex ? "none" : "flex";
     }
 
-    tabs[currentIndex].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+    function scrollTabs(direction) {
+        if (direction === 1 && currentIndex < maxIndex) {
+            currentIndex++;
+        } else if (direction === -1 && currentIndex > 0) {
+            currentIndex--;
+        }
+        updateTabs();
+    }
 
-    // Update active tab styling
-    tabs.forEach(t => t.classList.remove("active"));
-    tabs[currentIndex].classList.add("active");
-
-    // Show/hide arrows based on position
-    document.querySelector(".arrow-left").style.display = currentIndex === 0 ? "none" : "flex";
-    document.querySelector(".arrow-right").style.display = currentIndex === maxIndex ? "none" : "flex";
-}
-
-// Initialize arrows visibility
-document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector(".arrow-left").style.display = "none"; // Hide left arrow initially
-});
-
-</script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        let tabs = document.querySelectorAll(".tab");
-        let details = document.querySelectorAll(".paper-details");
-
-        tabs.forEach(tab => {
-            tab.addEventListener("click", function () {
-                let index = this.getAttribute("data-index");
-
-                // Remove active class from all tabs and details
-                tabs.forEach(t => t.classList.remove("active"));
-                details.forEach(d => d.classList.remove("active"));
-
-                // Add active class to the clicked tab and corresponding details
-                this.classList.add("active");
-                document.getElementById("paper-" + index).classList.add("active");
-            });
+    // Event Listeners for tab clicks
+    tabs.forEach((tab, index) => {
+        tab.addEventListener("click", function () {
+            currentIndex = index; // Update index based on clicked tab
+            updateTabs();
         });
     });
+
+    // Arrow button event listeners
+    document.querySelector(".arrow-left").addEventListener("click", function () {
+        scrollTabs(-1);
+    });
+
+    document.querySelector(".arrow-right").addEventListener("click", function () {
+        scrollTabs(1);
+    });
+
+    // Initialize first active tab
+    updateTabs();
+});
+
+
 </script>
 
 
