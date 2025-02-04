@@ -1,1 +1,55 @@
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum vitae perspiciatis at quos, distinctio eos recusandae voluptatum. Expedita autem impedit optio cupiditate adipisci necessitatibus quisquam labore corrupti pariatur aliquam, qui sint odit esse ipsum sed distinctio sunt debitis placeat dolore earum. Error maxime eos dolor velit quasi nam odio, natus adipisci tempore doloribus! Doloremque id aspernatur, nemo voluptatibus at error quasi corporis quidem fugiat labore, quisquam similique numquam nostrum minima soluta maxime? Nihil, qui recusandae cupiditate odit repellat totam rerum eaque ex doloribus aspernatur ullam commodi dicta cumque voluptas enim itaque voluptatum omnis, aliquam impedit, blanditiis deserunt possimus fugit autem? Laborum quas voluptate ipsum eaque quasi. Voluptates maiores placeat, tempore nemo, accusantium quis aut dolor fuga cum iure odit quod eum voluptate incidunt corrupti. Incidunt est, voluptatem nulla ad, facilis doloremque blanditiis optio veniam eos quaerat aspernatur nobis eaque inventore repellendus aliquam fugiat nostrum, sint quod cumque. Repellat, delectus debitis et quisquam exercitationem consequatur distinctio doloribus dolorem nobis culpa excepturi explicabo hic at ex fugiat, nemo mollitia minus! Aut tempora magnam placeat ipsum, sunt non ullam! Sit fugiat, aut nemo molestias sunt quia modi ea. Fugit quia rem, aliquam minus amet quidem autem repellat facere iste quasi rerum unde, cumque vitae totam? Optio recusandae itaque eius. Placeat laborum reiciendis molestias nisi, velit, voluptate tenetur vero sed itaque nam, consequuntur maxime iure laudantium. Assumenda asperiores et explicabo! Consectetur voluptatum expedita repellat repellendus amet, quidem deleniti doloribus maxime. Quaerat molestias tempora reiciendis et quam, repudiandae quidem sapiente unde labore cupiditate deleniti impedit incidunt iure possimus officia, accusamus earum eligendi exercitationem quas architecto itaque, odit maiores qui. Accusantium reprehenderit delectus rem eligendi! Iste recusandae, atque ipsa dolore maiores nam eaque quidem dicta quia dignissimos tempore? Delectus autem at libero magni! Iure optio facere odio. Facilis provident voluptate ab placeat doloribus hic nostrum unde.
+<?php
+$products = [
+    [
+        "title" => "Business Cards",
+        "desc" => "Leaflets & Flyers",
+        "product_link" => "#",
+        "price" => "£8.50",
+        "image" => "../media/category_custom_shape_1.jpg",
+        "link" => "#"
+    ],
+    [
+        "title" => "Postcards",
+        "desc" => "Leaflets & Flyers",
+        "product_link" => "#",
+        "price" => "£12.50",
+        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "link" => "#",
+        "badge" => "NEW white pearl foil"
+    ]
+];
+?>
+
+    <!-- Product Section -->
+    <section class="product-grid">
+    <h2>Print with us</h2>
+    <div class="grid">
+        <?php foreach ($products as $product) : ?>
+            <div class="product">
+                <?php if (isset($product['badge'])) : ?>
+                    <span class="badge"><?php echo $product['badge']; ?></span>
+                <?php endif; ?>
+                <div>
+                <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['title']; ?>">
+                <div class="hover_desc">
+                    <p><?php echo $product['desc']; ?></p>
+                    <a href="<?php echo $product['product_link']; ?>" class="explore">Explore more</a>
+                </div>
+                </div>
+                <div class="card_content">
+                <h3><?php echo $product['title']; ?></h3>
+                <p class="price">from <strong><?php echo $product['price']; ?></strong></p>
+                <a href="<?php echo $product['link']; ?>" class="order-now">Order Now ></a>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <a href="#" class="chat-button">View All Products</a>
+</section>
+
+
+<style>
+.cat-content .product-grid{
+    background: var(--gary-bg);
+}
+</style>

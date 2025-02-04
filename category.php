@@ -124,7 +124,7 @@ $menuItems = [
 </nav>
 
 <!-- Page Sections -->
-<div class="cat-content">
+<div class="cat-content container">
     <?php foreach ($menuItems as $item) : ?>
         <section id="<?php echo $item['id']; ?>" class="page-section">
             <h2><?php echo $item['title']; ?></h2>

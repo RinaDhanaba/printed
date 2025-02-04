@@ -5,6 +5,7 @@
     width: 100%;
     margin: auto;    
     overflow: hidden;
+    border-radius: 0;
  }
  .cat-slider .slide{
     min-height:550px;
@@ -92,7 +93,7 @@
 /* Sticky Navigation */
 #navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     background: white;
     padding: 10px 20px;
@@ -163,11 +164,6 @@
 }
 
 /* Page Sections */
-.cat-content {
-    padding-top: 80px; /* Ensure content is below navbar */
-    position: relative;
-}
-
 .page-section {
     min-height: 80vh;
     padding: 50px;
