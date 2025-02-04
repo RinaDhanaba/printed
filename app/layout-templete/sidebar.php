@@ -1,63 +1,80 @@
 <!-- Sidebar -->
-<div class="sidebar" id="sidebar">
-    <!-- Button to open sidebar -->
-    <button class="toggle-btn" id="toggleBtn" onclick="toggleSidebar()">&#x276F;</button>
+<button class="openbtn" onclick="toggleNav()">☰ Open Sidebar</button>
+
+<div id="mySidenav" class="sidenav">
+    <button class="closebtn" onclick="toggleNav()">×</button>
     <h2>Sidebar Content</h2>
-    <p>This is your sidebar where you can add any content you like.</p>
+    <a href="#">Home</a>
+    <a href="#">Services</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
 </div>
 
+
 <script>
-        function toggleSidebar() {
-            var sidebar = document.getElementById("sidebar");
-            var button = document.getElementById("toggleBtn");
+function toggleNav() {
+    var sidebar = document.getElementById("mySidenav");
+    if (sidebar.style.width === "1000px") {
+        sidebar.style.width = "0";
+    } else {
+        sidebar.style.width = "1000px";
+    }
+}
 
-            sidebar.classList.toggle("active");
-
-            // Change button text based on sidebar state
-            if (sidebar.classList.contains("active")) {
-                button.innerHTML = "&#x276E;"; // Change to "‹" (left arrow)
-            } else {
-                button.innerHTML = "&#x276F;"; // Change back to "›" (right arrow)
-            }
-        }
     </script>
 
 
 <style>
         /* Sidebar styling */
-        .sidebar {
-            position: fixed;
-            top: 0;
-            right: -100%; /* Initially hidden */
-            max-width: 100px;
-            width:90%;
-            height: 100%;
-            background-color: #fff;
-            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
-            transition: right 0.3s ease-in-out;
-            padding: 20px;
-            z-index: 999999;
-        }
+        .openbtn {
+    font-size: 18px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 1000;
+}
 
-        /* When sidebar is active */
-        .sidebar.active {
-            right: 0;
-        }
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #333;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 60px;
+    max-width: 95%;
+    width: 1000px;
+}
 
-        /* Toggle Button Styling */
-        .toggle-btn {
-            position: relative;
-            top: 20px;
-            right: -100%; /* Adjust position outside the sidebar */
-            background-color: #ff1493;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            font-size: 16px;
-            border-radius: 5px 0 0 5px;
-            transition: right 0.3s ease-in-out;
-            z-index: 999999;
-        }
+.sidenav a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    background-color: #575757;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
 
 </style>

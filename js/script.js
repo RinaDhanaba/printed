@@ -39,20 +39,3 @@ function playVideo() {
 
 // Step Navigation form 
 
-$(document).ready(function() {
-    // Open sidebar
-    $("#openSidebar, .select-product").click(function() {
-        $("#sidebar").addClass("open");
-
-        // If product button is clicked, preselect product
-        let selectedProduct = $(this).data("product");
-        if (selectedProduct) {
-            $("#productSelect").val(selectedProduct);
-        }
-    });
-
-    // Close sidebar
-    $("#closeSidebar").click(function() {
-        $("#sidebar").removeClass("open");
-    });
-});
