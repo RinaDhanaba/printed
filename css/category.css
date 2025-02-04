@@ -6,6 +6,15 @@
     margin: auto;    
     overflow: hidden;
  }
+ .cat-slider .slide{
+    min-height:550px;
+    height:70vh;
+}
+
+.cat-slider .slide img {
+    height: 100%;      
+    object-fit: cover;
+ }
 
  .cat-slider .slide-content{
     background-color: transparent;
