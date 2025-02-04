@@ -1,6 +1,8 @@
 <!-- Include the header -->
 <?php include('app/layout-templete/header.php'); ?>
 
+<?php session_start(); ?>
+
 <!-- Product Listing -->
 <div class="product-listing">
     <div class="product" data-product="Leaflets & Flyers">

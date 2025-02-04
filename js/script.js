@@ -39,3 +39,38 @@ function playVideo() {
 
 // Step Navigation form 
 
+document.addEventListener("DOMContentLoaded", function () {
+    let currentStep = 0;
+    const formSteps = document.querySelectorAll(".form-step");
+    const progressSteps = document.querySelectorAll(".progress-bar .step");
+
+    function showStep(step) {
+        formSteps.forEach((stepDiv, index) => {
+            stepDiv.classList.toggle("active", index === step);
+        });
+
+        progressSteps.forEach((circle, index) => {
+            circle.classList.toggle("active", index <= step);
+        });
+    }
+
+    document.querySelectorAll(".next-step").forEach((button) => {
+        button.addEventListener("click", () => {
+            if (currentStep < formSteps.length - 1) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        });
+    });
+
+    document.querySelectorAll(".prev-step").forEach((button) => {
+        button.addEventListener("click", () => {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+    });
+
+    showStep(currentStep);
+});
