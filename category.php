@@ -77,7 +77,7 @@ $cat_slides = [
                 <div class="slide-content">
                     <div class="inner-slide-content">
                     <h2><?php echo htmlspecialchars($slide['title']); ?></h2>
-                    <p><?php echo htmlspecialchars($slide['description']); ?></p>
+                    <p> <?php echo $slide['description']; ?></p>
                     <a href="<?php echo htmlspecialchars($slide['link']); ?>" class="explore-btn">Explore More</a>
                     </div>
                     <div class="trustpilot">
