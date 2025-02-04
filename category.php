@@ -12,7 +12,7 @@
 
 
 <?php
-$slides = [
+$cat_slides = [
     [
         "title" => "The Retail Collection",
         "price" => "2.50"
@@ -37,7 +37,7 @@ $slides = [
 
 <div class="cat-slider">
     <div class="slider-container">
-        <?php foreach ($slides as $index => $slide) : ?>
+        <?php foreach ($cat_slides as $index => $slide) : ?>
             <div class="slide">
                 <img src="<?php echo $slide['image']; ?>" alt="<?php echo $slide['title']; ?>">
                 <div class="slide-content">
