@@ -1,19 +1,26 @@
 <!-- Sidebar -->
 <div class="sidebar" id="sidebar">
     <!-- Button to open sidebar -->
-    <button class="toggle-btn" onclick="toggleSidebar()"> >> </button>
-
-    <button class="close-btn" onclick="toggleSidebar()">✖ Close</button>
+    <button class="toggle-btn" id="toggleBtn" onclick="toggleSidebar()">&#x276F;</button>
     <h2>Sidebar Content</h2>
     <p>This is your sidebar where you can add any content you like.</p>
 </div>
 
 <script>
-    function toggleSidebar() {
-        var sidebar = document.getElementById("sidebar");
-        sidebar.classList.toggle("active");
-    }
-</script>
+        function toggleSidebar() {
+            var sidebar = document.getElementById("sidebar");
+            var button = document.getElementById("toggleBtn");
+
+            sidebar.classList.toggle("active");
+
+            // Change button text based on sidebar state
+            if (sidebar.classList.contains("active")) {
+                button.innerHTML = "&#x276E;"; // Change to "‹" (left arrow)
+            } else {
+                button.innerHTML = "&#x276F;"; // Change back to "›" (right arrow)
+            }
+        }
+    </script>
 
 
 <style>
