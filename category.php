@@ -11,7 +11,7 @@
 </div> -->
 
 
-<!-- <?php
+<?php
 $cat_slides = [
     [
         "title" => "The Retail Collection",
@@ -35,29 +35,6 @@ $cat_slides = [
 ];
 ?>
 
-<div class="cat-slider">
-    <div class="slider-container">
-        <?php foreach ($cat_slides as $index => $slide) : ?>
-            <div class="slide">
-                <img src="<?php echo $slide['image']; ?>" alt="<?php echo $slide['title']; ?>">
-                <div class="slide-content">
-                    <h2><?php echo $slide['title']; ?></h2>
-                    <p><?php echo $slide['description']; ?></p>
-                    <a href="<?php echo $slide['link']; ?>" class="explore-btn">Explore More</a>
-                </div>
-            </div>
-        <?php endforeach; ?>
-    </div>
-    <div class="slider-controls">
-        <button class="slider-btn prev">&#10094;</button>
-        <button class="slider-btn next">&#10095;</button>
-    </div>
-    <div class="dots">
-        <?php foreach ($slides as $index => $slide) : ?>
-            <span class="dot"></span>
-        <?php endforeach; ?>
-    </div>
-</div> -->
 
 
 
