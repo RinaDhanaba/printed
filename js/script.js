@@ -36,3 +36,40 @@ function playVideo() {
     alert("Play video feature coming soon!");
 }
 
+
+// Step Navigation form 
+
+document.addEventListener("DOMContentLoaded", function() {
+    let steps = document.querySelectorAll(".step");
+    let nextBtns = document.querySelectorAll(".next-btn");
+    let prevBtns = document.querySelectorAll(".prev-btn");
+    
+    let currentStep = 0;
+
+    function showStep(stepIndex) {
+        steps.forEach((step, index) => {
+            step.style.display = index === stepIndex ? "block" : "none";
+        });
+    }
+
+    nextBtns.forEach((btn, index) => {
+        btn.addEventListener("click", function() {
+            if (index < steps.length - 1) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        });
+    });
+
+    prevBtns.forEach((btn, index) => {
+        btn.addEventListener("click", function() {
+            if (currentStep > 0) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+    });
+
+    showStep(currentStep);
+});
+
