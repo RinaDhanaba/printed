@@ -162,36 +162,27 @@ document.addEventListener("DOMContentLoaded", function () {
     let isSticky = false; // Track sticky state
 
     function updateActiveSection() {
-        let navbarHeight = navbar.offsetHeight;
-        let firstItem = navItems[0];
+        let scrollPosition = window.scrollY + window.innerHeight / 3;
 
         if (!isSticky) {
-            // Keep only the first item active until the navbar becomes sticky
+            // Keep the first item active until sticky
             navItems.forEach((item) => item.classList.remove("active"));
-            firstItem.classList.add("active");
+            navItems[0].classList.add("active");
             return;
         }
 
-        let foundActive = false;
-
         sections.forEach((section) => {
-            let rect = section.getBoundingClientRect();
+            let sectionTop = section.offsetTop;
+            let sectionBottom = sectionTop + section.offsetHeight;
 
-            if (rect.top <= navbarHeight && rect.bottom > navbarHeight) {
+            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
                 navItems.forEach((item) => item.classList.remove("active"));
                 let activeItem = document.querySelector(`.nav-item[href="#${section.id}"]`);
                 if (activeItem) {
                     activeItem.classList.add("active");
                 }
-                foundActive = true;
             }
         });
-
-        // If no section is active, keep the first item active
-        if (!foundActive) {
-            navItems.forEach((item) => item.classList.remove("active"));
-            firstItem.classList.add("active");
-        }
     }
 
     function handleStickyNav() {
@@ -209,6 +200,5 @@ document.addEventListener("DOMContentLoaded", function () {
         updateActiveSection();
     });
 
-    handleStickyNav(); // Run once on page load
-    updateActiveSection();
+    updateActiveSection(); // Run once on page load
 });
