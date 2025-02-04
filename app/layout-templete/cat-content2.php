@@ -320,48 +320,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
-}
-
-h2 {
-    text-align: center;
-    margin-bottom: 10px;
-}
-
-.description {
-    text-align: center;
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-/* Tabs */
-.tab-wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    overflow-x: auto;
-    padding: 10px 0;
-}
-
-.tab {
-    cursor: pointer;
-    padding: 10px 15px;
-    background: #fff;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: all 0.3s;
-    border: 2px solid transparent;
-}
-
-.tab:hover, .tab.active {
-    border-color: #ff0080;
-    color: #ff0080;
-}
-
 /* Paper Details */
 .paper-details {
     display: none;
