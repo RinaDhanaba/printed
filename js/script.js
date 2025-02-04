@@ -158,15 +158,20 @@ document.addEventListener("DOMContentLoaded", function () {
     let navbar = document.getElementById("navbar");
     let navItems = document.querySelectorAll(".nav-item");
     let sections = document.querySelectorAll(".page-section");
-    let navbarOffset = navbar.offsetTop; // Get initial navbar position
+    let navbarOffset = navbar.offsetTop; // Initial navbar position
     let isSticky = false; // Track sticky state
+
+    let mobileNavToggle = document.getElementById("mobileNavToggle");
+    let mobileNavLabel = document.getElementById("mobileNavLabel");
+    let mobileNavMenu = document.querySelector(".nav-links");
+    let mobileArrow = document.querySelector(".arrow");
 
     function updateActiveSection() {
         let navbarHeight = navbar.offsetHeight;
         let firstItem = navItems[0];
 
         if (!isSticky) {
-            // Keep only the first item active until the navbar becomes sticky
+            // Keep first item active until navbar becomes sticky
             navItems.forEach((item) => item.classList.remove("active"));
             firstItem.classList.add("active");
             return;
@@ -182,6 +187,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 let activeItem = document.querySelector(`.nav-item[href="#${section.id}"]`);
                 if (activeItem) {
                     activeItem.classList.add("active");
+                    if (mobileNavLabel) {
+                        mobileNavLabel.innerText = activeItem.innerText; // Update mobile nav label
+                    }
                 }
                 foundActive = true;
             }
@@ -204,11 +212,19 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Mobile Menu Toggle
+    if (mobileNavToggle) {
+        mobileNavToggle.addEventListener("click", function () {
+            mobileNavMenu.classList.toggle("open");
+            mobileArrow.style.transform = mobileNavMenu.classList.contains("open") ? "rotate(180deg)" : "rotate(0deg)";
+        });
+    }
+
     window.addEventListener("scroll", function () {
         handleStickyNav();
         updateActiveSection();
     });
 
-    handleStickyNav(); // Run once on page load
+    handleStickyNav(); // Run on page load
     updateActiveSection();
 });
