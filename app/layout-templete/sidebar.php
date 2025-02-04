@@ -34,8 +34,8 @@ function toggleNav() {
     border: none;
     padding: 10px 15px;
     position: relative;
-    right: -130%;
-    top: 20px;
+    left: -45px;
+    top: 0px;
     z-index: 999999;
 }
 
@@ -46,11 +46,11 @@ function toggleNav() {
     top: 0;
     right: 0;
     background-color: var(--white);
-    overflow-x: hidden;
     transition: 0.3s;
     padding-top: 60px;
     width: 95%;
-    max-width: 1000px;
+    max-width:1000px;
+    z-index: 999999;
 }
 
 .sidenav a {
