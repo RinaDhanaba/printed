@@ -240,67 +240,88 @@ document.addEventListener("DOMContentLoaded", function () {
 <style>
 
 .tab-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-    padding: 10px 0;
-    white-space: nowrap;
-    justify-content: center;
-    align-items: center;
-    scroll-snap-type: x mandatory;
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 10px 0;
+            white-space: nowrap;
+            justify-content: center;
+            align-items: center;
+            scroll-snap-type: x mandatory;
+        }
+
+/* Hide scrollbar for Chrome, Safari, and newer Edge */
+.tab-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.tab-container {
+    scrollbar-width: none;
+}
+
+/* Hide scrollbar for Internet Explorer and older Edge */
+.tab-container {
+    -ms-overflow-style: none;
 }
 
 .tab {
+    cursor: pointer;
+    padding: 10px 15px;
+    background: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s;
+    border: 2px solid transparent;
     scroll-snap-align: center;
 }
+.tab:hover, .tab.active {
+    border-color: #ff0080;
+    color: #ff0080;
+}
+.paper-details {
+    display: none;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    text-align: left;
+    margin-top: 20px;
+}
+.paper-details.active {
+    display: block;
+}
+.paper-image {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+}
+.btn-order {
+    background-color: #ff0080;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
 
-        .tab:hover, .tab.active {
-            border-color: #ff0080;
-            color: #ff0080;
-        }
-        .paper-details {
-            display: none;
-            padding: 20px;
-            background: white;
-            border-radius: 10px;
-            text-align: left;
-            margin-top: 20px;
-        }
-        .paper-details.active {
-            display: block;
-        }
-        .paper-image {
-            width: 100%;
-            max-width: 250px;
-            border-radius: 10px;
-        }
-        .btn-order {
-            background-color: #ff0080;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .arrow {
-            background-color: #ff0080;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 30px;
-            height: 30px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 20px;
-            cursor: pointer;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        .arrow-left { left: -40px; }
-        .arrow-right { right: -40px; }
+.arrow {
+    background-color: #ff0080;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.arrow-left { left: -40px; }
+.arrow-right { right: -40px; }
 
 </style>
