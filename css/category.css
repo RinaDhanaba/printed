@@ -13,11 +13,27 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
  }
 
 .cat-slider .slide-content .inner-slide-content, .cat-slider .slide-content .trustpilot-section {
  background: #fff;
  padding: 20px;
+}
+.cat-slider .slide-content .trustpilot-section * {
+    margin: 0;
+}
+
+.cat-slider .slide-content .trustpilot-section {
+    position: relative;
+    justify-content: flex-start;    
+}
+.cat-slider .slide-content .trustpilot-section .stars {
+    position: absolute;
+    top:50px;
+    left:20px;
 }
 
  .cat-slider .dot {
