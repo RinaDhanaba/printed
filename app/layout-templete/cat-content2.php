@@ -129,17 +129,13 @@ $papers = [
 
 ?>
 
-
 <section class="advanced-horizontal-tab">
-<div class="container">
-    <h2>Browse Our Papers</h2>
-    <p class="description">The paper you choose can make all the difference to your finished print.</p>
+    <div class="container">
+        <h2>Browse Our Papers</h2>
+        <p class="description">The paper you choose can make all the difference to your finished print.</p>
 
-       <!-- Tab Navigation with Arrows -->
-       <div class="tab-wrapper" style="position: relative; display: flex; align-items: center;">
-        <button class="arrow arrow-left" onclick="scrollTabs(-1)">&#9665;</button>
-        
-        <div class="tab-container">
+        <!-- Tab Navigation -->
+        <div class="tab-wrapper">
             <?php foreach ($papers as $index => $paper): ?>
                 <div class="tab <?= $index === 0 ? 'active' : '' ?>" data-index="<?= $index ?>">
                     <?= $paper['name'] ?>
@@ -147,57 +143,71 @@ $papers = [
             <?php endforeach; ?>
         </div>
 
-        <button class="arrow arrow-right" onclick="scrollTabs(1)">&#9655;</button>
+        <!-- Paper Details Section -->
+        <?php foreach ($papers as $index => $paper): ?>
+            <div class="paper-details <?= $index === 0 ? 'active' : '' ?>" id="paper-<?= $index ?>">
+                <div class="paper-content">
+                    <!-- Left: Image -->
+                    <div class="paper-image-container">
+                        <img src="<?= $paper['image'] ?>" alt="<?= $paper['name'] ?>" class="paper-image">
+                    </div>
+
+                    <!-- Right: Text Content -->
+                    <div class="paper-info">
+                        <h3><?= $paper['name'] ?></h3>
+                        <p><?= $paper['description'] ?></p>
+
+                        <h4>Available Weights</h4>
+                        <div class="weight-list">
+                            <?php foreach ($paper['weights'] as $weight): ?>
+                                <span class="badge"><?= $weight ?></span>
+                            <?php endforeach; ?>
+                        </div>
+
+                        <div class="paper-meta">
+                            <div class="paper-column">
+                                <h4>Best for</h4>
+                                <ul>
+                                    <?php foreach ($paper['bestFor'] as $use): ?>
+                                        <li><?= $use ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+
+                            <div class="paper-column">
+                                <h4>Credentials</h4>
+                                <ul>
+                                    <?php foreach ($paper['credentials'] as $cred): ?>
+                                        <li><?= $cred ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <a href="#" class="btn-order">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
     </div>
-
-    <!-- Paper Details Section -->
-    <?php foreach ($papers as $index => $paper): ?>
-        <div class="paper-details <?= $index === 0 ? 'active' : '' ?>" id="paper-<?= $index ?>">
-            <img src="<?= $paper['image'] ?>" alt="<?= $paper['name'] ?>" class="paper-image">
-            <h3><?= $paper['name'] ?></h3>
-            <p><?= $paper['description'] ?></p>
-
-            <h4>Available Weights</h4>
-            <p>
-                <?php foreach ($paper['weights'] as $weight): ?>
-                    <span class="badge bg-secondary"><?= $weight ?></span>
-                <?php endforeach; ?>
-            </p>
-
-            <h4>Best for</h4>
-            <ul>
-                <?php foreach ($paper['bestFor'] as $use): ?>
-                    <li><?= $use ?></li>
-                <?php endforeach; ?>
-            </ul>
-
-            <h4>Credentials</h4>
-            <ul>
-                <?php foreach ($paper['credentials'] as $cred): ?>
-                    <li><?= $cred ?></li>
-                <?php endforeach; ?>
-            </ul>
-
-            <a href="#" class="btn-order">Order Now</a>
-        </div>
-    <?php endforeach; ?>
-</div>
 </section>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
     const tabs = document.querySelectorAll(".tab");
+    const details = document.querySelectorAll(".paper-details");
     const maxIndex = tabs.length - 1;
     let currentIndex = Math.floor(maxIndex / 2); // Set the middle tab as active
 
     function updateTabs() {
         // Remove 'active' class from all tabs and details
         tabs.forEach(t => t.classList.remove("active"));
-        document.querySelectorAll(".paper-details").forEach(d => d.classList.remove("active"));
+        details.forEach(d => d.classList.remove("active"));
 
         // Add 'active' class to the current tab and corresponding details
         tabs[currentIndex].classList.add("active");
-        document.getElementById("paper-" + currentIndex).classList.add("active");
+        details[currentIndex].classList.add("active");
 
         // Scroll active tab into view
         tabs[currentIndex].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
@@ -216,10 +226,10 @@ document.addEventListener("DOMContentLoaded", function () {
         updateTabs();
     }
 
-    // Event Listeners for tab clicks
+    // Click to activate tab
     tabs.forEach((tab, index) => {
-        tab.addEventListener("click", function () {
-            currentIndex = index; // Update index based on clicked tab
+        tab.addEventListener("click", () => {
+            currentIndex = index; // Update index
             updateTabs();
         });
     });
@@ -282,31 +292,6 @@ document.addEventListener("DOMContentLoaded", function () {
     border-color: #ff0080;
     color: #ff0080;
 }
-.paper-details {
-    display: none;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    text-align: left;
-    margin-top: 20px;
-}
-.paper-details.active {
-    display: block;
-}
-.paper-image {
-    width: 100%;
-    max-width: 250px;
-    border-radius: 10px;
-}
-.btn-order {
-    background-color: #ff0080;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-decoration: none;
-}
 
 .arrow {
     background-color: #ff0080;
@@ -326,5 +311,151 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 .arrow-left { left: -40px; }
 .arrow-right { right: -40px; }
+
+
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.description {
+    text-align: center;
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Tabs */
+.tab-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 0;
+}
+
+.tab {
+    cursor: pointer;
+    padding: 10px 15px;
+    background: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s;
+    border: 2px solid transparent;
+}
+
+.tab:hover, .tab.active {
+    border-color: #ff0080;
+    color: #ff0080;
+}
+
+/* Paper Details */
+.paper-details {
+    display: none;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.paper-details.active {
+    display: block;
+}
+
+/* Layout */
+.paper-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Left: Image */
+.paper-image-container {
+    flex: 1;
+}
+
+.paper-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+/* Right: Content */
+.paper-info {
+    flex: 2;
+}
+
+/* Weights */
+.weight-list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Best For & Credentials */
+.paper-meta {
+    display: flex;
+    gap: 50px;
+    margin-top: 15px;
+}
+
+.paper-column {
+    flex: 1;
+}
+
+.paper-column h4 {
+    margin-bottom: 10px;
+}
+
+.paper-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.paper-column ul li {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Order Button */
+.btn-order {
+    background-color: #ff0080;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .paper-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .paper-meta {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
 
 </style>
