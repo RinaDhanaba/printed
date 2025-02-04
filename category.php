@@ -125,14 +125,14 @@ $menuItems = [
 
 <!-- Page Sections -->
 <div class="cat-content">
-    <div class="container">
     <?php foreach ($menuItems as $item) : ?>
         <section id="<?php echo $item['id']; ?>" class="page-section">
+        <div class="container">
             <h2><?php echo $item['title']; ?></h2>
             <?php include $item['file']; ?>
+        </div>
         </section>
     <?php endforeach; ?>
-    </div>
 </div>
 
 
