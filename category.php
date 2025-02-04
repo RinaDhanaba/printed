@@ -3,26 +3,21 @@
 
 <?php session_start(); ?>
 
-<!-- Product Listing -->
-<div class="product-listing">
-    <div class="product" data-product="Leaflets & Flyers">
-        <img src="leaflet.jpg" alt="Leaflets & Flyers">
-        <h3>Leaflets & Flyers</h3>
-        <button class="select-product" data-product="Leaflets & Flyers">Order Now</button>
-    </div>
-    <div class="product" data-product="Folded Leaflets & Flyers">
-        <img src="folded-leaflet.jpg" alt="Folded Leaflets">
-        <h3>Folded Leaflets & Flyers</h3>
-        <button class="select-product" data-product="Folded Leaflets & Flyers">Order Now</button>
-    </div>
+<!-- Example of product listing with onclick -->
+<div class="product-item" onclick="openSidebar('Leaflets & Flyers', 'A5')">
+    <h3>Leaflets & Flyers</h3>
+    <p>Size: A5</p>
+    <button>Select</button>
+</div>
+
+<div class="product-item" onclick="openSidebar('Folded Leaflets & Flyers', 'A4')">
+    <h3>Folded Leaflets</h3>
+    <p>Size: A4</p>
+    <button>Select</button>
 </div>
 
 <!-- Sidebar Section -->
 <?php include 'app/layout-templete/sidebar.php'; ?>
-
-<!-- Open Sidebar Button -->
-<button id="openSidebar">Customize</button>
-
 
 <!-- blog section  -->
 <?php include('app/layout-templete/trending_blog.php'); ?>

@@ -37,45 +37,67 @@ function playVideo() {
 }
 
 
-// Toggle the sidebar open and close
+// Toggle Sidebar Open/Close
 function toggleNav() {
     var sidebar = document.getElementById("mySidenav");
-
-    // If sidebar is open, close it; otherwise, open it
-    if (sidebar.style.width === "1000px" || sidebar.style.width === "95%") {
-        sidebar.style.width = "0";
-    } else {
-        sidebar.style.width = "95%"; // Adjust width as needed
-    }
+    sidebar.style.width = sidebar.style.width === "95%" ? "0" : "95%";
 }
 
+// Open Sidebar and Set Preselected Values
+function openSidebar(product, size) {
+    var sidebar = document.getElementById("mySidenav");
+    sidebar.style.width = "95%"; // Open Sidebar
 
-// Step Navigation form 
-document.addEventListener("DOMContentLoaded", function () {
-    const formSteps = document.querySelectorAll(".form-step"); // All form steps
-    const progressList = document.querySelectorAll("#progressList li"); // Progress sidebar steps
-    const radioButtons = document.querySelectorAll("input[type='radio']"); // All radio buttons
+    // Store values in localStorage
+    if (product) localStorage.setItem("selectedProduct", product);
+    if (size) localStorage.setItem("selectedSize", size);
 
-    // Function to update progress bar
-    function updateProgress() {
-        formSteps.forEach((step, index) => {
-            const selectedOption = step.querySelector("input[type='radio']:checked");
-            if (selectedOption) {
-                progressList[index].classList.add("completed"); // Mark as completed
-                progressList[index].querySelector("span").textContent = selectedOption.value; // Update text
-            } else {
-                progressList[index].classList.remove("completed");
-                progressList[index].querySelector("span").textContent = "-";
-            }
-        });
-    }
+    // Set product selection
+    setRadioValue("product", product);
 
-    // Listen for radio button changes
-    radioButtons.forEach((radio) => {
-        radio.addEventListener("change", updateProgress);
+    // Set size selection
+    setRadioValue("size", size);
+
+    // Update progress UI
+    updateProgress();
+}
+
+// Helper function to set radio button value
+function setRadioValue(name, value) {
+    let radios = document.querySelectorAll(`input[name='${name}']`);
+    radios.forEach(radio => {
+        if (radio.value === value) {
+            radio.checked = true;
+        }
     });
+}
 
-    updateProgress(); // Initial call
+// Load saved selections on page load
+document.addEventListener("DOMContentLoaded", function () {
+    let savedProduct = localStorage.getItem("selectedProduct");
+    let savedSize = localStorage.getItem("selectedSize");
+
+    if (savedProduct) setRadioValue("product", savedProduct);
+    if (savedSize) setRadioValue("size", savedSize);
+
+    updateProgress();
 });
+
+// Step Navigation and Auto-update Sidebar Progress
+function updateProgress() {
+    const formSteps = document.querySelectorAll(".form-step");
+    const progressList = document.querySelectorAll("#progressList li");
+
+    formSteps.forEach((step, index) => {
+        const selectedOption = step.querySelector("input[type='radio']:checked");
+        if (selectedOption) {
+            progressList[index].classList.add("completed");
+            progressList[index].querySelector("span").textContent = selectedOption.value;
+        } else {
+            progressList[index].classList.remove("completed");
+            progressList[index].querySelector("span").textContent = "-";
+        }
+    });
+}
 
 

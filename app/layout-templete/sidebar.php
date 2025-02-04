@@ -1,83 +1,75 @@
 <!-- Sidebar -->
 
 
+<!-- Sidebar -->
 <div id="mySidenav" class="sidenav">
-<button class="openbtn" onclick="toggleNav()">☰</button>
+    <button class="openbtn" onclick="toggleNav()">☰</button>
 
-<!-- Main Form -->
-<section class="form-section">
-    <h2>Leaflets & Flyers</h2>
+    <section class="form-section">
+        <h2>Leaflets & Flyers</h2>
 
-    <form action="/app/layout-templete/process.php" method="POST" id="multiStepForm">
-        
-        <!-- Step 1: Product Presets -->
-        <div class="form-step">
-            <h3 class="step-title">📌 Our Product Presets</h3>
-            <p>Build your own or choose from one of our preset options.</p>
-            <div class="options-grid">
-                <label class="option-card">
-                    <input type="radio" name="preset" value="Build Your Own" required>
-                    <span class="option-text">Build Your Own</span>
-                </label>
-                <label class="option-card">
-                    <input type="radio" name="preset" value="Most Popular">
-                    <span class="option-text">Most Popular</span>
-                </label>
-                <label class="option-card">
-                    <input type="radio" name="preset" value="Eco">
-                    <span class="option-text">Eco</span>
-                </label>
-                <label class="option-card">
-                    <input type="radio" name="preset" value="Economy">
-                    <span class="option-text">Economy</span>
-                </label>
+        <form action="/app/layout-templete/process.php" method="POST" id="multiStepForm">
+            
+            <!-- Step 1: Product Presets -->
+            <div class="form-step">
+                <h3 class="step-title">📌 Our Product Presets</h3>
+                <div class="options-grid">
+                    <label class="option-card">
+                        <input type="radio" name="preset" value="Build Your Own"> Build Your Own
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="preset" value="Most Popular"> Most Popular
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="preset" value="Eco"> Eco
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="preset" value="Economy"> Economy
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <!-- Step 2: Product Type -->
-        <div class="form-step">
-            <h3 class="step-title">📄 Product</h3>
-            <div class="options-grid">
-                <label class="option-card">
-                    <input type="radio" name="product" value="Leaflets & Flyers" required>
-                    <span class="option-text">Leaflets & Flyers</span>
-                </label>
-                <label class="option-card">
-                    <input type="radio" name="product" value="Folded Leaflets & Flyers">
-                    <span class="option-text">Folded Leaflets & Flyers</span>
-                </label>
+            <!-- Step 2: Product Type -->
+            <div class="form-step">
+                <h3 class="step-title">📄 Product</h3>
+                <div class="options-grid">
+                    <label class="option-card">
+                        <input type="radio" name="product" value="Leaflets & Flyers"> Leaflets & Flyers
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="product" value="Folded Leaflets & Flyers"> Folded Leaflets & Flyers
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <!-- Step 3: Select Size -->
-        <div class="form-step">
-            <h3 class="step-title">📏 Size</h3>
-            <div class="size-grid">
-                <label class="size-option">
-                    <input type="radio" name="size" value="A7" required>
-                    <span>A7</span>
-                </label>
-                <label class="size-option">
-                    <input type="radio" name="size" value="A6">
-                    <span>A6</span>
-                </label>
-                <label class="size-option selected">
-                    <input type="radio" name="size" value="A5">
-                    <span>A5</span> ✨
-                </label>
+            <!-- Step 3: Select Size -->
+            <div class="form-step">
+                <h3 class="step-title">📏 Size</h3>
+                <div class="size-grid">
+                    <label class="size-option">
+                        <input type="radio" name="size" value="A7"> A7
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size" value="A6"> A6
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size" value="A5"> A5
+                    </label>
+                    <label class="size-option">
+                        <input type="radio" name="size" value="A4"> A4
+                    </label>
+                </div>
             </div>
-        </div>
 
-        <!-- Step 4: Summary -->
-        <div class="form-step summary-step">
-            <h3 class="step-title">📋 Summary</h3>
-            <p>Review your selections before submitting.</p>
-            <button type="submit" class="submit-btn">Submit</button>
-        </div>
+            <!-- Step 4: Summary -->
+            <div class="form-step summary-step">
+                <h3 class="step-title">📋 Summary</h3>
+                <p>Review your selections before submitting.</p>
+                <button type="submit" class="submit-btn">Submit</button>
+            </div>
 
-    </form>
-</section>
-
+        </form>
+    </section>
 
 
 <!-- Sidebar -->
@@ -98,7 +90,7 @@
 
 <style>
         /* Sidebar styling */
-        .openbtn {
+    .openbtn {
     font-size: 18px;
     cursor: pointer;
     background-color: var(--secondary-color);
@@ -107,7 +99,7 @@
     padding: 10px 15px;
     position: relative;
     left: -45px;
-    top: 0px;
+    top: 60px;
     z-index: 999999;
 }
 
