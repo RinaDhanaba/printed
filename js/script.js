@@ -37,6 +37,10 @@ function playVideo() {
 }
 
 
+
+
+
+
 // Toggle Sidebar Open/Close
 function toggleNav() {
     var sidebar = document.getElementById("mySidenav");
@@ -44,60 +48,82 @@ function toggleNav() {
 }
 
 // Open Sidebar and Set Preselected Values
-function openSidebar(product, size) {
+function openSidebar(product, size, preset = null, finishType = null) {
     var sidebar = document.getElementById("mySidenav");
     sidebar.style.width = "95%"; // Open Sidebar
 
     // Store values in localStorage
     if (product) localStorage.setItem("selectedProduct", product);
     if (size) localStorage.setItem("selectedSize", size);
+    if (preset) localStorage.setItem("selectedPreset", preset);
+    if (finishType) localStorage.setItem("selectedFinishType", finishType);
 
-    // Set product selection
+    // Set values in the form
     setRadioValue("product", product);
-
-    // Set size selection
     setRadioValue("size", size);
+    setRadioValue("preset", preset);
+    setRadioValue("finishType", finishType);
 
     // Update progress UI
     updateProgress();
 }
 
-// Helper function to set radio button value
+// Helper function to set a radio button value
 function setRadioValue(name, value) {
     let radios = document.querySelectorAll(`input[name='${name}']`);
     radios.forEach(radio => {
-        if (radio.value === value) {
-            radio.checked = true;
-        }
+        radio.checked = radio.value === value;
     });
 }
 
 // Load saved selections on page load
 document.addEventListener("DOMContentLoaded", function () {
+    let savedPreset = localStorage.getItem("selectedPreset");
     let savedProduct = localStorage.getItem("selectedProduct");
     let savedSize = localStorage.getItem("selectedSize");
+    let savedFinishType = localStorage.getItem("selectedFinishType");
 
-    if (savedProduct) setRadioValue("product", savedProduct);
-    if (savedSize) setRadioValue("size", savedSize);
+    setRadioValue("preset", savedPreset);
+    setRadioValue("product", savedProduct);
+    setRadioValue("size", savedSize);
+    setRadioValue("finishType", savedFinishType);
 
     updateProgress();
 });
 
 // Step Navigation and Auto-update Sidebar Progress
 function updateProgress() {
-    const formSteps = document.querySelectorAll(".form-step");
     const progressList = document.querySelectorAll("#progressList li");
 
-    formSteps.forEach((step, index) => {
-        const selectedOption = step.querySelector("input[type='radio']:checked");
-        if (selectedOption) {
-            progressList[index].classList.add("completed");
-            progressList[index].querySelector("span").textContent = selectedOption.value;
+    const selectedPreset = document.querySelector("input[name='preset']:checked")?.value || "-";
+    const selectedProduct = document.querySelector("input[name='product']:checked")?.value || "-";
+    const selectedSize = document.querySelector("input[name='size']:checked")?.value || "-";
+    const selectedFinishType = document.querySelector("input[name='finishType']:checked")?.value || "-";
+
+    // Update the progress sidebar dynamically
+    progressList[0].querySelector("span").textContent = selectedPreset;
+    progressList[1].querySelector("span").textContent = selectedProduct;
+    progressList[2].querySelector("span").textContent = selectedSize;
+    progressList[3].querySelector("span").textContent = selectedFinishType;
+
+    // Add "completed" class to filled steps
+    progressList.forEach((item, index) => {
+        let value = item.querySelector("span").textContent;
+        if (value !== "-") {
+            item.classList.add("completed");
         } else {
-            progressList[index].classList.remove("completed");
-            progressList[index].querySelector("span").textContent = "-";
+            item.classList.remove("completed");
         }
     });
 }
+
+// Listen for changes in radio buttons to update progress
+document.querySelectorAll("input[type='radio']").forEach((radio) => {
+    radio.addEventListener("change", function () {
+        localStorage.setItem(`selected${radio.name.charAt(0).toUpperCase() + radio.name.slice(1)}`, radio.value);
+        updateProgress();
+    });
+});
+
 
 

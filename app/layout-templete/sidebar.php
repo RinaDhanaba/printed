@@ -1,6 +1,4 @@
 <!-- Sidebar -->
-
-
 <!-- Sidebar -->
 <div id="mySidenav" class="sidenav">
     <button class="openbtn" onclick="toggleNav()">☰</button>
@@ -42,9 +40,9 @@
                 </div>
             </div>
 
-            <!-- Step 3: Select Size -->
+            <!-- Step 3: Select Size and Finish Type (Combined Step) -->
             <div class="form-step">
-                <h3 class="step-title">📏 Size</h3>
+                <h3 class="step-title">📏 Size & Finish Type</h3>
                 <div class="size-grid">
                     <label class="size-option">
                         <input type="radio" name="size" value="A7"> A7
@@ -59,6 +57,15 @@
                         <input type="radio" name="size" value="A4"> A4
                     </label>
                 </div>
+                <h4>Finish Type</h4>
+                <div class="options-grid">
+                    <label class="option-card">
+                        <input type="radio" name="finishType" value="Glossy"> Glossy
+                    </label>
+                    <label class="option-card">
+                        <input type="radio" name="finishType" value="Matte"> Matte
+                    </label>
+                </div>
             </div>
 
             <!-- Step 4: Summary -->
@@ -71,21 +78,18 @@
         </form>
     </section>
 
-
-<!-- Sidebar -->
-<section id="sidebar">
-    <h2>Progress</h2>
-    <ul id="progressList">
-        <li data-step="1">Product Presets: <span>-</span></li>
-        <li data-step="2">Product Type: <span>-</span></li>
-        <li data-step="3">Size: <span>-</span></li>
-        <li data-step="4">Summary</li>
-    </ul>
-</section>
-
-    
+    <!-- Progress Sidebar -->
+    <section id="sidebar">
+        <h2>Progress</h2>
+        <ul id="progressList">
+            <li data-step="1">Product Presets: <span>-</span></li>
+            <li data-step="2">Product Type: <span>-</span></li>
+            <li data-step="3">Size: <span>-</span></li>
+            <li data-step="4">Finish Type: <span>-</span></li>
+            <li data-step="5">Summary</li>
+        </ul>
+    </section>
 </div>
-
 
 
 <style>

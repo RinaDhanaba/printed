@@ -3,18 +3,13 @@
 
 <?php session_start(); ?>
 
-<!-- Example of product listing with onclick -->
-<div class="product-item" onclick="openSidebar('Leaflets & Flyers', 'A5')">
+<!-- Product List Item That Opens Sidebar -->
+<div class="product-item" onclick="openSidebar('Leaflets & Flyers', 'A5', 'Most Popular', 'Glossy')">
     <h3>Leaflets & Flyers</h3>
-    <p>Size: A5</p>
+    <p>Size: A5 | Finish: Glossy</p>
     <button>Select</button>
 </div>
 
-<div class="product-item" onclick="openSidebar('Folded Leaflets & Flyers', 'A4')">
-    <h3>Folded Leaflets</h3>
-    <p>Size: A4</p>
-    <button>Select</button>
-</div>
 
 <!-- Sidebar Section -->
 <?php include 'app/layout-templete/sidebar.php'; ?>
