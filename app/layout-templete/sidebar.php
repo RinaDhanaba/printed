@@ -9,38 +9,75 @@
     <h2>Leaflets & Flyers</h2>
 
     <form action="/app/layout-templete/process.php" method="POST" id="multiStepForm">
+        
         <!-- Step 1: Product Presets -->
         <div class="form-step">
-            <h3>Product Presets</h3>
-            <label><input type="radio" name="preset" value="Build Your Own" required> Build Your Own</label>
-            <label><input type="radio" name="preset" value="Most Popular"> Most Popular</label>
-            <label><input type="radio" name="preset" value="Eco"> Eco</label>
-            <label><input type="radio" name="preset" value="Economy"> Economy</label>
+            <h3 class="step-title">📌 Our Product Presets</h3>
+            <p>Build your own or choose from one of our preset options.</p>
+            <div class="options-grid">
+                <label class="option-card">
+                    <input type="radio" name="preset" value="Build Your Own" required>
+                    <span class="option-text">Build Your Own</span>
+                </label>
+                <label class="option-card">
+                    <input type="radio" name="preset" value="Most Popular">
+                    <span class="option-text">Most Popular</span>
+                </label>
+                <label class="option-card">
+                    <input type="radio" name="preset" value="Eco">
+                    <span class="option-text">Eco</span>
+                </label>
+                <label class="option-card">
+                    <input type="radio" name="preset" value="Economy">
+                    <span class="option-text">Economy</span>
+                </label>
+            </div>
         </div>
 
         <!-- Step 2: Product Type -->
         <div class="form-step">
-            <h3>Select Product Type</h3>
-            <label><input type="radio" name="product" value="Leaflets & Flyers" required> Leaflets & Flyers</label>
-            <label><input type="radio" name="product" value="Folded Leaflets & Flyers"> Folded Leaflets & Flyers</label>
+            <h3 class="step-title">📄 Product</h3>
+            <div class="options-grid">
+                <label class="option-card">
+                    <input type="radio" name="product" value="Leaflets & Flyers" required>
+                    <span class="option-text">Leaflets & Flyers</span>
+                </label>
+                <label class="option-card">
+                    <input type="radio" name="product" value="Folded Leaflets & Flyers">
+                    <span class="option-text">Folded Leaflets & Flyers</span>
+                </label>
+            </div>
         </div>
 
         <!-- Step 3: Select Size -->
         <div class="form-step">
-            <h3>Select Size</h3>
-            <label><input type="radio" name="size" value="A7" required> A7</label>
-            <label><input type="radio" name="size" value="A6"> A6</label>
-            <label><input type="radio" name="size" value="A5"> A5</label>
+            <h3 class="step-title">📏 Size</h3>
+            <div class="size-grid">
+                <label class="size-option">
+                    <input type="radio" name="size" value="A7" required>
+                    <span>A7</span>
+                </label>
+                <label class="size-option">
+                    <input type="radio" name="size" value="A6">
+                    <span>A6</span>
+                </label>
+                <label class="size-option selected">
+                    <input type="radio" name="size" value="A5">
+                    <span>A5</span> ✨
+                </label>
+            </div>
         </div>
 
-        <!-- Step 4: Summary & Submit -->
-        <div class="form-step">
-            <h3>Summary</h3>
+        <!-- Step 4: Summary -->
+        <div class="form-step summary-step">
+            <h3 class="step-title">📋 Summary</h3>
             <p>Review your selections before submitting.</p>
-            <button type="submit" name="submit">Submit</button>
+            <button type="submit" class="submit-btn">Submit</button>
         </div>
+
     </form>
 </section>
+
 
 
 <!-- Sidebar -->
@@ -82,23 +119,100 @@
     top: 0;
     right: 0;
     background-color: var(--white);
-    transition: width 0.3s ease-in-out;  /* Smooth opening */
-    padding-top: 60px;
+    transition: width 0.3s ease-in-out;
     max-width: 1000px;
     z-index: 999999;
+    display: flex;
+    align-items: flex-start;
 }
 
 
 /* Sidebar */
 #sidebar {
     width: 280px;
-    height: 100vh;
+    height: 100%;
     background: white;
     border-left: 3px solid #00c2c2;
     padding: 20px;
     overflow-y: auto;
     transition: all 0.3s ease-in-out;
     box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section.form-section {
+    flex: 1;
+    padding:30px 10px;
+}
+
+/* General Styling */
+.form-section {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+/* Step Titles */
+.step-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+/* Grid Layout for Options */
+.options-grid, .size-grid {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+/* Cards for Options */
+.option-card, .size-option {
+    background: white;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border: 2px solid #ddd;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Highlight Selected Option */
+.option-card input:checked + .option-text,
+.size-option input:checked + span {
+    font-weight: bold;
+    color: #00c2c2;
+}
+
+.size-option.selected {
+    border-color: #ff4081;
+    background: rgba(255, 64, 129, 0.1);
+}
+
+/* Summary Step */
+.summary-step {
+    border-top: 2px solid #ddd;
+    padding-top: 20px;
+}
+
+/* Submit Button */
+.submit-btn {
+    background: #00c2c2;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background: #008a8a;
 }
 
 /* Heading */
