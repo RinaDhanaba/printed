@@ -81,13 +81,6 @@
 
 .cat-slider .slider-btn {
     position: absolute;
-    bottom: 10px;   
-    background: var(--primary-color);
-    color: var(--white);
-    border: none;
-    padding: 4px;
-    cursor: pointer;
-    border-radius: 50%;
-    height:30px;
-    width:30px;
+    top: 90%;
+    transform: translateY(0%);
 }
