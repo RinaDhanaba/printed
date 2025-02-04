@@ -191,18 +191,28 @@ $papers = [
     const maxIndex = tabs.length - 1;
 
     function scrollTabs(direction) {
-        if (direction === 1 && currentIndex < maxIndex) {
-            currentIndex++;
-        } else if (direction === -1 && currentIndex > 0) {
-            currentIndex--;
-        }
-
-        tabs[currentIndex].scrollIntoView({ behavior: "smooth", inline: "center" });
-
-        // Update active tab styling
-        tabs.forEach(t => t.classList.remove("active"));
-        tabs[currentIndex].classList.add("active");
+    if (direction === 1 && currentIndex < maxIndex) {
+        currentIndex++;
+    } else if (direction === -1 && currentIndex > 0) {
+        currentIndex--;
     }
+
+    tabs[currentIndex].scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+
+    // Update active tab styling
+    tabs.forEach(t => t.classList.remove("active"));
+    tabs[currentIndex].classList.add("active");
+
+    // Show/hide arrows based on position
+    document.querySelector(".arrow-left").style.display = currentIndex === 0 ? "none" : "flex";
+    document.querySelector(".arrow-right").style.display = currentIndex === maxIndex ? "none" : "flex";
+}
+
+// Initialize arrows visibility
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelector(".arrow-left").style.display = "none"; // Hide left arrow initially
+});
+
 </script>
 
 <script>
@@ -230,23 +240,20 @@ $papers = [
 <style>
 
 .tab-container {
-            display: flex;
-            overflow-x: auto;
-            gap: 10px;
-            padding: 10px 0;
-            white-space: nowrap;
-            justify-content: center;
-            align-items: center;
-        }
-        .tab {
-            cursor: pointer;
-            padding: 10px 15px;
-            background: #fff;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: all 0.3s;
-            border: 2px solid transparent;
-        }
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px 0;
+    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-type: x mandatory;
+}
+
+.tab {
+    scroll-snap-align: center;
+}
+
         .tab:hover, .tab.active {
             border-color: #ff0080;
             color: #ff0080;
