@@ -83,7 +83,6 @@
     right: 0;
     background-color: var(--white);
     transition: width 0.3s ease-in-out;  /* Smooth opening */
-    overflow-x: hidden;
     padding-top: 60px;
     max-width: 1000px;
     z-index: 999999;
