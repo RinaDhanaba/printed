@@ -165,7 +165,7 @@
 
 /* Page Sections */
 .page-section {
-    min-height: 80vh;
-    padding: 50px;
+    height: 100%;
+    padding: 50px 10px;
     border-bottom: 1px solid #ddd;
 }
