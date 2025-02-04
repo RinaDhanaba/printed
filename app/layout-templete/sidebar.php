@@ -75,17 +75,18 @@
     z-index: 999999;
 }
 
+/* Sidebar (Initially Closed) */
 .sidenav {
     height: 100%;
-    width: 0;
+    width: 0;  /* Initially closed */
     position: fixed;
     top: 0;
     right: 0;
     background-color: var(--white);
-    transition: 0.3s;
+    transition: width 0.3s ease-in-out;  /* Smooth opening */
+    overflow-x: hidden;
     padding-top: 60px;
-    width: 95%;
-    max-width:1000px;
+    max-width: 1000px;
     z-index: 999999;
 }
 

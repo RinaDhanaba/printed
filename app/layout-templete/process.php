@@ -11,8 +11,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<p><strong>Product:</strong> " . $_SESSION['product'] . "</p>";
     echo "<p><strong>Size:</strong> " . $_SESSION['size'] . "</p>";
 
-    echo '<br><a href="index.php">Go Back</a>';
+    echo '<br><a href="/category">Go Back</a>';
 } else {
-    header("Location: index.php");
+    header("Location: /category");
 }
 ?>

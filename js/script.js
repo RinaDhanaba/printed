@@ -36,15 +36,19 @@ function playVideo() {
     alert("Play video feature coming soon!");
 }
 
-// side slider categorey
+
+// Toggle the sidebar open and close
 function toggleNav() {
     var sidebar = document.getElementById("mySidenav");
-    if (sidebar.style.width === "1000px") {
+
+    // If sidebar is open, close it; otherwise, open it
+    if (sidebar.style.width === "1000px" || sidebar.style.width === "95%") {
         sidebar.style.width = "0";
     } else {
-        sidebar.style.width = "1000px";
+        sidebar.style.width = "95%"; // Adjust width as needed
     }
 }
+
 
 // Step Navigation form 
 document.addEventListener("DOMContentLoaded", function () {
