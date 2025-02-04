@@ -155,6 +155,8 @@
 section.form-section {
     flex: 1;
     padding:30px 10px;
+    height: 100vh;
+    overflow-y: scroll;
 }
 
 /* Step Titles */
