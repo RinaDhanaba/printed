@@ -103,7 +103,7 @@ $(document).ready(function() {
         $("#safeDesc").text(leaflet.safe_description);
 
         // Calculate proportional sizes
-        var maxWidth = 100; // Maximum width of the box
+        var maxWidth = 170; // Maximum width of the box
         var scale = maxWidth / Math.max(leaflet.bleed_width, leaflet.bleed_height);
 
         var bleedWidth = leaflet.bleed_width * scale;

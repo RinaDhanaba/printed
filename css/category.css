@@ -450,6 +450,7 @@ text-align: left;
     align-items: center; justify-content: left;
     height: 170px;
     margin:10px auto;}
+    
 #section3 #bleedBox {
     position: absolute;
     border: 1px solid #dc3545;
