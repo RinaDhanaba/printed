@@ -5,7 +5,7 @@
     <button class="tab-button" onclick="openTab(event, 'sample-packs')">Sample Packs</button>
 </div>
 
-<   div class="tab-content active" id="downloadable-templates">
+<div class="tab-content active" id="downloadable-templates">
     <h2>Downloadable Templates</h2>
     <p><strong>Bleed (3mm):</strong> 105mm x 216mm</p>
     <p><strong>Safe area (3mm):</strong> 93mm x 204mm</p>
