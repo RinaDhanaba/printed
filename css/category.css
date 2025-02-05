@@ -26,7 +26,7 @@
  }
 
  .cat-slider .slide-content .inner-slide-content{
-    background: #fff;
+    background: var(--white);
     padding: 25px 10px 30px 20px; 
     border-radius: 7px 7px 0 0;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -57,7 +57,7 @@
 }
 
 .cat-slider .slide-content .trustpilot-section {
-    background: #fff;
+    background: var(--white);
     padding: 20px;
     border-radius: 0 0 7px 7px;
     position: relative;
@@ -95,9 +95,9 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background: white;
+    background: var(--white);
     padding: 10px 20px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid var(--gary-bg);
     position: relative;
     width: 100%;
     transition: all 0.3s ease-in-out;
@@ -118,7 +118,7 @@
 
 #navbar .nav-links a {
     text-decoration: none;
-    color: black;
+    color:var(--black);
     font-weight: bold;
     padding: 10px;
     position: relative;
@@ -130,7 +130,7 @@
     display: block;
     height: 3px;
     width: 100%;
-    background-color: teal;
+    background-color: var(--secondary-color);
     position: absolute;
     bottom: 0;
     left: 0;
@@ -142,7 +142,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: white;
+    background:var(--white);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
 }
@@ -150,8 +150,8 @@
 /* Show Order Now Button when Sticky */
 #navbar .order-now {
     display: none;
-    background: #ff0080;
-    color: white;
+    background:  var(--primary-color);
+    color: var(--white);
     border: none;
     padding: 10px 20px;
     border-radius: 20px;
@@ -173,3 +173,173 @@
     background: var(--gary-bg);
 }
 
+
+
+
+
+/* second tab style */
+
+
+.tab-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px 0;
+    white-space: nowrap;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-type: x mandatory;
+}
+
+/* Hide scrollbar for Chrome, Safari, and newer Edge */
+.tab-container::-webkit-scrollbar {
+display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.tab-container {
+scrollbar-width: none;
+}
+
+/* Hide scrollbar for Internet Explorer and older Edge */
+.tab-container {
+-ms-overflow-style: none;
+}
+
+.tab {
+cursor: pointer;
+padding: 10px 15px;
+background: #fff;
+border-radius: 5px;
+font-weight: bold;
+transition: all 0.3s;
+border: 2px solid transparent;
+scroll-snap-align: center;
+}
+.tab:hover, .tab.active {
+border-color: #ff0080;
+color: #ff0080;
+}
+
+.arrow {
+background-color: #ff0080;
+color: white;
+border: none;
+border-radius: 50%;
+width: 30px;
+height: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 20px;
+cursor: pointer;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+}
+.arrow-left { left: -40px; }
+.arrow-right { right: -40px; }
+
+
+
+/* Paper Details */
+.paper-details {
+display: none;
+padding: 20px;
+background: #f9f9f9;
+border-radius: 10px;
+text-align: left;
+margin-top: 20px;
+}
+
+.paper-details.active {
+display: block;
+}
+
+/* Layout */
+.paper-content {
+display: flex;
+align-items: center;
+gap: 30px;
+}
+
+/* Left: Image */
+.paper-image-container {
+flex: 1;
+}
+
+.paper-image {
+width: 100%;
+max-width: 300px;
+border-radius: 10px;
+}
+
+/* Right: Content */
+.paper-info {
+flex: 2;
+}
+
+/* Weights */
+.weight-list {
+display: flex;
+gap: 8px;
+flex-wrap: wrap;
+}
+
+.badge {
+background-color: #e0e0e0;
+padding: 5px 10px;
+border-radius: 20px;
+font-size: 0.9rem;
+}
+
+/* Best For & Credentials */
+.paper-meta {
+display: flex;
+gap: 50px;
+margin-top: 15px;
+}
+
+.paper-column {
+flex: 1;
+}
+
+.paper-column h4 {
+margin-bottom: 10px;
+}
+
+.paper-column ul {
+list-style: none;
+padding: 0;
+}
+
+.paper-column ul li {
+font-size: 0.9rem;
+color: #333;
+}
+
+/* Order Button */
+.btn-order {
+background-color: #ff0080;
+color: white;
+padding: 10px 15px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+text-decoration: none;
+display: inline-block;
+margin-top: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+.paper-content {
+flex-direction: column;
+text-align: center;
+}
+
+.paper-meta {
+flex-direction: column;
+gap: 20px;
+}
+}
