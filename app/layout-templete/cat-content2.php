@@ -140,6 +140,7 @@ $papers = [
         <div class="tab-container">
             <?php foreach ($papers as $index => $paper): ?>
                 <div class="tab <?= $index === 0 ? 'active' : '' ?>" data-index="<?= $index ?>">
+                    <img src="<?= $paper['image'] ?>" alt="<?= $paper['name'] ?>" class="tab-image">
                     <?= $paper['name'] ?>
                 </div>
             <?php endforeach; ?>
