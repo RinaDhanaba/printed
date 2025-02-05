@@ -1,3 +1,5 @@
+<!--  real template files stored in a folder (templates/) -->
+
 <?php
 // Fetch user selection
 $fileType = isset($_GET['type']) ? $_GET['type'] : '';
@@ -7,37 +9,29 @@ if (!$fileType || !$leafletType) {
     die("Invalid request.");
 }
 
-// Define leaflet dimensions
-$leaflets = [
-    "a4_dl_roll" => ["name" => "A4 folded to DL Leaflet - Roll Fold", "bleed_width" => 303, "bleed_height" => 426],
-    "a4_a5" => ["name" => "A4 folded to A5 Leaflet", "bleed_width" => 154, "bleed_height" => 111],
-    "a4_dl_z" => ["name" => "A4 folded to DL Leaflet - Z Fold", "bleed_width" => 426, "bleed_height" => 303]
+// Map file types correctly
+$fileExtensions = [
+    "pdf" => "pdf",
+    "indesign" => "zip", // InDesign files will be provided in a ZIP format
+    "psd" => "psd"
 ];
 
-if (!isset($leaflets[$leafletType])) {
-    die("Invalid leaflet type.");
+if (!isset($fileExtensions[$fileType])) {
+    die("Invalid file format.");
 }
 
-$leaflet = $leaflets[$leafletType];
-$filename = $leafletType . "." . $fileType;
+// Define the correct file path
+$filePath = "templates/" . $leafletType . "." . $fileExtensions[$fileType];
 
-// Set headers for download
+// Check if the file exists
+if (!file_exists($filePath)) {
+    die("Error: The requested template file is not available.");
+}
+
+// Serve the file for download
 header('Content-Type: application/octet-stream');
-header('Content-Disposition: attachment; filename="' . $filename . '"');
-
-// Generate content based on file type
-switch ($fileType) {
-    case 'pdf':
-        echo "PDF Template for " . $leaflet["name"] . " (" . $leaflet["bleed_width"] . "mm x " . $leaflet["bleed_height"] . "mm)";
-        break;
-    case 'indesign':
-        echo "InDesign Template for " . $leaflet["name"] . " (" . $leaflet["bleed_width"] . "mm x " . $leaflet["bleed_height"] . "mm)";
-        break;
-    case 'psd':
-        echo "Photoshop Template for " . $leaflet["name"] . " (" . $leaflet["bleed_width"] . "mm x " . $leaflet["bleed_height"] . "mm)";
-        break;
-    default:
-        die("Invalid file format.");
-}
-
+header('Content-Disposition: attachment; filename="' . basename($filePath) . '"');
+header('Content-Length: ' . filesize($filePath));
+readfile($filePath);
 exit;
+?>
