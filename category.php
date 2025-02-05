@@ -129,11 +129,17 @@ $menuItems = [
             <li><a href="#<?php echo $item['id']; ?>" class="nav-item"><?php echo $item['title']; ?></a></li>
         <?php endforeach; ?>
     </ul>
-    <select id="mobileNavSelect" class="mobile-nav">
-        <?php foreach ($menuItems as $item) : ?>
-            <option value="<?php echo $item['id']; ?>"><?php echo $item['title']; ?></option>
-        <?php endforeach; ?>
-    </select>
+
+    <!-- Custom Dropdown -->
+    <div class="custom-dropdown">
+        <div class="dropdown-selected">Browse our papers</div>
+        <ul class="dropdown-options">
+            <?php foreach ($menuItems as $item) : ?>
+                <li data-value="<?php echo $item['id']; ?>"><?php echo $item['title']; ?></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+
     <button id="orderNow" class="order-now">Order Now</button>
 </nav>
 

@@ -209,16 +209,42 @@ document.addEventListener("DOMContentLoaded", function () {
     let navbar = document.getElementById("navbar");
     let navItems = document.querySelectorAll(".nav-item");
     let sections = document.querySelectorAll(".page-section");
-    let mobileNav = document.getElementById("mobileNavSelect");
-    let navastab = document.getElementById("navastab"); // Get the parent section
+    let dropdown = document.querySelector(".custom-dropdown");
+    let selected = document.querySelector(".dropdown-selected");
+    let options = document.querySelector(".dropdown-options");
+    let navastab = document.getElementById("navastab");
     let navbarOffset = navbar.offsetTop;
     let isSticky = false;
+
+    // Toggle dropdown on click
+    selected.addEventListener("click", function () {
+        dropdown.classList.toggle("active");
+    });
+
+    // Select option
+    options.addEventListener("click", function (event) {
+        if (event.target.tagName === "LI") {
+            selected.textContent = event.target.textContent;
+            dropdown.classList.remove("active");
+
+            let selectedSection = document.getElementById(event.target.dataset.value);
+            if (selectedSection) {
+                window.scrollTo({ top: selectedSection.offsetTop - 50, behavior: "smooth" });
+            }
+        }
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener("click", function (event) {
+        if (!dropdown.contains(event.target)) {
+            dropdown.classList.remove("active");
+        }
+    });
 
     function updateActiveSection() {
         let scrollPosition = window.scrollY + window.innerHeight / 3;
         let activeFound = false;
 
-        // Only update active section within the #navastab
         if (navastab && isSticky) {
             sections.forEach((section) => {
                 let sectionTop = section.offsetTop;
@@ -229,7 +255,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     let activeItem = document.querySelector(`.nav-item[href="#${section.id}"]`);
                     if (activeItem) {
                         activeItem.classList.add("active");
-                        mobileNav.value = section.id;
+                        selected.textContent = activeItem.textContent; // Update dropdown text
                         activeFound = true;
                     }
                 }
@@ -245,7 +271,6 @@ document.addEventListener("DOMContentLoaded", function () {
         let navastabTop = navastab.offsetTop;
         let navastabBottom = navastabTop + navastab.offsetHeight;
 
-        // Check if the navbar should stick within the #navastab section
         if (window.scrollY > navastabTop && window.scrollY < navastabBottom - navbar.offsetHeight) {
             navbar.classList.add("sticky");
             isSticky = true;
@@ -255,14 +280,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Mobile Navigation Change
-    mobileNav.addEventListener("change", function () {
-        let selectedSection = document.getElementById(this.value);
-        if (selectedSection) {
-            window.scrollTo({ top: selectedSection.offsetTop - 50, behavior: "smooth" });
-        }
-    });
-
     window.addEventListener("scroll", function () {
         handleStickyNav();
         updateActiveSection();
@@ -270,4 +287,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateActiveSection();
 });
-
