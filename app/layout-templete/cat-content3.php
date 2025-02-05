@@ -99,7 +99,15 @@ $(document).ready(function() {
     });
 });
 </script>
-
+<style>
+        body { font-family: Arial, sans-serif; }
+        .container { width: 80%; margin: 20px auto; display: flex; align-items: center; }
+        .dimension-box { width: 40%; padding: 20px; border: 1px dashed #333; text-align: center; }
+        .info-box { width: 60%; padding: 20px; border: 1px solid #ccc; background: #f9f9f9; }
+        .form-group { margin-bottom: 15px; }
+        select, button { width: 100%; padding: 10px; margin-top: 5px; }
+        .download-btn { display: block; padding: 10px; background: #ff0066; color: #fff; text-decoration: none; text-align: center; border-radius: 5px; margin-top: 10px; }
+    </style>
 </div>
 
 <div class="tab-content" id="sample-packs">
