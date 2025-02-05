@@ -108,7 +108,7 @@ $cat_slides = [
 $menuItems = [
     ["id" => "section1", "title" => "Leaflets & Flyers - The Range", "file" => "app/layout-templete/cat-content1.php"],
     ["id" => "section2", "title" => "Browse our papers", "file" => "app/layout-templete/cat-content2.php"],
-    ["id" => "section3", "title" => "Artwork templates", "file" => "app/layout-templete/cat-content3.php"],
+    ["id" => "section3", "title" => "Guide to perfect print", "file" => "app/layout-templete/cat-content3.php"],
     ["id" => "section4", "title" => "You may also like", "file" => "app/layout-templete/cat-content4.php"]
 ];
 ?>
