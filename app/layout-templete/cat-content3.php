@@ -80,7 +80,7 @@ $leafletJSON = json_encode($leaflets);
                 </select>
             </div>
 
-            <a href="#" class="download-btn order-now" id="downloadBtn" style="display: none;">Download Template</a>
+            <a href="#" class="download-btn shop-btn" id="downloadBtn" style="display: none;">Download Template</a>
         </div>
     </div>
 
