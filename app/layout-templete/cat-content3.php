@@ -1,1 +1,139 @@
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit quod officia repellendus, dolores dolorem, excepturi iste eaque libero esse voluptatibus aliquam! Veniam aspernatur recusandae nisi commodi laboriosam ipsa quia est accusamus sapiente nihil ratione placeat animi voluptatem, unde repellendus impedit explicabo temporibus similique et vero fugit odit vitae? Nihil, praesentium! Nihil natus sequi est corporis cumque repellat dolor error odio ab earum iure, animi veniam ullam. Aliquam veritatis, voluptatibus distinctio ex minima iste nam est, dolore dignissimos tempora omnis fugiat nobis qui temporibus sit esse? Eveniet dolore culpa cum, dolor ipsam ipsum! Tempora assumenda provident id voluptate nulla perspiciatis non ipsa mollitia culpa officia! Asperiores, illo hic. Nemo aspernatur voluptatum quaerat libero maxime impedit adipisci architecto error? In quos, enim aliquam magnam culpa, architecto mollitia asperiores quas sapiente molestiae deserunt sed delectus et quo ducimus magni adipisci dolores perspiciatis minima non corporis maxime quisquam commodi nobis? Totam molestiae vitae, deleniti ducimus non minima temporibus asperiores similique fugiat aliquam facere, sapiente aliquid voluptatibus esse. Sapiente recusandae rerum minus accusamus nobis. Fuga, perferendis ipsa minima placeat autem debitis in ad molestiae ipsam inventore possimus velit recusandae aspernatur facilis cum provident explicabo laboriosam vero magnam quas eum modi distinctio facere? Debitis, distinctio velit nostrum ex nisi rem soluta iure, a nemo expedita tempora magnam dolor? Quod nobis inventore obcaecati veritatis unde explicabo ab vitae, doloremque voluptate tempora aut veniam odio officiis tempore ex nesciunt? Et culpa possimus, voluptatem temporibus, odit exercitationem laboriosam at aspernatur dolorum eos tenetur minima laudantium sunt quam labore nulla ducimus non animi rem reiciendis est excepturi eveniet. Enim eligendi hic quaerat architecto atque accusamus cumque inventore sint nisi quisquam ratione necessitatibus quidem veritatis animi maiores suscipit repellendus natus, ullam voluptatum dolorum voluptates voluptas mollitia. Voluptatibus deleniti laboriosam, veritatis in atque quae nesciunt consequatur, iste neque voluptatem inventore soluta facilis!
+<h1>Guide to perfect print</h1>
+        <p>Get your print to the presses perfectly with everything you need to get set up</p>
+
+        <div class="tabs">
+            <button class="tab-button active" onclick="openTab(event, 'downloadable-templates')">Downloadable Templates</button>
+            <button class="tab-button" onclick="openTab(event, 'sample-packs')">Sample Packs</button>
+        </div>
+
+        <div class="tab-content active" id="downloadable-templates">
+            <h2>Downloadable Templates</h2>
+            <p><strong>Bleed (3mm):</strong> 105mm x 216mm</p>
+            <p><strong>Safe area (3mm):</strong> 93mm x 204mm</p>
+
+            <label for="template-type">Select Template:</label>
+            <select id="template-type">
+                <option>A5 Portrait Leaflet</option>
+                <option>A4 Landscape Flyer</option>
+            </select>
+
+            <label for="file-type">Select File Type:</label>
+            <select id="file-type">
+                <option>PDF</option>
+                <option>AI</option>
+                <option>PSD</option>
+            </select>
+
+            <button class="download-btn" disabled>Download Template</button>
+        </div>
+
+        <div class="tab-content" id="sample-packs">
+            <h2>Sample Packs</h2>
+            <form action="submit.php" method="POST">
+                <label>Paper Type:</label>
+                <select name="paper-type">
+                    <option>Bestsellers</option>
+                    <option>Luxury</option>
+                    <option>Recycled</option>
+                </select>
+
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="tel" name="phone" placeholder="Telephone" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="text" name="address1" placeholder="Address Line 1" required>
+                <input type="text" name="address2" placeholder="Address Line 2">
+                <input type="text" name="town" placeholder="Town" required>
+                <input type="text" name="postcode" placeholder="Postcode" required>
+
+                <button type="submit" class="request-btn">Request Sample Pack</button>
+            </form>
+        </div>
+
+
+
+        <style>
+            .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.tab-button {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.tab-button.active {
+    background: #000;
+    color: white;
+}
+
+.tab-content {
+    display: none;
+    text-align: left;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+select, input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.download-btn, .request-btn {
+    width: 100%;
+    padding: 10px;
+    background: #000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.download-btn:disabled {
+    background: gray;
+    cursor: not-allowed;
+}
+        </style>
+
+
+<script>
+    // Handle Tab Switching
+function openTab(evt, tabId) {
+    let i, tabContent, tabButtons;
+
+    tabContent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabContent.length; i++) {
+        tabContent[i].style.display = "none";
+    }
+
+    tabButtons = document.getElementsByClassName("tab-button");
+    for (i = 0; i < tabButtons.length; i++) {
+        tabButtons[i].classList.remove("active");
+    }
+
+    document.getElementById(tabId).style.display = "block";
+    evt.currentTarget.classList.add("active");
+}
+
+// Ensure the first tab is visible on load
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("downloadable-templates").style.display = "block";
+});
+
+// Enable Download Button when file type is selected
+document.getElementById("file-type").addEventListener("change", function() {
+    let button = document.querySelector(".download-btn");
+    button.disabled = this.value === "";
+});
+
+</script>
