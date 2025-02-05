@@ -123,6 +123,15 @@ $menuItems = [
     <button id="orderNow" class="order-now">Order Now</button>
 </nav>
 
+<!-- Mobile Navigation (Dropdown) -->
+<div id="mobileNavbar">
+    <select id="mobileNavSelect">
+        <?php foreach ($menuItems as $item) : ?>
+            <option value="<?php echo $item['id']; ?>"><?php echo $item['title']; ?></option>
+        <?php endforeach; ?>
+    </select>
+</div>
+
 <!-- Page Sections -->
 <div class="cat-content">
     <?php foreach ($menuItems as $item) : ?>

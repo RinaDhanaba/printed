@@ -219,7 +219,7 @@ $productCatsJSON = json_encode($product_cats);
             <input type="text" id="telephone" name="telephone" placeholder="Enter your phone number" pattern="^\+?[0-9\s\-()]+$" required>
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
             <input type="text" id="address1" name="address1" placeholder="Enter address" required>
-            <input type="text" id="address2" name="address2" placeholder="Optional">
+            <input type="text" id="address2" name="address2" placeholder="Enter Second address">
             <input type="text" id="town" name="town" placeholder="Enter town/city" required>
             <input type="text" id="postcode" name="postcode" placeholder="Enter postcode" required>
             <select name="country" id="country" required>

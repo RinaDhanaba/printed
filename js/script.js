@@ -153,23 +153,78 @@ function capitalize(str) {
 
 
 
-// category page nav-bar 
+// // category page nav-bar 
+// document.addEventListener("DOMContentLoaded", function () {
+//     let navbar = document.getElementById("navbar");
+//     let navItems = document.querySelectorAll(".nav-item");
+//     let sections = document.querySelectorAll(".page-section");
+//     let navbarOffset = navbar.offsetTop; // Get initial navbar position
+//     let isSticky = false; // Track sticky state
+
+//     function updateActiveSection() {
+//         let scrollPosition = window.scrollY + window.innerHeight / 3;
+
+//         if (!isSticky) {
+//             // Keep the first item active until sticky
+//             navItems.forEach((item) => item.classList.remove("active"));
+//             navItems[0].classList.add("active");
+//             return;
+//         }
+
+//         sections.forEach((section) => {
+//             let sectionTop = section.offsetTop;
+//             let sectionBottom = sectionTop + section.offsetHeight;
+
+//             if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+//                 navItems.forEach((item) => item.classList.remove("active"));
+//                 let activeItem = document.querySelector(`.nav-item[href="#${section.id}"]`);
+//                 if (activeItem) {
+//                     activeItem.classList.add("active");
+//                 }
+//             }
+//         });
+//     }
+
+//     function handleStickyNav() {
+//         if (window.scrollY > navbarOffset) {
+//             navbar.classList.add("sticky");
+//             isSticky = true;
+//         } else {
+//             navbar.classList.remove("sticky");
+//             isSticky = false;
+//         }
+//     }
+
+//     window.addEventListener("scroll", function () {
+//         handleStickyNav();
+//         updateActiveSection();
+//     });
+
+//     updateActiveSection(); // Run once on page load
+// });
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     let navbar = document.getElementById("navbar");
     let navItems = document.querySelectorAll(".nav-item");
     let sections = document.querySelectorAll(".page-section");
-    let navbarOffset = navbar.offsetTop; // Get initial navbar position
-    let isSticky = false; // Track sticky state
+    let mobileNav = document.getElementById("mobileNavSelect");
+    let navbarOffset = navbar.offsetTop;
+    let isSticky = false;
 
     function updateActiveSection() {
         let scrollPosition = window.scrollY + window.innerHeight / 3;
-
+        
         if (!isSticky) {
-            // Keep the first item active until sticky
             navItems.forEach((item) => item.classList.remove("active"));
-            navItems[0].classList.add("active");
+            if (navItems.length > 0) {
+                navItems[0].classList.add("active");
+            }
             return;
         }
+
+        let activeFound = false;
 
         sections.forEach((section) => {
             let sectionTop = section.offsetTop;
@@ -180,9 +235,15 @@ document.addEventListener("DOMContentLoaded", function () {
                 let activeItem = document.querySelector(`.nav-item[href="#${section.id}"]`);
                 if (activeItem) {
                     activeItem.classList.add("active");
+                    mobileNav.value = section.id;
+                    activeFound = true;
                 }
             }
         });
+
+        if (!activeFound && isSticky && navItems.length > 0) {
+            navItems[0].classList.add("active");
+        }
     }
 
     function handleStickyNav() {
@@ -195,10 +256,18 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    // Mobile Navigation Change
+    mobileNav.addEventListener("change", function () {
+        let selectedSection = document.getElementById(this.value);
+        if (selectedSection) {
+            window.scrollTo({ top: selectedSection.offsetTop - 50, behavior: "smooth" });
+        }
+    });
+
     window.addEventListener("scroll", function () {
         handleStickyNav();
         updateActiveSection();
     });
 
-    updateActiveSection(); // Run once on page load
+    updateActiveSection();
 });
