@@ -38,7 +38,7 @@ $products2 = [
 ?>
 
     <!-- Product Section -->
-    <section class="product-grid category">
+    <section class="product-grid">
     <div class="grid">
         <?php foreach ($products2 as $product) : ?>
             <div class="product">

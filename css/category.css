@@ -173,9 +173,3 @@
     background: var(--gary-bg);
 }
 
-
- /* second product grid  */
-.category.product-grid{
-    background: transparent;
-    padding:0;
-}

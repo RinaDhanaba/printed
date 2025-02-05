@@ -48,7 +48,7 @@ $products = [
 
 <style>
 .cat-content .product-grid{
-    background: var(--white);
-    padding:0 0 60px 0;
+    background:transparent;
+    padding:0;
 }
 </style>
