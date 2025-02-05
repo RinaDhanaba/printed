@@ -6,24 +6,100 @@
 </div>
 
 <div class="tab-content active" id="downloadable-templates">
-    <h2>Downloadable Templates</h2>
-    <p><strong>Bleed (3mm):</strong> 105mm x 216mm</p>
-    <p><strong>Safe area (3mm):</strong> 93mm x 204mm</p>
 
-    <label for="template-type">Select Template:</label>
-    <select id="template-type">
-        <option>A5 Portrait Leaflet</option>
-        <option>A4 Landscape Flyer</option>
-    </select>
 
-    <label for="file-type">Select File Type:</label>
-    <select id="file-type">
-        <option>PDF</option>
-        <option>AI</option>
-        <option>PSD</option>
-    </select>
+<?php
+// Array storing leaflet details
+$leaflets = [
+    "a4_dl_roll" => [
+        "name" => "A4 folded to DL Leaflet - Roll Fold",
+        "bleed" => "303mm x 426mm",
+        "safe_area" => "291mm x 414mm",
+        "description" => "The bleed area extends out an extra 3mm from the edge of your finished artwork. Make sure that you don't place any important content or artwork elements in this area, as it will get trimmed off.",
+        "safe_description" => "We recommend that no text is placed in this area as anything placed outside of this box will risk being cut off."
+    ],
+    "a4_a5" => [
+        "name" => "A4 folded to A5 Leaflet",
+        "bleed" => "154mm x 111mm",
+        "safe_area" => "142mm x 99mm",
+        "description" => "The bleed area extends out an extra 3mm from the edge of your finished artwork.",
+        "safe_description" => "We recommend that no text is placed in this area."
+    ],
+    "a4_dl_z" => [
+        "name" => "A4 folded to DL Leaflet - Z Fold",
+        "bleed" => "426mm x 303mm",
+        "safe_area" => "414mm x 291mm",
+        "description" => "The bleed area extends out an extra 3mm from the edge of your finished artwork.",
+        "safe_description" => "We recommend that no text is placed in this area."
+    ]
+];
+?>
 
-    <button class="download-btn" disabled>Download Template</button>
+<div class="container">
+    <!-- Dimension Box -->
+    <div class="dimension-box">
+        <p id="dimensionText">A4 folded to DL Leaflet - Roll Fold</p>
+        <p><strong>Bleed Size:</strong> <span id="bleedSize"><?= $leaflets["a4_dl_roll"]["bleed"] ?></span></p>
+        <p><strong>Safe Area:</strong> <span id="safeSize"><?= $leaflets["a4_dl_roll"]["safe_area"] ?></span></p>
+    </div>
+
+    <!-- Info & Form Box -->
+    <div class="info-box">
+        <h3>Select Leaflet Type</h3>
+        <div class="form-group">
+            <label>Leaflet Type:</label>
+            <select id="leafletSelector">
+                <?php foreach ($leaflets as $key => $leaflet): ?>
+                    <option value="<?= $key ?>"><?= $leaflet["name"] ?></option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label>File Type:</label>
+            <select id="fileType">
+                <option value="">Select a file type</option>
+                <option value="pdf">PDF</option>
+                <option value="indesign">InDesign</option>
+                <option value="psd">Photoshop</option>
+            </select>
+        </div>
+
+        <h3 id="leafletName"><?= $leaflets["a4_dl_roll"]["name"] ?></h3>
+        <p id="bleedDesc"><?= $leaflets["a4_dl_roll"]["description"] ?></p>
+        <p id="safeDesc"><?= $leaflets["a4_dl_roll"]["safe_description"] ?></p>
+        
+        <a href="#" class="download-btn" id="downloadBtn">Download Template</a>
+    </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    var leafletData = <?php echo json_encode($leaflets); ?>;
+
+    $("#leafletSelector").change(function() {
+        var selectedLeaflet = $(this).val();
+
+        // Update text dynamically
+        $("#dimensionText").text(leafletData[selectedLeaflet].name);
+        $("#bleedSize").text(leafletData[selectedLeaflet].bleed);
+        $("#safeSize").text(leafletData[selectedLeaflet].safe_area);
+        $("#leafletName").text(leafletData[selectedLeaflet].name);
+        $("#bleedDesc").text(leafletData[selectedLeaflet].description);
+        $("#safeDesc").text(leafletData[selectedLeaflet].safe_description);
+    });
+
+    $("#fileType").change(function() {
+        var fileType = $(this).val();
+        if (fileType) {
+            $("#downloadBtn").attr("href", "download.php?type=" + fileType).show();
+        } else {
+            $("#downloadBtn").hide();
+        }
+    });
+});
+</script>
+
 </div>
 
 <div class="tab-content" id="sample-packs">
