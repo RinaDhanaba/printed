@@ -42,12 +42,12 @@ $leafletJSON = json_encode($leaflets);
         <!-- Dimension Section -->
         <div class="dimension-section">
             <h3>Leaflet Dimensions</h3>
+            <p id="dimensionText"><?= $leaflets["a4_dl_roll"]["name"] ?></p>
             <div id="dimensionVisual">
                 <div id="bleedBox">
                     <div id="safeBox"></div>
                 </div>
-            </div>
-            <p id="dimensionText"><?= $leaflets["a4_dl_roll"]["name"] ?></p>
+            </div>            
         </div>
 
         <!-- Description Section -->
@@ -80,7 +80,7 @@ $leafletJSON = json_encode($leaflets);
                 </select>
             </div>
 
-            <a href="#" class="download-btn" id="downloadBtn" style="display: none;">Download Template</a>
+            <a href="#" class="download-btn order-now" id="downloadBtn" style="display: none;">Download Template</a>
         </div>
     </div>
 

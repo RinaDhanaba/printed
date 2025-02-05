@@ -224,7 +224,7 @@ p{
 .product-grid {
     text-align: center;
     padding: 80px 10px;
-    background: var(--gary-bg);
+    background: transparent;
 }
 .product-grid.product-grid2{    
     padding: 80px 10px 160px 10px;

@@ -467,11 +467,17 @@ text-align: left;
 
 /* Form Section */
 #section3 .form-section { 
-flex:1; padding: 20px; 
-border: 1px solid #ccc; 
-background: #f9f9f9; 
+flex:1; padding: 20px 0;  
 border-radius:4px;
 }
+
+@media (max-width: 768px) {
+#section3 .tab-content .container { 
+ flex-direction:column-reverse;
+}
+}
+
 #section3 .form-group { margin-bottom: 15px; }
-#section3 select { width: 100%; padding: 10px; margin-top: 5px; }
-#section3 .download-btn { display: block; padding: 10px; background: #ff0066; color: #fff; text-decoration: none; text-align: center; border-radius: 5px; margin-top: 10px; }
+
+select { width: 100%; padding: 10px; margin-top: 5px; font-size:14px; }
+label, ::placeholder, option {font-size:14px; }
