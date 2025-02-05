@@ -255,72 +255,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 <style>
-/* Hide scrollbar for Chrome, Safari, and newer Edge
+
+.tab-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 10px 0;
+            white-space: nowrap;
+            justify-content: center;
+            align-items: center;
+            scroll-snap-type: x mandatory;
+        }
+
+/* Hide scrollbar for Chrome, Safari, and newer Edge */
 .tab-container::-webkit-scrollbar {
     display: none;
 }
 
-Hide scrollbar for Firefox
+/* Hide scrollbar for Firefox */
 .tab-container {
     scrollbar-width: none;
 }
 
-Hide scrollbar for Internet Explorer and older Edge
+/* Hide scrollbar for Internet Explorer and older Edge */
 .tab-container {
     -ms-overflow-style: none;
-} */
-
-.tab-wrapper {
-    display: flex;
-    align-items: center;
-    position: relative;
-    justify-content: center;
-    gap: 10px;
-}
-
-.tab-container {
-    display: flex;
-    overflow-x: auto;
-    gap: 15px;
-    padding: 10px 0;
-    white-space: nowrap;
-    scroll-snap-type: x mandatory;
-    align-items: center;
-}
-
-/* Hide Scrollbar */
-.tab-container::-webkit-scrollbar {
-    display: none;
 }
 
 .tab {
     cursor: pointer;
-    padding: 10px;
+    padding: 10px 15px;
     background: #fff;
     border-radius: 5px;
     font-weight: bold;
     transition: all 0.3s;
     border: 2px solid transparent;
     scroll-snap-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
-
 .tab:hover, .tab.active {
     border-color: #ff0080;
     color: #ff0080;
 }
 
-.tab-image {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 5px;
-    margin-bottom: 5px;
-}
-
-/* Arrows */
 .arrow {
     background-color: #ff0080;
     color: white;
@@ -333,18 +309,115 @@ Hide scrollbar for Internet Explorer and older Edge
     justify-content: center;
     font-size: 20px;
     cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
-
 .arrow-left { left: -40px; }
 .arrow-right { right: -40px; }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .tab-container {
-        flex-wrap: nowrap;
-        overflow-x: scroll;
-    }
+
+
+/* Paper Details */
+.paper-details {
+    display: none;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    text-align: left;
+    margin-top: 20px;
 }
 
+.paper-details.active {
+    display: block;
+}
+
+/* Layout */
+.paper-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Left: Image */
+.paper-image-container {
+    flex: 1;
+}
+
+.paper-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+/* Right: Content */
+.paper-info {
+    flex: 2;
+}
+
+/* Weights */
+.weight-list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Best For & Credentials */
+.paper-meta {
+    display: flex;
+    gap: 50px;
+    margin-top: 15px;
+}
+
+.paper-column {
+    flex: 1;
+}
+
+.paper-column h4 {
+    margin-bottom: 10px;
+}
+
+.paper-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.paper-column ul li {
+    font-size: 0.9rem;
+    color: #333;
+}
+
+/* Order Button */
+.btn-order {
+    background-color: #ff0080;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .paper-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .paper-meta {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
 
 </style>
