@@ -129,23 +129,18 @@ $papers = [
 
 ?>
 
-<section class="advanced-horizontal-tab">
+<section class="paper-selection">
     <div class="container">
-        <p class="description">The paper you choose can make all the difference to your finished print.</p>
-
-        <!-- Tab Navigation with Arrows -->
+        <!-- Tab Navigation -->
         <div class="tab-wrapper">
             <button class="arrow arrow-left" onclick="scrollTabs(-1)">&#9665;</button>
-            
             <div class="tab-container">
                 <?php foreach ($papers as $index => $paper): ?>
                     <div class="tab <?= $index === 0 ? 'active' : '' ?>" data-index="<?= $index ?>">
-                        <img src="<?= $paper['image'] ?>" alt="<?= $paper['name'] ?>" class="tab-image">
                         <span><?= $paper['name'] ?></span>
                     </div>
                 <?php endforeach; ?>
             </div>
-
             <button class="arrow arrow-right" onclick="scrollTabs(1)">&#9655;</button>
         </div>
 
@@ -160,10 +155,10 @@ $papers = [
 
                     <!-- Right: Text Content -->
                     <div class="paper-info">
-                        <h3><?= $paper['name'] ?></h3>
-                        <p><?= $paper['description'] ?></p>
+                        <h3 class="paper-title"><?= $paper['name'] ?></h3>
+                        <p class="paper-description"><?= $paper['description'] ?></p>
 
-                        <h4>Available Weights</h4>
+                        <h4 class="section-title">Available Weights</h4>
                         <div class="weight-list">
                             <?php foreach ($paper['weights'] as $weight): ?>
                                 <span class="badge"><?= $weight ?></span>
@@ -257,15 +252,15 @@ document.addEventListener("DOMContentLoaded", function () {
 <style>
 
 .tab-container {
-            display: flex;
-            overflow-x: auto;
-            gap: 10px;
-            padding: 10px 0;
-            white-space: nowrap;
-            justify-content: center;
-            align-items: center;
-            scroll-snap-type: x mandatory;
-        }
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px 0;
+    white-space: nowrap;    
+    justify-content: center;
+    align-items: center;
+    scroll-snap-type: x mandatory;
+}
 
 /* Hide scrollbar for Chrome, Safari, and newer Edge */
 .tab-container::-webkit-scrollbar {
@@ -417,6 +412,104 @@ document.addEventListener("DOMContentLoaded", function () {
     .paper-meta {
         flex-direction: column;
         gap: 20px;
+    }
+}
+
+
+/* Tab Navigation */
+.tab-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.tab-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 10px;
+}
+
+.tab {
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.tab:hover, .tab.active {
+    border-color: #ff0080;
+    color: #ff0080;
+}
+
+/* Paper Details */
+.paper-details {
+    display: none;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.paper-details.active {
+    display: block;
+}
+
+.paper-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.paper-image-container {
+    flex: 1;
+}
+
+.paper-image {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+}
+
+.paper-info {
+    flex: 2;
+}
+
+.section-title {
+    font-weight: bold;
+}
+
+.weight-list {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background-color: #e0e0e0;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.btn-order {
+    background-color: #ff0080;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+@media (max-width: 768px) {
+    .paper-content {
+        flex-direction: column;
+        text-align: center;
     }
 }
 
