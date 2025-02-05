@@ -144,37 +144,6 @@ $(document).ready(function() {
 });
 </script>
 
-<style>
-.container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; }
-
-/* Dimension Section */
-.dimension-section { width: 30%; padding: 20px; border: 1px dashed #333; background: #f9f9f9; text-align: center; }
-#dimensionVisual { position: relative; display: flex; align-items: center; justify-content: center; height: 300px; }
-#bleedBox {
-    background: rgba(220, 53, 69, 0.2);
-    position: absolute;
-    border: 2px solid #dc3545;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#safeBox {
-    background: rgba(40, 167, 69, 0.2);
-    border: 2px solid #28a745;
-}
-
-/* Description Section */
-.description-section { width: 35%; padding: 20px; border: 1px solid #ccc; background: #fff; }
-
-/* Form Section */
-.form-section { width: 30%; padding: 20px; border: 1px solid #ccc; background: #f9f9f9; }
-.form-group { margin-bottom: 15px; }
-select { width: 100%; padding: 10px; margin-top: 5px; }
-.download-btn { display: block; padding: 10px; background: #ff0066; color: #fff; text-decoration: none; text-align: center; border-radius: 5px; margin-top: 10px; }
-</style>
-
-
-
 </div>
 
 <div class="tab-content" id="sample-packs">

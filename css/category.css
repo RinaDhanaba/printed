@@ -433,26 +433,29 @@ text-align: left;
     display: block;
 }
 
-select, input {
-    width: 100%;
-    height: 50px;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid var(--text-color);
-    border-radius: 5px; 
+#section3 .container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; }
+
+/* Dimension Section */
+#section3 .dimension-section { width: 30%; padding: 20px; border: 1px dashed #333; background: #f9f9f9; text-align: center; }
+#section3 #dimensionVisual { position: relative; display: flex; align-items: center; justify-content: center; height: 300px; }
+#section3 #bleedBox {
+    background: rgba(220, 53, 69, 0.2);
+    position: absolute;
+    border: 2px solid #dc3545;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#section3 #safeBox {
+    background: rgba(40, 167, 69, 0.2);
+    border: 2px solid #28a745;
 }
 
-.download-btn, .request-btn {
-    width: 100%;
-    padding: 10px;
-    background: #000;
-    color: white;
-    border: none;
-    cursor: pointer;
-    margin-top: 10px;
-}
+/* Description Section */
+#section3 .description-section { width: 35%; padding: 20px; border: 1px solid #ccc; background: #fff; }
 
-.download-btn:disabled {
-    background: gray;
-    cursor: not-allowed;
-}
+/* Form Section */
+#section3 .form-section { width: 30%; padding: 20px; border: 1px solid #ccc; background: #f9f9f9; }
+#section3 .form-group { margin-bottom: 15px; }
+#section3 select { width: 100%; padding: 10px; margin-top: 5px; }
+#section3 .download-btn { display: block; padding: 10px; background: #ff0066; color: #fff; text-decoration: none; text-align: center; border-radius: 5px; margin-top: 10px; }
