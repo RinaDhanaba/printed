@@ -39,9 +39,9 @@ $leafletJSON = json_encode($leaflets);
 ?>
 
 <div class="container">
-    <!-- Dimension Box -->
-    <div class="dimension-container">
-        <div class="dimension-box">
+        <!-- Dimension Section -->
+        <div class="dimension-section">
+            <h3>Leaflet Dimensions</h3>
             <p id="dimensionText"><?= $leaflets["a4_dl_roll"]["name"] ?></p>
             <div id="dimensionVisual">
                 <div id="bleedBox">
@@ -51,36 +51,40 @@ $leafletJSON = json_encode($leaflets);
             <p><strong>Bleed Size:</strong> <span id="bleedSize"><?= $leaflets["a4_dl_roll"]["bleed_width"] . "mm x " . $leaflets["a4_dl_roll"]["bleed_height"] ?></span></p>
             <p><strong>Safe Area:</strong> <span id="safeSize"><?= $leaflets["a4_dl_roll"]["safe_width"] . "mm x " . $leaflets["a4_dl_roll"]["safe_height"] ?></span></p>
         </div>
-    </div>
 
-    <!-- Info & Form Box -->
-    <div class="info-box">
-        <h3>Select Leaflet Type</h3>
-        <div class="form-group">
-            <label>Leaflet Type:</label>
-            <select id="leafletSelector">
-                <?php foreach ($leaflets as $key => $leaflet): ?>
-                    <option value="<?= $key ?>"><?= $leaflet["name"] ?></option>
-                <?php endforeach; ?>
-            </select>
-        </div>
-        
-        <div class="form-group">
-            <label>File Type:</label>
-            <select id="fileType">
-                <option value="">Select a file type</option>
-                <option value="pdf">PDF</option>
-                <option value="indesign">InDesign</option>
-                <option value="psd">Photoshop</option>
-            </select>
+        <!-- Description Section -->
+        <div class="description-section">
+            <h3 id="leafletName"><?= $leaflets["a4_dl_roll"]["name"] ?></h3>
+            <p id="bleedDesc"><?= $leaflets["a4_dl_roll"]["description"] ?></p>
+            <p id="safeDesc"><?= $leaflets["a4_dl_roll"]["safe_description"] ?></p>
         </div>
 
-        <h3 id="leafletName"><?= $leaflets["a4_dl_roll"]["name"] ?></h3>
-        <p id="bleedDesc"><?= $leaflets["a4_dl_roll"]["description"] ?></p>
-        <p id="safeDesc"><?= $leaflets["a4_dl_roll"]["safe_description"] ?></p>
-        
-        <a href="#" class="download-btn" id="downloadBtn" style="display: none;">Download Template</a>
+        <!-- Form Section -->
+        <div class="form-section">
+            <h3>Select Leaflet Type</h3>
+            <div class="form-group">
+                <label>Leaflet Type:</label>
+                <select id="leafletSelector">
+                    <?php foreach ($leaflets as $key => $leaflet): ?>
+                        <option value="<?= $key ?>"><?= $leaflet["name"] ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>File Type:</label>
+                <select id="fileType">
+                    <option value="">Select a file type</option>
+                    <option value="pdf">PDF</option>
+                    <option value="indesign">InDesign</option>
+                    <option value="psd">Photoshop</option>
+                </select>
+            </div>
+
+            <a href="#" class="download-btn" id="downloadBtn" style="display: none;">Download Template</a>
+        </div>
     </div>
+
 </div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -101,7 +105,7 @@ $(document).ready(function() {
 
         // Calculate proportional sizes
         var maxWidth = 300; // Maximum width of the box
-        var scale = maxWidth / Math.max(leaflet.bleed_width, leaflet.bleed_height); // Scale factor
+        var scale = maxWidth / Math.max(leaflet.bleed_width, leaflet.bleed_height);
 
         var bleedWidth = leaflet.bleed_width * scale;
         var bleedHeight = leaflet.bleed_height * scale;
@@ -109,45 +113,45 @@ $(document).ready(function() {
         var safeHeight = leaflet.safe_height * scale;
 
         // Update CSS styles dynamically
-        $("#bleedBox").css({
-            "width": bleedWidth + "px",
-            "height": bleedHeight + "px"
-        });
-
-        $("#safeBox").css({
-            "width": safeWidth + "px",
-            "height": safeHeight + "px"
-        });
+        $("#bleedBox").css({ "width": bleedWidth + "px", "height": bleedHeight + "px" });
+        $("#safeBox").css({ "width": safeWidth + "px", "height": safeHeight + "px" });
     }
 
     // Change leaflet selection dynamically
     $("#leafletSelector").change(function() {
         updateDimensions($(this).val());
+        updateDownloadLink(); // Update download link
     });
 
     // Change file type selection and show/hide button
     $("#fileType").change(function() {
-        var fileType = $(this).val();
-        if (fileType) {
-            $("#downloadBtn").attr("href", "download.php?type=" + fileType).show();
+        updateDownloadLink(); // Update download link
+    });
+
+    function updateDownloadLink() {
+        var leafletType = $("#leafletSelector").val();
+        var fileType = $("#fileType").val();
+        if (leafletType && fileType) {
+            $("#downloadBtn").attr("href", "download.php?type=" + fileType + "&leaflet=" + leafletType).show();
         } else {
             $("#downloadBtn").hide();
         }
-    });
+    }
 
     // Initialize with first selection
     updateDimensions($("#leafletSelector").val());
+    updateDownloadLink();
 });
 </script>
 
 <style>
-.container { display: flex; flex-wrap: wrap; justify-content: space-between; }
-.dimension-container { width: 40%; display: flex; align-items: center; justify-content: center; }
-.dimension-box { text-align: center; padding: 20px; border: 1px dashed #333; background: #f9f9f9; width: 100%; }
+.container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; }
 
-#dimensionVisual { position: relative; display: flex; align-items: center; justify-content: center; height: 350px; }
+/* Dimension Section */
+.dimension-section { width: 30%; padding: 20px; border: 1px dashed #333; background: #f9f9f9; text-align: center; }
+#dimensionVisual { position: relative; display: flex; align-items: center; justify-content: center; height: 300px; }
 #bleedBox {
-    background: rgba(220, 53, 69, 0.2); /* Light red for bleed area */
+    background: rgba(220, 53, 69, 0.2);
     position: absolute;
     border: 2px solid #dc3545;
     display: flex;
@@ -155,16 +159,19 @@ $(document).ready(function() {
     justify-content: center;
 }
 #safeBox {
-    background: rgba(40, 167, 69, 0.2); /* Light green for safe area */
+    background: rgba(40, 167, 69, 0.2);
     border: 2px solid #28a745;
 }
 
-.info-box { width: 55%; padding: 20px; border: 1px solid #ccc; background: #fff; }
+/* Description Section */
+.description-section { width: 35%; padding: 20px; border: 1px solid #ccc; background: #fff; }
+
+/* Form Section */
+.form-section { width: 30%; padding: 20px; border: 1px solid #ccc; background: #f9f9f9; }
 .form-group { margin-bottom: 15px; }
-select, button { width: 100%; padding: 10px; margin-top: 5px; }
+select { width: 100%; padding: 10px; margin-top: 5px; }
 .download-btn { display: block; padding: 10px; background: #ff0066; color: #fff; text-decoration: none; text-align: center; border-radius: 5px; margin-top: 10px; }
 </style>
-
 
 
 
