@@ -34,7 +34,7 @@ $leaflets = [
     ]
 ];
 
-// Convert PHP array to JSON
+// Convert PHP array to JSON for JavaScript
 $leafletJSON = json_encode($leaflets);
 ?>
 
@@ -76,11 +76,12 @@ $leafletJSON = json_encode($leaflets);
     </div>
 </div>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
 $(document).ready(function() {
-    var leafletData = <?= $leafletJSON; ?>; // Fix: Assign PHP array to JavaScript variable
+    var leafletData = <?= $leafletJSON; ?>; // Get PHP data into JS
 
-    // Change leaflet selection
+    // Change leaflet selection dynamically
     $("#leafletSelector").change(function() {
         var selectedLeaflet = $(this).val();
 
@@ -93,7 +94,7 @@ $(document).ready(function() {
         $("#safeDesc").text(leafletData[selectedLeaflet].safe_description);
     });
 
-    // Change file type selection
+    // Change file type selection and show/hide button
     $("#fileType").change(function() {
         var fileType = $(this).val();
         if (fileType) {
@@ -109,7 +110,7 @@ $(document).ready(function() {
 .dimension-box { width: 40%; padding: 20px; border: 1px dashed #333; text-align: center; }
 .info-box { width: 60%; padding: 20px; border: 1px solid #ccc; background: #f9f9f9; }
 .form-group { margin-bottom: 15px; }
-select, button { width: 100%; padding: 10px; margin-top: 5px; }
+.tab-content select, .tab-content button { width: 100%; padding: 10px; margin-top: 5px; }
 .download-btn { display: block; padding: 10px; background: #ff0066; color: #fff; text-decoration: none; text-align: center; border-radius: 5px; margin-top: 10px; }
 </style>
 
