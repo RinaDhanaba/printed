@@ -33,6 +33,9 @@ $leaflets = [
         "safe_description" => "We recommend that no text is placed in this area."
     ]
 ];
+
+// Convert PHP array to JSON
+$leafletJSON = json_encode($leaflets);
 ?>
 
 <div class="container">
@@ -75,7 +78,7 @@ $leaflets = [
 
 <script>
 $(document).ready(function() {
-    var leafletData = <?= $leafletJSON; ?>; // Get data from PHP
+    var leafletData = <?= $leafletJSON; ?>; // Fix: Assign PHP array to JavaScript variable
 
     // Change leaflet selection
     $("#leafletSelector").change(function() {
@@ -101,13 +104,18 @@ $(document).ready(function() {
     });
 });
 </script>
+
 <style>
-        .dimension-box { width: 40%; padding: 20px; border: 1px dashed #333; text-align: center; }
-        .info-box { width: 60%; padding: 20px; border: 1px solid #ccc; background: #f9f9f9; }
-        .form-group { margin-bottom: 15px; }
-        select, button { width: 100%; padding: 10px; margin-top: 5px; }
-        .download-btn { display: block; padding: 10px; background: #ff0066; color: #fff; text-decoration: none; text-align: center; border-radius: 5px; margin-top: 10px; }
-    </style>
+.dimension-box { width: 40%; padding: 20px; border: 1px dashed #333; text-align: center; }
+.info-box { width: 60%; padding: 20px; border: 1px solid #ccc; background: #f9f9f9; }
+.form-group { margin-bottom: 15px; }
+select, button { width: 100%; padding: 10px; margin-top: 5px; }
+.download-btn { display: block; padding: 10px; background: #ff0066; color: #fff; text-decoration: none; text-align: center; border-radius: 5px; margin-top: 10px; }
+</style>
+
+
+
+
 </div>
 
 <div class="tab-content" id="sample-packs">
