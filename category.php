@@ -114,23 +114,29 @@ $menuItems = [
 ?>
 
 <!-- Navigation Bar -->
-<nav id="navbar">
+<!-- <nav id="navbar">
     <ul class="nav-links"> 
         <?php foreach ($menuItems as $item) : ?>
             <li><a href="#<?php echo $item['id']; ?>" class="nav-item"><?php echo $item['title']; ?></a></li>
         <?php endforeach; ?>
     </ul>
     <button id="orderNow" class="order-now">Order Now</button>
-</nav>
+</nav> -->
 
-<!-- Mobile Navigation (Dropdown) -->
-<div id="mobileNavbar">
-    <select id="mobileNavSelect">
+<nav id="navbar">
+    <ul class="nav-links">
+        <?php foreach ($menuItems as $item) : ?>
+            <li><a href="#<?php echo $item['id']; ?>" class="nav-item"><?php echo $item['title']; ?></a></li>
+        <?php endforeach; ?>
+    </ul>
+    <select id="mobileNavSelect" class="mobile-nav">
         <?php foreach ($menuItems as $item) : ?>
             <option value="<?php echo $item['id']; ?>"><?php echo $item['title']; ?></option>
         <?php endforeach; ?>
     </select>
-</div>
+    <button id="orderNow" class="order-now">Order Now</button>
+</nav>
+
 
 <!-- Page Sections -->
 <div class="cat-content">
