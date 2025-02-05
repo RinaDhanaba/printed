@@ -439,11 +439,11 @@ text-align: left;
     display: flex;
     flex-wrap: wrap;
     justify-content: center; 
-    gap: 20px; }
+    gap: 50px; }
 
 /* Dimension Section */
 .dimension-section{
- flex:1;    
+ padding-right: 40px;   
 }
 #section3 #dimensionVisual { 
     position: relative; display: flex;
@@ -463,11 +463,11 @@ text-align: left;
 }
 
 /* Description Section */
-#section3 .description-section { flex:2;}
+#section3 .description-section { flex:1;}
 
 /* Form Section */
 #section3 .form-section { 
-flex:2; 
+flex:1; 
 padding: 20px 0;  
 border-radius:4px;
 }
