@@ -1,1 +1,65 @@
-Lorem, ipsum dolor sit amet consectetur adipisicing elit. Esse soluta accusamus doloribus cum voluptas suscipit nobis inventore voluptates officia, incidunt eius nam possimus illum, ducimus assumenda expedita provident sapiente eligendi architecto omnis nulla cupiditate? Assumenda ipsa esse illum, impedit facere possimus, labore illo, explicabo expedita deserunt consequatur tempora ab nesciunt saepe numquam vitae dolores cum ipsam hic. Ex optio nemo odit dolorem? Enim, perspiciatis officiis error nisi aliquam maxime sequi consequatur quasi eveniet vero officia amet dolorem corporis quaerat, aut sed dolores sapiente! Distinctio a ad eos aspernatur ipsum maiores molestiae explicabo quidem saepe et aliquid itaque mollitia amet, exercitationem fugiat ducimus ipsam rem vero quasi minima reiciendis, deserunt fuga placeat cum! Ratione accusamus harum aliquid illo quas nulla reprehenderit impedit sequi culpa. Aperiam autem sed obcaecati cum, soluta aliquid commodi assumenda adipisci voluptas voluptatum suscipit excepturi neque laborum, quidem quibusdam in delectus iure! Blanditiis, nulla provident quo distinctio aliquid nemo alias inventore illum reprehenderit cumque quasi placeat eligendi quaerat reiciendis id rem corporis voluptatem delectus, libero deserunt dolore! Architecto nemo nihil fuga! Omnis cum dolorum, facilis perferendis consectetur modi officia, exercitationem nemo eum esse culpa, suscipit tenetur porro? Consequuntur cupiditate, iure at quam doloremque quod eos suscipit labore vel odit molestias alias nemo debitis magni cum earum, inventore recusandae vero saepe? Quo error fuga reprehenderit inventore ipsa facere at animi. Suscipit recusandae voluptatum tenetur alias quos repellat ullam architecto excepturi asperiores vero blanditiis et consectetur id doloremque error voluptates repellendus quo, expedita explicabo at ut accusantium! Minus iusto eaque, natus ipsa omnis possimus debitis nostrum provident. Aspernatur fugit dolore consequatur ea sunt eligendi officiis iusto excepturi ipsa ad, dicta numquam illum vero libero cupiditate itaque aliquam maxime similique id reprehenderit vel delectus exercitationem autem iure. Nostrum, cupiditate doloremque, ducimus alias quibusdam hic molestias eum eos a sunt iste beatae!
+<?php
+$products2 = [
+    [
+        "title" => "Business Cards",
+        "desc" => "Leaflets & Flyers",
+        "product_link" => "#",
+        "price" => "",
+        "image" => "../media/category_custom_shape_1.jpg",
+        "link" => "#"
+    ],
+    [
+        "title" => "Postcards",
+        "desc" => "Leaflets & Flyers",
+        "product_link" => "#",
+        "price" => "",
+        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "link" => "#",
+        "badge" => "NEW white pearl foil"
+    ],
+    [
+        "title" => "Business Cards",
+        "desc" => "Leaflets & Flyers",
+        "product_link" => "#",
+        "price" => "",
+        "image" => "../media/category_custom_shape_1.jpg",
+        "link" => "#"
+    ],
+    [
+        "title" => "Postcards",
+        "desc" => "Leaflets & Flyers",
+        "product_link" => "#",
+        "price" => "£12.50",
+        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "link" => "#",
+        "badge" => "NEW white pearl foil"
+    ]
+];
+?>
+
+    <!-- Product Section -->
+    <section class="product-grid category">
+    <div class="grid">
+        <?php foreach ($products2 as $product) : ?>
+            <div class="product">
+                <?php if (isset($product['badge'])) : ?>
+                    <span class="badge"><?php echo $product['badge']; ?></span>
+                <?php endif; ?>
+                <div>
+                <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['title']; ?>">
+                <div class="hover_desc">
+                    <p><?php echo $product['desc']; ?></p>
+                    <a href="<?php echo $product['product_link']; ?>" class="explore">Explore more</a>
+                </div>
+                </div>
+                <div class="card_content">
+                <h3><?php echo $product['title']; ?></h3>
+                <?php if (!empty($product['price'])): ?>
+                    <p class="price">from <strong><?php echo $product['price']; ?></strong></p>
+                <?php endif; ?>
+                <a href="<?php echo $product['link']; ?>" class="order-now">Order Now ></a>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</section>
