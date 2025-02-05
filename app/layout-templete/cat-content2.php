@@ -190,8 +190,9 @@ $papers = [
                                 </ul>
                             </div>
                         </div>
-
-                        <a href="#" class="btn-order">Order Now</a>
+                        <div class="btn-order">
+                        <a href="#" class="chat-button">Order Now</a>
+                        </div>
                     </div>
                 </div>
             </div>
