@@ -178,7 +178,9 @@
 
 
 /* second tab style */
-
+#section2 .container{
+    max-width: 900px;
+}
 
 .tab-container {
     display: flex;
