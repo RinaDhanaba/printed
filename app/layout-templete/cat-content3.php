@@ -44,8 +44,9 @@ $leafletJSON = json_encode($leaflets);
         <div class="dimension-box">
             <p id="dimensionText"><?= $leaflets["a4_dl_roll"]["name"] ?></p>
             <div id="dimensionVisual">
-                <div id="bleedBox"></div>
-                <div id="safeBox"></div>
+                <div id="bleedBox">
+                    <div id="safeBox"></div>
+                </div>
             </div>
             <p><strong>Bleed Size:</strong> <span id="bleedSize"><?= $leaflets["a4_dl_roll"]["bleed_width"] . "mm x " . $leaflets["a4_dl_roll"]["bleed_height"] ?></span></p>
             <p><strong>Safe Area:</strong> <span id="safeSize"><?= $leaflets["a4_dl_roll"]["safe_width"] . "mm x " . $leaflets["a4_dl_roll"]["safe_height"] ?></span></p>
@@ -88,22 +89,24 @@ $(document).ready(function() {
     var leafletData = <?= $leafletJSON; ?>; // Get PHP data into JS
 
     function updateDimensions(selectedLeaflet) {
+        var leaflet = leafletData[selectedLeaflet];
+
         // Update text
-        $("#dimensionText").text(leafletData[selectedLeaflet].name);
-        $("#bleedSize").text(leafletData[selectedLeaflet].bleed_width + "mm x " + leafletData[selectedLeaflet].bleed_height + "mm");
-        $("#safeSize").text(leafletData[selectedLeaflet].safe_width + "mm x " + leafletData[selectedLeaflet].safe_height + "mm");
-        $("#leafletName").text(leafletData[selectedLeaflet].name);
-        $("#bleedDesc").text(leafletData[selectedLeaflet].description);
-        $("#safeDesc").text(leafletData[selectedLeaflet].safe_description);
+        $("#dimensionText").text(leaflet.name);
+        $("#bleedSize").text(leaflet.bleed_width + "mm x " + leaflet.bleed_height + "mm");
+        $("#safeSize").text(leaflet.safe_width + "mm x " + leaflet.safe_height + "mm");
+        $("#leafletName").text(leaflet.name);
+        $("#bleedDesc").text(leaflet.description);
+        $("#safeDesc").text(leaflet.safe_description);
 
         // Calculate proportional sizes
         var maxWidth = 300; // Maximum width of the box
-        var scale = maxWidth / leafletData[selectedLeaflet].bleed_width; // Scale factor
+        var scale = maxWidth / Math.max(leaflet.bleed_width, leaflet.bleed_height); // Scale factor
 
-        var bleedWidth = leafletData[selectedLeaflet].bleed_width * scale;
-        var bleedHeight = leafletData[selectedLeaflet].bleed_height * scale;
-        var safeWidth = leafletData[selectedLeaflet].safe_width * scale;
-        var safeHeight = leafletData[selectedLeaflet].safe_height * scale;
+        var bleedWidth = leaflet.bleed_width * scale;
+        var bleedHeight = leaflet.bleed_height * scale;
+        var safeWidth = leaflet.safe_width * scale;
+        var safeHeight = leaflet.safe_height * scale;
 
         // Update CSS styles dynamically
         $("#bleedBox").css({
@@ -138,26 +141,27 @@ $(document).ready(function() {
 </script>
 
 <style>
-.container { display: flex; flex-wrap: wrap; }
+.container { display: flex; flex-wrap: wrap; justify-content: space-between; }
 .dimension-container { width: 40%; display: flex; align-items: center; justify-content: center; }
-.dimension-box { text-align: center; padding: 20px; border: 1px dashed #333; }
-#dimensionVisual { position: relative; display: inline-block; }
+.dimension-box { text-align: center; padding: 20px; border: 1px dashed #333; background: #f9f9f9; width: 100%; }
+
+#dimensionVisual { position: relative; display: flex; align-items: center; justify-content: center; height: 350px; }
 #bleedBox {
-    background: #f8d7da; /* Light red for bleed area */
+    background: rgba(220, 53, 69, 0.2); /* Light red for bleed area */
     position: absolute;
-    top: 0; left: 0;
     border: 2px solid #dc3545;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 #safeBox {
-    background: #d4edda; /* Light green for safe area */
-    position: absolute;
-    top: 0; left: 0;
+    background: rgba(40, 167, 69, 0.2); /* Light green for safe area */
     border: 2px solid #28a745;
 }
 
-.info-box { width: 55%; padding: 20px; border: 1px solid #ccc; background: #f9f9f9; }
+.info-box { width: 55%; padding: 20px; border: 1px solid #ccc; background: #fff; }
 .form-group { margin-bottom: 15px; }
-select { width: 100%; padding: 10px; margin-top: 5px; }
+select, button { width: 100%; padding: 10px; margin-top: 5px; }
 .download-btn { display: block; padding: 10px; background: #ff0066; color: #fff; text-decoration: none; text-align: center; border-radius: 5px; margin-top: 10px; }
 </style>
 
