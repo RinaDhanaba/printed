@@ -101,7 +101,7 @@ $cat_slides = [
 </div>
 
 <!-- Sidebar Section -->
-<?php include 'app/layout-templete/sidebar.php'; ?>
+<?php // include 'app/layout-templete/sidebar.php'; ?>
 
 <section id="navastab">
 <?php
