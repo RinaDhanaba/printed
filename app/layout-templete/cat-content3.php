@@ -42,20 +42,19 @@ $leafletJSON = json_encode($leaflets);
         <!-- Dimension Section -->
         <div class="dimension-section">
             <h3>Leaflet Dimensions</h3>
-            <p id="dimensionText"><?= $leaflets["a4_dl_roll"]["name"] ?></p>
             <div id="dimensionVisual">
                 <div id="bleedBox">
                     <div id="safeBox"></div>
                 </div>
             </div>
-            <p><strong>Bleed Size:</strong> <span id="bleedSize"><?= $leaflets["a4_dl_roll"]["bleed_width"] . "mm x " . $leaflets["a4_dl_roll"]["bleed_height"] ?></span></p>
-            <p><strong>Safe Area:</strong> <span id="safeSize"><?= $leaflets["a4_dl_roll"]["safe_width"] . "mm x " . $leaflets["a4_dl_roll"]["safe_height"] ?></span></p>
+            <p id="dimensionText"><?= $leaflets["a4_dl_roll"]["name"] ?></p>
         </div>
 
         <!-- Description Section -->
         <div class="description-section">
-            <h3 id="leafletName"><?= $leaflets["a4_dl_roll"]["name"] ?></h3>
+            <p><strong>Bleed Size:</strong> <span id="bleedSize"><?= $leaflets["a4_dl_roll"]["bleed_width"] . "mm x " . $leaflets["a4_dl_roll"]["bleed_height"] ?></span></p>
             <p id="bleedDesc"><?= $leaflets["a4_dl_roll"]["description"] ?></p>
+            <p><strong>Safe Area:</strong> <span id="safeSize"><?= $leaflets["a4_dl_roll"]["safe_width"] . "mm x " . $leaflets["a4_dl_roll"]["safe_height"] ?></span></p>
             <p id="safeDesc"><?= $leaflets["a4_dl_roll"]["safe_description"] ?></p>
         </div>
 

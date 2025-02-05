@@ -407,6 +407,7 @@ text-align: left;
     font-size: 16px;
     margin-bottom: -1px;
     color:var(--white);
+    border-radius: 4px 4px 0 0;
 }
 
 .tab-button.active {
@@ -441,31 +442,35 @@ text-align: left;
     gap: 20px; }
 
 /* Dimension Section */
-#section3 .dimension-section { 
-    width: 30%; padding: 20px; border: 1px dashed #333;
-    background: #f9f9f9; text-align: center; }
+.dimension-section{
+ flex:1;    
+}
 #section3 #dimensionVisual { 
     position: relative; display: flex;
-    align-items: center; justify-content: center;
-    height: 100px; }
+    align-items: center; justify-content: left;
+    height: 170px;
+    margin:10px auto;}
 #section3 #bleedBox {
-    background: rgba(220, 53, 69, 0.2);
     position: absolute;
-    border: 2px solid #dc3545;
+    border: 1px solid #dc3545;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 #section3 #safeBox {
-    background: rgba(40, 167, 69, 0.2);
-    border: 2px solid #28a745;
+    border: 1px solid #28a745;
 }
 
 /* Description Section */
-#section3 .description-section { width: 35%; padding: 20px; border: 1px solid #ccc; background: #fff; }
+#section3 .description-section { flex:1;}
 
 /* Form Section */
-#section3 .form-section { width: 30%; padding: 20px; border: 1px solid #ccc; background: #f9f9f9; }
+#section3 .form-section { 
+flex:1; padding: 20px; 
+border: 1px solid #ccc; 
+background: #f9f9f9; 
+border-radius:4px;
+}
 #section3 .form-group { margin-bottom: 15px; }
 #section3 select { width: 100%; padding: 10px; margin-top: 5px; }
 #section3 .download-btn { display: block; padding: 10px; background: #ff0066; color: #fff; text-decoration: none; text-align: center; border-radius: 5px; margin-top: 10px; }
