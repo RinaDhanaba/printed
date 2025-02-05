@@ -164,7 +164,7 @@ $product_cats = [
     ],
     "Business_Cards" => [
         "name" => "Business Cards",
-        "img" => "../media/business_cards.jpg",
+        "img" => "../media/a6-invitations-flat-2000-x-2000_4_1.jpg",
         "description" => "<ul>
             <li>Silk Coated, 350gsm</li>
             <li>Uncoated Recycled, 300gsm</li>
@@ -174,7 +174,7 @@ $product_cats = [
     ],
     "Foiling" => [
         "name" => "Foiling",
-        "img" => "../media/foiling.jpg",
+        "img" => "../media/presentation_folders_category_2.jpg",
         "description" => "<ul>
             <li>Gold Foil on Silk, 350gsm</li>
             <li>Silver Foil on Uncoated, 300gsm</li>
@@ -193,7 +193,7 @@ $productCatsJSON = json_encode($product_cats);
     <div class="description-section">
         <img id="descriptionImage" src="<?= $product_cats["Bestsellers"]["img"] ?>" alt="<?= $product_cats["Bestsellers"]["name"] ?>">
         <h3 id="descriptionTitle"><?= $product_cats["Bestsellers"]["name"] ?></h3>
-        <p id="descriptionText"><?= $product_cats["Bestsellers"]["description"] ?></p>
+        <div id="descriptionText"><?= $product_cats["Bestsellers"]["description"] ?></div>
     </div>
 
     <!-- Form Section -->
@@ -250,7 +250,7 @@ $(document).ready(function() {
         // Update description section dynamically
         $("#descriptionImage").attr("src", product.img);
         $("#descriptionTitle").text(product.name);
-        $("#descriptionText").html(product.description); // Use .html() to support HTML lists
+        $("#descriptionText").html(product.description); // Replaces inner HTML completely
     }
 
     // Change event for product selection
@@ -262,6 +262,7 @@ $(document).ready(function() {
     var firstProduct = $("#productSelector").val();
     updateDescription(firstProduct); // Initial update on page load
 });
+
 </script>
 
 
