@@ -346,6 +346,10 @@ text-align: left;
 }
 
 
+
+
+
+
 /* tab for 3rd section  */
 
 #section3 .tabs {
@@ -353,12 +357,12 @@ text-align: left;
     justify-content: center;
     gap: 10px;
     margin-bottom: 20px;
-    border-bottom: 1px solid var( --text-color);
+    border-bottom: 1px solid var(--secondary-color);
 }
 
 .tab-button {
-    background: var(--gary-bg);
-    border-color: var( --text-color);
+    background: var(--secondary-color);
+    border-color: var(--white);
     border: 1px solid;
     border-bottom: none;
     padding: 10px 20px;
@@ -386,7 +390,7 @@ select, input {
     height: 50px;
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid var(--gary-bg);
+    border: 1px solid var(--text-color);
     border-radius: 5px; 
 }
 
