@@ -80,7 +80,7 @@ $leafletJSON = json_encode($leaflets);
                 </select>
             </div>
 
-            <a href="#" class="download-btn shop-btn" id="downloadBtn" style="display: none;">Download Template</a>
+            <a href="#" class="download-btn shop-btn" id="downloadBtn">Download Template</a>
         </div>
     </div>
 
@@ -146,25 +146,135 @@ $(document).ready(function() {
 </div>
 
 <div class="tab-content" id="sample-packs">
-    <h2>Sample Packs</h2>
-    <form action="submit.php" method="POST">
-        <label>Paper Type:</label>
-        <select name="paper-type">
-            <option>Bestsellers</option>
-            <option>Luxury</option>
-            <option>Recycled</option>
-        </select>
 
-        <input type="text" name="name" placeholder="Full Name" required>
-        <input type="tel" name="phone" placeholder="Telephone" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="text" name="address1" placeholder="Address Line 1" required>
-        <input type="text" name="address2" placeholder="Address Line 2">
-        <input type="text" name="town" placeholder="Town" required>
-        <input type="text" name="postcode" placeholder="Postcode" required>
 
-        <button type="submit" class="request-btn">Request Sample Pack</button>
-    </form>
+<?php
+// Product category details
+$product_cats = [
+    "Bestsellers" => [
+        "name" => "Bestsellers",
+        "img" => "../media/presentation_folders_category_2.jpg",
+        "description" => "<ul>
+            <li>Hahnemühle German Etching, 310gsm</li>
+            <li>Hahnemühle Photo Rag Pearl, 320gsm</li>
+            <li>Hahnemühle Bamboo, 290gsm</li>
+            <li>Epson Luster, 260gsm</li>
+            <li>Kodak Glossy, 255gsm</li>
+        </ul>"
+    ],
+    "Business_Cards" => [
+        "name" => "Business Cards",
+        "img" => "../media/business_cards.jpg",
+        "description" => "<ul>
+            <li>Silk Coated, 350gsm</li>
+            <li>Uncoated Recycled, 300gsm</li>
+            <li>Gloss Laminated, 400gsm</li>
+            <li>Matt Laminated, 450gsm</li>
+        </ul>"
+    ],
+    "Foiling" => [
+        "name" => "Foiling",
+        "img" => "../media/foiling.jpg",
+        "description" => "<ul>
+            <li>Gold Foil on Silk, 350gsm</li>
+            <li>Silver Foil on Uncoated, 300gsm</li>
+            <li>Rose Gold Foil on Matt Laminated, 450gsm</li>
+        </ul>"
+    ]
+];
+
+// Convert PHP array to JSON for JavaScript
+$leafletJSON = json_encode($product_cats);
+?>
+
+<div class="container">
+    <form action="#" method="POST">
+        <!-- Description Section (Updated Dynamically) -->
+        <div class="description-section">
+            <img id="descriptionImage" src="<?= $product_cats["Bestsellers"]["img"] ?>" alt="<?= $product_cats["Bestsellers"]["name"] ?>">
+            <h3 id="descriptionTitle"><?= $product_cats["Bestsellers"]["name"] ?></h3>
+            <p id="descriptionText"><?= $product_cats["Bestsellers"]["description"] ?></p>
+        </div>
+
+        <!-- Form Section -->
+        <div class="form-section">
+            <div class="form-group">
+                <label for="leafletSelector">Select a Sample Pack:</label>
+                <select id="leafletSelector">
+                    <option value="">Choose a pack...</option>
+                    <?php foreach ($product_cats as $key => $product_cat): ?>
+                        <option value="<?= $key ?>"><?= $product_cat["name"] ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="telephone">Telephone:</label>
+            <input type="text" id="telephone" name="telephone" placeholder="Enter your phone number" pattern="^\+?[0-9\s\-()]+$" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="address1">Address Line 1:</label>
+            <input type="text" id="address1" name="address1" placeholder="Enter address" required>
+
+            <label for="address2">Address Line 2:</label>
+            <input type="text" id="address2" name="address2" placeholder="Optional">
+
+            <label for="town">Town/City:</label>
+            <input type="text" id="town" name="town" placeholder="Enter town/city" required>
+
+            <label for="postcode">Postcode:</label>
+            <input type="text" id="postcode" name="postcode" placeholder="Enter postcode" required>
+
+            <label for="country">Country:</label>
+            <select name="country" id="country" required>
+                <option value="">Select a country...</option>
+                <option value="United States">United States</option>
+                <option value="United Kingdom">United Kingdom</option>
+                <option value="Canada">Canada</option>
+                <option value="Australia">Australia</option>
+                <option value="Germany">Germany</option>
+            </select>
+
+            <p>All of our sample packs are Printed.com branded. Once you’ve submitted your request, we may contact you to follow up on your order.</p>
+
+            <button type="submit" class="shop-btn">Request Sample Pack</button>
+        </form>
+    </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    var leafletData = <?= $leafletJSON; ?>; // Get PHP data into JS
+
+    function updateDescription(selectedLeaflet) {
+        if (!leafletData[selectedLeaflet]) return; // Prevent errors
+
+        var leaflet = leafletData[selectedLeaflet];
+
+        // Update description section dynamically
+        $("#descriptionImage").attr("src", leaflet.img);
+        $("#descriptionTitle").text(leaflet.name);
+        $("#descriptionText").html(leaflet.description); // Using .html() to support HTML lists
+    }
+
+    // Change event for leaflet selection
+    $("#leafletSelector").change(function() {
+        updateDescription($(this).val());
+    });
+
+    // Initialize with first selection (if any)
+    var firstLeaflet = $("#leafletSelector").val();
+    if (firstLeaflet) updateDescription(firstLeaflet);
+});
+</script>
+
+
+
+</div>
 </div>
 
 
