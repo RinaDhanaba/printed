@@ -9,26 +9,26 @@
 
 
 <?php
-// Array storing leaflet details
+// Leaflet details with real dimensions
 $leaflets = [
     "a4_dl_roll" => [
         "name" => "A4 folded to DL Leaflet - Roll Fold",
-        "bleed" => "303mm x 426mm",
-        "safe_area" => "291mm x 414mm",
+        "bleed_width" => 303, "bleed_height" => 426,
+        "safe_width" => 291, "safe_height" => 414,
         "description" => "The bleed area extends out an extra 3mm from the edge of your finished artwork. Make sure that you don't place any important content or artwork elements in this area, as it will get trimmed off.",
         "safe_description" => "We recommend that no text is placed in this area as anything placed outside of this box will risk being cut off."
     ],
     "a4_a5" => [
         "name" => "A4 folded to A5 Leaflet",
-        "bleed" => "154mm x 111mm",
-        "safe_area" => "142mm x 99mm",
+        "bleed_width" => 154, "bleed_height" => 111,
+        "safe_width" => 142, "safe_height" => 99,
         "description" => "The bleed area extends out an extra 3mm from the edge of your finished artwork.",
         "safe_description" => "We recommend that no text is placed in this area."
     ],
     "a4_dl_z" => [
         "name" => "A4 folded to DL Leaflet - Z Fold",
-        "bleed" => "426mm x 303mm",
-        "safe_area" => "414mm x 291mm",
+        "bleed_width" => 426, "bleed_height" => 303,
+        "safe_width" => 414, "safe_height" => 291,
         "description" => "The bleed area extends out an extra 3mm from the edge of your finished artwork.",
         "safe_description" => "We recommend that no text is placed in this area."
     ]
@@ -40,10 +40,16 @@ $leafletJSON = json_encode($leaflets);
 
 <div class="container">
     <!-- Dimension Box -->
-    <div class="dimension-box">
-        <p id="dimensionText"><?= $leaflets["a4_dl_roll"]["name"] ?></p>
-        <p><strong>Bleed Size:</strong> <span id="bleedSize"><?= $leaflets["a4_dl_roll"]["bleed"] ?></span></p>
-        <p><strong>Safe Area:</strong> <span id="safeSize"><?= $leaflets["a4_dl_roll"]["safe_area"] ?></span></p>
+    <div class="dimension-container">
+        <div class="dimension-box">
+            <p id="dimensionText"><?= $leaflets["a4_dl_roll"]["name"] ?></p>
+            <div id="dimensionVisual">
+                <div id="bleedBox"></div>
+                <div id="safeBox"></div>
+            </div>
+            <p><strong>Bleed Size:</strong> <span id="bleedSize"><?= $leaflets["a4_dl_roll"]["bleed_width"] . "mm x " . $leaflets["a4_dl_roll"]["bleed_height"] ?></span></p>
+            <p><strong>Safe Area:</strong> <span id="safeSize"><?= $leaflets["a4_dl_roll"]["safe_width"] . "mm x " . $leaflets["a4_dl_roll"]["safe_height"] ?></span></p>
+        </div>
     </div>
 
     <!-- Info & Form Box -->
@@ -81,17 +87,39 @@ $leafletJSON = json_encode($leaflets);
 $(document).ready(function() {
     var leafletData = <?= $leafletJSON; ?>; // Get PHP data into JS
 
-    // Change leaflet selection dynamically
-    $("#leafletSelector").change(function() {
-        var selectedLeaflet = $(this).val();
-
-        // Update text dynamically
+    function updateDimensions(selectedLeaflet) {
+        // Update text
         $("#dimensionText").text(leafletData[selectedLeaflet].name);
-        $("#bleedSize").text(leafletData[selectedLeaflet].bleed);
-        $("#safeSize").text(leafletData[selectedLeaflet].safe_area);
+        $("#bleedSize").text(leafletData[selectedLeaflet].bleed_width + "mm x " + leafletData[selectedLeaflet].bleed_height + "mm");
+        $("#safeSize").text(leafletData[selectedLeaflet].safe_width + "mm x " + leafletData[selectedLeaflet].safe_height + "mm");
         $("#leafletName").text(leafletData[selectedLeaflet].name);
         $("#bleedDesc").text(leafletData[selectedLeaflet].description);
         $("#safeDesc").text(leafletData[selectedLeaflet].safe_description);
+
+        // Calculate proportional sizes
+        var maxWidth = 300; // Maximum width of the box
+        var scale = maxWidth / leafletData[selectedLeaflet].bleed_width; // Scale factor
+
+        var bleedWidth = leafletData[selectedLeaflet].bleed_width * scale;
+        var bleedHeight = leafletData[selectedLeaflet].bleed_height * scale;
+        var safeWidth = leafletData[selectedLeaflet].safe_width * scale;
+        var safeHeight = leafletData[selectedLeaflet].safe_height * scale;
+
+        // Update CSS styles dynamically
+        $("#bleedBox").css({
+            "width": bleedWidth + "px",
+            "height": bleedHeight + "px"
+        });
+
+        $("#safeBox").css({
+            "width": safeWidth + "px",
+            "height": safeHeight + "px"
+        });
+    }
+
+    // Change leaflet selection dynamically
+    $("#leafletSelector").change(function() {
+        updateDimensions($(this).val());
     });
 
     // Change file type selection and show/hide button
@@ -103,14 +131,33 @@ $(document).ready(function() {
             $("#downloadBtn").hide();
         }
     });
+
+    // Initialize with first selection
+    updateDimensions($("#leafletSelector").val());
 });
 </script>
 
 <style>
-.dimension-box { width: 40%; padding: 20px; border: 1px dashed #333; text-align: center; }
-.info-box { width: 60%; padding: 20px; border: 1px solid #ccc; background: #f9f9f9; }
+.container { display: flex; flex-wrap: wrap; }
+.dimension-container { width: 40%; display: flex; align-items: center; justify-content: center; }
+.dimension-box { text-align: center; padding: 20px; border: 1px dashed #333; }
+#dimensionVisual { position: relative; display: inline-block; }
+#bleedBox {
+    background: #f8d7da; /* Light red for bleed area */
+    position: absolute;
+    top: 0; left: 0;
+    border: 2px solid #dc3545;
+}
+#safeBox {
+    background: #d4edda; /* Light green for safe area */
+    position: absolute;
+    top: 0; left: 0;
+    border: 2px solid #28a745;
+}
+
+.info-box { width: 55%; padding: 20px; border: 1px solid #ccc; background: #f9f9f9; }
 .form-group { margin-bottom: 15px; }
-.tab-content select, .tab-content button { width: 100%; padding: 10px; margin-top: 5px; }
+select { width: 100%; padding: 10px; margin-top: 5px; }
 .download-btn { display: block; padding: 10px; background: #ff0066; color: #fff; text-decoration: none; text-align: center; border-radius: 5px; margin-top: 10px; }
 </style>
 
