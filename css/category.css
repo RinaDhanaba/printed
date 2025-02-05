@@ -439,7 +439,9 @@ text-align: left;
     display: flex;
     flex-wrap: wrap;
     justify-content: center; 
-    gap: 50px; }
+    gap: 50px;
+    max-width:950px;
+ }
 
 /* Dimension Section */
 .dimension-section{
@@ -465,6 +467,11 @@ text-align: left;
 /* Description Section */
 #section3 .description-section { flex:1;}
 
+#section3 .description-section img{
+    max-width:300px;
+    margin-bottom:20px
+}
+
 /* Form Section */
 #section3 .form-section { 
 flex:1; 
@@ -480,9 +487,46 @@ border-radius:4px;
 
 #section3 .form-group { margin-bottom: 15px; }
 
-select { width: 100%; padding: 10px; margin-top: 5px; font-size:14px; }
-label, ::placeholder, option {font-size:14px; }
+select, input { width: 100%; padding: 10px; margin-top: 5px; font-size:12px; }
+label, ::placeholder, option {font-size:12px; }
 
+.form2.container{
+    max-width: 700px;
+}
+
+.form2 .form-section{
+    padding: 0px;
+}
+
+.form2 .form-group{
+    margin-bottom: 0;
+}
+
+.form2 select{
+    max-width: 0 0 10px 0;
+}
+
+.form2 .tab-content p {
+    margin: 20px 0;
+}
+.form2 h3 {
+    text-align: center;
+    font-weight: 600;
+}
+
+#descriptionText ul {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+}
+
+#descriptionText ul li {
+    font-size: 14px;
+    width: 50%; /* Makes two equal columns */
+    box-sizing: border-box;
+    padding: 5px;
+}
 
 
 

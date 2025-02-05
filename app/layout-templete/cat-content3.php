@@ -187,7 +187,7 @@ $product_cats = [
 $productCatsJSON = json_encode($product_cats);
 ?>
 
-<div class="container">
+<div class="container form2">
 
     <!-- Description Section (Updated Dynamically) -->
     <div class="description-section">
