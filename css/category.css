@@ -170,3 +170,13 @@
     border-bottom: 1px solid #ddd;
     text-align:center;
 }
+
+
+
+
+
+ /* second product grid  */
+.category.product-grid{
+    background: var(--white);
+    padding:0;
+}
