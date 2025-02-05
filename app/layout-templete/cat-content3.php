@@ -132,7 +132,7 @@ $(document).ready(function() {
         var leafletType = $("#leafletSelector").val();
         var fileType = $("#fileType").val();
         if (leafletType && fileType) {
-            $("#downloadBtn").attr("href", "download.php?type=" + fileType + "&leaflet=" + leafletType).show();
+            $("#downloadBtn").attr("href", "../app/layout-templete/download.php?type=" + fileType + "&leaflet=" + leafletType).show();
         } else {
             $("#downloadBtn").hide();
         }
