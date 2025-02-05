@@ -192,7 +192,7 @@ $productCatsJSON = json_encode($product_cats);
     <!-- Description Section (Updated Dynamically) -->
     <div class="description-section">
         <img id="descriptionImage" src="<?= $product_cats["Bestsellers"]["img"] ?>" alt="<?= $product_cats["Bestsellers"]["name"] ?>">
-        <h3 id="descriptionTitle"><?= $product_cats["Bestsellers"]["name"] ?></h3>
+        <h3>What paper stocks are included?</h3>
         <div id="descriptionText"><?= $product_cats["Bestsellers"]["description"] ?></div>
     </div>
 
@@ -249,7 +249,6 @@ $(document).ready(function() {
 
         // Update description section dynamically
         $("#descriptionImage").attr("src", product.img);
-        $("#descriptionTitle").text(product.name);
         $("#descriptionText").html(product.description); // Replaces inner HTML completely
     }
 
