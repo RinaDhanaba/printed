@@ -167,7 +167,6 @@
 .page-section {
     height: 100%;
     padding: 50px 10px;
-    border-bottom: 1px solid #ddd;
     text-align:center;
 }
 
@@ -178,5 +177,11 @@
  /* second product grid  */
 .category.product-grid{
     background: var(--white);
-    padding:0 0 60px 0;
+    padding:0;
+}
+
+
+/* cat blog  */
+.trending-section{
+    padding: 0px 10px 80px 10px;
 }
