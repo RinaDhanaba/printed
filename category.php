@@ -177,6 +177,7 @@ $products2 = [
 
     <!-- Product Section -->
     <section class="product-grid category">
+    <h2>You may also like</h2>
     <div class="grid">
         <?php foreach ($products2 as $product) : ?>
             <div class="product">
