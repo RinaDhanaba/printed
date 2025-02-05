@@ -38,7 +38,7 @@ $leaflets = [
 <div class="container">
     <!-- Dimension Box -->
     <div class="dimension-box">
-        <p id="dimensionText">A4 folded to DL Leaflet - Roll Fold</p>
+        <p id="dimensionText"><?= $leaflets["a4_dl_roll"]["name"] ?></p>
         <p><strong>Bleed Size:</strong> <span id="bleedSize"><?= $leaflets["a4_dl_roll"]["bleed"] ?></span></p>
         <p><strong>Safe Area:</strong> <span id="safeSize"><?= $leaflets["a4_dl_roll"]["safe_area"] ?></span></p>
     </div>
@@ -69,14 +69,15 @@ $leaflets = [
         <p id="bleedDesc"><?= $leaflets["a4_dl_roll"]["description"] ?></p>
         <p id="safeDesc"><?= $leaflets["a4_dl_roll"]["safe_description"] ?></p>
         
-        <a href="#" class="download-btn" id="downloadBtn">Download Template</a>
+        <a href="#" class="download-btn" id="downloadBtn" style="display: none;">Download Template</a>
     </div>
 </div>
 
 <script>
 $(document).ready(function() {
-    var leafletData = <?php echo json_encode($leaflets); ?>;
+    var leafletData = <?= $leafletJSON; ?>; // Get data from PHP
 
+    // Change leaflet selection
     $("#leafletSelector").change(function() {
         var selectedLeaflet = $(this).val();
 
@@ -89,6 +90,7 @@ $(document).ready(function() {
         $("#safeDesc").text(leafletData[selectedLeaflet].safe_description);
     });
 
+    // Change file type selection
     $("#fileType").change(function() {
         var fileType = $(this).val();
         if (fileType) {
@@ -100,8 +102,6 @@ $(document).ready(function() {
 });
 </script>
 <style>
-        body { font-family: Arial, sans-serif; }
-        .container { width: 80%; margin: 20px auto; display: flex; align-items: center; }
         .dimension-box { width: 40%; padding: 20px; border: 1px dashed #333; text-align: center; }
         .info-box { width: 60%; padding: 20px; border: 1px solid #ccc; background: #f9f9f9; }
         .form-group { margin-bottom: 15px; }
