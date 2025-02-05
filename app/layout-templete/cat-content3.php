@@ -199,37 +199,28 @@ $leafletJSON = json_encode($product_cats);
         <!-- Form Section -->
         <div class="form-section">
             <div class="form-group">
-                <label for="leafletSelector">Select a Sample Pack:</label>
                 <select id="leafletSelector">
-                    <option value="">Choose a pack...</option>
+                    <?php 
+                    // Set default selection to the first option in the array
+                    $firstKey = key($product_cats); // Get the key of the first element in the array
+                    ?>
+                    <option value="<?= $firstKey ?>" selected><?= $product_cats[$firstKey]["name"] ?></option>
                     <?php foreach ($product_cats as $key => $product_cat): ?>
-                        <option value="<?= $key ?>"><?= $product_cat["name"] ?></option>
+                        <?php if ($key !== $firstKey): ?>
+                            <option value="<?= $key ?>"><?= $product_cat["name"] ?></option>
+                        <?php endif; ?>
                     <?php endforeach; ?>
                 </select>
             </div>
 
-            <label for="name">Full Name:</label>
+            <!-- Form fields without labels -->
             <input type="text" id="name" name="name" placeholder="Enter your full name" required>
-
-            <label for="telephone">Telephone:</label>
             <input type="text" id="telephone" name="telephone" placeholder="Enter your phone number" pattern="^\+?[0-9\s\-()]+$" required>
-
-            <label for="email">Email:</label>
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
-            <label for="address1">Address Line 1:</label>
             <input type="text" id="address1" name="address1" placeholder="Enter address" required>
-
-            <label for="address2">Address Line 2:</label>
             <input type="text" id="address2" name="address2" placeholder="Optional">
-
-            <label for="town">Town/City:</label>
             <input type="text" id="town" name="town" placeholder="Enter town/city" required>
-
-            <label for="postcode">Postcode:</label>
             <input type="text" id="postcode" name="postcode" placeholder="Enter postcode" required>
-
-            <label for="country">Country:</label>
             <select name="country" id="country" required>
                 <option value="">Select a country...</option>
                 <option value="United States">United States</option>
@@ -251,7 +242,7 @@ $(document).ready(function() {
     var leafletData = <?= $leafletJSON; ?>; // Get PHP data into JS
 
     function updateDescription(selectedLeaflet) {
-        if (!leafletData[selectedLeaflet]) return; // Prevent errors
+        if (!selectedLeaflet || !leafletData[selectedLeaflet]) return; // Prevent errors when empty selection
 
         var leaflet = leafletData[selectedLeaflet];
 
@@ -266,9 +257,9 @@ $(document).ready(function() {
         updateDescription($(this).val());
     });
 
-    // Initialize with first selection (if any)
+    // Initialize with the first selected leaflet (first element in the array)
     var firstLeaflet = $("#leafletSelector").val();
-    if (firstLeaflet) updateDescription(firstLeaflet);
+    updateDescription(firstLeaflet); // Initial update on page load
 });
 </script>
 
