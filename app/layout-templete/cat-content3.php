@@ -184,25 +184,26 @@ $product_cats = [
 ];
 
 // Convert PHP array to JSON for JavaScript
-$leafletJSON = json_encode($product_cats);
+$productCatsJSON = json_encode($product_cats);
 ?>
 
 <div class="container">
-    <form action="#" method="POST">
-        <!-- Description Section (Updated Dynamically) -->
-        <div class="description-section">
-            <img id="descriptionImage" src="<?= $product_cats["Bestsellers"]["img"] ?>" alt="<?= $product_cats["Bestsellers"]["name"] ?>">
-            <h3 id="descriptionTitle"><?= $product_cats["Bestsellers"]["name"] ?></h3>
-            <p id="descriptionText"><?= $product_cats["Bestsellers"]["description"] ?></p>
-        </div>
 
-        <!-- Form Section -->
-        <div class="form-section">
+    <!-- Description Section (Updated Dynamically) -->
+    <div class="description-section">
+        <img id="descriptionImage" src="<?= $product_cats["Bestsellers"]["img"] ?>" alt="<?= $product_cats["Bestsellers"]["name"] ?>">
+        <h3 id="descriptionTitle"><?= $product_cats["Bestsellers"]["name"] ?></h3>
+        <p id="descriptionText"><?= $product_cats["Bestsellers"]["description"] ?></p>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-section">
+        <form action="#" method="POST">
             <div class="form-group">
-                <select id="leafletSelector">
+                <select id="productSelector">
                     <?php 
                     // Set default selection to the first option in the array
-                    $firstKey = key($product_cats); // Get the key of the first element in the array
+                    $firstKey = key($product_cats); 
                     ?>
                     <option value="<?= $firstKey ?>" selected><?= $product_cats[$firstKey]["name"] ?></option>
                     <?php foreach ($product_cats as $key => $product_cat): ?>
@@ -239,33 +240,31 @@ $leafletJSON = json_encode($product_cats);
 
 <script>
 $(document).ready(function() {
-    var leafletData = <?= $leafletJSON; ?>; // Get PHP data into JS
+    var productData = <?= $productCatsJSON; ?>; // Get PHP data into JS
 
-    function updateDescription(selectedLeaflet) {
-        if (!selectedLeaflet || !leafletData[selectedLeaflet]) return; // Prevent errors when empty selection
+    function updateDescription(selectedProduct) {
+        if (!selectedProduct || !productData[selectedProduct]) return; // Prevent errors
 
-        var leaflet = leafletData[selectedLeaflet];
+        var product = productData[selectedProduct];
 
         // Update description section dynamically
-        $("#descriptionImage").attr("src", leaflet.img);
-        $("#descriptionTitle").text(leaflet.name);
-        $("#descriptionText").html(leaflet.description); // Using .html() to support HTML lists
+        $("#descriptionImage").attr("src", product.img);
+        $("#descriptionTitle").text(product.name);
+        $("#descriptionText").html(product.description); // Use .html() to support HTML lists
     }
 
-    // Change event for leaflet selection
-    $("#leafletSelector").change(function() {
+    // Change event for product selection
+    $("#productSelector").change(function() {
         updateDescription($(this).val());
     });
 
-    // Initialize with the first selected leaflet (first element in the array)
-    var firstLeaflet = $("#leafletSelector").val();
-    updateDescription(firstLeaflet); // Initial update on page load
+    // Initialize with the first selected product (first element in the array)
+    var firstProduct = $("#productSelector").val();
+    updateDescription(firstProduct); // Initial update on page load
 });
 </script>
 
 
-
-</div>
 </div>
 
 
