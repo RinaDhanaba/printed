@@ -362,18 +362,19 @@ text-align: left;
 
 .tab-button {
     background: var(--secondary-color);
-    border-color: var(--white);
+    border-color: var(--secondary-color);
     border: 1px solid;
     border-bottom: none;
     padding: 10px 20px;
     cursor: pointer;
     font-size: 16px;
     margin-bottom: -1px;
-    color:var(--black);
+    color:var(--white);
 }
 
 .tab-button.active {
     background: var(--white);
+    color:var(--black);
 }
 
 .tab-content {
