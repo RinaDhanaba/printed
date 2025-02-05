@@ -210,44 +210,43 @@ document.addEventListener("DOMContentLoaded", function () {
     let navItems = document.querySelectorAll(".nav-item");
     let sections = document.querySelectorAll(".page-section");
     let mobileNav = document.getElementById("mobileNavSelect");
+    let navastab = document.getElementById("navastab"); // Get the parent section
     let navbarOffset = navbar.offsetTop;
     let isSticky = false;
 
     function updateActiveSection() {
         let scrollPosition = window.scrollY + window.innerHeight / 3;
-        
-        if (!isSticky) {
-            navItems.forEach((item) => item.classList.remove("active"));
-            if (navItems.length > 0) {
-                navItems[0].classList.add("active");
-            }
-            return;
-        }
-
         let activeFound = false;
 
-        sections.forEach((section) => {
-            let sectionTop = section.offsetTop;
-            let sectionBottom = sectionTop + section.offsetHeight;
+        // Only update active section within the #navastab
+        if (navastab && isSticky) {
+            sections.forEach((section) => {
+                let sectionTop = section.offsetTop;
+                let sectionBottom = sectionTop + section.offsetHeight;
 
-            if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                navItems.forEach((item) => item.classList.remove("active"));
-                let activeItem = document.querySelector(`.nav-item[href="#${section.id}"]`);
-                if (activeItem) {
-                    activeItem.classList.add("active");
-                    mobileNav.value = section.id;
-                    activeFound = true;
+                if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                    navItems.forEach((item) => item.classList.remove("active"));
+                    let activeItem = document.querySelector(`.nav-item[href="#${section.id}"]`);
+                    if (activeItem) {
+                        activeItem.classList.add("active");
+                        mobileNav.value = section.id;
+                        activeFound = true;
+                    }
                 }
-            }
-        });
+            });
 
-        if (!activeFound && isSticky && navItems.length > 0) {
-            navItems[0].classList.add("active");
+            if (!activeFound && navItems.length > 0) {
+                navItems[0].classList.add("active");
+            }
         }
     }
 
     function handleStickyNav() {
-        if (window.scrollY > navbarOffset) {
+        let navastabTop = navastab.offsetTop;
+        let navastabBottom = navastabTop + navastab.offsetHeight;
+
+        // Check if the navbar should stick within the #navastab section
+        if (window.scrollY > navastabTop && window.scrollY < navastabBottom - navbar.offsetHeight) {
             navbar.classList.add("sticky");
             isSticky = true;
         } else {
@@ -271,3 +270,4 @@ document.addEventListener("DOMContentLoaded", function () {
 
     updateActiveSection();
 });
+

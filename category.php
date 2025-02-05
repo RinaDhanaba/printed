@@ -103,7 +103,7 @@ $cat_slides = [
 <!-- Sidebar Section -->
 <?php include 'app/layout-templete/sidebar.php'; ?>
 
-
+<section id="navastab">
 <?php
 $menuItems = [
     ["id" => "section1", "title" => "Leaflets & Flyers - The Range", "file" => "app/layout-templete/cat-content1.php"],
@@ -149,6 +149,8 @@ $menuItems = [
         </section>
     <?php endforeach; ?>
 </div>
+
+</section>
 
 <!-- Blog section -->
 <?php include('app/layout-templete/trending_blog.php'); ?>
