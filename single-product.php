@@ -33,11 +33,6 @@ $product_image_slider = [
         <?php endforeach; ?>
     </div>
 
-    <div class="slider-controls">
-        <button class="slider-btn prev">&#10094;</button>
-        <button class="slider-btn next">&#10095;</button>
-    </div>
-
     <!-- Navigation Dots -->
     <div class="dots">
         <?php foreach ($product_image_slider as $index => $slide) : ?>
@@ -81,7 +76,7 @@ $product_image_slider = [
 <div class="customise-cta">
     <h3>Build Your Own</h3>
     <p>Customise your product to your exact specification. We’ve got all the options you need to bring your print to life. Let’s make it real!</p>
-    <button id="orderNow" class="order-now">Order Now</button>
+    <button id="orderNow" class="chat-button">Order Now</button>
 </div>
 
 

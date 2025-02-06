@@ -16,25 +16,27 @@
 .product-image-slider{
     position: relative;
     width: 100%;
-    height:500px;
+    height: 485px;
     overflow: hidden;
+    flex: 2;
 }
 
 .product-image-slider div{
-    height:500px;
+    height: 485px;
 }
 
 .product-image-slider img {
     width: 100%;
     border-radius: 10px;
-    height: 500px;
+    height: 485px;
     object-fit: cover;
 }
 
 .product-image-slider .dots{
- bottom:10px;
-height:20px;
-
+    text-align: start;
+    left:20px;
+    bottom:10px;
+    height:20px;
 }
 
 .product-image-slider .dot{
@@ -48,6 +50,11 @@ height:20px;
 }
 
 
+
+.single-product-info {
+    flex: 3;
+}
+
 .trustpilot-section-product{
     display:flex;
 }
@@ -55,7 +62,24 @@ height:20px;
 .customise-cta {
     padding:20px;
     background:var(--gary-bg);
-    border:1px solid var(--primary-color);
+    border:1px solid var(--secondary-color);
     border-radius:20px
     
+}
+
+.customise-cta:hover {
+    border:1px solid var(--primary-color);
+} 
+.customise-cta .chat-button{
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.customise-cta:hover .chat-button{
+    background: var(--primary-color);
+}
+
+.customise-cta h3{
+    margin-bottom:15px;
+    font-weight: 600;
 }
