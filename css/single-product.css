@@ -16,13 +16,6 @@
     overflow: hidden;
 }
 
-/* .product-image-slider .image-section{
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center center;
-} */
-
 .product-image-slider img {
     width: 100%;
     border-radius: 10px;
