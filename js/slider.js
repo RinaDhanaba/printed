@@ -99,4 +99,5 @@ document.addEventListener("DOMContentLoaded", function () {
     initializeSlider(".hero_slider", ".hero-slide", ".dot", ".next", ".prev");
     initializeSlider(".slider", ".slide", ".dot", ".next", ".prev");
     initializeSlider(".cat-slider", ".slide", ".dot", ".next", ".prev");
+    initializeSlider(".product-image-slider", ".product-image-slide", ".dot", ".next", ".prev");
 });

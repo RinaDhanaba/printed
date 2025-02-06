@@ -4,11 +4,93 @@
 <!-- Sidebar Section -->
 <?php // include 'app/layout-templete/sidebar.php'; ?>
 
+<!-- product info section  -->
+ <section class="product_intro">
+ <?php
+$product_image_slider = [
+    [
+        "title" => "Express yourself",
+        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg"
+    ],
+    [
+        "title" => "Put your best card forward",
+        "image" => "../media/man-working-printing-house-with-paper-paints.jpg"
+    ],
+    [
+        "title" => "Your love story starts here",
+        "image" => "../media/leaflets-_-flyers-nav-image-3_11.jpg"
+    ]
+];
+?>
+
+<!-- Hero Section -->
+<div class="product-image-slider">
+    <div class="slider-container">
+        <?php foreach ($product_image_slider as $index => $slide) : ?>
+            <div class="product-image-slide">
+                <div class="product-image-content">
+                    <div class="image-section" style="background-image: url('<?php echo htmlspecialchars($slide['image']); ?>');">
+                        <img src="<?php echo htmlspecialchars($slide['image']); ?>" alt="<?php echo htmlspecialchars($slide['title']); ?>">
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <div class="dots">
+        <?php foreach ($hero_slider as $index => $slide) : ?>
+            <span class="dot"></span>
+        <?php endforeach; ?>
+    </div>
+</div>
+
+<div class="single-product-info">
+    <h1>Leaflet & Flyer Printing</h1>
+    <p class="price">from <strong>£8.50</strong> <sub>(ex VAT)</sub></p>
+
+    <div class="trustpilot-section">        
+        <p class="trustpilot-logo">★ Trustpilot</p>
+        <div class="stars">
+            <?php
+                for ($i = 0; $i < 4; $i++) {
+                    echo '<span class="star full"></span>';
+                }
+            ?>
+            <span class="star half"></span>
+        </div>
+        <span>4.5</span>
+    </div>
+
+    <p>
+    Looking for an effective way to promote your business, event, or charity? Our flat Leaflet and Flyer printing services offer budget and luxury options with customisable features like multiple Versions, lamination, and various sizes. Perfect for business promotion, event advertising, and charity campaigns, our high-quality prints ensure maximum outreach and impact. More information
+    </p>
+
+    <ul>
+        <li>Wide size and paper range </li>
+        <li>Print multiple Versions at once for lower unit costs </li>
+        <li>Next day delivery on selected options </li>
+        <li>Available with white ink printing</li>
+    </ul>
+
+    
+<!-- Build Your Own CTA  -->
+
+<div class="customise-cta">
+    <h3>Build Your Own</h3>
+    <p>Customise your product to your exact specification. We’ve got all the options you need to bring your print to life. Let’s make it real!</p>
+    <button id="orderNow" class="order-now">Order Now</button>
+</div>
+
+
+</div>
+
+
+ </section>
+
 
 <!-- product presets  -->
 <?php include('app/layout-templete/product_presets.php'); ?>
 
-<section id="navastab">
+<section id="product_navastab">
 <?php
 $menuItems = [
     ["id" => "section1", "title" => "Our stocks", "file" => "app/layout-templete/product-content1.php"],
