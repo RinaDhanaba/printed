@@ -37,6 +37,11 @@ $product_image_slider = [
         <?php endforeach; ?>
     </div>
 
+    <div class="slider-controls">
+        <button class="slider-btn prev">&#10094;</button>
+        <button class="slider-btn next">&#10095;</button>
+    </div>
+
     <!-- Navigation Dots -->
     <div class="dots">
         <?php foreach ($product_image_slider as $index => $slide) : ?>
