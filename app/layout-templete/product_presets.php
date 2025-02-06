@@ -1,5 +1,5 @@
 <section class="product-preset">
-
+<div class="container">
 <?php
 $product_presets = [
     [
@@ -41,8 +41,8 @@ $product_presets = [
 ];
 ?>
 
-<h2 class="container">Get a quick quote with our product presets</h2>
-<div class="presets-container container">
+<h2>Get a quick quote with our product presets</h2>
+<div class="presets-container">
     <?php foreach ($product_presets as $preset): ?>
         <div class="preset-card">
             <h3><span><?= htmlspecialchars($preset['icon']) ?></span><?= htmlspecialchars($preset['title']) ?></h3>
@@ -58,5 +58,7 @@ $product_presets = [
             <div class="ex-vat">(ex VAT)</div>
         </div>
     <?php endforeach; ?>
+</div>
+
 </div>
 </section>
