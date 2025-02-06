@@ -1,5 +1,4 @@
-<section class="product-preset container">
-
+<section class="product-preset">
 
 <?php
 $product_presets = [
@@ -43,7 +42,7 @@ $product_presets = [
 ?>
 
 <h2>Get a quick quote with our product presets</h2>
-<div class="presets-container">
+<div class="presets-container container">
     <?php foreach ($product_presets as $preset): ?>
         <div class="preset-card">
             <h3><span><?= htmlspecialchars($preset['icon']) ?></span><?= htmlspecialchars($preset['title']) ?></h3>
@@ -60,78 +59,4 @@ $product_presets = [
         </div>
     <?php endforeach; ?>
 </div>
-
-
-
-<style>
-.presets-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.preset-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    width: 300px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.preset-card h3 {
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-    margin: 0 0 10px;
-}
-
-.preset-card h3 span {
-    margin-right: 10px;
-    font-size: 22px;
-}
-
-.preset-card p {
-    color: #555;
-    margin: 0 0 15px;
-}
-
-.price-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.price-list li {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
-}
-
-.price-list li:last-child {
-    border-bottom: none;
-}
-
-.price {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.ex-vat {
-    text-align: right;
-    color: #888;
-    font-size: 12px;
-    margin-top: 10px;
-}
-
-@media (max-width: 768px) {
-    .preset-card {
-        width: 100%;
-    }
-}
-</style>
-
-
 </section>
