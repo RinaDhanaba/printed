@@ -41,7 +41,7 @@ $product_presets = [
 ];
 ?>
 
-<h2>Get a quick quote with our product presets</h2>
+<h2 class="container">Get a quick quote with our product presets</h2>
 <div class="presets-container container">
     <?php foreach ($product_presets as $preset): ?>
         <div class="preset-card">
