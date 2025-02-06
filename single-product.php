@@ -5,7 +5,7 @@
 <?php // include 'app/layout-templete/sidebar.php'; ?>
 
 <!-- product info section  -->
- <section class="product_intro">
+ <section class="product_intro container">
  <?php
 $product_image_slider = [
     [
@@ -51,7 +51,7 @@ $product_image_slider = [
     <h1>Leaflet & Flyer Printing</h1>
     <p class="price">from <strong>£8.50</strong> <sub>(ex VAT)</sub></p>
 
-    <div class="trustpilot-section">        
+    <div class="trustpilot-section-product">        
         <p class="trustpilot-logo">★ Trustpilot</p>
         <div class="stars">
             <?php
