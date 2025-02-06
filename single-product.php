@@ -23,10 +23,10 @@ $product_image_slider = [
 ];
 ?>
 
-<!-- Hero Section -->
+<!-- Product Image Slider -->
 <div class="product-image-slider">
     <div class="slider-container">
-        <?php foreach ($product_image_slider as $index => $slide) : ?>
+        <?php foreach ($product_image_slider as $slide) : ?>
             <div class="slide">
                 <div class="product-image-content">
                     <div class="image-section" style="background-image: url('<?php echo htmlspecialchars($slide['image']); ?>');">
@@ -36,12 +36,15 @@ $product_image_slider = [
             </div>
         <?php endforeach; ?>
     </div>
+
+    <!-- Navigation Dots -->
     <div class="dots">
-        <?php foreach ($hero_slider as $index => $slide) : ?>
-            <span class="dot"></span>
+        <?php foreach ($product_image_slider as $index => $slide) : ?>
+            <span class="dot" data-index="<?php echo $index; ?>"></span>
         <?php endforeach; ?>
     </div>
 </div>
+
 
 <div class="single-product-info">
     <h1>Leaflet & Flyer Printing</h1>
