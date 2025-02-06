@@ -90,7 +90,7 @@ $product_image_slider = [
 <!-- product presets  -->
 <?php include('app/layout-templete/product_presets.php'); ?>
 
-<section id="product_navastab">
+<section id="navastab" class="product_navastab">
 <?php
 $menuItems = [
     ["id" => "section1", "title" => "Our stocks", "file" => "app/layout-templete/product-content1.php"],
