@@ -189,6 +189,7 @@
 
 #product-page-grid  .product {
     background: transparent;
+    box-shadow: none;
 }
 
 #product-page-grid  .card_content{
@@ -199,4 +200,5 @@
     font-size:16px;
     color: var(--black);
     font-weight:600;
+    text-align:left;
 }
