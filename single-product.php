@@ -28,7 +28,7 @@ $product_image_slider = [
     <div class="slider-container">
         <?php foreach ($product_image_slider as $slide) : ?>
             <div class="slide">
-                <div class="product-image-content">
+                <div class="slide-content">
                     <div class="image-section" style="background-image: url('<?php echo htmlspecialchars($slide['image']); ?>');">
                         <img src="<?php echo htmlspecialchars($slide['image']); ?>" alt="<?php echo htmlspecialchars($slide['title']); ?>">
                     </div>
