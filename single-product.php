@@ -173,7 +173,7 @@ $products = [
 ?>
 
     <!-- Product Section -->
-    <section class="product-grid">
+    <section id="product-page-grid"class="product-grid container">
     <h2>More products you might like</h2>
     <div class="grid">
         <?php foreach ($products as $product) : ?>
