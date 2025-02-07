@@ -496,7 +496,7 @@ text-wrap: auto;
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .tab-container {
+    .faq-tab-content {
         flex-direction: column;
     }
     .tab-menu, .tab-content-container {
