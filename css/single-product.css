@@ -420,7 +420,7 @@
 
 /* FAQ Container */
 .faq-container{
-    text-align: center;
+    text-align: left;
 }
 .highlight {
     color: var(--primary-color);
