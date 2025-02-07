@@ -444,9 +444,9 @@
     width: 100%;
     background: none;
     border: none;
-    padding: 15px;
+    padding: 10px;
     text-align: left;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
     transition: background 0.3s;
     color: #333;
@@ -466,16 +466,22 @@
 }
 
 /* Tab Content (Right Side) */
-.tab-content-container {
+.faq-tab-content-container {
     width: 70%;  /* Ensures content takes remaining space */
     padding: 20px;
     border: 1px solid var(--light-gray);
     border-radius: 20px;
 }
 
-.faq-container .tab-content {
+.faq-container .faq-tab-content {
     display: none; 
     padding: 0;
+}
+.faq-tab-content * {
+    font-size: 14px;
+text-wrap: auto;
+    text-align: left;
+    line-height: 1.5em;
 }
 
 /* Link Styles */

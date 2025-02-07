@@ -31,7 +31,7 @@
             $first = true;
             foreach ($faq as $question => $answer) {
                 $displayStyle = $first ? 'style="display:block;"' : '';
-                echo "<div id='".md5($question)."' class='tab-content' $displayStyle>
+                echo "<div id='".md5($question)."' class='faq-tab-content' $displayStyle>
                         <p>$answer</p>
                       </div>";
                 $first = false;
@@ -45,7 +45,7 @@
 function openTab(evt, tabName) {
     var i, tabcontent, tablinks;
     
-    tabcontent = document.getElementsByClassName("tab-content");
+    tabcontent = document.getElementsByClassName("faq-tab-content");
     for (i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none";
     }
