@@ -223,6 +223,121 @@
 
 
 
+/* section 1  */
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navigation Bar Styling */
+.product-container nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+.product-container .nav-bar {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+.product-container .nav-bar li {
+    margin: 0 15px;
+}
+
+.product-container .nav-bar a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+.product-container .nav-bar a:hover,
+.product-container .nav-bar .active {
+    background-color: #ffcc00;
+    color: #333;
+}
+
+/* Product Section Styling */
+.product-container .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Product Card */
+.product-container .product-card {
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    padding: 15px;
+    transition: transform 0.2s;
+}
+
+.product-container .product-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.product-container .product-card h3 {
+    margin: 15px 0 10px;
+}
+
+.product-container .product-card p {
+    color: #555;
+}
+
+.product-container .product-card:hover {
+    transform: scale(1.05);
+}
+
+/* No Products Message */
+.product-container .no-products {
+    font-size: 20px;
+    color: #999;
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* Pagination Styling */
+.product-container .pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.product-container .pagination a {
+    margin: 0 5px;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: #333;
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.product-container .pagination a.active {
+    background-color: #ffcc00;
+    color: #333;
+    font-weight: bold;
+}
+
+.product-container .pagination a:hover {
+    background-color: #ddd;
+}
+
+
+
+
+
+
 /* section 2  */
 
 .cards h3 {
