@@ -13,7 +13,7 @@
                 'link_url' => '#'
             ],
             [
-                'image' => '..media/International.png', // Replace with actual icon URLs
+                'image' => '../media/International.png', // Replace with actual icon URLs
                 'title' => 'Downloadable Templates',
                 'description' => 'Use our free templates to create your artwork and make sure your print is set up perfectly for the presses.',
                 'link_text' => 'Find A Template >',
