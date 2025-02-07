@@ -451,12 +451,15 @@
 .tab-container {
     display: flex;
     gap: 20px;
+    align-items: flex-start;
 }
 
 /* Tab Menu (Left Side) */
 .tab-menu {
     width: 30%;  /* Fixed width to prevent overflow */
     border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
 }
 
 /* Individual Tab Buttons */

@@ -1,8 +1,7 @@
-
-<div class="faq-container">
-    <h2 style="margin-bottom:15px;">Frequently asked questions</h2>
+<h2 style="margin-bottom:15px;">Frequently asked questions</h2>
     <p>Got a question? We might have answered it here. If not, feel free to get in touch with <span class="highlight">The Team</span>, we’re here to help!</p>
 
+<div class="faq-container"> 
     <div class="tab-container">
         <!-- Left Side Tabs -->
         <div class="tab-menu">
@@ -35,7 +34,6 @@
             foreach ($faq as $question => $answer) {
                 $displayStyle = $first ? 'style="display:block;"' : '';
                 echo "<div id='".md5($question)."' class='tab-content' $displayStyle>
-                        <h3>$question</h3>
                         <p>$answer</p>
                       </div>";
                 $first = false;
