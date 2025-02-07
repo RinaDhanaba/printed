@@ -1,1 +1,43 @@
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia id minima, ea a aliquam dolores unde maiores sint cum deleniti quasi ut quod eaque. Officia, sequi iure. Velit, commodi! Tempore eum quo officia esse magnam ducimus quaerat earum consequatur illum repellat minus fugiat voluptas eos nisi sint unde, reiciendis, minima, odio repudiandae hic? Nobis impedit eaque est error! Eligendi ab molestias voluptate nemo id ullam aperiam praesentium esse, ratione a consequuntur totam corrupti asperiores ad dolore cumque odit illum aspernatur tenetur pariatur, provident maxime sed quam? Eveniet, dolores nisi. Alias totam aliquid similique. Facere aliquid et reprehenderit quo sapiente assumenda libero est, eos itaque nostrum, porro, cupiditate officia ea! Voluptatum magnam reprehenderit, aspernatur repellendus, culpa accusantium fugiat aperiam voluptatem omnis unde ex sint id corporis incidunt. Obcaecati quis qui consectetur praesentium iusto sequi atque! Minus alias, voluptatibus quis mollitia, deleniti temporibus adipisci voluptate sit tenetur perferendis et commodi non velit molestiae optio dolorum eaque magnam voluptatum. Veritatis provident nobis soluta autem non natus ipsam tenetur sunt voluptas pariatur, quae ullam vitae perspiciatis reiciendis iure animi cupiditate modi incidunt quasi. Accusamus maiores velit architecto modi adipisci molestias odio! Sunt, excepturi nobis minima hic deserunt officia quia dolorem ab sequi voluptatum facere praesentium eos, reiciendis repellendus ad. Reiciendis sint error, iusto libero, quidem maiores nostrum consequuntur doloribus at ea vel blanditiis ex cumque sunt nobis quas tempora accusantium non numquam deserunt nesciunt! Deserunt error facere officia totam ipsa quia consequatur dolorem! Laborum quaerat eos recusandae nesciunt veniam vel repellendus necessitatibus nobis rerum, autem at molestias iste aliquam ipsam unde voluptatem blanditiis voluptas error? Ex ipsum sint saepe aut voluptas explicabo aspernatur soluta laboriosam veniam nobis velit magni, facere dignissimos nostrum iure praesentium tempora ad accusantium ducimus voluptatibus sequi temporibus! Temporibus illo nostrum accusamus necessitatibus beatae odio obcaecati incidunt magni id debitis! Possimus?
+<div class="container">
+    <h1>Guide to perfect print</h1>
+    <p class="subtitle">Get your print to the presses perfectly with everything you need to get set up</p>
+
+    <div class="cards">
+        <?php
+        // Array to hold the card data
+        $cards = [
+            [
+                'image' => 'https://via.placeholder.com/50x50.png?text=📄', // Replace with actual icon URLs
+                'title' => 'Sample Packs',
+                'description' => 'Get a feel for our range of quality products, papers and special finishes in our free Sample Packs.',
+                'link_text' => 'Order Now >',
+                'link_url' => '#'
+            ],
+            [
+                'image' => 'https://via.placeholder.com/50x50.png?text=📐', // Replace with actual icon URLs
+                'title' => 'Downloadable Templates',
+                'description' => 'Use our free templates to create your artwork and make sure your print is set up perfectly for the presses.',
+                'link_text' => 'Find A Template >',
+                'link_url' => '#'
+            ],
+            [
+                'image' => 'https://via.placeholder.com/50x50.png?text=💡', // Replace with actual icon URLs
+                'title' => 'Bespoke Service',
+                'description' => 'Can’t find the print you’re looking for? From unique papers to custom sizes and finishes, our Bespoke Team can help with your request.',
+                'link_text' => 'Get A Quote >',
+                'link_url' => '#'
+            ]
+        ];
+
+        // Loop through the array to display cards
+        foreach ($cards as $card) {
+            echo '<div class="card">';
+            echo '<img src="' . $card['image'] . '" alt="' . $card['title'] . ' Icon">';
+            echo '<h2>' . $card['title'] . '</h2>';
+            echo '<p>' . $card['description'] . '</p>';
+            echo '<a href="' . $card['link_url'] . '">' . $card['link_text'] . '</a>';
+            echo '</div>';
+        }
+        ?>
+    </div>
+</div>
