@@ -294,7 +294,7 @@
 .sustainable-section {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: stretch;
     justify-content: space-between;
     max-width: 1200px;
     margin: 20px auto;
@@ -319,7 +319,8 @@
 
 .sustainable-image img {
     width: 100%;
-    height: auto;
+    height: 250px;
+    object-fit: cover;
     display: block;
 }
 
