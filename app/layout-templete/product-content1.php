@@ -77,19 +77,31 @@ $currentProducts = array_slice($filteredProducts, $start, $productsPerPage);
             ?>
         </div>
 
-        <!-- Pagination -->
-        <div class="pagination">
-            <?php if ($page > 1): ?>
-                <a href="?category=<?= $selectedCategory ?>&page=<?= $page - 1 ?>">&laquo; Prev</a>
-            <?php endif; ?>
+        
+<!-- Pagination -->
+<div class="pagination">
+    <?php
+    $start = $offset + 1;
+    $end = min($offset + $productsPerPage, count($filteredProducts));
+    ?>
 
-            <?php for ($i = 1; $i <= $totalPages; $i++): ?>
-                <a href="?category=<?= $selectedCategory ?>&page=<?= $i ?>" class="<?= $i == $page ? 'active' : '' ?>"><?= $i ?></a>
-            <?php endfor; ?>
+    <!-- Previous Arrow -->
+    <?php if ($page > 1): ?>
+        <a href="?category=<?= $selectedCategory ?>&page=<?= $page - 1 ?>" class="arrow prev-arrow">&#8592;</a>
+    <?php else: ?>
+        <span class="arrow disabled">&#8592;</span>
+    <?php endif; ?>
 
-            <?php if ($page < $totalPages): ?>
-                <a href="?category=<?= $selectedCategory ?>&page=<?= $page + 1 ?>">Next &raquo;</a>
-            <?php endif; ?>
-        </div>
+    <!-- Showing X-Y of Z -->
+    <span class="pagination-info">Showing <?= $start ?>-<?= $end ?> of <?= count($filteredProducts) ?></span>
+
+    <!-- Next Arrow -->
+    <?php if ($page < $totalPages): ?>
+        <a href="?category=<?= $selectedCategory ?>&page=<?= $page + 1 ?>" class="arrow next-arrow">&#8594;</a>
+    <?php else: ?>
+        <span class="arrow disabled">&#8594;</span>
+    <?php endif; ?>
+</div>
+
 
     </div>
