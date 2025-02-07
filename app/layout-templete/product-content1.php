@@ -52,7 +52,7 @@ $currentProducts = array_slice($filteredProducts, $start, $productsPerPage);
         <!-- Navigation Bar -->
         <nav>
             <ul class="nav-bar">
-                <li><a href="?category=all" class="<?= $selectedCategory == 'All' ? 'active' : '' ?>">All Papers</a></li>
+                <li><a href="?" class="<?= $selectedCategory == 'All' ? 'active' : '' ?>">All Papers</a></li>
                 <li><a href="?category=Luxury" class="<?= $selectedCategory == 'Luxury' ? 'active' : '' ?>">Luxury Papers</a></li>
                 <li><a href="?category=Bestsellers" class="<?= $selectedCategory == 'Bestsellers' ? 'active' : '' ?>">Bestsellers & Core Papers</a></li>
                 <li><a href="?category=Recycled" class="<?= $selectedCategory == 'Recycled' ? 'active' : '' ?>">Recycled Papers</a></li>
@@ -77,7 +77,7 @@ $currentProducts = array_slice($filteredProducts, $start, $productsPerPage);
             ?>
         </div>
 
-        
+
 <!-- Pagination -->
 <div class="pagination">
     <?php
