@@ -203,9 +203,21 @@
     text-align:left;
 }
 
+#product-page-grid  .product h2{
+    margin-bottom: 15px;
+}
+
 #navastab.product_navastab #section2 .container{
     max-width: 1200px;
 }
+/* 
+#navastab.product_navastab #section2, #navastab.product_navastab #section4{
+    background: var(--white);
+}
+
+#navastab.product_navastab #section1, #navastab.product_navastab #section3, #navastab.product_navastab #section5{
+    background: var(--gary-bg);
+} */
 
 
 
@@ -268,5 +280,58 @@
 @media (max-width: 600px) {
     .card {
         width: 100%; /* 1 card per row */
+    }
+}
+
+
+
+
+
+
+
+/* section 3  */
+
+.sustainable-section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 20px auto;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sustainable-content {
+    background-color: var(--secondary-color);
+    color: var(--black);
+    padding: 40px;
+    flex: 1 1 50%;
+}
+
+.sustainable-image {
+    flex: 1 1 50%;
+}
+
+.sustainable-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sustainable-section {
+        flex-direction: column;
+    }
+
+    .sustainable-content, .sustainable-image {
+        flex: 1 1 100%;
+    }
+
+    .sustainable-content {
+        padding: 20px;
+        text-align: center;
     }
 }

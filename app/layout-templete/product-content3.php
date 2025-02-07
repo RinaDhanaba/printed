@@ -1,1 +1,63 @@
-Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque, consequuntur quia. Dicta esse quis hic corrupti, laboriosam itaque non dolor recusandae fuga praesentium explicabo, aliquid consectetur nostrum nesciunt qui sapiente distinctio error? Atque distinctio tenetur unde accusamus, aliquid odit praesentium quo ut reiciendis nihil exercitationem quis, suscipit fuga modi nisi. Ad, hic. Sunt adipisci eligendi odio repellendus laborum, excepturi placeat commodi minima, impedit unde quis eos maiores dolore nulla dolores. Eveniet dolorum exercitationem laborum minus laudantium voluptatum blanditiis quaerat, quia accusantium. Repudiandae repellat accusantium pariatur ex consequatur magni, ullam esse, illum sed voluptatem impedit officiis culpa nobis animi! Quia esse dicta eum ex quaerat, omnis aspernatur praesentium. Aut distinctio autem recusandae labore perspiciatis illo exercitationem, et cupiditate qui doloribus fugiat voluptatem quae consequatur hic vero tempore doloremque suscipit aperiam laborum? Laboriosam, voluptate impedit. Libero, totam dolor, animi aspernatur quae fugit veritatis perspiciatis architecto quam atque aliquam inventore placeat itaque! Fuga, nesciunt sapiente nam velit nisi natus esse assumenda omnis nemo maiores sed iste odio itaque, saepe praesentium dolorum commodi optio reprehenderit consequuntur corporis cupiditate. Cupiditate accusantium quae explicabo, iusto aliquid officiis consequuntur ut eligendi repellendus! Id voluptas culpa nobis doloremque alias natus similique possimus ipsam enim beatae vero doloribus molestiae sunt minus libero eius iure tenetur unde rem error adipisci, sed perferendis. Explicabo repudiandae odit harum necessitatibus amet quo ab inventore earum quia, corrupti facere, quod culpa neque! Quod distinctio ullam incidunt aspernatur ea, perferendis veniam quo dolores nam aliquid quaerat veritatis pariatur eum! Veniam aliquid in voluptatibus quasi nihil numquam consequatur, voluptatum repellat, porro laborum eos deleniti. Ipsum ipsa ullam voluptatibus vitae praesentium. Nisi dolor, similique ea reprehenderit iusto obcaecati sunt. Asperiores temporibus numquam fuga? Explicabo dolorem, magni pariatur, commodi sint cumque tempora libero, voluptatibus blanditiis maxime quos. Recusandae, voluptates qui dolor sint beatae voluptatibus officia sed iure quo!
+
+<?php
+$products = [
+    [
+       "title" => "Postcards", 
+        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "link" => "#"
+    ],
+    [
+        "title" => "Postcards", 
+        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "link" => "#"
+    ]
+];
+?>
+
+    <!-- Product Section -->
+    <section id="product-page-grid"class="product-grid container">
+    <h2 style="margin-bottom:15px">The range </h2>
+    <p>Explore other similar products.</p>
+    <div class="grid">
+        <?php foreach ($products as $product) : ?>
+            <div class="product">
+                <?php if (isset($product['badge'])) : ?>
+                    <span class="badge"><?php echo $product['badge']; ?></span>
+                <?php endif; ?>
+                <div>
+                <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['title']; ?>">
+                </div>
+                <div class="card_content">
+                <h3><?php echo $product['title']; ?></h3>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</section>
+
+
+<div class="sustainable-section">
+    <?php
+    // Dynamic content array
+    $sustainable_content = [
+        'title' => 'Sustainable print',
+        'description' => 'At Printed.com, we want to help you reduce your environmental impact. From using innovative packaging and sourcing eco-friendly papers, to minimising waste and promoting recycling, we’re dedicated to giving you more sustainable choices across our range.',
+        'button_text' => 'Find Out More',
+        'button_link' => '#',
+        'image_src' => 'https://via.placeholder.com/600x400.png?text=Mindful+Inc.', // Replace with actual image URL
+        'image_alt' => 'Mindful Inc. card in a plant pot'
+    ];
+    ?>
+
+    <!-- Text Section -->
+    <div class="sustainable-content">
+        <h3><?php echo $sustainable_content['title']; ?></h3>
+        <p><?php echo $sustainable_content['description']; ?></p>
+        <a href="<?php echo $sustainable_content['button_link']; ?>" class="chat-button"><?php echo $sustainable_content['button_text']; ?></a>
+    </div>
+
+    <!-- Image Section -->
+    <div class="sustainable-image">
+        <img src="<?php echo $sustainable_content['image_src']; ?>" alt="<?php echo $sustainable_content['image_alt']; ?>">
+    </div>
+</div>
