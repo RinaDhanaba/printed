@@ -415,7 +415,10 @@
 }
 
 
-/* section 5  */
+
+
+
+/* FAQ Container */
 .faq-container {
     max-width: 1000px;
     margin: auto;
@@ -425,6 +428,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Header Styling */
 .faq-container h2 {
     font-size: 32px;
     color: #333;
@@ -443,18 +447,19 @@
     font-weight: bold;
 }
 
+/* Tab Container - Main Layout */
 .tab-container {
     display: flex;
-    flex-wrap: nowrap; /* Ensures side-by-side layout */
     gap: 20px;
 }
 
+/* Tab Menu (Left Side) */
 .tab-menu {
-    flex: 1;
-    min-width: 250px;
+    width: 30%;  /* Fixed width to prevent overflow */
     border-right: 1px solid #ddd;
 }
 
+/* Individual Tab Buttons */
 .tab-menu .tab-link {
     width: 100%;
     background: none;
@@ -465,8 +470,12 @@
     cursor: pointer;
     transition: background 0.3s;
     color: #333;
+    word-wrap: break-word;  /* Ensures long text wraps */
+    white-space: normal;    /* Prevents text from staying in one line */
+    overflow-wrap: break-word;  /* Handles word wrapping */
 }
 
+/* Hover and Active States */
 .tab-menu .tab-link:hover {
     background-color: #f1f1f1;
 }
@@ -477,13 +486,14 @@
     font-weight: bold;
 }
 
+/* Tab Content (Right Side) */
 .tab-content-container {
-    flex: 2;
+    width: 70%;  /* Ensures content takes remaining space */
     padding: 20px;
 }
 
 .tab-content {
-    display: none;
+    display: none;  /* Hide content by default */
 }
 
 .tab-content h3 {
@@ -496,6 +506,7 @@
     line-height: 1.6;
 }
 
+/* Link Styles */
 .faq-container a {
     color: #e91e63;
     text-decoration: none;
@@ -510,7 +521,8 @@
     .tab-container {
         flex-direction: column;
     }
-    .tab-menu {
+    .tab-menu, .tab-content-container {
+        width: 100%;  /* Full width on smaller screens */
         border-right: none;
         border-bottom: 1px solid #ddd;
     }
