@@ -13,17 +13,17 @@
     // Array to hold the card data
     $info_cards = [
         [
-            'image' => 'https://via.placeholder.com/300x200.png?text=Paper+Size+Guide', // Replace with actual image URL
+            'image' => '../media/business_cards_category.jpg', // Replace with actual image URL
             'title' => 'Paper Size Guide',
             'link' => '#'
         ],
         [
-            'image' => 'https://via.placeholder.com/300x200.png?text=How+To+Create+Leaflets',
+            'image' => '../media/business_cards_category.jpg',
             'title' => 'How To Create: Leaflets',
             'link' => '#'
         ],
         [
-            'image' => 'https://via.placeholder.com/300x200.png?text=5+Printing+Tips',
+            'image' => '../media/business_cards_category.jpg',
             'title' => '5 Printing Tips',
             'link' => '#'
         ]
