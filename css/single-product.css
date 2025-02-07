@@ -308,8 +308,10 @@
     color: var(--white);
     padding: 40px;
     flex: 1 1 50%;
-    text-align: center;
+    text-align: left;
 }
+
+.sustainable-content p{ color: var(--white);}
 
 .sustainable-image {
     flex: 1 1 50%;
