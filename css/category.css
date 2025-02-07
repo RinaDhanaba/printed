@@ -262,7 +262,7 @@
 
 
 /* second tab style */
-#section2 .container{
+#navastab #section2 .container{
     max-width: 900px;
 }
 
@@ -473,7 +473,7 @@ text-align: left;
 
 /* tab for 3rd section  */
 
-#section3 .tabs {
+#navastab #section3 .tabs {
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -519,7 +519,7 @@ text-align: left;
 }
 
 
-#section3 .tab-content .container { 
+#navastab #section3 .tab-content .container { 
     display: flex;
     flex-wrap: wrap;
     justify-content: center; 
@@ -531,71 +531,71 @@ text-align: left;
 .dimension-section{
  padding-right: 40px;   
 }
-#section3 #dimensionVisual { 
+#navastab #section3 #dimensionVisual { 
     position: relative; display: flex;
     align-items: center; justify-content: left;
     height: 170px;
     margin:10px auto;}
     
-#section3 #bleedBox {
+#navastab #section3 #bleedBox {
     position: absolute;
     border: 1px solid #dc3545;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#section3 #safeBox {
+#navastab #section3 #safeBox {
     border: 1px solid #28a745;
 }
 
 /* Description Section */
-#section3 .description-section { flex:1;}
+#navastab #section3 .description-section { flex:1;}
 
-#section3 .description-section img{
+#navastab #section3 .description-section img{
     width:100%;
     margin-bottom:20px
 }
 
 /* Form Section */
-#section3 .form-section { 
+#navastab #section3 .form-section { 
 flex:1; 
 padding: 20px 0;  
 border-radius:4px;
 }
 
 @media (max-width: 768px) {
-#section3 .tab-content .container { 
+#navastab #section3 .tab-content .container { 
  flex-direction:column-reverse;
 }
 }
 
 
-#section3 .form-group { margin-bottom: 15px; }
+#navastab #section3 .form-group { margin-bottom: 15px; }
 
 select, input { width: 100%; padding: 10px; margin-top: 5px; font-size:12px; }
 label, ::placeholder, option {font-size:12px; }
 
-#section3 .form2.container{
+#navastab #section3 .form2.container{
     max-width: 700px;
 }
 
-#section3 .form2 .form-section{
+#navastab #section3 .form2 .form-section{
     padding: 0px;
 }
 
-#section3 .form2 .form-group{
+#navastab #section3 .form2 .form-group{
     margin-bottom: 0;
 }
 
-#section3 .form2 select{
+#navastab #section3 .form2 select{
     max-width: 0 0 10px 0;
 }
 
-#section3 .form2 p {
+#navastab #section3 .form2 p {
     margin: 10px 0;
     font-size: 12px;
 }
-#section3 .form2 h3 {
+#navastab #section3 .form2 h3 {
     text-align: center;
     font-weight: 600;
 }
@@ -617,6 +617,6 @@ label, ::placeholder, option {font-size:12px; }
 
 
 
-#section4 .product-grid{
+#navastab  #section4 .product-grid{
     padding: 0;
 }
