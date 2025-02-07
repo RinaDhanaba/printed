@@ -1,1 +1,47 @@
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto tenetur pariatur culpa, blanditiis explicabo illo reiciendis esse mollitia sint sequi quo soluta beatae facilis, et cupiditate aliquam iste cum, amet velit nemo in! Exercitationem labore distinctio autem quam a, excepturi quisquam magni. Delectus consequatur eius earum minima officiis, vel laborum blanditiis aspernatur nam eos cum id placeat nesciunt quibusdam. Fugiat repellat laboriosam, dolore repudiandae, quia officiis ab illo eligendi sunt ipsa assumenda excepturi? Expedita sunt voluptatibus, delectus repellendus voluptatem nemo commodi blanditiis at impedit eos incidunt voluptates tempora esse voluptate facere suscipit rem optio, vel ipsa aperiam earum natus. Saepe ab, labore ipsum pariatur aliquid reprehenderit magni maiores adipisci tenetur vel ad sapiente aut delectus est odit cumque! Id at laudantium aut ab quae, placeat nemo non cupiditate accusamus animi, ullam illum! Incidunt repellat, quae maxime enim sed cumque eveniet debitis eos! Ducimus ex modi animi tempora iste, officia alias, incidunt fugit vero cupiditate, mollitia a ipsa? Dignissimos unde id porro pariatur qui nemo beatae dolores inventore natus! Laboriosam delectus inventore impedit iste? Placeat assumenda numquam laboriosam? Illo officia doloribus placeat eaque non labore quos facere neque, consequatur amet ipsa dolore tempore quaerat at hic cumque velit exercitationem? Obcaecati ducimus omnis eligendi sed nostrum illum molestias perferendis recusandae veritatis quis molestiae repellendus neque incidunt facilis, laborum voluptate vitae eum doloremque maxime deleniti distinctio iure! Dignissimos ducimus, vitae amet, perspiciatis doloremque aliquid quibusdam fugiat id modi fugit nam eveniet! Nesciunt magnam exercitationem quis, voluptatum fugiat excepturi hic reiciendis, quam quos quasi nemo eius facere a rem soluta quisquam animi. Qui ea optio laborum assumenda porro cumque quaerat sequi, laudantium consequatur quibusdam ad eius, cupiditate iure quas sapiente nemo facere? Rerum aspernatur voluptates corrupti, ut ipsum voluptatem inventore ea veniam quibusdam officia nesciunt, officiis illo explicabo voluptatum at atque illum obcaecati excepturi.
+<div class="info-section">
+    <h2>More information</h2>
+    <p>
+        Whether you’re after cost-effective Leaflet printing solutions or premium, high-end materials, we’ve got you covered.
+        Our budget options for Flyer printing offer great value without compromising on quality, while our luxury range provides a touch of sophistication
+        that stands out from the crowd. Need different designs for diverse audiences? We can print multiple Leaflet Versions in one go, saving you time
+        and hassle while saving on unit costs. From compact A6 to full-page A4 Leaflets and Flyers, select the size that best fits your message and design.
+        Showcase your products or services with eye-catching designs, spread the word about your upcoming event or raise awareness and support for your cause
+        - our Leaflet printing services are designed to help you make a lasting impression.
+    </p>
+
+    <?php
+    // Array to hold the card data
+    $info_cards = [
+        [
+            'image' => 'https://via.placeholder.com/300x200.png?text=Paper+Size+Guide', // Replace with actual image URL
+            'title' => 'Paper Size Guide',
+            'link' => '#'
+        ],
+        [
+            'image' => 'https://via.placeholder.com/300x200.png?text=How+To+Create+Leaflets',
+            'title' => 'How To Create: Leaflets',
+            'link' => '#'
+        ],
+        [
+            'image' => 'https://via.placeholder.com/300x200.png?text=5+Printing+Tips',
+            'title' => '5 Printing Tips',
+            'link' => '#'
+        ]
+    ];
+    ?>
+
+    <!-- Cards Section -->
+    <div class="info-cards">
+        <?php foreach ($info_cards as $card): ?>
+            <div class="info-card">
+                <a href="<?php echo $card['link']; ?>">
+                    <img src="<?php echo $card['image']; ?>" alt="<?php echo $card['title']; ?>">
+                    <div class="info-card-content">
+                        <div class="read-label">READ</div>
+                        <h3><?php echo $card['title']; ?></h3>
+                    </div>
+                </a>
+            </div>
+        <?php endforeach; ?>
+    </div>
+</div>
