@@ -305,9 +305,10 @@
 
 .sustainable-content {
     background-color: var(--secondary-color);
-    color: var(--black);
+    color: var(--white);
     padding: 40px;
     flex: 1 1 50%;
+    text-align: center;
 }
 
 .sustainable-image {

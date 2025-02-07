@@ -44,7 +44,7 @@ $products = [
         'description' => 'At Printed.com, we want to help you reduce your environmental impact. From using innovative packaging and sourcing eco-friendly papers, to minimising waste and promoting recycling, we’re dedicated to giving you more sustainable choices across our range.',
         'button_text' => 'Find Out More',
         'button_link' => '#',
-        'image_src' => 'https://via.placeholder.com/600x400.png?text=Mindful+Inc.', // Replace with actual image URL
+        'image_src' => '../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg', // Replace with actual image URL
         'image_alt' => 'Mindful Inc. card in a plant pot'
     ];
     ?>
@@ -53,7 +53,7 @@ $products = [
     <div class="sustainable-content">
         <h3><?php echo $sustainable_content['title']; ?></h3>
         <p><?php echo $sustainable_content['description']; ?></p>
-        <a href="<?php echo $sustainable_content['button_link']; ?>" class="chat-button"><?php echo $sustainable_content['button_text']; ?></a>
+        <a href="<?php echo $sustainable_content['button_link']; ?>" class="shop-btn"><?php echo $sustainable_content['button_text']; ?></a>
     </div>
 
     <!-- Image Section -->
