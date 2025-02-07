@@ -203,7 +203,7 @@
     text-align:left;
 }
 
-.product_navastab #section2 .container{
+#navastab.product_navastab #section2 .container{
     max-width: 1200px;
 }
 
