@@ -335,8 +335,7 @@
     }
 
     .sustainable-content {
-        padding: 20px;
-        text-align: center;
+        padding: 40px 20px;
     }
 }
 
@@ -347,16 +346,15 @@
 
 /* section 4  */
 .info-section {
-    padding: 50px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    text-align: left;
 }
 .info-card a {
     text-decoration: none;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 .info-cards {
+    margin-top: 35px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -381,7 +379,7 @@
 
 .info-card img {
     width: 100px;
-    height: 80px;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
