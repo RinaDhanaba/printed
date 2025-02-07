@@ -419,7 +419,9 @@
 
 
 /* FAQ Container */
-
+.faq-container{
+    text-align: center;
+}
 .highlight {
     color: var(--primary-color);
     font-weight: bold;

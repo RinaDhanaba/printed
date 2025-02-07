@@ -1,3 +1,4 @@
+<div class="faq-container">
 <h2 style="margin-bottom:15px;">Frequently asked questions</h2>
     <p>Got a question? We might have answered it here. If not, feel free to get in touch with <span class="highlight">The Team</span>, we’re here to help!</p>
     <div class="tab-container">
@@ -39,7 +40,7 @@
             ?>
         </div>
     </div>
-
+</div>
 <script>
 // JavaScript to handle tab switching
 function openTab(evt, tabName) {
