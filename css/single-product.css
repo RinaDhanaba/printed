@@ -429,13 +429,12 @@
 .tab-container {
     display: flex;
     gap: 20px;
-    align-items: flex-start;
+    align-items: stretch;
 }
 
 /* Tab Menu (Left Side) */
 .tab-menu {
-    width: 30%;  /* Fixed width to prevent overflow */
-    border-right: 1px solid var(--light-gray);
+    width: 30%;
     display: flex;
     flex-direction: column;
 }
@@ -470,20 +469,13 @@
 .tab-content-container {
     width: 70%;  /* Ensures content takes remaining space */
     padding: 20px;
+    border: 1px solid var(--light-gray);
+    border-radius: 20px;
 }
 
-.tab-content {
-    display: none;  /* Hide content by default */
-}
-
-.tab-content h3 {
-    margin-bottom: 15px;
-    color: #333;
-}
-
-.tab-content p {
-    color: #555;
-    line-height: 1.6;
+.faq-container .tab-content {
+    display: none; 
+    padding: 0;
 }
 
 /* Link Styles */
@@ -502,8 +494,6 @@
         flex-direction: column;
     }
     .tab-menu, .tab-content-container {
-        width: 100%;  /* Full width on smaller screens */
-        border-right: none;
-        border-bottom: 1px solid #ddd;
+        width: 100%; 
     }
 }
