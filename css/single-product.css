@@ -473,7 +473,7 @@
     border-radius: 20px;
 }
 
-.faq-container .faq-tab-content {
+.faq-tab-content {
     display: none; 
     padding: 0;
 }
