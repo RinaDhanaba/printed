@@ -226,18 +226,19 @@
 
 /* section 1  */
 
-/* Basic Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 .product-container .nav-bar {
     list-style-type: none;
     display: flex;
     justify-content: start;
     flex-wrap:wrap;
+}
+
+.product-container h2{
+    text-align: left;
+    margin-bottom: 5px;
+}
+.product-container p{
+    text-align: left;
 }
 
 .product-container .nav-bar li {
