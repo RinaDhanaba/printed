@@ -32,7 +32,7 @@ $selectedCategory = isset($_GET['category']) ? $_GET['category'] : 'All';
 
 // Pagination setup
 $productsPerPage = 6; // Products per page
-$page = isset($_GET['page']) ? $_GET['page'] : 1;
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $start = ($page - 1) * $productsPerPage;
 
 // Filter products by selected category
@@ -46,62 +46,62 @@ $totalPages = ceil($totalProducts / $productsPerPage);
 $currentProducts = array_slice($filteredProducts, $start, $productsPerPage);
 ?>
 
-    <!-- Product Navigation and Listing Section -->
-    <div class="product-container" id="sorting-product">
-        
-        <!-- Navigation Bar -->
-        <nav>
-            <ul class="nav-bar">
-                <li><a href="?#sorting-product" class="<?= $selectedCategory == 'All' ? 'active' : '' ?>">All Papers</a></li>
-                <li><a href="?category=Luxury#sorting-product" class="<?= $selectedCategory == 'Luxury' ? 'active' : '' ?>">Luxury Papers</a></li>
-                <li><a href="?category=Bestsellers#sorting-product" class="<?= $selectedCategory == 'Bestsellers' ? 'active' : '' ?>">Bestsellers & Core Papers</a></li>
-                <li><a href="?category=Recycled#sorting-product" class="<?= $selectedCategory == 'Recycled' ? 'active' : '' ?>">Recycled Papers</a></li>
-                <li><a href="?category=Core#sorting-product" class="<?= $selectedCategory == 'Core' ? 'active' : '' ?>">Core Papers</a></li>
-            </ul>
-        </nav>
+<!-- Product Navigation and Listing Section -->
+<div class="product-container" id="sorting-product">
+    
+    <!-- Navigation Bar -->
+    <nav>
+        <ul class="nav-bar">
+            <li><a href="?#sorting-product" class="<?= $selectedCategory == 'All' ? 'active' : '' ?>">All Papers</a></li>
+            <li><a href="?category=Luxury#sorting-product" class="<?= $selectedCategory == 'Luxury' ? 'active' : '' ?>">Luxury Papers</a></li>
+            <li><a href="?category=Bestsellers#sorting-product" class="<?= $selectedCategory == 'Bestsellers' ? 'active' : '' ?>">Bestsellers & Core Papers</a></li>
+            <li><a href="?category=Recycled#sorting-product" class="<?= $selectedCategory == 'Recycled' ? 'active' : '' ?>">Recycled Papers</a></li>
+            <li><a href="?category=Core#sorting-product" class="<?= $selectedCategory == 'Core' ? 'active' : '' ?>">Core Papers</a></li>
+        </ul>
+    </nav>
 
-        <!-- Product Cards -->
-        <div class="products">
-            <?php
-            if (count($currentProducts) > 0) {
-                foreach ($currentProducts as $product) {
-                    echo '<div class="product-card">';
-                    echo '<img src="' . $product['image'] . '" alt="' . $product['name'] . '">';
-                    echo '<h3>' . $product['name'] . '</h3>';
-                    echo '<p>' . $product['description'] . '</p>';
-                    echo '</div>';
-                }
-            } else {
-                echo '<p class="no-products">No products found in this category.</p>';
+    <!-- Product Cards -->
+    <div class="products">
+        <?php
+        if (count($currentProducts) > 0) {
+            foreach ($currentProducts as $product) {
+                echo '<div class="product-card">';
+                echo '<img src="' . $product['image'] . '" alt="' . $product['name'] . '">';
+                echo '<h3>' . $product['name'] . '</h3>';
+                echo '<p>' . $product['description'] . '</p>';
+                echo '</div>';
             }
-            ?>
-        </div>
-
-
-<!-- Pagination -->
-<div class="pagination">
-    <?php
-    $start = $offset + 1;
-    $end = min($offset + $productsPerPage, count($filteredProducts));
-    ?>
-
-    <!-- Previous Arrow -->
-    <?php if ($page > 1): ?>
-        <a href="?category=<?= $selectedCategory ?>&page=<?= $page - 1 ?>" class="arrow prev-arrow">&#8592;</a>
-    <?php else: ?>
-        <span class="arrow disabled">&#8592;</span>
-    <?php endif; ?>
-
-    <!-- Showing X-Y of Z -->
-    <span class="pagination-info">Showing <?= $start ?>-<?= $end ?> of <?= count($filteredProducts) ?></span>
-
-    <!-- Next Arrow -->
-    <?php if ($page < $totalPages): ?>
-        <a href="?category=<?= $selectedCategory ?>&page=<?= $page + 1 ?>" class="arrow next-arrow">&#8594;</a>
-    <?php else: ?>
-        <span class="arrow disabled">&#8594;</span>
-    <?php endif; ?>
-</div>
-
-
+        } else {
+            echo '<p class="no-products">No products found in this category.</p>';
+        }
+        ?>
     </div>
+
+
+    <!-- Pagination -->
+    <div class="pagination">
+        <?php
+        $showingStart = $start + 1;
+        $showingEnd = min($start + $productsPerPage, $totalProducts);
+        $categoryParam = $selectedCategory != 'All' ? '&category=' . urlencode($selectedCategory) : '';
+        ?>
+
+        <!-- Previous Arrow -->
+        <?php if ($page > 1): ?>
+            <a href="?page=<?= $page - 1 . $categoryParam ?>#sorting-product" class="arrow prev-arrow">&#8592;</a>
+        <?php else: ?>
+            <span class="arrow disabled">&#8592;</span>
+        <?php endif; ?>
+
+        <!-- Showing X-Y of Z -->
+        <span class="pagination-info">Showing <?= $showingStart ?>-<?= $showingEnd ?> of <?= $totalProducts ?></span>
+
+        <!-- Next Arrow -->
+        <?php if ($page < $totalPages): ?>
+            <a href="?page=<?= $page + 1 . $categoryParam ?>#sorting-product" class="arrow next-arrow">&#8594;</a>
+        <?php else: ?>
+            <span class="arrow disabled">&#8594;</span>
+        <?php endif; ?>
+    </div>
+
+</div>
