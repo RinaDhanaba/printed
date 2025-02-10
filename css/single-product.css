@@ -226,7 +226,7 @@
 
 /* section 1  */
 .product-container .nav-bar{
-justify-content: space-between;display: flex;flex-wrap:wrap;
+display: flex;justify-content: space-between;flex-wrap:wrap;
 }
 
 .product-container .nav-bar ul{
