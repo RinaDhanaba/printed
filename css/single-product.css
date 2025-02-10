@@ -225,7 +225,7 @@
 
 
 /* section 1  */
-.product-container nv{
+.product-container nav{
 display: flex;justify-content: space-between;flex-wrap:wrap;
 }
 
