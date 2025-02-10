@@ -225,6 +225,10 @@
 
 
 /* section 1  */
+.product-container *{
+    text-align: left;
+}
+
 .product-container nav{
 display: flex;justify-content: space-between;flex-wrap:wrap;
 }
@@ -238,11 +242,7 @@ display: flex;justify-content: space-between;flex-wrap:wrap;
 }
 
 .product-container h2{
-    text-align: left;
     margin-bottom: 5px;
-}
-.product-container p{
-    text-align: left;
 }
 
 .product-container .nav-bar li {
