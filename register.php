@@ -1,7 +1,7 @@
 <!-- Include the header -->
 <?php include('app/layout-templete/header.php'); ?>
 
-<form action="register.php" method="POST" style="width:100%; padding:5px; max-width:550px; margin: 80px auto;">
+<form action="#" method="POST" style="width:100%; padding:5px; max-width:550px; margin: 80px auto;">
         <div class="form-group">
             <label for="first_name">First Name*</label>
             <input type="text" id="first_name" name="first_name">
@@ -77,7 +77,7 @@
             <label for="subscribe">Register to receive deals and product inspiration.</label>
         </div>
 
-        <button type="submit" class="submit-btn">Create Account</button>
+        <button type="submit" class="shop-btn">Create Account</button>
     </form>
 
 
