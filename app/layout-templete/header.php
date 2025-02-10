@@ -50,8 +50,8 @@
 
                 <!-- Navigation Links -->
                 <div class="nav-links mobile-only">
-                    <a href="/register">Join</a>
-                    <a href="/sign-in">Sign in</a>
+                    <a href="./register">Join</a>
+                    <a href="./sign-in">Sign in</a>
                     <div class="cart">
                         <i class="fas fa-shopping-bag"></i>
                         <span class="cart-count">0</span>
@@ -70,9 +70,9 @@
                 <div class="menu-toggle">☰ Menu</div>
                 <ul class="menu">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/single-product">product</a></li>
-                    <li><a href="/category">category</a></li>
-                    <li><a href="/sidebar-elements">sidebar</a></li>
+                    <li><a href="./single-product">product</a></li>
+                    <li><a href="./category">category</a></li>
+                    <li><a href="./sidebar-elements">sidebar</a></li>
                     <li class="has-submenu">
                         <a href="#">Services</a>
                         <div class="submenu">
