@@ -223,6 +223,7 @@
 
 
 
+
 /* section 1  */
 
 /* Basic Reset */
@@ -232,40 +233,35 @@
     box-sizing: border-box;
 }
 
-/* Navigation Bar Styling */
-.product-container nav {
-    background-color: #333;
-    padding: 10px;
-}
-
 .product-container .nav-bar {
     list-style-type: none;
     display: flex;
-    justify-content: center;
+    justify-content: start;
 }
 
 .product-container .nav-bar li {
-    margin: 0 15px;
+    margin: 0 1px;
 }
 
 .product-container .nav-bar a {
     text-decoration: none;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 5px;
+    border:1px solid var(--light-gray);
+    border-radius:20px;
+    padding:7px;
+    color: var(--text-color);
 }
 
 .product-container .nav-bar a:hover,
-.product-container .nav-bar .active {
-    background-color: #ffcc00;
-    color: #333;
+.product-container .nav-bar a.active {
+    border:3px solid var(--primary-color);
+    color:var(--black);
 }
 
 /* Product Section Styling */
 .product-container .products {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
     padding: 20px;
     gap: 20px;
 }
@@ -275,35 +271,23 @@
     background-color: #f4f4f4;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 250px;
+    flex:1;
     text-align: center;
-    padding: 15px;
+    padding: 2px;
     transition: transform 0.2s;
 }
 
 .product-container .product-card img {
     width: 100%;
-    border-radius: 5px;
+    border-radius: 8px;
 }
 
 .product-container .product-card h3 {
     margin: 15px 0 10px;
 }
 
-.product-container .product-card p {
-    color: #555;
-}
-
 .product-container .product-card:hover {
     transform: scale(1.05);
-}
-
-/* No Products Message */
-.product-container .no-products {
-    font-size: 20px;
-    color: #999;
-    margin-top: 50px;
-    text-align: center;
 }
 
 /* Pagination Styling */
@@ -322,18 +306,19 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    border: 1px solid #00c4cc;
-    color: #00c4cc;
-    font-size: 20px;
+    /* border: 1px solid var(--primary-color); */
+    color: white;
+    font-size: 15px;
     cursor: pointer;
     margin: 0 10px;
     text-decoration: none;
     transition: background-color 0.3s, color 0.3s;
+    position:relative;
+    top:20px;
 }
 
 .product-container .pagination .arrow:hover {
-    background-color: #00c4cc;
-    color: #fff;
+    background-color: var(--primary-color);
 }
 
 .product-container .pagination .disabled {
@@ -346,8 +331,6 @@
     font-weight: bold;
     color: #000;
 }
-
-
 
 
 
