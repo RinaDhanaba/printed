@@ -72,7 +72,7 @@
                     <li><a href="/">Home</a></li>
                     <li><a href="/single-product">product</a></li>
                     <li><a href="/category">category</a></li>
-                    <li><a href="/sidebar">sidebar</a></li>
+                    <li><a href="/sidebar-elements">sidebar</a></li>
                     <li class="has-submenu">
                         <a href="#">Services</a>
                         <div class="submenu">
