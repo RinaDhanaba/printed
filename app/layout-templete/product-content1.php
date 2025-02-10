@@ -52,11 +52,11 @@ $currentProducts = array_slice($filteredProducts, $start, $productsPerPage);
         <!-- Navigation Bar -->
         <nav>
             <ul class="nav-bar">
-                <li><a href="?" class="<?= $selectedCategory == 'All' ? 'active' : '' ?>">All Papers</a></li>
-                <li><a href="?category=Luxury" class="<?= $selectedCategory == 'Luxury' ? 'active' : '' ?>">Luxury Papers</a></li>
-                <li><a href="?category=Bestsellers" class="<?= $selectedCategory == 'Bestsellers' ? 'active' : '' ?>">Bestsellers & Core Papers</a></li>
-                <li><a href="?category=Recycled" class="<?= $selectedCategory == 'Recycled' ? 'active' : '' ?>">Recycled Papers</a></li>
-                <li><a href="?category=Core" class="<?= $selectedCategory == 'Core' ? 'active' : '' ?>">Core Papers</a></li>
+                <li><a href="?#sorting-product" class="<?= $selectedCategory == 'All' ? 'active' : '' ?>">All Papers</a></li>
+                <li><a href="?category=Luxury#sorting-product" class="<?= $selectedCategory == 'Luxury' ? 'active' : '' ?>">Luxury Papers</a></li>
+                <li><a href="?category=Bestsellers#sorting-product" class="<?= $selectedCategory == 'Bestsellers' ? 'active' : '' ?>">Bestsellers & Core Papers</a></li>
+                <li><a href="?category=Recycled#sorting-product" class="<?= $selectedCategory == 'Recycled' ? 'active' : '' ?>">Recycled Papers</a></li>
+                <li><a href="?category=Core#sorting-product" class="<?= $selectedCategory == 'Core' ? 'active' : '' ?>">Core Papers</a></li>
             </ul>
         </nav>
 
