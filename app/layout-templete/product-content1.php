@@ -31,7 +31,7 @@ $products = [
 $selectedCategory = isset($_GET['category']) ? $_GET['category'] : 'All';
 
 // Pagination setup
-$productsPerPage = 6; // Products per page
+$productsPerPage = 4; // Products per page
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $start = ($page - 1) * $productsPerPage;
 
