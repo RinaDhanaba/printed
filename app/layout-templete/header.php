@@ -15,15 +15,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- css files  -->
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/mega-menu.css">
-    <link rel="stylesheet" href="../css/category.css">    
-    <link rel="stylesheet" href="../css/sidebar.css">
-    <link rel="stylesheet" href="../css/single-product.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/mega-menu.css">
+    <link rel="stylesheet" href="./css/category.css">    
+    <link rel="stylesheet" href="./css/sidebar.css">
+    <link rel="stylesheet" href="./css/single-product.css">
 
     <!-- js files  -->
-    <script defer src="../js/slider.js"></script>
-    <script defer src="../js/script.js"></script>
+    <script defer src="./js/slider.js"></script>
+    <script defer src="./js/script.js"></script>
 
 </head>
 <body>
