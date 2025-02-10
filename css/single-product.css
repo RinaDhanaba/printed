@@ -225,11 +225,11 @@
 
 
 /* section 1  */
-.product-container .nav-bar{
+.product-container nv{
 display: flex;justify-content: space-between;flex-wrap:wrap;
 }
 
-.product-container .nav-bar ul{
+.product-container .nav-bar{
     list-style-type: none;
     display: flex;
     justify-content: start;
