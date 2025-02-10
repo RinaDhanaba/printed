@@ -31,7 +31,7 @@ $products = [
 $selectedCategory = isset($_GET['category']) ? $_GET['category'] : 'All';
 
 // Pagination setup
-$productsPerPage = 4; // Products per page
+$productsPerPage = 6; // Products per page
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 $start = ($page - 1) * $productsPerPage;
 
@@ -48,6 +48,8 @@ $currentProducts = array_slice($filteredProducts, $start, $productsPerPage);
 
 <!-- Product Navigation and Listing Section -->
 <div class="product-container" id="sorting-product">
+    <h2>Our stocks</h2>
+    <p>Find your perfect match</p>
     
     <!-- Navigation Bar -->
     <nav>
