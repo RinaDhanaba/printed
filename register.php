@@ -1,7 +1,7 @@
 <!-- Include the header -->
 <?php include('app/layout-templete/header.php'); ?>
 
-<form action="register.php" method="POST">
+<form action="register.php" method="POST" style="width:100%; padding:5px; max-width:550px; margin: 80px auto;">
         <div class="form-group">
             <label for="first_name">First Name*</label>
             <input type="text" id="first_name" name="first_name">
