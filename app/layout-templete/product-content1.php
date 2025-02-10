@@ -83,12 +83,12 @@ $currentProducts = array_slice($filteredProducts, $start, $productsPerPage);
         <?php
         $showingStart = $start + 1;
         $showingEnd = min($start + $productsPerPage, $totalProducts);
-        $categoryParam = $selectedCategory != 'All' ? '&category=' . urlencode($selectedCategory) : '';
+        $categoryParam = $selectedCategory != 'All' ? 'category=' . urlencode($selectedCategory) . '&' : '';
         ?>
 
         <!-- Previous Arrow -->
         <?php if ($page > 1): ?>
-            <a href="?page=<?= $page - 1 . $categoryParam ?>#sorting-product" class="arrow prev-arrow">&#8592;</a>
+            <a href="?<?= $categoryParam ?>page=<?= $page - 1 ?>#sorting-product" class="arrow prev-arrow">&#8592;</a>
         <?php else: ?>
             <span class="arrow disabled">&#8592;</span>
         <?php endif; ?>
@@ -98,7 +98,7 @@ $currentProducts = array_slice($filteredProducts, $start, $productsPerPage);
 
         <!-- Next Arrow -->
         <?php if ($page < $totalPages): ?>
-            <a href="?page=<?= $page + 1 . $categoryParam ?>#sorting-product" class="arrow next-arrow">&#8594;</a>
+            <a href="?<?= $categoryParam ?>page=<?= $page + 1 ?>#sorting-product" class="arrow next-arrow">&#8594;</a>
         <?php else: ?>
             <span class="arrow disabled">&#8594;</span>
         <?php endif; ?>
