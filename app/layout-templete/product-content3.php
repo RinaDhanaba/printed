@@ -3,12 +3,12 @@
 $products = [
     [
        "title" => "Postcards", 
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "./media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#"
     ],
     [
         "title" => "Postcards", 
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "./media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#"
     ]
 ];
@@ -44,7 +44,7 @@ $products = [
         'description' => 'At Printed.com, we want to help you reduce your environmental impact. From using innovative packaging and sourcing eco-friendly papers, to minimising waste and promoting recycling, we’re dedicated to giving you more sustainable choices across our range.',
         'button_text' => 'Find Out More',
         'button_link' => '#',
-        'image_src' => '../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg', // Replace with actual image URL
+        'image_src' => './media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg', // Replace with actual image URL
         'image_alt' => 'Mindful Inc. card in a plant pot'
     ];
     ?>

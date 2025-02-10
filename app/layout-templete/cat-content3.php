@@ -153,7 +153,7 @@ $(document).ready(function() {
 $product_cats = [
     "Bestsellers" => [
         "name" => "Bestsellers",
-        "img" => "../media/presentation_folders_category_2.jpg",
+        "img" => "./media/presentation_folders_category_2.jpg",
         "description" => "<ul>
             <li>Hahnemühle German Etching, 310gsm</li>
             <li>Hahnemühle Photo Rag Pearl, 320gsm</li>
@@ -164,7 +164,7 @@ $product_cats = [
     ],
     "Business_Cards" => [
         "name" => "Business Cards",
-        "img" => "../media/a6-invitations-flat-2000-x-2000_4_1.jpg",
+        "img" => "./media/a6-invitations-flat-2000-x-2000_4_1.jpg",
         "description" => "<ul>
             <li>Silk Coated, 350gsm</li>
             <li>Uncoated Recycled, 300gsm</li>
@@ -174,7 +174,7 @@ $product_cats = [
     ],
     "Foiling" => [
         "name" => "Foiling",
-        "img" => "../media/presentation_folders_category_2.jpg",
+        "img" => "./media/presentation_folders_category_2.jpg",
         "description" => "<ul>
             <li>Gold Foil on Silk, 350gsm</li>
             <li>Silver Foil on Uncoated, 300gsm</li>

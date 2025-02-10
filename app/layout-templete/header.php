@@ -39,7 +39,7 @@
             <nav class="navbar container">
                 <!-- Logo -->
                 <a href="#" class="logo">
-                    <img src="..\media\logo (1).png" alt="Logo">
+                    <img src=".\media\logo (1).png" alt="Logo">
                 </a>
 
                 <!-- Search Bar -->

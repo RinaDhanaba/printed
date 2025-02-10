@@ -6,21 +6,21 @@
         // Array to hold the card data
         $cards = [
             [
-                'image' => '../media/Sample Packs.png', // Replace with actual icon URLs
+                'image' => './media/Sample Packs.png', // Replace with actual icon URLs
                 'title' => 'Sample Packs',
                 'description' => 'Get a feel for our range of quality products, papers and special finishes in our free Sample Packs.',
                 'link_text' => 'Order Now >',
                 'link_url' => '#'
             ],
             [
-                'image' => '../media/International.png', // Replace with actual icon URLs
+                'image' => './media/International.png', // Replace with actual icon URLs
                 'title' => 'Downloadable Templates',
                 'description' => 'Use our free templates to create your artwork and make sure your print is set up perfectly for the presses.',
                 'link_text' => 'Find A Template >',
                 'link_url' => '#'
             ],
             [
-                'image' => '../media/Bespoke.png', // Replace with actual icon URLs
+                'image' => './media/Bespoke.png', // Replace with actual icon URLs
                 'title' => 'Bespoke Service',
                 'description' => 'Can’t find the print you’re looking for? From unique papers to custom sizes and finishes, our Bespoke Team can help with your request.',
                 'link_text' => 'Get A Quote >',

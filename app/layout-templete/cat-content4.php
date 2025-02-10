@@ -5,7 +5,7 @@ $products2 = [
         "desc" => "Leaflets & Flyers",
         "product_link" => "#",
         "price" => "",
-        "image" => "../media/category_custom_shape_1.jpg",
+        "image" => "./media/category_custom_shape_1.jpg",
         "link" => "#"
     ],
     [
@@ -13,7 +13,7 @@ $products2 = [
         "desc" => "Leaflets & Flyers",
         "product_link" => "#",
         "price" => "",
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "./media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#",
         "badge" => "NEW white pearl foil"
     ],
@@ -22,7 +22,7 @@ $products2 = [
         "desc" => "Leaflets & Flyers",
         "product_link" => "#",
         "price" => "",
-        "image" => "../media/category_custom_shape_1.jpg",
+        "image" => "./media/category_custom_shape_1.jpg",
         "link" => "#"
     ],
     [
@@ -30,7 +30,7 @@ $products2 = [
         "desc" => "Leaflets & Flyers",
         "product_link" => "#",
         "price" => "",
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "./media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#",
         "badge" => "NEW white pearl foil"
     ]

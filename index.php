@@ -7,7 +7,7 @@ $hero_slider = [
     [
         "title" => "Express yourself",
         "para" => "Refresh your stationery with Notepads, Bookmarks, and more.",
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "./media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "button_text" => "Shop Stationery",
         "link" => "#",
         "color" => "#960145"
@@ -15,7 +15,7 @@ $hero_slider = [
     [
         "title" => "Put your best card forward",
         "para" => "Create high-quality Business Cards starting from £8.50.",
-        "image" => "../media/man-working-printing-house-with-paper-paints.jpg",
+        "image" => "./media/man-working-printing-house-with-paper-paints.jpg",
         "button_text" => "Shop Business Cards",
         "link" => "#",
         "color" => "#55267E"
@@ -23,7 +23,7 @@ $hero_slider = [
     [
         "title" => "Your love story starts here",
         "para" => "Begin your journey with beautiful wedding prints to mark your big day.",
-        "image" => "../media/leaflets-_-flyers-nav-image-3_11.jpg",
+        "image" => "./media/leaflets-_-flyers-nav-image-3_11.jpg",
         "button_text" => "Shop Wedding Print",
         "link" => "#",
         "color" => "#0282e7"
@@ -74,7 +74,7 @@ $products = [
         "desc" => "Leaflets & Flyers",
         "product_link" => "#",
         "price" => "£12.50",
-        "image" => "../media/a6-folded-invitations.2_1.jpg",
+        "image" => "./media/a6-folded-invitations.2_1.jpg",
         "link" => "#"
     ],
     [
@@ -82,7 +82,7 @@ $products = [
         "desc" => "Leaflets & Flyers",
         "product_link" => "#",
         "price" => "£22.00",
-        "image" => "../media/a6-invitations-flat-2000-x-2000_4_1.jpg",
+        "image" => "./media/a6-invitations-flat-2000-x-2000_4_1.jpg",
         "link" => "#"
     ],
     [
@@ -90,7 +90,7 @@ $products = [
         "desc" => "Leaflets & Flyers",
         "product_link" => "#",
         "price" => "£12.50",
-        "image" => "../media/business_cards_category.jpg",
+        "image" => "./media/business_cards_category.jpg",
         "link" => "#",
         "badge" => "Free white envelopes"
     ],
@@ -99,7 +99,7 @@ $products = [
         "desc" => "Leaflets & Flyers",
         "product_link" => "#",
         "price" => "£8.50",
-        "image" => "../media/category_custom_shape_1.jpg",
+        "image" => "./media/category_custom_shape_1.jpg",
         "link" => "#"
     ],
     [
@@ -107,7 +107,7 @@ $products = [
         "desc" => "Leaflets & Flyers",
         "product_link" => "#",
         "price" => "£8.50",
-        "image" => "../media/category_custom_shape_1.jpg",
+        "image" => "./media/category_custom_shape_1.jpg",
         "link" => "#"
     ],
     [
@@ -115,7 +115,7 @@ $products = [
         "desc" => "Leaflets & Flyers",
         "product_link" => "#",
         "price" => "£8.50",
-        "image" => "../media/category_custom_shape_1.jpg",
+        "image" => "./media/category_custom_shape_1.jpg",
         "link" => "#"
     ],
     [
@@ -123,7 +123,7 @@ $products = [
         "desc" => "Leaflets & Flyers",
         "product_link" => "#",
         "price" => "£8.50",
-        "image" => "../media/category_custom_shape_1.jpg",
+        "image" => "./media/category_custom_shape_1.jpg",
         "link" => "#"
     ],
     [
@@ -131,7 +131,7 @@ $products = [
         "desc" => "Leaflets & Flyers",
         "product_link" => "#",
         "price" => "£12.50",
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "./media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#",
         "badge" => "NEW white pearl foil"
     ]

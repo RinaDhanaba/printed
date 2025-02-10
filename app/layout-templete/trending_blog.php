@@ -3,22 +3,22 @@
 $trending_articles = [
     [
         "title" => "What is Bleed in Printing? Everything You Need to Know",
-        "image" => "../media/category_custom_shape_1.jpg",
+        "image" => "./media/category_custom_shape_1.jpg",
         "link" => "#",
     ],
     [
         "title" => "Designing Wedding Invites & Save the Dates with Canva",
-        "image" => "../media/category_custom_shape_1.jpg",
+        "image" => "./media/category_custom_shape_1.jpg",
         "link" => "#",
     ],
     [
         "title" => "Wedding Invitation Trends You’ll Love in 2025",
-        "image" => "../media/category_custom_shape_1.jpg",
+        "image" => "./media/category_custom_shape_1.jpg",
         "link" => "#",
     ],
     [
         "title" => "How To Nail Your Next Business Card Design",
-        "image" => "../media/category_custom_shape_1.jpg",
+        "image" => "./media/category_custom_shape_1.jpg",
         "link" => "#",
     ]
 ];

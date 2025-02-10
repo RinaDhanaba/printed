@@ -29,7 +29,7 @@ $cat_slides = [
         <li>Lamination and round corners available</li>
         <li>Next day delivery on selected options</li>
     </ul>",
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "./media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#"
     ],
     [
@@ -46,7 +46,7 @@ $cat_slides = [
         <li>Lamination and round corners available</li>
         <li>Next day delivery on selected options</li>
     </ul>",
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "./media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#"
     ],
     [
@@ -63,7 +63,7 @@ $cat_slides = [
         <li>Lamination and round corners available</li>
         <li>Next day delivery on selected options</li>
     </ul>",
-        "image" => "../media/man-working-printing-house-with-paper-paints.jpg",
+        "image" => "./media/man-working-printing-house-with-paper-paints.jpg",
         "link" => "#"
     ]
 ];

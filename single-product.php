@@ -10,15 +10,15 @@
 $product_image_slider = [
     [
         "title" => "Express yourself",
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg"
+        "image" => "./media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg"
     ],
     [
         "title" => "Put your best card forward",
-        "image" => "../media/man-working-printing-house-with-paper-paints.jpg"
+        "image" => "./media/man-working-printing-house-with-paper-paints.jpg"
     ],
     [
         "title" => "Your love story starts here",
-        "image" => "../media/leaflets-_-flyers-nav-image-3_11.jpg"
+        "image" => "./media/leaflets-_-flyers-nav-image-3_11.jpg"
     ]
 ];
 ?>
@@ -150,22 +150,22 @@ $menuItems = [
 $products = [
     [
        "title" => "Postcards", 
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "./media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#"
     ],
     [
         "title" => "Postcards", 
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "./media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#"
     ],
     [
         "title" => "Postcards", 
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "./media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#"
     ],
     [
         "title" => "Postcards", 
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "./media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#"
     ]
 ];

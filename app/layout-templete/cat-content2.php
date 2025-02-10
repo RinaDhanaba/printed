@@ -3,7 +3,7 @@
 $papers = [
     [
         "name" => "Nettuno",
-        "image" => "../media/category-correx2_1.jpg",
+        "image" => "./media/category-correx2_1.jpg",
         "description" => "A high-quality textured paper perfect for elegant print designs.",
         "weights" => ["120gsm", "250gsm"],
         "bestFor" => ["Business Cards", "Wedding Invitations", "Brochures"],
@@ -11,7 +11,7 @@ $papers = [
     ],
     [
         "name" => "Acquerello",
-        "image" => "../media/category-correx2_1.jpg",
+        "image" => "./media/category-correx2_1.jpg",
         "description" => "A finely lined surface that adds a touch of class to any design.",
         "weights" => ["150gsm", "300gsm"],
         "bestFor" => ["Greeting Cards", "Menus", "Invitations"],
@@ -19,7 +19,7 @@ $papers = [
     ],
     [
         "name" => "Pearl Polar",
-        "image" => "../media/category-correx2_1.jpg",
+        "image" => "./media/category-correx2_1.jpg",
         "description" => "A pearlescent, smooth finish with a premium look.",
         "weights" => ["170gsm", "350gsm"],
         "bestFor" => ["Luxury Prints", "Photobooks", "Certificates"],
@@ -27,14 +27,14 @@ $papers = [
     ],
     [
         "name" => "Pearl Oyster",
-        "image" => "../media/category-correx2_1.jpg",
+        "image" => "./media/category-correx2_1.jpg",
         "description" => "A subtle pearlescent shine for standout designs.",
         "weights" => ["125gsm", "300gsm"],
         "bestFor" => ["Wedding Stationery", "Greeting Cards", "Invitations"],
         "credentials" => ["Recyclable", "FSC Certified", "Sustainably Sourced", "Chlorine-Free"]
     ],[
         "name" => "Acquerello",
-        "image" => "../media/category-correx2_1.jpg",
+        "image" => "./media/category-correx2_1.jpg",
         "description" => "A finely lined surface that adds a touch of class to any design.",
         "weights" => ["150gsm", "300gsm"],
         "bestFor" => ["Greeting Cards", "Menus", "Invitations"],
@@ -42,7 +42,7 @@ $papers = [
     ],
     [
         "name" => "Pearl Polar",
-        "image" => "../media/category-correx2_1.jpg",
+        "image" => "./media/category-correx2_1.jpg",
         "description" => "A pearlescent, smooth finish with a premium look.",
         "weights" => ["170gsm", "350gsm"],
         "bestFor" => ["Luxury Prints", "Photobooks", "Certificates"],
@@ -50,14 +50,14 @@ $papers = [
     ],
     [
         "name" => "Pearl Oyster",
-        "image" => "../media/category-correx2_1.jpg",
+        "image" => "./media/category-correx2_1.jpg",
         "description" => "A subtle pearlescent shine for standout designs.",
         "weights" => ["125gsm", "300gsm"],
         "bestFor" => ["Wedding Stationery", "Greeting Cards", "Invitations"],
         "credentials" => ["Recyclable", "FSC Certified", "Sustainably Sourced", "Chlorine-Free"]
     ],[
         "name" => "Acquerello",
-        "image" => "../media/category-correx2_1.jpg",
+        "image" => "./media/category-correx2_1.jpg",
         "description" => "A finely lined surface that adds a touch of class to any design.",
         "weights" => ["150gsm", "300gsm"],
         "bestFor" => ["Greeting Cards", "Menus", "Invitations"],
@@ -65,7 +65,7 @@ $papers = [
     ],
     [
         "name" => "Pearl Polar",
-        "image" => "../media/category-correx2_1.jpg",
+        "image" => "./media/category-correx2_1.jpg",
         "description" => "A pearlescent, smooth finish with a premium look.",
         "weights" => ["170gsm", "350gsm"],
         "bestFor" => ["Luxury Prints", "Photobooks", "Certificates"],
@@ -73,14 +73,14 @@ $papers = [
     ],
     [
         "name" => "Pearl Oyster",
-        "image" => "../media/category-correx2_1.jpg",
+        "image" => "./media/category-correx2_1.jpg",
         "description" => "A subtle pearlescent shine for standout designs.",
         "weights" => ["125gsm", "300gsm"],
         "bestFor" => ["Wedding Stationery", "Greeting Cards", "Invitations"],
         "credentials" => ["Recyclable", "FSC Certified", "Sustainably Sourced", "Chlorine-Free"]
     ],[
         "name" => "Acquerello",
-        "image" => "../media/category-correx2_1.jpg",
+        "image" => "./media/category-correx2_1.jpg",
         "description" => "A finely lined surface that adds a touch of class to any design.",
         "weights" => ["150gsm", "300gsm"],
         "bestFor" => ["Greeting Cards", "Menus", "Invitations"],
@@ -88,7 +88,7 @@ $papers = [
     ],
     [
         "name" => "Pearl Polar",
-        "image" => "../media/category-correx2_1.jpg",
+        "image" => "./media/category-correx2_1.jpg",
         "description" => "A pearlescent, smooth finish with a premium look.",
         "weights" => ["170gsm", "350gsm"],
         "bestFor" => ["Luxury Prints", "Photobooks", "Certificates"],
@@ -96,14 +96,14 @@ $papers = [
     ],
     [
         "name" => "Pearl Oyster",
-        "image" => "../media/category-correx2_1.jpg",
+        "image" => "./media/category-correx2_1.jpg",
         "description" => "A subtle pearlescent shine for standout designs.",
         "weights" => ["125gsm", "300gsm"],
         "bestFor" => ["Wedding Stationery", "Greeting Cards", "Invitations"],
         "credentials" => ["Recyclable", "FSC Certified", "Sustainably Sourced", "Chlorine-Free"]
     ],[
         "name" => "Acquerello",
-        "image" => "../media/category-correx2_1.jpg",
+        "image" => "./media/category-correx2_1.jpg",
         "description" => "A finely lined surface that adds a touch of class to any design.",
         "weights" => ["150gsm", "300gsm"],
         "bestFor" => ["Greeting Cards", "Menus", "Invitations"],
@@ -111,7 +111,7 @@ $papers = [
     ],
     [
         "name" => "Pearl Polar",
-        "image" => "../media/category-correx2_1.jpg",
+        "image" => "./media/category-correx2_1.jpg",
         "description" => "A pearlescent, smooth finish with a premium look.",
         "weights" => ["170gsm", "350gsm"],
         "bestFor" => ["Luxury Prints", "Photobooks", "Certificates"],
@@ -119,7 +119,7 @@ $papers = [
     ],
     [
         "name" => "Pearl Oyster",
-        "image" => "../media/category-correx2_1.jpg",
+        "image" => "./media/category-correx2_1.jpg",
         "description" => "A subtle pearlescent shine for standout designs.",
         "weights" => ["125gsm", "300gsm"],
         "bestFor" => ["Wedding Stationery", "Greeting Cards", "Invitations"],
@@ -201,7 +201,7 @@ $papers = [
 </section>
 
 <section id="cateory-cta">
-    <img src="../media/req-18013-bespoke-widget-product-pages-288x140.webp"/>
+    <img src="./media/req-18013-bespoke-widget-product-pages-288x140.webp"/>
     <div class="cateory-cta-content">
         <h2>For something extraordinary try our Bespoke Service</h2>
         <p>We know that print isn’t one size fits all. No matter the shape, size or scope of the project we’ll help you get your print, your way.</p>
