@@ -237,10 +237,11 @@
     list-style-type: none;
     display: flex;
     justify-content: start;
+    flex-wrap:wrap;
 }
 
 .product-container .nav-bar li {
-    margin: 0 1px;
+    margin: 10px 1px;
 }
 
 .product-container .nav-bar a {
@@ -271,10 +272,17 @@
     background-color: #f4f4f4;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    flex:1;
+    width:25%;
     text-align: center;
     padding: 2px;
     transition: transform 0.2s;
+}
+
+@media (max-width:750px){
+    .product-container .product-card {width:45%;}
+}
+@media (max-width:350px){
+    .product-container .product-card {width:100%;}
 }
 
 .product-container .product-card img {
