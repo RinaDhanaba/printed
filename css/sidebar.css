@@ -3,7 +3,7 @@
             font-size: 18px;
             cursor: pointer;
             background-color: var(--secondary-color);
-            color: white;
+            color: var(--white);
             border: none;
             padding: 10px 15px;
             position: relative;
@@ -32,8 +32,8 @@
         #sidebar {
             width: 280px;
             height: 100%;
-            background: white;
-            border-left: 3px solid #00c2c2;
+            background: var(--white);
+            border-left: 3px solid var(--secondary-color);
             padding: 20px;
             overflow-y: auto;
             transition: all 0.3s ease-in-out;
@@ -82,33 +82,18 @@
         .option-card input:checked + .option-text,
         .size-option input:checked + span {
             font-weight: bold;
-            color: #00c2c2;
+            color: var(--secondary-color);
         }
         
         .size-option.selected {
-            border-color: #ff4081;
-            background: rgba(255, 64, 129, 0.1);
+            border-color: var(--primary-color);
+            background: var(--gary-bg);
         }
         
         /* Summary Step */
         .summary-step {
-            border-top: 2px solid #ddd;
+            border-top: 2px solid var(--gary-bg);
             padding-top: 20px;
-        }
-        
-        /* Submit Button */
-        .submit-btn {
-            background: #00c2c2;
-            color: white;
-            padding: 12px 20px;
-            border: none;
-            font-size: 16px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        
-        .submit-btn:hover {
-            background: #008a8a;
         }
         
         .preset-options {
@@ -118,7 +103,7 @@
         }
         
         .preset-card {
-            border: 2px solid #ddd;
+            border: 2px solid var(--gary-bg);
             padding: 15px;
             border-radius: 8px;
             cursor: pointer;
@@ -128,34 +113,23 @@
         }
         
         .preset-card:hover {
-            border-color: #007bff;
+            border-color: var(--secondary-color);
         }
         
         .preset-card.selected {
-            border-color: #ff4081;
-            background-color: #fff0f5;
+            border-color: var(--secondary-color);
+            background-color: var(--gary-bg);
         }
         
         .next-btn {
             margin-top: 20px;
             padding: 10px 15px;
-            background: #007bff;
-            color: white;
+            background: var(--secondary-color);
+            color: var(--white);
             border: none;
             cursor: pointer;
         }
         
-        
-        
-        
-        /* Heading */
-        #sidebar h2 {
-            font-size: 18px;
-            font-weight: bold;
-            border-bottom: 2px solid #eaeaea;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
-        }
         
         /* Progress List */
         #progressList {
@@ -170,7 +144,7 @@
             padding: 12px 10px;
             margin-bottom: 8px;
             border-radius: 8px;
-            background: #f9f9f9;
+            background: var(--gary-bg);;
             font-size: 14px;
             transition: background 0.3s ease, transform 0.2s ease;
             position: relative;
@@ -180,35 +154,35 @@
         #progressList li::before {
             content: "⭘"; /* Default circle */
             font-size: 16px;
-            color: gray;
+            color: var(--light-gray);
             margin-right: 8px;
             transition: 0.3s ease;
         }
         
         /* Completed Step */
         #progressList li.completed {
-            background: #e6fbf8;
-            border-left: 3px solid #00c2c2;
+            background: var(--gary-bg);
+            border-left: 3px solid var(--secondary-color);
             font-weight: bold;
             transform: scale(1.02);
         }
         
         #progressList li.completed::before {
             content: "✔"; /* Check icon */
-            color: #00c2c2;
+            color: var(--secondary-color);
             font-weight: bold;
         }
         
         /* Edit Icon */
         .edit-icon {
-            color: #ff4081;
+            color: var(--primary-color);
             cursor: pointer;
             font-size: 14px;
             transition: 0.3s;
         }
         
         .edit-icon:hover {
-            color: #ff0051;
+            color: var(--secondary-color);
         }
         
         /* Mobile View */

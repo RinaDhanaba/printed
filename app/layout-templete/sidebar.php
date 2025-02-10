@@ -86,7 +86,7 @@
             <div class="form-step summary-step">
                 <h3 class="step-title">📋 Summary</h3>
                 <p>Review your selections before submitting.</p>
-                <button type="submit" class="submit-btn">Submit</button>
+                <button type="submit" class="shop-btn">Submit</button>
             </div>
 
         </form>
