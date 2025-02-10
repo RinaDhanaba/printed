@@ -272,18 +272,12 @@
     background-color: #f4f4f4;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width:25%;
+    flex: 0 0 4;
     text-align: center;
     padding: 2px;
     transition: transform 0.2s;
 }
 
-@media (max-width:750px){
-    .product-container .product-card {width:45%;}
-}
-@media (max-width:350px){
-    .product-container .product-card {width:100%;}
-}
 
 .product-container .product-card img {
     width: 100%;
