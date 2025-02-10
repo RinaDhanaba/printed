@@ -60,28 +60,10 @@ $currentProducts = array_slice($filteredProducts, $start, $productsPerPage);
             <li><a href="?category=Recycled#sorting-product" class="<?= $selectedCategory == 'Recycled' ? 'active' : '' ?>">Recycled Papers</a></li>
             <li><a href="?category=Core#sorting-product" class="<?= $selectedCategory == 'Core' ? 'active' : '' ?>">Core Papers</a></li>
         </ul>
-    </nav>
+    
 
-    <!-- Product Cards -->
-    <div class="products">
-        <?php
-        if (count($currentProducts) > 0) {
-            foreach ($currentProducts as $product) {
-                echo '<div class="product-card">';
-                echo '<img src="' . $product['image'] . '" alt="' . $product['name'] . '">';
-                echo '<h3>' . $product['name'] . '</h3>';
-                echo '<p>' . $product['description'] . '</p>';
-                echo '</div>';
-            }
-        } else {
-            echo '<p class="no-products">No products found in this category.</p>';
-        }
-        ?>
-    </div>
-
-
-    <!-- Pagination -->
-    <div class="pagination">
+        <!-- Pagination -->
+        <div class="pagination">
         <?php
         $showingStart = $start + 1;
         $showingEnd = min($start + $productsPerPage, $totalProducts);
@@ -104,6 +86,24 @@ $currentProducts = array_slice($filteredProducts, $start, $productsPerPage);
         <?php else: ?>
             <span class="arrow disabled">&#8594;</span>
         <?php endif; ?>
+    </div>
+    </nav>
+
+    <!-- Product Cards -->
+    <div class="products">
+        <?php
+        if (count($currentProducts) > 0) {
+            foreach ($currentProducts as $product) {
+                echo '<div class="product-card">';
+                echo '<img src="' . $product['image'] . '" alt="' . $product['name'] . '">';
+                echo '<h3>' . $product['name'] . '</h3>';
+                echo '<p>' . $product['description'] . '</p>';
+                echo '</div>';
+            }
+        } else {
+            echo '<p class="no-products">No products found in this category.</p>';
+        }
+        ?>
     </div>
 
 </div>
