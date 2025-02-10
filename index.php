@@ -173,7 +173,7 @@ $products2 = [
         "desc" => "Leaflets & Flyers",
         "product_link" => "#",
         "price" => "£12.50",
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "./media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#"
     ],
     [
@@ -181,7 +181,7 @@ $products2 = [
         "desc" => "Leaflets & Flyers",
         "product_link" => "#",
         "price" => "£22.00",
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "./media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#"
     ],
     [
@@ -189,7 +189,7 @@ $products2 = [
         "desc" => "Leaflets & Flyers",
         "product_link" => "#",
         "price" => "£12.50",
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "./media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#",
         "badge" => "Free white envelopes"
     ],
@@ -198,7 +198,7 @@ $products2 = [
         "desc" => "Leaflets & Flyers",
         "product_link" => "#",
         "price" => "£8.50",
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "./media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#"
     ]
 ];
@@ -237,9 +237,9 @@ $products2 = [
         <h2>Supporting small businesses</h2>
 
         <div class="video-container">
-            <img src="../media/man-working-printing-house-with-paper-paints.jpg" alt="Video Thumbnail" class="thumbnail">
+            <img src="./media/man-working-printing-house-with-paper-paints.jpg" alt="Video Thumbnail" class="thumbnail">
             <button class="play-button" onclick="playVideo()">
-                <img src="../media/play-button.svg" alt="Play">
+                <img src="./media/play-button.svg" alt="Play">
             </button>
         </div>
 
@@ -249,35 +249,35 @@ $features = [
     [
         "title" => "Printed Promise",
         "desc" => "Our promises to deliver your print, your way.",
-        "image" => "../media/Printed Promise.png",
+        "image" => "./media/Printed Promise.png",
         "btn" => "Find Out More",
         "link" => "#"
     ],
     [
         "title" => "Rewards",
         "desc" => "Earn Printed Points and redeem them for free print and more.",
-        "image" => "../media/Rewards.png",        
+        "image" => "./media/Rewards.png",        
         "btn" => "Earn Now",
         "link" => "#"
     ],
     [
         "title" => "Bespoke",
         "desc" => "For any idea that isn’t covered by the print options on our site, go Bespoke.",
-        "image" => "../media/Bespoke.png",
+        "image" => "./media/Bespoke.png",
         "btn" => "Get A Quote",
         "link" => "#"
     ],
     [
         "title" => "Sample Packs",
         "desc" => "Get a feel for our huge range of papers and products with a free Sample Pack.",
-        "image" => "../media/Sample Packs.png",
+        "image" => "./media/Sample Packs.png",
         "btn" => "Order Now",
         "link" => "#"
     ],
     [
         "title" => "Sustainability",
         "desc" => "From sourcing eco-friendly papers to minimizing and recycling our waste.",
-        "image" => "../media/Sustainability.png",
+        "image" => "./media/Sustainability.png",
         "btn" => "Find Out More ",
         "link" => "#"
     ]
@@ -304,19 +304,19 @@ $slides = [
     [
         "title" => "The Retail Collection",
         "description" => "Whatever you sell, whether it is in-store or online, we’ve got everything you need to bring your brand to life.",
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "./media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#"
     ],
     [
         "title" => "Custom Packaging",
         "description" => "Make your brand stand out with high-quality, eco-friendly packaging solutions.",
-        "image" => "../media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
+        "image" => "./media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
         "link" => "#"
     ],
     [
         "title" => "Marketing Materials",
         "description" => "From flyers to brochures, print everything you need to promote your business.",
-        "image" => "../media/man-working-printing-house-with-paper-paints.jpg",
+        "image" => "./media/man-working-printing-house-with-paper-paints.jpg",
         "link" => "#"
     ]
 ];
@@ -351,19 +351,19 @@ $delivery_options = [
     [
         "title" => "Standard",
         "description" => "Find Out More >",
-        "icon" => "../media/Standard.png",
+        "icon" => "./media/Standard.png",
         "link" => "#"
     ],
     [
         "title" => "Next Day",
         "description" => "Find Out More >",
-        "icon" => "../media/Next Day.png",
+        "icon" => "./media/Next Day.png",
         "link" => "#"
     ],
     [
         "title" => "International",
         "description" => "Find Out More >",
-        "icon" => "../media/International.png",
+        "icon" => "./media/International.png",
         "link" => "#"
     ]
 ];
