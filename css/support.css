@@ -110,34 +110,26 @@
     font-weight: bold;
 }
 
+#support-tab .tab-link.active::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -15px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid #ffffff;  /* Matches the content background color */
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
+}
+
 #support-tab .tab-content-container {
     width: 70%;
     padding: 20px;
     background-color: white;
 }
 
-#support-tab .faq-tab-content {
-    display: none;
-}
-
-#support-tab .faq-tab-content h3 {
-    margin-top: 0;
-    font-size: 20px;
-    color: #333;
-}
-
-#support-tab .faq-tab-content ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#support-tab .faq-tab-content li {
-    margin-bottom: 10px;
-    padding: 8px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
    
 
 
