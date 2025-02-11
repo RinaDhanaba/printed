@@ -73,6 +73,12 @@
 #support-tab .tab-content-container{
     border-radius: 0px;
 }
+.tab-content-container{display:flex;flex-wrap:wrap;}
+
+.support-list h3{
+    color: var(--primary-color);
+    font-weight: 600;
+}
 
 #support-tab .tab-link {
     display: block;
@@ -137,6 +143,9 @@
     box-sizing: border-box;
     padding: 20px;
     text-align: center;
+}
+.support-tool-card h2{
+    margin-top: 20px;
 }
 
 .support-tool-card img {

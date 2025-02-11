@@ -3,7 +3,7 @@
 
 <div class="background-section"></div>
 
-    
+
 <h1 style="font-weight: bolder;
     text-align: center;
     padding: 50px 5px;
@@ -124,11 +124,11 @@ $tabs = [
                 
                 // Loop through sections and questions
                 foreach ($sections as $sectionTitle => $questions) {
-                    echo "<h3>$sectionTitle</h3><ul>";
+                    echo "<div class='support-list'><h3>$sectionTitle</h3><ul>";
                     foreach ($questions as $question) {
                         echo "<li>$question</li>";
                     }
-                    echo "</ul>";
+                    echo "</ul></div>";
                 }
 
                 echo "</div>";
@@ -255,8 +255,7 @@ function prevTool() {
 
 
 
-<section class="container" style="text-align: center;margin-bottom:50px;
-    max-width: 450px;">
+<section class="container" style="text-align: center;margin-bottom:50px;max-width: 450px;margin: 20px auto 50px;">
     <h2>Still need help?</h2>
     <p>Our Customer Service Team are dedicated to helping you get your print, your way. If you have any questions please get in touch with our friendly, UK-based team who will be happy to help.</p>
     <p>You can contact us Monday-Friday via chat (9am-5pm), phone (9am-5pm) or email.</p>
