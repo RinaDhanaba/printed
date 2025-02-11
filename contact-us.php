@@ -4,7 +4,7 @@
 
 <div class="background-section"></div>
 
-
+<div style="background-color: #F5F4FB;">
 <section class="contact-section-info">
     <h1>Here to help</h1>
     <p>Our friendly UK-based Customer Service Team is on hand to help every weekday from 8:30am until 5.30pm. Just get in touch using the details below.</p>
@@ -28,7 +28,7 @@
     </div>
 
 </section>
-
+</div>
 
 
 <div class="contact-section">
