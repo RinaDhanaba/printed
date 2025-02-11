@@ -10,14 +10,13 @@
     margin: 15px auto;
     padding: 0px;
     border-radius: 5px;
-    border:1px solid var(--gary-bg);
+    border:1px solid var(--text-color);
 }
 
 .contact-section h3 {
-    margin-bottom: 30px;
-    font-size: 2.2em;
-    color: #333;    
-    background-color: var(--gary-bg);
+    margin-bottom: 20px;  
+    color: var(--white);
+    background-color: var(--text-color);
 }
 
 .team-card-wrapper{
