@@ -75,8 +75,13 @@ gap:0;
 }
 
 #support-tab .tab-link {
+    display: block;
+    width: 100%;
     background-color: #f7fafa;
+    border: none;
     border: 1px solid #ddd;
+    position: relative;
+    transition: background-color 0.3s ease;
 }
 
 #support-tab .tab-link:hover {
