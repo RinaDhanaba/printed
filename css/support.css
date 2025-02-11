@@ -142,39 +142,6 @@
     border-radius: 10px;
 }
 
-.support-tool-card h3 {
-    margin: 10px 0;
-    color: #333;
-    font-size: 20px;
-}
-
-.support-tool-card p {
-    color: #666;
-    font-size: 14px;
-}
-
-.support-tool-card button {
-    background-color: #ff00aa;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.support-slider-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: #ff00aa;
-    border: none;
-    color: white;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 50%;
-    font-size: 18px;
-}
-
 .support-slider-arrow-left {
     left: 10px;
 }

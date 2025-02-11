@@ -166,16 +166,16 @@ function openTab(evt, tabId) {
 
 
 
-    <h1 style="text-align:center;">Tools to Make Print Easy</h1>
+    <h2 style="text-align:center;">Tools to Make Print Easy</h2>
 
     <div class="support-slider-container">
-        <button class="support-slider-arrow support-slider-arrow-left" onclick="prevTool()">&#9664;</button>
+        <button class="support-slider-arrow support-slider-arrow-left slider-btn prev" onclick="prevTool()">&#9664;</button>
         
         <div class="support-slider-wrapper" id="supportToolSlider">
             <!-- Tool Cards will be inserted dynamically -->
         </div>
         
-        <button class="support-slider-arrow support-slider-arrow-right" onclick="nextTool()">&#9654;</button>
+        <button class="support-slider-arrow support-slider-arrow-right slider-btn next" onclick="nextTool()">&#9654;</button>
     </div>
 
     <script>
@@ -213,46 +213,55 @@ function openTab(evt, tabId) {
         ];
 
         const sliderWrapper = document.getElementById('supportToolSlider');
-        let currentIndex = 0;
+const prevButton = document.querySelector('.support-slider-arrow-left');
+const nextButton = document.querySelector('.support-slider-arrow-right');
+let currentIndex = 0;
 
-        function loadTools() {
-            tools.forEach(tool => {
-                const toolCard = document.createElement('div');
-                toolCard.classList.add('support-tool-card');
-                toolCard.innerHTML = `
-                    <img src="${tool.image}" alt="${tool.title}">
-                    <h3>${tool.title}</h3>
-                    <p>${tool.description}</p>
-                    <button>Explore More</button>
-                `;
-                sliderWrapper.appendChild(toolCard);
-            });
-        }
+function loadTools() {
+    tools.forEach(tool => {
+        const toolCard = document.createElement('div');
+        toolCard.classList.add('support-tool-card');
+        toolCard.innerHTML = `
+            <img src="${tool.image}" alt="${tool.title}">
+            <h3>${tool.title}</h3>
+            <p>${tool.description}</p>
+            <button class="chat-button">Explore More</button>
+        `;
+        sliderWrapper.appendChild(toolCard);
+    });
 
-        function nextTool() {
-            if (currentIndex < tools.length - 1) {
-                currentIndex++;
-                updateSlider();
-            }
-        }
+    updateSlider(); // Ensure arrows are correctly set on load
+}
 
-        function prevTool() {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateSlider();
-            }
-        }
+function nextTool() {
+    if (currentIndex < tools.length - 1) {
+        currentIndex++;
+        updateSlider();
+    }
+}
 
-        function updateSlider() {
-            const toolWidth = document.querySelector('.support-tool-card').offsetWidth;
-            sliderWrapper.style.transform = `translateX(-${toolWidth * currentIndex}px)`;
-        }
+function prevTool() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateSlider();
+    }
+}
 
-        window.onload = loadTools;
+function updateSlider() {
+    const toolWidth = document.querySelector('.support-tool-card').offsetWidth;
+    sliderWrapper.style.transform = `translateX(-${toolWidth * currentIndex}px)`;
+
+    // Hide left arrow if at the start, hide right arrow if at the end
+    prevButton.style.display = currentIndex === 0 ? 'none' : 'block';
+    nextButton.style.display = currentIndex === tools.length - 1 ? 'none' : 'block';
+}
+
+window.onload = loadTools;
     </script>
 
 
-<section class="container">
+<section class="container" style="text-align: center;
+    max-width: 450px;">
     <h2>Still need help?</h2>
     <p>Our Customer Service Team are dedicated to helping you get your print, your way. If you have any questions please get in touch with our friendly, UK-based team who will be happy to help.</p>
     <p>You can contact us Monday-Friday via chat (9am-5pm), phone (9am-5pm) or email.</p>
