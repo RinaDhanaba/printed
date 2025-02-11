@@ -21,11 +21,11 @@
 </section>
 
 <style>
-    .basket-cta{
+    #basket-cta{
         background: var(--gary-bg);
         margin-bottom:100px;
     }
-    .basket-cta .container{display: flex;
+    #basket-cta .container{display: flex;
     gap: 15px;
     justify-content: center;
     align-items: center;
