@@ -179,85 +179,62 @@ function openTab(evt, tabId) {
     </div>
 
     <script>
-        const tools = [
-            {
-                title: "Artwork Editor",
-                description: "Easily make changes to your designs and create simple print-ready files.",
-                image: "./media/presentation_folders_category_2.jpg"
-            },
-            {
-                title: "Downloadable Templates",
-                description: "Ensure your artwork is perfect the first time, no matter the design software.",
-                image: "./media/presentation_folders_category_2.jpg"
-            },
-            {
-                title: "Versions",
-                description: "Upload multiple artwork variations, saving you time and money.",
-                image: "./media/presentation_folders_category_2.jpg"
-            },
-            {
-                title: "Personalisation",
-                description: "Upload a list of names and let us handle the rest.",
-                image: "./media/presentation_folders_category_2.jpg"
-            },
-            {
-                title: "Reordering",
-                description: "Quickly reorder previous artwork and product choices.",
-                image: "./media/presentation_folders_category_2.jpg"
-            },
-            {
-                title: "Split Baskets",
-                description: "Ship to multiple addresses within the same order, saving you time.",
-                image: "./media/presentation_folders_category_2.jpg"
-            }
-        ];
+    const tools = [
+        { title: "Artwork Editor", description: "Easily make changes to your designs and create simple print-ready files.", image: "./media/presentation_folders_category_2.jpg" },
+        { title: "Downloadable Templates", description: "Ensure your artwork is perfect the first time, no matter the design software.", image: "./media/presentation_folders_category_2.jpg" },
+        { title: "Versions", description: "Upload multiple artwork variations, saving you time and money.", image: "./media/presentation_folders_category_2.jpg" },
+        { title: "Personalisation", description: "Upload a list of names and let us handle the rest.", image: "./media/presentation_folders_category_2.jpg" },
+        { title: "Reordering", description: "Quickly reorder previous artwork and product choices.", image: "./media/presentation_folders_category_2.jpg" },
+        { title: "Split Baskets", description: "Ship to multiple addresses within the same order, saving you time.", image: "./media/presentation_folders_category_2.jpg" }
+    ];
 
-        const sliderWrapper = document.getElementById('supportToolSlider');
-const prevButton = document.querySelector('.support-slider-arrow-left');
-const nextButton = document.querySelector('.support-slider-arrow-right');
-let currentIndex = 0;
+    const sliderWrapper = document.getElementById('supportToolSlider');
+    const prevButton = document.querySelector('.support-slider-arrow-left');
+    const nextButton = document.querySelector('.support-slider-arrow-right');
+    let currentIndex = 0;
 
-function loadTools() {
-    tools.forEach(tool => {
-        const toolCard = document.createElement('div');
-        toolCard.classList.add('support-tool-card');
-        toolCard.innerHTML = `
-            <img src="${tool.image}" alt="${tool.title}">
-            <h3>${tool.title}</h3>
-            <p>${tool.description}</p>
-            <button class="chat-button">Explore More</button>
-        `;
-        sliderWrapper.appendChild(toolCard);
-    });
-
-    updateSlider(); // Ensure arrows are correctly set on load
-}
-
-function nextTool() {
-    if (currentIndex < tools.length - 1) {
-        currentIndex++;
-        updateSlider();
+    function loadTools() {
+        tools.forEach(tool => {
+            const toolCard = document.createElement('div');
+            toolCard.classList.add('support-tool-card');
+            toolCard.innerHTML = `
+                <img src="${tool.image}" alt="${tool.title}">
+                <h3>${tool.title}</h3>
+                <p>${tool.description}</p>
+                <button class="chat-button">Explore More</button>
+            `;
+            sliderWrapper.appendChild(toolCard);
+        });
+        updateSlider(); // Ensure correct initial state of arrows
     }
-}
 
-function prevTool() {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateSlider();
+    function nextTool() {
+        if (currentIndex < tools.length - 1) {
+            currentIndex++;
+            updateSlider();
+        }
     }
-}
 
-function updateSlider() {
-    const toolWidth = document.querySelector('.support-tool-card').offsetWidth;
-    sliderWrapper.style.transform = `translateX(-${toolWidth * currentIndex}px)`;
+    function prevTool() {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSlider();
+        }
+    }
 
-    // Hide left arrow if at the start, hide right arrow if at the end
-    prevButton.style.display = currentIndex === 0 ? 'none' : 'block';
-    nextButton.style.display = currentIndex === tools.length - 1 ? 'none' : 'block';
-}
+    function updateSlider() {
+        const toolWidth = document.querySelector('.support-tool-card').offsetWidth;
+        sliderWrapper.style.transform = `translateX(-${toolWidth * currentIndex}px)`;
 
-window.onload = loadTools;
-    </script>
+        // Hide/show arrows based on currentIndex
+        prevButton.style.display = currentIndex === 0 ? 'none' : 'block';
+        nextButton.style.display = currentIndex === tools.length - 1 ? 'none' : 'block';
+    }
+
+    window.onload = loadTools;
+</script>
+
+
 
 
 <section class="container" style="text-align: center;
