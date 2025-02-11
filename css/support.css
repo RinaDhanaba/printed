@@ -143,9 +143,9 @@
 }
 
 .support-slider-arrow-left {
-    left: 10px;
+    left: 10px;    z-index: 1;
 }
 
 .support-slider-arrow-right {
-    right: 10px;
+    right: 10px;    z-index: 1;
 }

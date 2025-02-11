@@ -236,7 +236,7 @@ function openTab(evt, tabId) {
         prevButton.style.display = 'none';
         nextButton.style.display = 'none';
     } else {
-        prevButton.style.display = currentIndex === 0 ? 'none' : 'block';
+        prevButton.style.display = currentIndex === 1 ? 'none' : 'block';
         nextButton.style.display = currentIndex >= tools.length - Math.floor(visibleAreaWidth / toolWidth) ? 'none' : 'block';
     }
 }
