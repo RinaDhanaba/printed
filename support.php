@@ -94,33 +94,102 @@
     </div>
 </div>
 
+
+
+<div class="container">
+    <b>Learn more about some of our most frequently asked questions</b>
+
+    <div class="tab-wrapper">
+        <!-- Left-Side Tabs -->
+        <div class="tab-menu">
+            <button class="tab-link active" data-tab="started">To get you started</button>
+            <button class="tab-link" data-tab="artwork">Artwork FAQs</button>
+            <button class="tab-link" data-tab="afterPrint">After Print</button>
+            <button class="tab-link" data-tab="delivery">Delivery</button>
+        </div>
+
+        <!-- Right-Side Content -->
+        <div class="tab-content">
+            <!-- Tab 1: To Get You Started -->
+            <div id="started" class="content-section active">
+                <h3>Getting Started</h3>
+                <ul>
+                    <li><a href="#">Setting up your account</a></li>
+                    <li><a href="#">Placing your first order</a></li>
+                    <li><a href="#">Understanding product options</a></li>
+                </ul>
+            </div>
+
+            <!-- Tab 2: Artwork FAQs -->
+            <div id="artwork" class="content-section">
+                <h3>Artwork FAQs</h3>
+                <ul>
+                    <li><a href="#">How to prepare your artwork for print</a></li>
+                    <li><a href="#">File formats we accept</a></li>
+                    <li><a href="#">Common artwork issues & fixes</a></li>
+                </ul>
+            </div>
+
+            <!-- Tab 3: After Print -->
+            <div id="afterPrint" class="content-section">
+                <h3>After Print</h3>
+                <ul>
+                    <li><a href="#">How to track your order</a></li>
+                    <li><a href="#">Requesting reprints</a></li>
+                    <li><a href="#">Returns and refunds process</a></li>
+                </ul>
+            </div>
+
+            <!-- Tab 4: Delivery -->
+            <div id="delivery" class="content-section">
+                <h3>Delivery</h3>
+                <ul>
+                    <li><strong>By Region</strong>
+                        <ul>
+                            <li><a href="#">Highlands and Offshore Islands</a></li>
+                            <li><a href="#">International</a></li>
+                            <li><a href="#">UK Mainland</a></li>
+                        </ul>
+                    </li>
+                    <li><strong>Delivery Help</strong>
+                        <ul>
+                            <li><a href="#">What products are available for Next Day?</a></li>
+                            <li><a href="#">What delivery options do you use?</a></li>
+                            <li><a href="#">Where's my order?</a></li>
+                        </ul>
+                    </li>
+                    <li><strong>Christmas Delivery</strong>
+                        <ul>
+                            <li><a href="#">Christmas Delivery</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script>
-document.addEventListener("DOMContentLoaded", function () {
-    // Automatically show the first tab when the page loads
-    document.querySelector(".tab-link.active").click();
-});
+    document.addEventListener('DOMContentLoaded', function () {
+        const tabs = document.querySelectorAll('.tab-link');
+        const contents = document.querySelectorAll('.content-section');
 
-function openTab(evt, tabName) {
-    var contentSections = document.getElementsByClassName("content-section");
-    var tabLinks = document.getElementsByClassName("tab-link");
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const target = tab.getAttribute('data-tab');
 
-    // Hide all content sections
-    for (var i = 0; i < contentSections.length; i++) {
-        contentSections[i].style.display = "none";
-    }
+                // Remove 'active' class from all tabs and hide all content sections
+                tabs.forEach(t => t.classList.remove('active'));
+                contents.forEach(c => c.classList.remove('active'));
 
-    // Remove 'active' class from all tab links
-    for (var i = 0; i < tabLinks.length; i++) {
-        tabLinks[i].classList.remove("active");
-    }
-
-    // Display the selected tab content and add 'active' class
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.classList.add("active");
-}
-
-
+                // Add 'active' class to clicked tab and show related content
+                tab.classList.add('active');
+                document.getElementById(target).classList.add('active');
+            });
+        });
+    });
 </script>
+
 
 
 

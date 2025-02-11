@@ -70,21 +70,22 @@
 
 
 
-.support-container h2 {
+.container b {
+    display: block;
     text-align: center;
     font-size: 24px;
     margin-bottom: 20px;
-    font-weight: bold;
 }
 
 .tab-wrapper {
     display: flex;
+    flex-wrap: wrap; /* Ensures responsiveness */
     border: 1px solid #ddd;
 }
 
 /* Left-Side Tabs */
 .tab-menu {
-    width: 25%;
+    flex: 1 1 25%; /* Flexible for smaller screens */
     border-right: 1px solid #ddd;
     background-color: #fff;
 }
@@ -126,13 +127,17 @@
 
 /* Right-Side Content */
 .tab-content {
-    width: 75%;
+    flex: 1 1 75%; /* Flexible for smaller screens */
     padding: 20px;
     background-color: #fff;
 }
 
 .content-section {
     display: none;
+}
+
+.content-section.active {
+    display: block;
 }
 
 .content-section h3 {
@@ -143,9 +148,6 @@
 .content-section ul {
     list-style: none;
     padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
 }
 
 .content-section li {
@@ -159,6 +161,17 @@
 
 .content-section li a:hover {
     text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tab-wrapper {
+        flex-direction: column;
+    }
+
+    .tab-menu, .tab-content {
+        width: 100%;
+    }
 }
 
 
