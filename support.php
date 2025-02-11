@@ -95,25 +95,30 @@
 </div>
 
 <script>
-function openTab(evt, tabName) {
-    var i, contentSections, tabLinks;
+document.addEventListener("DOMContentLoaded", function () {
+    // Automatically show the first tab when the page loads
+    document.querySelector(".tab-link.active").click();
+});
 
-    // Hide all tab contents
-    contentSections = document.getElementsByClassName("content-section");
-    for (i = 0; i < contentSections.length; i++) {
+function openTab(evt, tabName) {
+    var contentSections = document.getElementsByClassName("content-section");
+    var tabLinks = document.getElementsByClassName("tab-link");
+
+    // Hide all content sections
+    for (var i = 0; i < contentSections.length; i++) {
         contentSections[i].style.display = "none";
     }
 
-    // Remove 'active' class from all tabs
-    tabLinks = document.getElementsByClassName("tab-link");
-    for (i = 0; i < tabLinks.length; i++) {
+    // Remove 'active' class from all tab links
+    for (var i = 0; i < tabLinks.length; i++) {
         tabLinks[i].classList.remove("active");
     }
 
-    // Show the selected tab content and set active class
+    // Display the selected tab content and add 'active' class
     document.getElementById(tabName).style.display = "block";
     evt.currentTarget.classList.add("active");
 }
+
 
 </script>
 
