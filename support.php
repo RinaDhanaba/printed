@@ -142,6 +142,29 @@ $tabs = [
 </div>
 
 
+<script>
+function openTab(evt, tabId) {
+    var i, tabcontent, tablinks;
+
+    // Hide all tab contents
+    tabcontent = document.getElementsByClassName("faq-tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Remove 'active' class from all tab links
+    tablinks = document.getElementsByClassName("tab-link");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab content and add 'active' class to the clicked tab
+    document.getElementById(tabId).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+</script>
+
+
 
 
     <h1 style="text-align:center;">Tools to Make Print Easy</h1>
