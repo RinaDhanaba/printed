@@ -5,52 +5,62 @@
 }
 
 .contact-section h1 {
-    margin-bottom: 20px;
-    font-size: 2em;
+    margin-bottom: 30px;
+    font-size: 2.2em;
     color: #333;
 }
 
+/* Styling the team cards */
 .team-card {
     background-color: #f1f3ec;
-    margin: 15px;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 15px auto;
+    padding: 25px;
+    border-radius: 12px;  /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);  /* Light shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);  /* Shadow on hover */
 }
 
 .team-card h2 {
-    margin-bottom: 10px;
-    font-size: 1.5em;
+    margin-bottom: 15px;
+    font-size: 1.8em;
     color: #333;
 }
 
 .team-card p {
     margin: 10px 0;
     color: #555;
+    line-height: 1.6;
 }
 
 .contact-link {
     display: inline-block;
-    margin-top: 15px;
-    color: #ff1493;  /* Pink color for links */
+    margin-top: 20px;
+    color: #ff1493;  /* Bright pink for links */
     text-decoration: none;
     font-weight: bold;
+    font-size: 1.1em;
 }
 
 .contact-link:hover {
     text-decoration: underline;
 }
 
-/* Responsive Row Layout */
+/* Responsive Row Layout for Finance and PR teams */
 .team-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    gap: 20px;  /* Added gap for better spacing */
 }
 
 /* Ensuring both cards are side-by-side on larger screens */
 .team-row .team-card {
-    flex: 1 1 calc(50% - 30px);
+    flex: 1 1 calc(50% - 20px);
 }
 
 /* Responsive adjustments for smaller screens */
