@@ -20,6 +20,11 @@
     <link rel="stylesheet" href="./css/category.css">    
     <link rel="stylesheet" href="./css/sidebar.css">
     <link rel="stylesheet" href="./css/single-product.css">
+    <link rel="stylesheet" href="./css/bespoke-service.css">    
+    <link rel="stylesheet" href="./css/contact-us.css">
+    <link rel="stylesheet" href="./css/gobrandghplus.css">
+    <link rel="stylesheet" href="./css/support.css">
+    
 
     <!-- js files  -->
     <script defer src="./js/slider.js"></script>
@@ -94,7 +99,15 @@
                             </ul>
                         </div>
                     </li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="./contact-us">Contact</a>
+                        <div class="submenu">
+                            <ul>
+                             <li><a href="./support">support</a></li>
+                             <li><a href="./bespoke-service">Bespoke Service</a></li>
+                             <li><a href="./gobrandghplus">Plus Service</a></li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </div>   
