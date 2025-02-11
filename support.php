@@ -100,7 +100,7 @@ $tabs = [
 ];
 ?>
 
-<div class="faq-container container" style="padding: 40px 5px;">
+<div id="support-tab" class="faq-container container" style="padding: 40px 5px;">
 <h2 style="text-align:center;">Learn more about some of our most frequently asked questions</h2>
     <div class="tab-container">
         <!-- Left Side Tabs -->

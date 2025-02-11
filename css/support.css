@@ -66,21 +66,7 @@
 
 
 
-
-
-
-
-/* Base styles for the tab container */
-
-/* Styling the tab menu */
-.custom-tab-menu {
-    display: flex;
-    justify-content: space-around;
-    background-color: #fff;
-    border-bottom: 2px solid #ddd;
-}
-
-.custom-tab {
+#support-tab .tab-link{
     padding: 15px 25px;
     cursor: pointer;
     font-size: 16px;
@@ -88,19 +74,19 @@
     color: #555;
     transition: all 0.3s ease;
     position: relative;
+    border:none !important;
 }
 
-.custom-tab:hover {
+#support-tab .tab-link:hover {
     background-color: #f0f0f0;
     color: #333;
 }
-
-.custom-tab.active {
+#support-tab .tab-link.active {
     color: #007bff;
     font-weight: bold;
 }
 
-.custom-tab.active::after {
+#support-tab .tab-link.active::after {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -110,71 +96,6 @@
     background-color: #007bff;
     border-radius: 4px 4px 0 0;
 }
-
-/* Styling the content area */
-.custom-tab-content {
-    display: none;
-    padding: 30px;
-    background-color: #fff;
-    border-top: none;
-    animation: fadeIn 0.3s ease-in-out;
-}
-
-.custom-tab-content.active {
-    display: block;
-}
-
-.custom-tab-content h2 {
-    margin-top: 0;
-    color: #333;
-    border-bottom: 2px solid #007bff;
-    display: inline-block;
-    padding-bottom: 5px;
-    font-size: 22px;
-}
-
-.custom-tab-content ul {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 20px;
-}
-
-.custom-tab-content li {
-    margin-bottom: 12px;
-    color: #007bff;
-    cursor: pointer;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
-
-.custom-tab-content li:hover {
-    color: #0056b3;
-    text-decoration: underline;
-}
-
-/* Smooth fade-in effect */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* Responsive behavior */
-@media (max-width: 768px) {
-    .custom-tab-menu {
-        flex-direction: column;
-    }
-
-    .custom-tab {
-        text-align: center;
-        padding: 12px 15px;
-        font-size: 14px;
-    }
-
-    .custom-tab-content {
-        padding: 20px;
-    }
-}
-
 
 
 
