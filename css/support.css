@@ -114,12 +114,16 @@
 
 
 
-
+.support-slider{
+    background-color: #f1f2ea;
+    padding: 50px 20px;
+    margin: 40px 0;
+}
 .support-slider-container {
     position: relative;
     width: 90%;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0px auto;
     overflow: hidden;
 }
 

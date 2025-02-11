@@ -141,6 +141,8 @@ $tabs = [
 </div>
 
 
+
+<section class="support-slider">
 <script>
 function openTab(evt, tabId) {
     var i, tabcontent, tablinks;
@@ -250,7 +252,7 @@ function prevTool() {
 
     window.onload = loadTools;
 </script>
-
+</section>
 
 
 
