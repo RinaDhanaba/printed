@@ -4,6 +4,15 @@
     text-align: center;
 }
 
+.contact-section-info h1{
+    font-weight: 700;
+}
+
+.contact-section-info a{
+    font-size: 13px;
+    color: var(--parimary-color);
+}
+
 .contact-section-info .flex {
     display:flex;
     gap:50px;
@@ -14,9 +23,6 @@
     font-weight:600;
     margin: 20px auto 10px;
 }
-
-
-
 
 
 .contact-section {
