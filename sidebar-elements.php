@@ -1,7 +1,7 @@
 <!-- Include the header -->
 <?php include('app/layout-templete/header.php'); ?>
 
-<div class="container" style ="display:flex; flex-direction:column; gap:80px;">
+<div class="container" style ="display:flex; flex-direction:column; gap:10px;">
 <!-- Sidebar Section -->
 
 
@@ -10,7 +10,6 @@
 <div class="divider"></div>
 
 <div class="preset-header">
-    <img src="check-icon.png" alt="check">
     <div>
         <strong>Our product presets</strong><br>
         <small>Build your own or choose from one of our preset options</small>
@@ -38,7 +37,7 @@
 
 <style>
         .divider {
-            border-bottom: 1px solid var(--gary-bg);
+            border-bottom: 1px solid var(--text-color);
             margin: 20px 0;
         }
         .preset-header {
@@ -65,7 +64,7 @@
             flex-wrap: wrap;
         }
         .preset {
-            border: 2px solid transparent;
+            border: 2px solid var(--gary-bg);
             border-radius: 10px;
             padding: 20px;
             width: 220px;
@@ -97,7 +96,7 @@
         }
 </style>
 
-
+<h2 class="product-heading">Product</h2>
 <div class="product-container">
     <div class="product-card selected">
         <img src="leaflets-flyers.png" alt="Leaflets & Flyers">
@@ -111,12 +110,19 @@
 </div>
 
 <style>
-        h2 img {
-            width: 20px;
-            height: 20px;
+        h2.product-heading::before {
+            content: "2";
+            background-color:var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
             margin-right: 10px;
-            display:inline;
         }
+
         .product-container {
             display: flex;
             gap: 20px;
@@ -155,7 +161,7 @@
 
 
 
-<h2><img src="check-icon.png" alt="check"> Size</h2>
+<h2 class="Size">Size</h2>
 
 <div class="size-list-container">
     <div class="size-list">
@@ -216,6 +222,20 @@
     </script>
 
 <style>
+
+h2.Size::before {
+            content: "3";
+            background-color:var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            margin-right: 10px;
+        }
+
         .size-list-container {
             display: flex;
             gap: 40px;
@@ -225,7 +245,7 @@
             width: 300px;
         }
         .size-option {
-            border: 2px solid transparent;
+            border: 2px solid var(--gary-bg);
             padding: 15px;
             margin-bottom: 10px;
             border-radius: 8px;
@@ -588,7 +608,7 @@
             padding: 12px;
             background-color: white;
             margin-bottom: 10px;
-            border: 2px solid transparent;
+            border: 2px solid var(--gary-bg);
             border-radius: 8px;
             cursor: pointer;
             transition: border-color 0.3s ease;
@@ -947,7 +967,7 @@
 <body>
 
 <div class="extras-section">
-    <div class="section-title">✔ Extras</div>
+    <h2 class="section-title">Extras</h2>
 
     <!-- Lamination Section -->
     <div class="options-group lamination">
@@ -1032,8 +1052,21 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
         }
 
+h2.section-title::before {
+            content: "8";
+            background-color:var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            margin-right: 10px;
+        }
+
         .section-title {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
             margin-bottom: 15px;
             display: flex;
