@@ -146,6 +146,12 @@
     border-radius: 10px;
 }
 
+.support-slider-arrow{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
 .support-slider-arrow-left {
     left: 10px;    z-index: 1;
 }

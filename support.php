@@ -175,8 +175,10 @@ function openTab(evt, tabId) {
             <!-- Tool Cards will be inserted dynamically -->
         </div>
     </div>
-    <button class="support-slider-arrow support-slider-arrow-left slider-btn prev" onclick="prevTool()">&#9664;</button>
-    <button class="support-slider-arrow support-slider-arrow-right slider-btn next" onclick="nextTool()">&#9654;</button>
+    <div class="support-slider-arrow">
+    <button class="support-slider-arrow-left slider-btn prev" onclick="prevTool()">&#9664;</button>
+    <button class="support-slider-arrow-right slider-btn next" onclick="nextTool()">&#9654;</button>
+    </div>
 
     <script>
     const tools = [
