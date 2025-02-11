@@ -185,6 +185,7 @@ function openTab(evt, tabId) {
         { title: "Versions", description: "Upload multiple artwork variations, saving you time and money.", image: "./media/presentation_folders_category_2.jpg" },
         { title: "Personalisation", description: "Upload a list of names and let us handle the rest.", image: "./media/presentation_folders_category_2.jpg" },
         { title: "Reordering", description: "Quickly reorder previous artwork and product choices.", image: "./media/presentation_folders_category_2.jpg" },
+        { title: "Reordering", description: "Quickly reorder previous artwork and product choices.", image: "./media/presentation_folders_category_2.jpg" },
         { title: "Split Baskets", description: "Ship to multiple addresses within the same order, saving you time.", image: "./media/presentation_folders_category_2.jpg" }
     ];
 
@@ -236,7 +237,7 @@ function openTab(evt, tabId) {
         prevButton.style.display = 'none';
         nextButton.style.display = 'none';
     } else {
-        prevButton.style.display = currentIndex === 1 ? 'none' : 'block';
+        prevButton.style.display = currentIndex === -1 ? 'none' : 'block';
         nextButton.style.display = currentIndex >= tools.length - Math.floor(visibleAreaWidth / toolWidth) ? 'none' : 'block';
     }
 }
