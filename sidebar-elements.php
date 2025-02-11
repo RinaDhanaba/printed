@@ -1,7 +1,7 @@
 <!-- Include the header -->
 <?php include('app/layout-templete/header.php'); ?>
 
-<div class="container" >
+<div class="container" style ="display:flex; flex-direction:column; gap:80px;">
 <!-- Sidebar Section -->
 
 
@@ -37,8 +37,8 @@
 </div>
 
 <style>
-            .divider {
-            border-bottom: 1px solid #ccc;
+        .divider {
+            border-bottom: 1px solid var(--gary-bg);
             margin: 20px 0;
         }
         .preset-header {
@@ -46,11 +46,19 @@
             align-items: center;
             margin-bottom: 10px;
         }
-        .preset-header img {
-            width: 24px;
-            height: 24px;
+        .preset-header::before {
+            content: "1";
+            background-color:var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
             margin-right: 10px;
         }
+
         .preset-container {
             display: flex;
             gap: 20px;
@@ -67,10 +75,10 @@
             transition: border-color 0.3s;
         }
         .preset:hover {
-            border-color: #00c2b4;
+            border-color:var(--secondary-color);
         }
         .preset.selected {
-            border-color: #ff4081;
+            border-color:var(--primary-color);
         }
         .preset h3 {
             margin-top: 0;
@@ -119,7 +127,7 @@
             border-radius: 10px;
             overflow: hidden;
             width: 200px;
-            background-color: white;
+            background-color: var(--white);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             cursor: pointer;
             transition: border-color 0.3s;
@@ -129,17 +137,17 @@
             height: auto;
         }
         .product-card:hover {
-            border-color: #00c2b4;
+            border-color:var(--secondary-color);
         }
         .product-card.selected {
-            border-color: #ff4081;
+            border-color:var(--primary-color);
         }
         .product-card .label {
             text-align: center;
             padding: 10px;
             font-weight: bold;
             color: #333;
-            background-color: #f0f0f0;
+            background-color: var(--gary-bg);
         }
     </style>
 
@@ -178,7 +186,7 @@
         <div class="size-preview">
             <span id="preview-width" style="top: -20px;">105mm</span>
             <span id="preview-height" style="left: -40px; transform: rotate(-90deg);">74mm</span>
-            <div style="width: 105px; height: 74px; background-color: #dcecec;"></div>
+            <div style="width: 105px; height: 74px; background-color:var(--secondary-color)"></div>
         </div>
         <div class="unit-selector">
             <div class="active" onclick="changeUnit(this)">mm</div>
@@ -226,19 +234,19 @@
             transition: border-color 0.3s;
         }
         .size-option:hover {
-            border-color: #00c2b4;
+            border-color:var(--secondary-color);
         }
         .size-option.selected {
-            border-color: #ff4081;
+            border-color: var(--primary-color);
         }
         .size-option .star {
             float: right;
-            color: #00c2b4;
+            color:var(--secondary-color);
         }
         .preview-container {
             width: 400px;
-            background-color: white;
-            border: 1px solid #ddd;
+            background-color: var(--white);
+            border: 1px solid var(--gray-bg);
             border-radius: 8px;
             padding: 20px;
         }
@@ -249,7 +257,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            background-color: #eaeff0;
+            background-color: var(--gary-bg);
         }
         .size-preview span {
             position: absolute;
@@ -267,13 +275,13 @@
             border: 1px solid #ddd;
             border-radius: 20px;
             cursor: pointer;
-            background-color: #f2f2f2;
+            background-color: var(--gary-bg);
             color: #555;
             transition: background-color 0.3s, color 0.3s;
         }
         .unit-selector div.active {
-            background-color: #ff4081;
-            color: white;
+            background-color: var(--primary-color);
+            color: var(--white);
         }
     </style>
 
@@ -321,8 +329,8 @@
 <style>
         h2.orientation-heading::before {
             content: "4";
-            background-color: #00c2b4;
-            color: white;
+            background-color: var(--secondary-color);
+            color: var(--white);
             border-radius: 50%;
             display: inline-block;
             width: 25px;
@@ -339,9 +347,9 @@
         .orientation-option {
             width: 150px;
             padding: 15px;
-            border: 2px solid transparent;
+            border: 2px solid var(--gary-bg);
             border-radius: 10px;
-            background-color: white;
+            background-color: var(--white);
             text-align: center;
             cursor: pointer;
             position: relative;
@@ -353,7 +361,7 @@
             margin-bottom: 10px;
         }
         .orientation-option.selected {
-            border-color: #ff4081;
+            border-color:var(--primary-color);
         }
         .orientation-option.disabled {
             opacity: 0.4;
@@ -363,14 +371,14 @@
             position: absolute;
             top: 8px;
             right: 8px;
-            color: #00c2b4;
+            color: var(--secondary-color);
             font-size: 18px;
         }
         .orientation-option .warning {
             position: absolute;
             top: 8px;
             right: 8px;
-            color: #ff4081;
+            color: var(--primary-color);
             font-size: 18px;
         }
     </style>
@@ -419,8 +427,8 @@
         }
         .printed-sides-section .section-title::before {
             content: "5";
-            background-color: #00c2b4;
-            color: white;
+            background-color: var(--secondary-color);
+            color: var(--white);
             border-radius: 50%;
             display: inline-block;
             width: 25px;
@@ -431,7 +439,7 @@
         }
         .printed-sides-section .info {
             font-size: 16px;
-            color: #00c2b4;
+            color: var(--secondary-color);
             margin-left: 10px;
             cursor: pointer;
         }
@@ -443,7 +451,7 @@
         .printed-side-option {
             width: 150px;
             padding: 15px;
-            border: 2px solid transparent;
+            border: 2px solid var(--gary-bg);
             border-radius: 10px;
             background-color: white;
             text-align: center;
@@ -457,13 +465,13 @@
             margin-bottom: 10px;
         }
         .printed-side-option.selected {
-            border-color: #d96ba0;
+            border-color: var(--primary-color);
         }
         .printed-side-option .star {
             position: absolute;
             top: 8px;
             right: 8px;
-            color: #00c2b4;
+            color: var(--secondary-color);
             font-size: 18px;
         }
     </style>
@@ -535,8 +543,8 @@
         }
         .paper-selection-section .section-title::before {
             content: "6";
-            background-color: #00c2b4;
-            color: white;
+            background-color: var(--secondary-color);
+            color: var(--white);
             border-radius: 50%;
             display: inline-block;
             width: 25px;
@@ -547,7 +555,7 @@
         }
         .paper-selection-section .info {
             font-size: 16px;
-            color: #00c2b4;
+            color: var(--secondary-color);
             margin-left: 10px;
             cursor: pointer;
         }
@@ -558,14 +566,14 @@
             display: inline-block;
             padding: 8px 15px;
             margin-right: 10px;
-            background-color: #f2f2f2;
+            background-color: var(--gary-bg);
             border-radius: 20px;
             cursor: pointer;
             font-size: 14px;
         }
         .paper-tab.active {
-            background-color: #00c2b4;
-            color: white;
+            background-color:var(--secondary-color);
+            color: var(--white);
         }
         .paper-options {
             display: flex;
@@ -592,11 +600,11 @@
             margin-right: 15px;
         }
         .paper-item.selected {
-            border-color: #d96ba0;
+            border-color: var(--primary-color);
         }
         .paper-item .star {
             margin-left: auto;
-            color: #00c2b4;
+            color: var(--secondary-color);
             font-size: 18px;
         }
         .paper-preview {
@@ -604,8 +612,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border: 1px solid #ccc;
-            background-color: white;
+            border: 1px solid var(--gary-bg);
+            background-color: var(--white);
             height: 250px;
         }
     </style>
@@ -621,8 +629,8 @@
         }
         .quantity-section .section-title::before {
             content: "7";
-            background-color: #00c2b4;
-            color: white;
+            background-color: var(--secondary-color);
+            color: var(--white);
             border-radius: 50%;
             display: inline-block;
             width: 25px;
@@ -639,8 +647,8 @@
         .custom-quantity button {
             width: 40px;
             height: 40px;
-            background-color: white;
-            border: 1px solid #ccc;
+            background-color: var(--white);
+            border: 1px solid var(--gary-bg);
             border-radius: 5px;
             font-size: 18px;
             cursor: pointer;
@@ -649,7 +657,7 @@
             width: 80px;
             height: 40px;
             text-align: center;
-            border: 1px solid #ccc;
+            border: 1px solid var(--gary-bg);
             border-radius: 5px;
             margin: 0 10px;
             font-size: 16px;
@@ -665,17 +673,17 @@
             align-items: center;
             width: calc(50% - 10px);
             padding: 12px;
-            background-color: white;
-            border: 2px solid transparent;
+            background-color: var(--white);
+            border: 2px solid var(--gary-bg);
             border-radius: 8px;
             cursor: pointer;
             transition: border-color 0.3s ease;
         }
         .quantity-item.selected {
-            border-color: #d96ba0;
+            border-color: var(--primary-color);
         }
         .quantity-item .price {
-            color: #007bff;
+            color: var(--secondary-color);
             font-weight: bold;
         }
     </style>
@@ -748,8 +756,8 @@
         }
         .version-section .sub-text .info-icon {
             display: inline-block;
-            background-color: #00c2b4;
-            color: white;
+            background-color: var(--secondary-color);
+            color: var(--white);
             width: 16px;
             height: 16px;
             border-radius: 50%;
@@ -768,14 +776,14 @@
             width: 100px;
             padding: 12px;
             text-align: center;
-            border: 2px solid #ccc;
+            border: 2px solid var(--gary-bg);
             border-radius: 8px;
             cursor: pointer;
             transition: border-color 0.3s ease;
         }
         .version-option.selected {
-            border-color: #d96ba0;
-            color: #333;
+            border-color: var(--primary-color);
+            color: var(--text-color);
             font-weight: bold;
         }
     </style>
@@ -807,7 +815,7 @@
 
     <style>
         .extras-section {
-            background: white;
+            background: var(--white);
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -822,8 +830,8 @@
         }
 
         .info-icon {
-            background-color: #00c2b4;
-            color: white;
+            background-color:var(--secondary-color);
+            color: var(--white);
             border-radius: 50%;
             width: 18px;
             height: 18px;
@@ -850,7 +858,7 @@
             width: calc(33.333% - 10px);
             padding: 15px;
             text-align: center;
-            border: 2px solid #ccc;
+            border: 2px solid var(--gary-bg);
             border-radius: 10px;
             cursor: pointer;
             transition: border-color 0.3s ease;
@@ -863,7 +871,7 @@
         }
 
         .option.selected {
-            border-color: #d96ba0;
+            border-color: var(--primary-color);
             font-weight: bold;
         }
 
@@ -871,22 +879,22 @@
             position: absolute;
             top: 8px;
             right: 8px;
-            color: #00c2b4;
+            color: var(--secondary-color);
         }
 
         .warning-icon {
             position: absolute;
             top: 8px;
             right: 8px;
-            color: #ffb347;
+            color:var(--primary-color);
         }
 
         .perforation-info {
-            background-color: #f1f1f1;
+            background-color: var(--gary-bg);
             padding: 15px;
             border-radius: 8px;
             font-size: 14px;
-            color: #555;
+            color: var(--text-color);
             line-height: 1.6;
         }
 
@@ -902,14 +910,14 @@
 
         .perforation-preview {
             width: 50%;
-            background-color: #fafafa;
-            border: 1px solid #ccc;
+            background-color: var(--gary-bg);
+            border: 1px solid var(--gary-bg);;
             border-radius: 8px;
             display: flex;
             justify-content: center;
             align-items: center;
             font-size: 16px;
-            color: #555;
+            color: var(--text-color);
         }
 
         @media (max-width: 768px) {
@@ -1018,7 +1026,7 @@
     <style>
 
         .delivery-section {
-            background: white;
+            background: var(--white);
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -1033,8 +1041,8 @@
         }
 
         .info-icon {
-            background-color: #00c2b4;
-            color: white;
+            background-color: var(--secondary-color);
+            color: var(--white);
             border-radius: 50%;
             width: 18px;
             height: 18px;
@@ -1056,20 +1064,20 @@
             flex: 1;
             padding: 15px;
             text-align: center;
-            border: 2px solid #ccc;
+            border: 2px solid var(--gary-bg);
             border-radius: 10px;
             cursor: pointer;
             transition: border-color 0.3s ease;
         }
 
         .option.selected {
-            border-color: #d96ba0;
+            border-color: var(--primary-color);
             font-weight: bold;
-            color: #000;
+            color: var(--black);
         }
 
         .option:not(.selected) {
-            color: #777;
+            color: var(--text-color);
         }
 
         @media (max-width: 768px) {
@@ -1112,9 +1120,9 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #f5f5f5;
+            background-color: var(--gary-bg);
             padding: 15px 20px;
-            border: 1px solid #ddd;
+            border: 1px solid var(--gary-bg);
         }
 
         .subtotal-details {
@@ -1136,7 +1144,7 @@
         }
 
         .vat-info {
-            color: #a1a1a1;
+            color: var(--gary-bg);
             font-size: 0.9em;
         }
 
@@ -1162,13 +1170,13 @@
 
         .add-to-basket {
             background-color: white;
-            border: 2px solid #ff4da6;
-            color: black;
+            border: 2px solid var(--primary-color);
+            color: var(--black);
         }
 
         .upload-artwork {
-            background-color: #ff4da6;
-            color: white;
+            background-color:var(--primary-color);
+            color: var(--white);
             border: none;
         }
     </style>
