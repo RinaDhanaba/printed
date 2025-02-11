@@ -21,174 +21,134 @@
 
 
 
-<div class="container" style=" padding: 40px 5px;">
-    <b style=" text-align: center;">Learn more about some of our most frequently asked questions</b>
+<?php
+$tabs = [
+    "To get you started" => [
+        "Welcome to Printed.com" => [
+            "How does the file checking service work?",
+            "How to place a Bespoke order",
+            "Our handy Artwork checklist",
+            "How to open a Trade Account",
+            "What is My Account?",
+            "How to order with Printed.com",
+            "How to edit your profile",
+            "Where do I add my job reference to a job and PO number to an order?"
+        ],
+        "Payment and Rewards" => [
+            "Do you have a Referral Scheme?",
+            "Adding FSC logo to your artwork",
+            "Rewards",
+            "How to make the most of your Printed Points",
+            "VAT explained",
+            "What payment methods do you accept?"
+        ]
+    ],
+    "Artwork FAQs" => [
+        "Print 101" => [
+            "Everything you need to know about Fonts",
+            "CMYK and RBG explained!",
+            "What is creep?",
+            "How to create a PDF",
+            "What is Bleed?",
+            "What is the Safe Area?",
+            "How to add Crop Marks",
+            "Resizing"
+        ],
+        "Quick tips to print perfection" => [
+            "What file types can I use?",
+            "Can I print multiple files at once?",
+            "Can I add names into my print?",
+            "Make the most of your print",
+            "Artwork upload - number of pages error",
+            "How to download Artwork templates",
+            "How to export a PDF"
+        ],
+        "Special Finishes" => [
+            "Flag artwork tips and finishes",
+            "Foiling artwork guide",
+            "Guide to Spot UV",
+            "Personalising your design",
+            "Guide to White ink",
+            "Digital Foiling vs Block Foiling",
+            "Guide to Die Cutting"
+        ]
+    ],
+    "After Print" => [
+        "After Print" => [
+            "Refunds and Credits",
+            "How do I track my delivery?",
+            "How do I re-order?",
+            "Delivery times and turnaround",
+            "Can I amend my job after I have ordered?"
+        ]
+    ],
+    "Delivery" => [
+        "By region" => [
+            "Highlands and Offshore Islands",
+            "International",
+            "UK Mainland"
+        ],
+        "Delivery Help" => [
+            "What products are available for Next Day?",
+            "What delivery options do you use?",
+            "Where’s my order?"
+        ],
+        "Christmas Delivery" => [
+            "Christmas Delivery"
+        ]
+    ]
+];
+?>
 
-    <div class="tab-wrapper">
-        <!-- Left-Side Tabs -->
-        <div class="tab-menu">
-            <button class="tab-link active" onclick="openTab(event, 'started')">To get you started</button>
-            <button class="tab-link" onclick="openTab(event, 'artwork')">Artwork FAQs</button>
-            <button class="tab-link" onclick="openTab(event, 'afterPrint')">After Print</button>
-            <button class="tab-link" onclick="openTab(event, 'delivery')">Delivery</button>
-        </div>
+<div class="custom-tabs-container">
+        <ul class="custom-tab-menu">
+            <?php foreach ($tabs as $tab => $content): ?>
+                <li class="custom-tab" data-tab="<?php echo strtolower(str_replace(' ', '-', $tab)); ?>">
+                    <?php echo $tab; ?>
+                </li>
+            <?php endforeach; ?>
+        </ul>
 
-        <!-- Right-Side Content -->
-        <div class="tab-content">
-            <!-- Tab 1: To Get You Started -->
-            <div id="started" class="content-section" style="display: block;">
-                <h3>Getting Started</h3>
-                <ul>
-                    <li><a href="#">Setting up your account</a></li>
-                    <li><a href="#">Placing your first order</a></li>
-                    <li><a href="#">Understanding product options</a></li>
-                </ul>
+        <?php foreach ($tabs as $tab => $sections): ?>
+            <div class="custom-tab-content" id="<?php echo strtolower(str_replace(' ', '-', $tab)); ?>">
+                <?php foreach ($sections as $sectionTitle => $questions): ?>
+                    <h2><?php echo $sectionTitle; ?></h2>
+                    <ul>
+                        <?php foreach ($questions as $question): ?>
+                            <li><?php echo $question; ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endforeach; ?>
             </div>
-
-            <!-- Tab 2: Artwork FAQs -->
-            <div id="artwork" class="content-section">
-                <h3>Artwork FAQs</h3>
-                <ul>
-                    <li><a href="#">How to prepare your artwork for print</a></li>
-                    <li><a href="#">File formats we accept</a></li>
-                    <li><a href="#">Common artwork issues & fixes</a></li>
-                </ul>
-            </div>
-
-            <!-- Tab 3: After Print -->
-            <div id="afterPrint" class="content-section">
-                <h3>After Print</h3>
-                <ul>
-                    <li><a href="#">How to track your order</a></li>
-                    <li><a href="#">Requesting reprints</a></li>
-                    <li><a href="#">Returns and refunds process</a></li>
-                </ul>
-            </div>
-
-            <!-- Tab 4: Delivery -->
-            <div id="delivery" class="content-section">
-                <h3>Delivery</h3>
-                <ul>
-                    <li><strong>By Region</strong>
-                        <ul>
-                            <li><a href="#">Highlands and Offshore Islands</a></li>
-                            <li><a href="#">International</a></li>
-                            <li><a href="#">UK Mainland</a></li>
-                        </ul>
-                    </li>
-                    <li><strong>Delivery Help</strong>
-                        <ul>
-                            <li><a href="#">What products are available for Next Day?</a></li>
-                            <li><a href="#">What delivery options do you use?</a></li>
-                            <li><a href="#">Where's my order?</a></li>
-                        </ul>
-                    </li>
-                    <li><strong>Christmas Delivery</strong>
-                        <ul>
-                            <li><a href="#">Christmas Delivery</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <?php endforeach; ?>
     </div>
-</div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const tabs = document.querySelectorAll('.custom-tab');
+    const contents = document.querySelectorAll('.custom-tab-content');
 
+    function hideAllTabs() {
+        contents.forEach(content => content.style.display = 'none');
+        tabs.forEach(tab => tab.classList.remove('active'));
+    }
 
-<div class="container">
-    <b>Learn more about some of our most frequently asked questions</b>
-
-    <div class="tab-wrapper">
-        <!-- Left-Side Tabs -->
-        <div class="tab-menu">
-            <button class="tab-link active" data-tab="started">To get you started</button>
-            <button class="tab-link" data-tab="artwork">Artwork FAQs</button>
-            <button class="tab-link" data-tab="afterPrint">After Print</button>
-            <button class="tab-link" data-tab="delivery">Delivery</button>
-        </div>
-
-        <!-- Right-Side Content -->
-        <div class="tab-content">
-            <!-- Tab 1: To Get You Started -->
-            <div id="started" class="content-section active">
-                <h3>Getting Started</h3>
-                <ul>
-                    <li><a href="#">Setting up your account</a></li>
-                    <li><a href="#">Placing your first order</a></li>
-                    <li><a href="#">Understanding product options</a></li>
-                </ul>
-            </div>
-
-            <!-- Tab 2: Artwork FAQs -->
-            <div id="artwork" class="content-section">
-                <h3>Artwork FAQs</h3>
-                <ul>
-                    <li><a href="#">How to prepare your artwork for print</a></li>
-                    <li><a href="#">File formats we accept</a></li>
-                    <li><a href="#">Common artwork issues & fixes</a></li>
-                </ul>
-            </div>
-
-            <!-- Tab 3: After Print -->
-            <div id="afterPrint" class="content-section">
-                <h3>After Print</h3>
-                <ul>
-                    <li><a href="#">How to track your order</a></li>
-                    <li><a href="#">Requesting reprints</a></li>
-                    <li><a href="#">Returns and refunds process</a></li>
-                </ul>
-            </div>
-
-            <!-- Tab 4: Delivery -->
-            <div id="delivery" class="content-section">
-                <h3>Delivery</h3>
-                <ul>
-                    <li><strong>By Region</strong>
-                        <ul>
-                            <li><a href="#">Highlands and Offshore Islands</a></li>
-                            <li><a href="#">International</a></li>
-                            <li><a href="#">UK Mainland</a></li>
-                        </ul>
-                    </li>
-                    <li><strong>Delivery Help</strong>
-                        <ul>
-                            <li><a href="#">What products are available for Next Day?</a></li>
-                            <li><a href="#">What delivery options do you use?</a></li>
-                            <li><a href="#">Where's my order?</a></li>
-                        </ul>
-                    </li>
-                    <li><strong>Christmas Delivery</strong>
-                        <ul>
-                            <li><a href="#">Christmas Delivery</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const tabs = document.querySelectorAll('.tab-link');
-        const contents = document.querySelectorAll('.content-section');
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                const target = tab.getAttribute('data-tab');
-
-                // Remove 'active' class from all tabs and hide all content sections
-                tabs.forEach(t => t.classList.remove('active'));
-                contents.forEach(c => c.classList.remove('active'));
-
-                // Add 'active' class to clicked tab and show related content
-                tab.classList.add('active');
-                document.getElementById(target).classList.add('active');
-            });
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            hideAllTabs();
+            const target = document.getElementById(tab.dataset.tab);
+            tab.classList.add('active');
+            if (target) target.style.display = 'block';
         });
     });
-</script>
+
+    // Initialize first tab as active
+    if (tabs.length > 0) {
+        tabs[0].click();
+    }
+});
+
+    </script>
 
 
 
