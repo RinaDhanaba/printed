@@ -1,7 +1,8 @@
 .contact-section-info{
     max-width: 850px;
-    margin: 60px auto 0;
+    margin: 60px auto;
     text-align: center;
+    background-color: #F5F4FB;
 }
 
 .contact-section-info .flex {
