@@ -100,7 +100,7 @@ $tabs = [
 ];
 ?>
 
-<div class="custom-tabs-container">
+<div class="custom-tabs-container container">
         <ul class="custom-tab-menu">
             <?php foreach ($tabs as $tab => $content): ?>
                 <li class="custom-tab" data-tab="<?php echo strtolower(str_replace(' ', '-', $tab)); ?>">
@@ -124,12 +124,12 @@ $tabs = [
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
     const tabs = document.querySelectorAll('.custom-tab');
     const contents = document.querySelectorAll('.custom-tab-content');
 
     function hideAllTabs() {
-        contents.forEach(content => content.style.display = 'none');
+        contents.forEach(content => content.classList.remove('active'));
         tabs.forEach(tab => tab.classList.remove('active'));
     }
 
@@ -138,7 +138,7 @@ $tabs = [
             hideAllTabs();
             const target = document.getElementById(tab.dataset.tab);
             tab.classList.add('active');
-            if (target) target.style.display = 'block';
+            if (target) target.classList.add('active');
         });
     });
 
@@ -147,7 +147,6 @@ $tabs = [
         tabs[0].click();
     }
 });
-
     </script>
 
 
