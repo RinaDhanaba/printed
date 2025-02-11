@@ -170,15 +170,13 @@ function openTab(evt, tabId) {
 
     <h2 style="text-align:center;">Tools to Make Print Easy</h2>
 
-    <div class="support-slider-container">
-        <button class="support-slider-arrow support-slider-arrow-left slider-btn prev" onclick="prevTool()">&#9664;</button>
-        
+    <div class="support-slider-container">        
         <div class="support-slider-wrapper" id="supportToolSlider">
             <!-- Tool Cards will be inserted dynamically -->
         </div>
-        
-        <button class="support-slider-arrow support-slider-arrow-right slider-btn next" onclick="nextTool()">&#9654;</button>
     </div>
+    <button class="support-slider-arrow support-slider-arrow-left slider-btn prev" onclick="prevTool()">&#9664;</button>
+    <button class="support-slider-arrow support-slider-arrow-right slider-btn next" onclick="nextTool()">&#9654;</button>
 
     <script>
     const tools = [
