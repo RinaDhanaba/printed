@@ -67,26 +67,13 @@
 
 
 #support-tab .tab-link{
-    padding: 15px 25px;
-    cursor: pointer;
-    font-size: 16px;
-    font-weight: 600;
-    color: #555;
-    transition: all 0.3s ease;
-    position: relative;
+    background: var(--light-gray);
     border:none !important;
 }
 
-#support-tab .tab-link:hover {
-    background-color: #f0f0f0;
-    color: #333;
-}
-#support-tab .tab-link.active {
-    color: #007bff;
-    font-weight: bold;
-}
 
-#support-tab .tab-link.active::after {
+
+#support-tab .tab-link::after {
     content: '';
     position: absolute;
     bottom: -2px;
