@@ -67,7 +67,7 @@
 
 
 #support-tab .tab-container{
-gap:0;
+  gap:0;
 }
 
 #support-tab .tab-content-container{
@@ -91,6 +91,7 @@ gap:0;
 #support-tab .tab-link.active {
     background-color: #eaf0ef;
     font-weight: bold;
+    position: relative;
 }
 
 /* Chevron effect for active tab */
