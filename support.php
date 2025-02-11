@@ -95,25 +95,26 @@
 </div>
 
 <script>
-    function openTab(evt, tabName) {
-        var i, contentSections, tabLinks;
+function openTab(evt, tabName) {
+    var i, contentSections, tabLinks;
 
-        // Hide all tab contents
-        contentSections = document.getElementsByClassName("content-section");
-        for (i = 0; i < contentSections.length; i++) {
-            contentSections[i].style.display = "none";
-        }
-
-        // Remove 'active' class from all tabs
-        tabLinks = document.getElementsByClassName("tab-link");
-        for (i = 0; i < tabLinks.length; i++) {
-            tabLinks[i].classList.remove("active");
-        }
-
-        // Show the selected tab content and set active class
-        document.getElementById(tabName).style.display = "block";
-        evt.currentTarget.classList.add("active");
+    // Hide all tab contents
+    contentSections = document.getElementsByClassName("content-section");
+    for (i = 0; i < contentSections.length; i++) {
+        contentSections[i].style.display = "none";
     }
+
+    // Remove 'active' class from all tabs
+    tabLinks = document.getElementsByClassName("tab-link");
+    for (i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].classList.remove("active");
+    }
+
+    // Show the selected tab content and set active class
+    document.getElementById(tabName).style.display = "block";
+    evt.currentTarget.classList.add("active");
+}
+
 </script>
 
 
