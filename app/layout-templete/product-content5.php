@@ -1,4 +1,4 @@
-<div class="faq-container container">
+<div class="faq-container">
 <h2 style="text-align:center;">Learn more about some of our most frequently asked questions</h2>
      <div class="tab-container">
         <!-- Left Side Tabs -->
