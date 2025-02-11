@@ -195,19 +195,22 @@ function openTab(evt, tabId) {
     let currentIndex = 0;
 
     function loadTools() {
-        tools.forEach(tool => {
-            const toolCard = document.createElement('div');
-            toolCard.classList.add('support-tool-card');
-            toolCard.innerHTML = `
-                <img src="${tool.image}" alt="${tool.title}">
-                <h3>${tool.title}</h3>
-                <p>${tool.description}</p>
-                <button class="chat-button">Explore More</button>
-            `;
-            sliderWrapper.appendChild(toolCard);
-        });
-        updateSlider(); // Ensure correct initial state of arrows
-    }
+    tools.forEach(tool => {
+        const toolCard = document.createElement('div');
+        toolCard.classList.add('support-tool-card');
+        toolCard.innerHTML = `
+            <img src="${tool.image}" alt="${tool.title}">
+            <h3>${tool.title}</h3>
+            <p>${tool.description}</p>
+            <button class="chat-button">Explore More</button>
+        `;
+        sliderWrapper.appendChild(toolCard);
+    });
+    
+    currentIndex = 0; // Ensure we start at the first slide
+    updateSlider();  // Ensure correct initial state of arrows
+}
+
 
     function nextTool() {
         if (currentIndex < tools.length - 1) {
@@ -225,12 +228,15 @@ function openTab(evt, tabId) {
 
     function updateSlider() {
     const toolCard = document.querySelector('.support-tool-card');
-    const toolWidth = toolCard.offsetWidth + 20; // Adding margin/padding if needed
+    const toolWidth = toolCard.offsetWidth + 20; // Adjust margin/padding if needed
     const visibleAreaWidth = document.querySelector('.support-slider-container').offsetWidth;
     const totalWidth = toolWidth * tools.length;
 
     // Move the slider
     sliderWrapper.style.transform = `translateX(-${toolWidth * currentIndex}px)`;
+
+    // Calculate how many cards fit on the screen
+    const visibleCards = Math.floor(visibleAreaWidth / toolWidth);
 
     // Hide arrows if all cards fit in the visible area
     if (totalWidth <= visibleAreaWidth) {
@@ -238,9 +244,10 @@ function openTab(evt, tabId) {
         nextButton.style.display = 'none';
     } else {
         prevButton.style.display = currentIndex === 0 ? 'none' : 'block';
-        nextButton.style.display = currentIndex >= tools.length - Math.floor(visibleAreaWidth / toolWidth) ? 'none' : 'block';
+        nextButton.style.display = currentIndex >= tools.length - visibleCards ? 'none' : 'block';
     }
 }
+
 
     window.onload = loadTools;
 </script>
