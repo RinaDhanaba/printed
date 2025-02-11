@@ -244,12 +244,9 @@ function openTab(evt, tabId) {
         nextButton.style.display = 'none';
     } else {
         prevButton.style.display = currentIndex === 0 ? 'none' : 'block';
-        // Fixing right arrow: Stop sliding when the last set of cards is visible
-        if (currentIndex >= tools.length - visibleCards) {
-            nextButton.style.display = 'none';
-        } else {
-            nextButton.style.display = 'block';
-        }
+        // Hide the right arrow when the last card is visible
+        const lastCardVisible = (currentIndex + Math.floor(visibleAreaWidth / toolWidth)) >= tools.length;
+        nextButton.style.display = lastCardVisible ? 'none' : 'block';
     }
 }
 
