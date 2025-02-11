@@ -120,11 +120,20 @@ $tabs = [
         <div class="tab-content-container">
             <?php
             $first = true;
-            foreach ($faq as $question => $answer) {
+            foreach ($tabs as $category => $sections) {
                 $displayStyle = $first ? 'style="display:block;"' : '';
-                echo "<div id='".md5($question)."' class='faq-tab-content' $displayStyle>
-                        <p>$answer</p>
-                      </div>";
+                echo "<div id='".md5($category)."' class='faq-tab-content' $displayStyle>";
+                
+                // Loop through sections and questions
+                foreach ($sections as $sectionTitle => $questions) {
+                    echo "<h3>$sectionTitle</h3><ul>";
+                    foreach ($questions as $question) {
+                        echo "<li>$question</li>";
+                    }
+                    echo "</ul>";
+                }
+
+                echo "</div>";
                 $first = false;
             }
             ?>
