@@ -49,5 +49,10 @@
     #basket-cta h2{margin-bottom:15px}
 </style>
 
+
+
+<!-- Trustpilot section  -->
+<?php include('app/layout-templete/trustpilot.php'); ?>
+
 <!-- Include the footer -->
 <?php include('app/layout-templete/footer.php'); ?>
