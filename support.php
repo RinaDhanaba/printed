@@ -5,7 +5,10 @@
 
 </div>
 
-<h1>Help and Support</h1>
+<h1 style="font-weight: bolder;
+    text-align: center;
+    padding: 50px 5px;
+">Help and Support</h1>
 
 <div class="search-section">
     <h2>Search for helpful hints and tips on your print, whether before or after placing your order, from artwork to delivery.</h2>
@@ -18,8 +21,8 @@
 
 
 
-<div class="support-container">
-    <h2>Learn more about some of our most frequently asked questions</h2>
+<div class="container" style=" padding: 40px 5px;">
+    <b style=" text-align: center;">Learn more about some of our most frequently asked questions</b>
 
     <div class="tab-wrapper">
         <!-- Left-Side Tabs -->
