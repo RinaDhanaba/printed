@@ -1,10 +1,9 @@
 <!-- Include the header -->
 <?php include('app/layout-templete/header.php'); ?>
 
-<div class="background-section">
+<div class="background-section"></div>
 
-</div>
-
+    
 <h1 style="font-weight: bolder;
     text-align: center;
     padding: 50px 5px;
@@ -256,7 +255,7 @@ function prevTool() {
 
 
 
-<section class="container" style="text-align: center;
+<section class="container" style="text-align: center;margin-bottom:50px;
     max-width: 450px;">
     <h2>Still need help?</h2>
     <p>Our Customer Service Team are dedicated to helping you get your print, your way. If you have any questions please get in touch with our friendly, UK-based team who will be happy to help.</p>
