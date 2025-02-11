@@ -212,43 +212,40 @@ function openTab(evt, tabId) {
 }
 
 
-    function nextTool() {
-        if (currentIndex < tools.length - 1) {
-            currentIndex++;
-            updateSlider();
-        }
-    }
-
-    function prevTool() {
-        if (currentIndex > 0) {
-            currentIndex--;
-            updateSlider();
-        }
-    }
-
-    function updateSlider() {
+function nextTool() {
+    const visibleArea = document.querySelector('.support-slider-container');
     const toolCard = document.querySelector('.support-tool-card');
-    const toolWidth = toolCard.offsetWidth + 20; // Adjust margin/padding if needed
-    const visibleAreaWidth = document.querySelector('.support-slider-container').offsetWidth;
-    const totalWidth = toolWidth * tools.length;
+    const visibleCards = Math.floor(visibleArea.offsetWidth / toolCard.offsetWidth);
+    const maxIndex = tools.length - visibleCards;
 
-    // Move the slider
-    sliderWrapper.style.transform = `translateX(-${toolWidth * currentIndex}px)`;
-
-    // Calculate how many cards fit on the screen
-    const visibleCards = Math.floor(visibleAreaWidth / toolWidth);
-
-    // Hide arrows if all cards fit in the visible area
-    if (totalWidth <= visibleAreaWidth) {
-        prevButton.style.display = 'none';
-        nextButton.style.display = 'none';
-    } else {
-        prevButton.style.display = currentIndex === 0 ? 'none' : 'block';
-        // Hide the right arrow when the last card is visible
-        const lastCardVisible = (currentIndex + Math.floor(visibleAreaWidth / toolWidth)) >= tools.length;
-        nextButton.style.display = lastCardVisible ? 'none' : 'block';
+    if (currentIndex < maxIndex) {
+        currentIndex++;
+        updateSlider();
     }
 }
+
+function prevTool() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateSlider();
+    }
+}
+
+    function updateSlider() {
+    const visibleArea = document.querySelector('.support-slider-container');
+    const toolCard = document.querySelector('.support-tool-card');
+    
+    const visibleCards = Math.floor(visibleArea.offsetWidth / toolCard.offsetWidth); // Number of visible cards at once
+    const maxIndex = tools.length - visibleCards; // Maximum index before the last card is fully visible
+
+    // Move the slider
+    sliderWrapper.style.transform = `translateX(-${toolCard.offsetWidth * currentIndex}px)`;
+
+    // Hide arrows when necessary
+    prevButton.style.display = currentIndex === 0 ? 'none' : 'block';
+    nextButton.style.display = currentIndex >= maxIndex ? 'none' : 'block';
+}
+
 
 
     window.onload = loadTools;
