@@ -100,55 +100,37 @@ $tabs = [
 ];
 ?>
 
-<div class="custom-tabs-container container">
-        <ul class="custom-tab-menu">
-            <?php foreach ($tabs as $tab => $content): ?>
-                <li class="custom-tab" data-tab="<?php echo strtolower(str_replace(' ', '-', $tab)); ?>">
-                    <?php echo $tab; ?>
-                </li>
-            <?php endforeach; ?>
-        </ul>
+<div class="faq-container">
+<h2 style="margin-bottom:15px;">Frequently asked questions</h2>
+    <p>Got a question? We might have answered it here. If not, feel free to get in touch with <span class="highlight">The Team</span>, we’re here to help!</p>
+    <div class="tab-container">
+        <!-- Left Side Tabs -->
+        <div class="tab-menu">
+            <?php
+            $first = true;
+            foreach ($tabs as $question => $answer) {
+                $activeClass = $first ? 'active' : '';
+                echo "<button class='tab-link $activeClass' onclick=\"openTab(event, '".md5($question)."')\">$question</button>";
+                $first = false;
+            }
+            ?>
+        </div>
 
-        <?php foreach ($tabs as $tab => $sections): ?>
-            <div class="custom-tab-content" id="<?php echo strtolower(str_replace(' ', '-', $tab)); ?>">
-                <?php foreach ($sections as $sectionTitle => $questions): ?>
-                    <h2><?php echo $sectionTitle; ?></h2>
-                    <ul>
-                        <?php foreach ($questions as $question): ?>
-                            <li><?php echo $question; ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                <?php endforeach; ?>
-            </div>
-        <?php endforeach; ?>
+        <!-- Right Side Content -->
+        <div class="tab-content-container">
+            <?php
+            $first = true;
+            foreach ($faq as $question => $answer) {
+                $displayStyle = $first ? 'style="display:block;"' : '';
+                echo "<div id='".md5($question)."' class='faq-tab-content' $displayStyle>
+                        <p>$answer</p>
+                      </div>";
+                $first = false;
+            }
+            ?>
+        </div>
     </div>
-
-    <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const tabs = document.querySelectorAll('.custom-tab');
-    const contents = document.querySelectorAll('.custom-tab-content');
-
-    function hideAllTabs() {
-        contents.forEach(content => content.classList.remove('active'));
-        tabs.forEach(tab => tab.classList.remove('active'));
-    }
-
-    tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-            hideAllTabs();
-            const target = document.getElementById(tab.dataset.tab);
-            tab.classList.add('active');
-            if (target) target.classList.add('active');
-        });
-    });
-
-    // Initialize first tab as active
-    if (tabs.length > 0) {
-        tabs[0].click();
-    }
-});
-    </script>
-
+</div>
 
 
 
