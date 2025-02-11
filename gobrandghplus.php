@@ -4,7 +4,7 @@
 
 
 <!-- trustpilot section -->
-<?php include('/app/layout-templete/trustpilot.php'); ?>
+<?php include('app/layout-templete/trustpilot.php'); ?>
 
 <!-- Include the footer -->
 <?php include('app/layout-templete/footer.php'); ?>
