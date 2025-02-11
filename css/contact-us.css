@@ -10,7 +10,7 @@
 
 .team-card-wrapper a{
     font-size: 13px;
-    color: var(--parimary-color);
+    color: var(--primary-color);    
 }
 
 .contact-section-info .flex {
@@ -19,6 +19,10 @@
     margin-top:50px;
 }
 
+.contact-section-info .flex img {
+    max-width:60px;
+    }
+    
 .contact-section-info .flex h3{
     font-weight:600;
     margin: 20px auto 10px;
