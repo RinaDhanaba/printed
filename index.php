@@ -63,8 +63,8 @@ $hero_slider = [
 </div>
 
 
-    <!-- Trustpilot section  -->
-    <?php include('app/layout-templete/trustpilot.php'); ?>
+<!-- Trustpilot section  -->
+<?php include('app/layout-templete/trustpilot.php'); ?>
 
 
     <?php
