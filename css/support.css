@@ -151,11 +151,12 @@
     display: flex;
     justify-content: center;
     gap: 40px;
+    margin-top:50px;
 }
 .support-slider-arrow-left {
-    left: 10px;    z-index: 1;
+   z-index: 1;position: relative;
 }
 
 .support-slider-arrow-right {
-    right: 10px;    z-index: 1;
+    z-index: 1;position: relative;
 }
