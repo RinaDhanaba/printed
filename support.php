@@ -223,13 +223,23 @@ function openTab(evt, tabId) {
     }
 
     function updateSlider() {
-        const toolWidth = document.querySelector('.support-tool-card').offsetWidth;
-        sliderWrapper.style.transform = `translateX(-${toolWidth * currentIndex}px)`;
+    const toolCard = document.querySelector('.support-tool-card');
+    const toolWidth = toolCard.offsetWidth + 20; // Adding margin/padding if needed
+    const visibleAreaWidth = document.querySelector('.support-slider-container').offsetWidth;
+    const totalWidth = toolWidth * tools.length;
 
-        // Hide/show arrows based on currentIndex
+    // Move the slider
+    sliderWrapper.style.transform = `translateX(-${toolWidth * currentIndex}px)`;
+
+    // Hide arrows if all cards fit in the visible area
+    if (totalWidth <= visibleAreaWidth) {
+        prevButton.style.display = 'none';
+        nextButton.style.display = 'none';
+    } else {
         prevButton.style.display = currentIndex === 0 ? 'none' : 'block';
-        nextButton.style.display = currentIndex === tools.length - 1 ? 'none' : 'block';
+        nextButton.style.display = currentIndex >= tools.length - Math.floor(visibleAreaWidth / toolWidth) ? 'none' : 'block';
     }
+}
 
     window.onload = loadTools;
 </script>
