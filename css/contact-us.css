@@ -1,3 +1,10 @@
+.contact-section-info{
+    max-width: 650px;
+    margin: 60px auto 0;
+    text-align: center;
+}
+
+
 .contact-section {
     max-width: 1200px;
     margin: 60px auto;

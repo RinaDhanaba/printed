@@ -5,7 +5,29 @@
 <div class="background-section"></div>
 
 
+<section class="contact-section-info">
+    <h1>Here to help</h1>
+    <p>Our friendly UK-based Customer Service Team is on hand to help every weekday from 8:30am until 5.30pm. Just get in touch using the details below.</p>
 
+    <div class="flex">
+        <div class="chat">
+            <img src="./media/Next Day.png" alt="">
+            <h3>Chat</h3>
+            <p>Our friendly team are available every weekday between 9am and 5pm. If you’re looking for help during this time, click here to open our live chat.</p>
+        </div>
+        <div class="email">
+            <img src="./media/Next Day.png" alt="">
+            <h3>Email</h3>
+            <p>Our friendly team are available every weekday between 9am and 5pm. If you’re looking for help during this time, click here to open our live chat.</p>
+        </div>
+        <div class="phone">
+            <img src="./media/Next Day.png" alt="">
+            <h3>Phone</h3>
+            <p>Our friendly team are available every weekday between 9am and 5pm. If you’re looking for help during this time, click here to open our live chat.</p>
+        </div>
+    </div>
+
+</section>
 
 
 
