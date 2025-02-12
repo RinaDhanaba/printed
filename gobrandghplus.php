@@ -60,7 +60,7 @@ $hero_slider = [
 <div class="hero_slider">
     <div class="slider-container">
         <?php foreach ($hero_slider as $index => $slide) : ?>
-            <div class="hero-slide" style="background-image: url('<?php echo htmlspecialchars($slide['image']); ?>');" >
+            <div class="hero-slide" style="background-image: url('<?php echo htmlspecialchars($slide['image']); ?>');background-position: center center; background-size: cover;" >
                 <div class="hero-content">
                     <div class="text-section">
                         <h2><?php echo htmlspecialchars($slide['title']); ?></h2>
