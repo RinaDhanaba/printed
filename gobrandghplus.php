@@ -57,13 +57,13 @@ $hero_slider = [
 ?>
 
 <!-- Hero Section -->
-<div class="hero_slider" style="height:auto;background-image: url('<?php echo htmlspecialchars($slide['image']); ?>');background-position: center center; background-size: cover;">
+<div class="hero_slider" style="height:auto;">
     <div class="slider-container">
         <?php foreach ($hero_slider as $index => $slide) : ?>
-            <div class="hero-slide" style="background-color: rgba(255, 255, 255, 0.1);
+            <div class="hero-slide" style="background-image: url('<?php echo htmlspecialchars($slide['image']); ?>');background-position: center center; background-size: cover; " >
+                <div class="container" style="margin:0 auto; height:100%;background-color: rgba(0, 0, 0, 0.4);
   -webkit-backdrop-filter: blur(1px);
-  backdrop-filter: blur(1px);" >
-                <div class="container" style="margin:0 auto; height:100%;">
+  backdrop-filter: blur(1px);">
                 <div class="hero-content">
                 <div class="image-section">
                         <?php
