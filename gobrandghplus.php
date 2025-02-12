@@ -60,7 +60,7 @@ $hero_slider = [
 <div class="hero_slider">
     <div class="slider-container">
         <?php foreach ($hero_slider as $index => $slide) : ?>
-            <div class="hero-slide" style="background-image: url('<?php //echo htmlspecialchars($slide['image']); ?>');background-position: center center; background-size: cover;" >
+            <div class="hero-slide" style="background-image: url('<?php echo htmlspecialchars($slide['image']); ?>');background-position: center center; background-size: cover;" >
                 <div style="  background-color: rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(1px);
   backdrop-filter: blur(1px);" class="container">
@@ -73,7 +73,7 @@ $hero_slider = [
                         </a>
                     </div>
                     <div class="image-section">
-                        <img src="<?php echo htmlspecialchars($slide['image']); ?>" alt="<?php echo htmlspecialchars($slide['title']); ?>">
+                        <img src="<?php echo $slide['image']; ?>" alt="<?php echo htmlspecialchars($slide['title']); ?>">
                     </div>
                 </div>
                 </div>
