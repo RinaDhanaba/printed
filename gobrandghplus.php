@@ -63,19 +63,19 @@ $hero_slider = [
             <div class="hero-slide" style="background-image: url('<?php echo htmlspecialchars($slide['image']); ?>');background-position: center center; background-size: cover;" >
                 <div style="  background-color: rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(1px);
-  backdrop-filter: blur(1px);" class="container">
+  backdrop-filter: blur(1px);" class="container" style="margin:0 auto; height:100%;">
                 <div class="hero-content">
+                <div class="image-section">
+                        <?php
+                        echo '<img style="display: block;" src="' . htmlspecialchars($slide['image']) . '" alt="' . htmlspecialchars($slide['title']) . '">';
+                        ?>
+                    </div>
                     <div class="text-section" style="flex:1;">
                         <h2><?php echo htmlspecialchars($slide['title']); ?></h2>
                         <p><?php echo htmlspecialchars($slide['para']); ?></p>
                         <a href="<?php echo htmlspecialchars($slide['link']); ?>" class="shop-btn">
                             <?php echo htmlspecialchars($slide['button_text']); ?>
                         </a>
-                    </div>
-                    <div class="image-section">
-                        <?php
-                        echo '<img src="' . htmlspecialchars($slide['image']) . '" alt="' . htmlspecialchars($slide['title']) . '">';
-                        ?>
                     </div>
                 </div>
                 </div>
