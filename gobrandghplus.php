@@ -27,6 +27,7 @@
 
 
 
+
 <?php
 $hero_slider = [
     [
@@ -57,29 +58,22 @@ $hero_slider = [
 ?>
 
 <!-- Hero Section -->
-<div class="hero_slider" style="height:350px;">
+<div class="hero_slider" style="height:300px">
     <div class="slider-container">
         <?php foreach ($hero_slider as $index => $slide) : ?>
-            <div class="hero-slide" style="background-image: url('<?php echo htmlspecialchars($slide['image']); ?>');background-position: center center; background-size: cover; " >
-            <div style="background-color: rgba(255, 255, 255, 0.2);-webkit-backdrop-filter: blur(1px);backdrop-filter: blur(1px);">  
-            <div class="container" style="margin:0 auto; height:100%;">
+            <div class="hero-slide" style="background-color: <?php echo htmlspecialchars($slide['color']); ?>" >
                 <div class="hero-content">
-                <div class="image-section">
-                        <?php
-                        echo '<img style="display: block;" src="' . htmlspecialchars($slide['image']) . '" alt="' . htmlspecialchars($slide['title']) . '">';
-                        ?>
-                    </div>
-                    <div class="text-section" style="flex:1;">
-                        <div class="center-flex-container" style="color:000; background-color: rgba(255, 255, 255, 0.6); padding: 30px; margin: 30px; max-width:350px;"> 
+                    <div class="text-section">
                         <h2><?php echo htmlspecialchars($slide['title']); ?></h2>
                         <p><?php echo htmlspecialchars($slide['para']); ?></p>
                         <a href="<?php echo htmlspecialchars($slide['link']); ?>" class="shop-btn">
                             <?php echo htmlspecialchars($slide['button_text']); ?>
                         </a>
-                        </div>
+                    </div>
+                    <div class="image-section" style="background-image: url('<?php echo htmlspecialchars($slide['image']); ?>');">
+                        <img src="<?php echo htmlspecialchars($slide['image']); ?>" alt="<?php echo htmlspecialchars($slide['title']); ?>">
                     </div>
                 </div>
-                </div></div>  
             </div>
         <?php endforeach; ?>
     </div>
@@ -93,6 +87,7 @@ $hero_slider = [
         <?php endforeach; ?>
     </div>
 </div>
+
 
 
 <section style="background:var(--gary-bg); padding:30px 5px; text-align:center;">
