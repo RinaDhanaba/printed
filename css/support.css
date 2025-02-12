@@ -80,6 +80,10 @@
     font-weight: 600;
 }
 
+#support-tab .faq-tab-content{
+    display: flex;
+}
+
 #support-tab .tab-link {
     display: block;
     width: 100%;
