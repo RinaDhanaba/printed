@@ -66,9 +66,6 @@ $hero_slider = [
                     <div class="text-section">
                         <h2><?php echo htmlspecialchars($slide['title']); ?></h2>
                         <p><?php echo htmlspecialchars($slide['para']); ?></p>
-                        <a href="<?php echo htmlspecialchars($slide['link']); ?>" class="shop-btn">
-                            <?php echo htmlspecialchars($slide['button_text']); ?>
-                        </a>
                     </div>
                     <div class="image-section" style="background-image: url('<?php echo htmlspecialchars($slide['image']); ?>');">
                         <img src="<?php echo htmlspecialchars($slide['image']); ?>" alt="<?php echo htmlspecialchars($slide['title']); ?>">
