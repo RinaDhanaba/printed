@@ -119,7 +119,7 @@ $tabs = [
             <?php
             $first = true;
             foreach ($tabs as $category => $sections) {
-                $displayStyle = $first ? 'style="display:flex;"' : '';
+                $displayStyle = $first ? 'style="display:block;"' : '';
                 echo "<div id='".md5($category)."' class='faq-tab-content' $displayStyle>";
                 
                 // Loop through sections and questions
@@ -159,7 +159,7 @@ function openTab(evt, tabId) {
     }
 
     // Show the current tab content and add 'active' class to the clicked tab
-    document.getElementById(tabId).style.display = "block";
+    document.getElementById(tabId).style.display = "flex";
     evt.currentTarget.className += " active";
 }
 </script>
