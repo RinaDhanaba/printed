@@ -60,12 +60,12 @@ $hero_slider = [
 <div class="hero_slider">
     <div class="slider-container">
         <?php foreach ($hero_slider as $index => $slide) : ?>
-            <div class="hero-slide" style="background-image: url('<?php echo htmlspecialchars($slide['image']); ?>');background-position: center center; background-size: cover;" >
+            <div class="hero-slide" style="background-image: url('<?php //echo htmlspecialchars($slide['image']); ?>');background-position: center center; background-size: cover;" >
                 <div style="  background-color: rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(1px);
-  backdrop-filter: blur(1px);">
+  backdrop-filter: blur(1px);" class="container">
                 <div class="hero-content">
-                    <div class="text-section">
+                    <div class="text-section" style="flex:1;">
                         <h2><?php echo htmlspecialchars($slide['title']); ?></h2>
                         <p><?php echo htmlspecialchars($slide['para']); ?></p>
                         <a href="<?php echo htmlspecialchars($slide['link']); ?>" class="shop-btn">
