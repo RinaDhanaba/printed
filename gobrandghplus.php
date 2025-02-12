@@ -61,9 +61,8 @@ $hero_slider = [
     <div class="slider-container">
         <?php foreach ($hero_slider as $index => $slide) : ?>
             <div class="hero-slide" style="background-image: url('<?php echo htmlspecialchars($slide['image']); ?>');background-position: center center; background-size: cover; " >
-                <div class="container" style="margin:0 auto; height:100%;background-color: rgba(0, 0, 0, 0.4);
-  -webkit-backdrop-filter: blur(1px);
-  backdrop-filter: blur(1px);">
+            <div style="background-color: rgba(255, 255, 255, 0.2);-webkit-backdrop-filter: blur(1px);backdrop-filter: blur(1px);">  
+            <div class="container" style="margin:0 auto; height:100%;">
                 <div class="hero-content">
                 <div class="image-section">
                         <?php
@@ -71,14 +70,16 @@ $hero_slider = [
                         ?>
                     </div>
                     <div class="text-section" style="flex:1;">
+                        <div class="center-flex-container" style="color:000; background-color: rgba(255, 255, 255, 0.6); padding: 30px; margin: 30px; max-width:350px;"> 
                         <h2><?php echo htmlspecialchars($slide['title']); ?></h2>
                         <p><?php echo htmlspecialchars($slide['para']); ?></p>
                         <a href="<?php echo htmlspecialchars($slide['link']); ?>" class="shop-btn">
                             <?php echo htmlspecialchars($slide['button_text']); ?>
                         </a>
+                        </div>
                     </div>
                 </div>
-                </div>
+                </div></div>  
             </div>
         <?php endforeach; ?>
     </div>
