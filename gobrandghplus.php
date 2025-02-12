@@ -73,7 +73,9 @@ $hero_slider = [
                         </a>
                     </div>
                     <div class="image-section">
-                        <img src="<?php echo $slide['image']; ?>" alt="<?php echo htmlspecialchars($slide['title']); ?>">
+                        <?php
+                        echo '<img src="' . htmlspecialchars($slide['image']) . '" alt="' . htmlspecialchars($slide['title']) . '">';
+                        ?>
                     </div>
                 </div>
                 </div>
