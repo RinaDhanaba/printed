@@ -233,4 +233,6 @@ font-weight: 600;
 .bespoke-service-slider .text-section a{
     color: var(--primary-color);
     font-weight: 600;
+    font-size: 12px;
+    text-decoration: none;
 }

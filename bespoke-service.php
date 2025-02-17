@@ -150,28 +150,25 @@ $requests = [
 <?php
 $hero_slider = [
     [
-        "title" => "Express yourself",
-        "para" => "Refresh your stationery with Notepads, Bookmarks, and more.",
+        "title" => "Custom Shape Signs",
+        "para" => "The Bespoke Team helped me with this custom order which was printed and cut at Printed.com. This was the second round sign I’ve ordered because they make such an impact, and this sign was in contrast to the rest of the suite that was all white with soft black typography and illustrations. I can always trust Printed.com to bring my designs to life.",
         "image" => "./media/modern-printing-press-produces-multi-colored-printouts-accurately-generated-by-ai.jpg",
-        "button_text" => "Shop Stationery",
-        "link" => "#",
-        "color" => "#960145"
+        "button_text" => "Heather, Invites by Heather",
+        "link" => "#"
     ],
     [
-        "title" => "Put your best card forward",
-        "para" => "Create high-quality Business Cards starting from £8.50.",
+        "title" => "Lady Bug Gate Fold Invites",
+        "para" => "In creating this Bespoke Invitation I had great and fast responses from the Printed.com Bespoke Team. I sent over my idea and had a quote fairly quickly. And then the art handoff and print order was very easy. Most importantly, my client and I were both so happy with the finished result!",
         "image" => "./media/man-working-printing-house-with-paper-paints.jpg",
-        "button_text" => "Shop Business Cards",
-        "link" => "#",
-        "color" => "#55267E"
+        "button_text" => "Jennifer, Jennifer’s Paper",
+        "link" => "#"
     ],
     [
-        "title" => "Your love story starts here",
-        "para" => "Begin your journey with beautiful wedding prints to mark your big day.",
+        "title" => "Die Cut Tipi",
+        "para" => "I love quirky designs and I wanted something that people will remember and have fun with. I worked closely with Printed.com to create a Bespoke order, they were fab at giving advice and we did a few test versions before the final piece. The design has lots of Special Finishes like Die Cut, fold marks and cuts inserted for you to pop your tipi poles into. It was great receiving the final printed design and building this into our own little tipi - it’s been even better watching all of our guests receive them and watching them build their tipis too!",
         "image" => "./media/leaflets-_-flyers-nav-image-3_11.jpg",
-        "button_text" => "Shop Wedding Print",
-        "link" => "#",
-        "color" => "#0282e7"
+        "button_text" => "Emma, Hello Emma Fisher",
+        "link" => "#"
     ]
 ];
 ?>
