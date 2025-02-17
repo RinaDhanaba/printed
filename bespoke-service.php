@@ -182,7 +182,6 @@ $hero_slider = [
         <?php foreach ($hero_slider as $index => $slide) : ?>
             <div class="hero-slide" style="background-image: url('<?php echo htmlspecialchars($slide['image']); ?>');background-position: center center; background-size: cover; " >
             <div style="background-color: rgba(255, 255, 255, 0.2);-webkit-backdrop-filter: blur(1px);backdrop-filter: blur(1px);">  
-            <div class="container" style="margin:0 auto; height:100%;">
                 <div class="hero-content">
                 <div class="image-section">
                         <?php
@@ -199,7 +198,7 @@ $hero_slider = [
                         </div>
                     </div>
                 </div>
-                </div></div>  
+                </div>
             </div>
         <?php endforeach; ?>
     </div>
