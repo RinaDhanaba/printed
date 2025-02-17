@@ -23,7 +23,7 @@
     </div>
 </section>
 
-<div class="background-section"  style="background-image: url('./media/cr-1225-printed-plus-webpage-feedback-unleash-the-power-2000250-1-copy.webp');"></div>
+<div class="background-section"  style="background-image: url('./media/cr-1225-printed-plus-webpage-feedback-unleash-the-power-2000250-1-copy.webp');height: clamp(100px, 20vw, 250px);"></div>
 
 
 
