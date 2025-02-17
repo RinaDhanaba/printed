@@ -11,9 +11,9 @@
     <p>From a dedicated Account Manager to a choice of discounts, free artwork checks and a wide range of other services, Printed Plus has been set up to support you with everything you need for your print.</p>
 </section>
 
-<section style="background:var(--gary-bg);">
-    <div class="container" style="display:flex; gap:40px;align-items: center;">
-    <img src="./media/category_custom_shape_1.jpg" alt="">
+<section style="background:var(--gary-bg);padding: 5px;">
+    <div class="container" style="display:flex; gap:40px;align-items: center; flex-wrap:wrap; overflow:hidden;    justify-content: flex-start;">
+    <img src="./media/category_custom_shape_1.jpg" alt="" style="width:50%; min-width:400px;">
     <div class="section_content" style="flex:1;">
         <h2>Who is Printed Plus for?</h2>
         <p>Printed Plus is a free service available to all customers who spend over £5,000 on print each year. </p>
