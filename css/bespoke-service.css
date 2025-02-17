@@ -31,14 +31,12 @@
     padding: 50px 5px;
     gap: 30px;
 }
-.bespoke-content-flex img{
-    min-height: 550px;
-}
 
-@media (max-width:600){
+@media (max-width:600px){
     .bespoke-content-flex{
         flex-direction: column;
     }   
+
 }
 
 
@@ -119,4 +117,14 @@
     height: 2px;
     background-color: #d63384;
     transform: translateY(-50%);
+}
+
+@media (max-width:600px){
+    .order-container{
+        flex-direction: column;
+    }   
+
+    .order-step .icon::before , .order-step .icon::after{
+        display: none;
+    }
 }
