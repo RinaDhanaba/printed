@@ -189,8 +189,7 @@ $hero_slider = [
                         ?>
                     </div>
                     <div class="text-section" style="flex:1;">
-                        <div class="center-flex-container" style="color:000; background-color: rgba(0, 0, 0, 0.6); padding: 30px;margin: 30px auto; max-width: 550px; width: 70% !important;
-"> 
+                        <div class="center-flex-container"> 
                         <h2><?php echo htmlspecialchars($slide['title']); ?></h2>
                         <p><?php echo htmlspecialchars($slide['para']); ?></p>
                         <a href="<?php echo htmlspecialchars($slide['link']); ?>" class="shop-btn">
