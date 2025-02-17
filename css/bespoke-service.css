@@ -172,19 +172,13 @@
 font-weight: 600;
 }
 
-/* Responsive Design */
+
 @media (max-width: 600px) {
     .bespoke-requests {
         flex-direction: column;
         align-items: center;
     }
 
-    .bespoke-requests-inner {
-        width: 90%;
-    }
-}
-
-@media (max-width: 600px) {
     .bespoke-requests-inner {
         width: 100%;
     }
