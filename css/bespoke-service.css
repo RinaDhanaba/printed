@@ -1,0 +1,21 @@
+.bespoke-header-banner{
+    background-image: url('./media/bespoke-header-2000x4002x.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 5px;
+}
+
+.bespoke-header-banner-inner{
+   max-width: 600px;
+   width: 80%;
+   padding: 30px;
+    background: rgba(255, 255, 255, 0.307);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    text-align: left;
+    color: var(--black);
+}
