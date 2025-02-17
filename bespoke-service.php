@@ -3,12 +3,14 @@
 
 
 <div class="bespoke-header-banner">
+    <div class="container">
     <div class="bespoke-header-banner-inner">
         <h2>Bespoke Service</h2>
         <p>We know print isn’t one size fits all, which is why we’ve created our Bespoke Service!
         From unique papers to custom sizes and finishes, just fill in our quick form and our expert team will work tirelessly to bring your print idea to life.</p>
         <button class="shop-btn">Get A Quote</button>
     </div>
+</div>
 </div>
 
 
