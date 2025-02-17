@@ -119,7 +119,7 @@ $tabs = [
             <?php
             $first = true;
             foreach ($tabs as $category => $sections) {
-                $displayStyle = $first ? 'style="display:block;"' : '';
+                $displayStyle = $first ? 'style="display:flex;"' : '';
                 echo "<div id='".md5($category)."' class='faq-tab-content' $displayStyle>";
                 
                 // Loop through sections and questions

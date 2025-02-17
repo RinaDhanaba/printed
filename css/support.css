@@ -16,7 +16,7 @@
 }
 
 .search-section h2 {
-    font-size: 18px;
+    font-size: 14px;
     color: #000;
     margin-bottom: 20px;
     font-weight: bold;
@@ -68,6 +68,10 @@
 
 #support-tab .tab-container{
   gap:0;
+}
+
+#support-tab h2{
+    font-size:16px;
 }
 
 #support-tab .tab-content-container{
