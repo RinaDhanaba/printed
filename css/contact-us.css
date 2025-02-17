@@ -28,6 +28,11 @@
     margin: 20px auto 10px;
 }
 
+@media (max-width:600px){
+    .flex{
+    flex-direction:column;
+}
+}
 
 .contact-section {
     max-width: 1200px;

@@ -236,3 +236,9 @@ font-weight: 600;
     font-size: 14px;
     text-decoration: none;
 }
+
+@media (max-width:950px){
+    .bespoke-service-slider .image-section{
+    display:none;
+}
+}
