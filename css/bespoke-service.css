@@ -148,10 +148,6 @@
 }
 
 .bespoke-requests-inner {
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     width: 32%;
     text-align: center;
     transition: transform 0.3s ease-in-out;
@@ -170,32 +166,7 @@
 
 /* Heading Styling */
 .bespoke-requests-inner h3 {
-    font-size: 1.5rem;
-    margin: 15px 0;
-    color: #333;
-}
-
-/* Paragraph Styling */
-.bespoke-requests-inner p {
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 15px;
-}
-
-/* Button Styling */
-.quote-link {
-    display: inline-block;
-    padding: 10px 15px;
-    background-color: #ff0077;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    transition: background 0.3s ease-in-out;
-}
-
-.quote-link:hover {
-    background-color: #cc005f;
+font-weight: 600;
 }
 
 /* Responsive Design */

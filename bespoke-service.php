@@ -120,7 +120,7 @@ $requests = [
 ];
 ?>
 
-<section style="padding:80px 5px; ">
+<section style="padding: 60px 5px;    background: var(--gary-bg);    margin: 80px 0; ">
     <div class="container">
         <h2 style="text-align:center;">Popular requests</h2>
         <div class="bespoke-requests">
@@ -129,7 +129,7 @@ $requests = [
                     <img src="<?= htmlspecialchars($request['image']); ?>" alt="<?= htmlspecialchars($request['title']); ?>">
                     <h3><?= htmlspecialchars($request['title']); ?></h3>
                     <p><?= htmlspecialchars($request['description']); ?></p>
-                    <a href="<?= htmlspecialchars($request['link']); ?>" class="chat-btn">Get A Quote ></a>
+                    <a href="<?= htmlspecialchars($request['link']); ?>" class="chat-button">Get A Quote ></a>
                 </div>
             <?php endforeach; ?>
         </div>
