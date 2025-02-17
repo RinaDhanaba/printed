@@ -10,7 +10,7 @@
    max-width: 600px;
    width: 80%;
    padding: 30px;
-    background: rgba(255, 255, 255, 0.307);
+    background: rgba(255, 255, 255, 0.8);
     border-radius: 20px;
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
@@ -18,4 +18,23 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
     text-align: left;
     color: var(--black);
+}
+
+.bespoke-header-banner-inner h1{
+    font-weight: 600;
+}
+
+
+
+.bespoke-content-flex{
+    display: flex;
+}
+.bespoke-content-flex img{
+    min-height: 550px;
+}
+
+@media (max-width:600){
+    .bespoke-content-flex{
+        flex-direction: column;
+    }   
 }
