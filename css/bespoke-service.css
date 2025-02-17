@@ -212,7 +212,7 @@ font-weight: 600;
 
 .bespoke-service-slider .text-section .center-flex-container {
     color:000;
-    background-color: rgba(225, 225, 225, 0.8); 
+    background-color: rgba(225, 225, 225, 0.9); 
     padding: 30px;
     margin: 30px auto; 
     max-width: 550px;
@@ -233,6 +233,6 @@ font-weight: 600;
 .bespoke-service-slider .text-section a{
     color: var(--primary-color);
     font-weight: 600;
-    font-size: 12px;
+    font-size: 14px;
     text-decoration: none;
 }

@@ -157,7 +157,7 @@ $hero_slider = [
         "link" => "#"
     ],
     [
-        "title" => "Lady Bug Gate Fold Invites",
+        "title" => "Lady Bug Gate Fold",
         "para" => "In creating this Bespoke Invitation I had great and fast responses from the Printed.com Bespoke Team. I sent over my idea and had a quote fairly quickly. And then the art handoff and print order was very easy. Most importantly, my client and I were both so happy with the finished result!",
         "image" => "./media/man-working-printing-house-with-paper-paints.jpg",
         "button_text" => "Jennifer, Jennifer’s Paper",
