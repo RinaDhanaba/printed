@@ -73,7 +73,9 @@ $order_steps = [
     <?php foreach ($order_steps as $step): ?>
         <div class="order-step">
         <div class="icon">
+            <div class="icon-inner">
             <img src="<?= $step["icon"] ?>" alt="<?= $step["title"] ?>">
+            </div>
         </div>
             <h3><?= $step["title"] ?></h3>
             <p><?= $step["description"] ?></p>
