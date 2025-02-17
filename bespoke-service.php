@@ -85,7 +85,7 @@ $order_steps = [
 </div>
 </section>
 
-<section class="container">
+<section class="container" style="text-align:center;">
 <h2 style="text-align:center;">Customer Stories</h2>
 
 <div class="video-container">
@@ -102,34 +102,34 @@ $requests = [
     [
         "title" => "Block & Digital Foiling",
         "description" => "If you’re looking to add Digital Foiling to a product you can’t find on our site, or you’re opting for the luxury feel of Block Foiling, get in touch.",
-        "image" => "block-digital-foiling.jpg",
+        "image" => "./media/a6-folded-invitations.2_1.jpg",
         "link" => "#"
     ],
     [
         "title" => "Die Cut & Custom Shapes",
         "description" => "From Stickers to Wedding Invitations, the possibilities are endless with Custom Shapes. Let’s make your idea a reality, together.",
-        "image" => "die-cut-custom-shapes.jpg",
+        "image" => "./media/a6-folded-invitations.2_1.jpg",
         "link" => "#"
     ],
     [
         "title" => "White Ink",
         "description" => "Turn up the contrast and add White Ink to our range of striking coloured card or Kraft paper. Ask us about products you can’t find on our site.",
-        "image" => "white-ink.jpg",
+        "image" => "./media/a6-folded-invitations.2_1.jpg",
         "link" => "#"
     ]
 ];
 ?>
 
-<section>
+<section style="padding:80px 5px; ">
     <div class="container">
-        <h2>Popular requests</h2>
+        <h2 style="text-align:center;">Popular requests</h2>
         <div class="bespoke-requests">
             <?php foreach ($requests as $request) : ?>
                 <div class="bespoke-requests-inner">
                     <img src="<?= htmlspecialchars($request['image']); ?>" alt="<?= htmlspecialchars($request['title']); ?>">
                     <h3><?= htmlspecialchars($request['title']); ?></h3>
                     <p><?= htmlspecialchars($request['description']); ?></p>
-                    <a href="<?= htmlspecialchars($request['link']); ?>" class="quote-link">Get A Quote ></a>
+                    <a href="<?= htmlspecialchars($request['link']); ?>" class="chat-btn">Get A Quote ></a>
                 </div>
             <?php endforeach; ?>
         </div>
