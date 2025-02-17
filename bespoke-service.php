@@ -66,7 +66,7 @@ $order_steps = [
 ];
 ?>
 
-
+<section style="text-align:center;" class="container"></section>
 <h2>How to Order</h2>
 
 <div class="order-container">
