@@ -174,7 +174,7 @@ $hero_slider = [
 ?>
 
 <!-- Hero Section -->
-<div class="hero_slider bespoke-service-slider" style="height:350px;">
+<div class="hero_slider bespoke-service-slider">
     <div class="slider-container">
         <?php foreach ($hero_slider as $index => $slide) : ?>
             <div class="hero-slide" style="background-image: url('<?php echo htmlspecialchars($slide['image']); ?>');background-position: center center; background-size: cover; " >

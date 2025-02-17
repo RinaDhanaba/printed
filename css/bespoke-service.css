@@ -195,9 +195,13 @@ font-weight: 600;
 
 
 
+.bespoke-service-slider{
+    height:350px;
+}
+
 .bespoke-service-slider .image-section{
     width: 100%;
-    max-width: 600px;
+    max-width: 500px;
     height: 600px;
     object-fit: cover;
 }
@@ -237,7 +241,7 @@ font-weight: 600;
     text-decoration: none;
 }
 
-@media (max-width:950px){
+@media (max-width:1050px){
     .bespoke-service-slider .image-section{
     display:none;
 }
