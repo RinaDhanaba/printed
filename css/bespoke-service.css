@@ -142,13 +142,12 @@
 /* Request Cards */
 .bespoke-requests {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
 }
 
 .bespoke-requests-inner {
-    width: 32%;
     text-align: center;
     transition: transform 0.3s ease-in-out;
     display: grid;
