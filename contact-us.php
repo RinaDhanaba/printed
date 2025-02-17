@@ -73,8 +73,8 @@
 
 
 
-<div>
-    <h2>Search our help section</h2>
+<div class="search-section">
+    <h2 style="font-size: 22px;">Search our help section</h2>
     <p>Browse our archive of articles relating to most common questions.</p>
     <div class="search-container">
         <input type="text" class="search-bar" placeholder="Search Printed.com support...">
