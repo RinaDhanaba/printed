@@ -191,8 +191,8 @@ $hero_slider = [
                     <div class="text-section" style="flex:1;">
                         <div class="center-flex-container"> 
                         <h2><?php echo htmlspecialchars($slide['title']); ?></h2>
-                        <p><?php echo htmlspecialchars($slide['para']); ?></p>
-                        <a href="<?php echo htmlspecialchars($slide['link']); ?>" class="shop-btn">
+                        <p><i><?php echo htmlspecialchars($slide['para']); ?></i></p>
+                        <a href="<?php echo htmlspecialchars($slide['link']); ?>">
                             <?php echo htmlspecialchars($slide['button_text']); ?>
                         </a>
                         </div>
