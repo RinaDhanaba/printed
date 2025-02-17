@@ -50,14 +50,27 @@
     align-items: center;
     gap: 40px;
     padding: 40px;
+    position: relative;
 }
 .order-step {
     text-align: center;
     max-width: 200px;
+    position: relative;
 }
 .order-step .icon {
-    font-size: 40px;
-    color: #d63384;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 2px solid #d63384;
+    margin: 0 auto;
+    position: relative;
+}
+.order-step img {
+    width: 50px;
 }
 .order-step h3 {
     margin: 10px 0;
@@ -73,4 +86,25 @@
     color: #d63384;
     font-weight: bold;
     text-decoration: none;
+}
+
+/* Add connecting arrows */
+.order-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 80px;
+    height: 2px;
+    background-color: #d63384;
+    transform: translateY(-50%);
+}
+.order-step:not(:last-child)::before {
+    content: "→";
+    position: absolute;
+    top: 50%;
+    left: calc(100% + 40px);
+    font-size: 24px;
+    color: #d63384;
+    transform: translateY(-50%);
 }

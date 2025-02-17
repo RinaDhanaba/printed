@@ -38,28 +38,28 @@ $order_steps = [
     [
         "title" => "Submit a form",
         "description" => "Tell us about your idea through our online form, and our team will contact you to confirm any details.",
-        "icon" => "📝", // Replace with actual icon/image path
+        "icon" => "./media/Rewards.png", // Replace with actual icon/image path
         "link_text" => "Fill Out Your Form >",
         "link" => "#"
     ],
     [
         "title" => "We'll send you a quote",
         "description" => "Your quote will be available in My Account within 24 hours. We’ll drop you an email to let you know when it’s ready.",
-        "icon" => "📄",
+        "icon" => "./media/Rewards.png",
         "link_text" => "",
         "link" => ""
     ],
     [
         "title" => "Upload artwork",
         "description" => "When you’re happy, add the quote straight to your basket and upload your artwork.",
-        "icon" => "🖼️",
+        "icon" => "./media/Rewards.png",
         "link_text" => "",
         "link" => ""
     ],
     [
         "title" => "Checkout",
         "description" => "Choose your delivery preferences and checkout. Then sit back and relax while we create your Bespoke prints!",
-        "icon" => "🛒",
+        "icon" => "./media/Rewards.png",
         "link_text" => "",
         "link" => ""
     ]
@@ -72,7 +72,9 @@ $order_steps = [
 <div class="order-container">
     <?php foreach ($order_steps as $step): ?>
         <div class="order-step">
-            <div class="icon"><?= $step["icon"] ?></div>
+        <div class="icon">
+            <img src="<?= $step["icon"] ?>" alt="<?= $step["title"] ?>">
+        </div>
             <h3><?= $step["title"] ?></h3>
             <p><?= $step["description"] ?></p>
             <?php if (!empty($step["link_text"])): ?>
