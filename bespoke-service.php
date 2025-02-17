@@ -120,7 +120,7 @@ $requests = [
 ];
 ?>
 
-<section style="padding: 60px 5px;    background: var(--gary-bg);    margin: 80px 0; ">
+<section style="padding: 60px 5px;    background: var(--gary-bg);    margin: 80px 0 0 0; ">
     <div class="container">
         <h2 style="text-align:center;">Popular requests</h2>
         <div class="bespoke-requests">
