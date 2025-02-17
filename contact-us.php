@@ -73,7 +73,7 @@
 
 
 
-<div class="search-section">
+<div>
     <h2>Search our help section</h2>
     <p>Browse our archive of articles relating to most common questions.</p>
     <div class="search-container">
