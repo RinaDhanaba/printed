@@ -66,7 +66,7 @@ $order_steps = [
 ];
 ?>
 
-<section class="container order-container-main"></section>
+<section class="container order-container-main">
 <h2 style="text-align:center;" >How to Order</h2>
 
 <div class="order-container">
@@ -83,6 +83,7 @@ $order_steps = [
         </div>
     <?php endforeach; ?>
 </div>
+</section>
 
 
 
