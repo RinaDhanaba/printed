@@ -31,11 +31,16 @@
     padding: 50px 5px;
     gap: 30px;
 }
-
+.bespoke-content-flex img{
+    width: 50%;
+}
 @media (max-width:600px){
     .bespoke-content-flex{
         flex-direction: column;
     }   
+    .bespoke-content-flex img{
+        width: 100%;
+    }
 
 }
 
