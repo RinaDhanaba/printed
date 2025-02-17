@@ -66,8 +66,8 @@ $order_steps = [
 ];
 ?>
 
-<section style="text-align:center;" class="container"></section>
-<h2>How to Order</h2>
+<section class="container order-container-main"></section>
+<h2 style="text-align:center;" >How to Order</h2>
 
 <div class="order-container">
     <?php foreach ($order_steps as $step): ?>
