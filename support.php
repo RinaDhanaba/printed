@@ -168,6 +168,7 @@ function openTab(evt, tabId) {
 
 
     <h2 style="text-align:center;">Tools to Make Print Easy</h2>
+    <p>Explore the range of tools and services that we offer to help you deliver your next print project as easily as possible.</p>
 
     <div class="support-slider-container">        
         <div class="support-slider-wrapper" id="supportToolSlider">
