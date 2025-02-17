@@ -95,7 +95,7 @@
 }
 
 /* Add connecting arrows */
-.order-step:not(:last-child)::after {
+.order-step:not(:last-child) .icon::after {
     content: "";
     position: absolute;
     top: 50%;
@@ -106,7 +106,7 @@
     transform: translateY(-50%);
 }
 
-.order-step:not(:last-child)::before {
+.order-step:not(:last-child) .icon::before {
     content: "→";
     position: absolute;
     top: 50%;
