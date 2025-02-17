@@ -72,11 +72,9 @@ $order_steps = [
 <div class="order-container">
     <?php foreach ($order_steps as $step): ?>
         <div class="order-step">
-        <div class="icon">
-            <div class="icon-inner">
-            <img src="<?= $step["icon"] ?>" alt="<?= $step["title"] ?>">
-            </div>
-        </div>
+                <div class="icon">
+                    <img src="<?= $step["icon"] ?>" alt="<?= $step["title"] ?>">
+                </div>
             <h3><?= $step["title"] ?></h3>
             <p><?= $step["description"] ?></p>
             <?php if (!empty($step["link_text"])): ?>

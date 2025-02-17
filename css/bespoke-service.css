@@ -59,7 +59,7 @@
     position: relative;
 }
 
-.order-step .icon-inner {
+.order-step .icon {
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -95,23 +95,24 @@
 }
 
 /* Add connecting arrows */
-.order-step:not(:last-child) .icon::after {
+.order-step:not(:first-child) .icon::after {
+    content: ">";
+    position: absolute;
+    top: 50%;
+    left:-13px;
+    font-size: 24px;
+    color: #d63384;
+    transform: translateY(-50%);  
+
+}
+
+.order-step:not(:last-child) .icon::before {
     content: "";
     position: absolute;
     top: 50%;
     left: 100%;
-    width: 40px; /* Adjust width to match spacing */
+    width: calc(200% + 20px); /* Adjust width to match spacing */
     height: 2px;
     background-color: #d63384;
-    transform: translateY(-50%);
-}
-
-.order-step:not(:last-child) .icon::before {
-    content: "→";
-    position: absolute;
-    top: 50%;
-    left: calc(100% + 20px); /* Adjust spacing to align properly */
-    font-size: 24px;
-    color: #d63384;
     transform: translateY(-50%);
 }
